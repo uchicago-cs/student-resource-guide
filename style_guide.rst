@@ -84,12 +84,12 @@ newlines are considered whitespace. So, the following is correct C::
 Blank Lines
 ^^^^^^^^^^^
 
+Unless a function is very short, the body of the function should include blank lines functions to indicate logical sections (with at most one blank line separating each logical section).
+
 Separate function definitions with two blank lines.
 
 Extra blank lines may be used (sparingly) to separate groups of
 related functions.
-
-Use blank lines in functions, sparingly, to indicate logical sections.
 
 
 Whitespace in Expressions and Statements
@@ -193,6 +193,25 @@ Places to use spaces
         hypot2 = x*x + y*y
         c = (a+b) * (a-b)
 
+- Do not include spaces around the dereference, dot, and arrow operators:
+
+  Yes:
+
+  ::
+
+        *v = 42;
+        client.name = "Sam";
+        node->next = NULL;
+
+  No:
+
+  ::
+
+        * v = 42;
+        client . name = "Sam";
+        node -> next = NULL;
+
+
 - Compound statements (multiple statements on the same line) are generally discouraged.
 
 
@@ -289,6 +308,35 @@ Block Comments
 Block comments (``/* ... */``) generally apply to some (or all) code that follows
 them, and are indented to the same level as that code.
 
+When commenting on ``if-else`` statements, block comments for each branch should be
+indented at the same level as the branch. Any comment indented at the same level
+as the ``if`` statement should be a comment on the entire conditional, not on the
+first branch. For example::
+
+    /* Checks if a year is a leap year */
+    if (year % 4 != 0)
+    {
+        /* If it's not divisible by 4, it definitely isn't a leap year */
+        return false;
+    }
+    else if (year % 100 != 0)
+    {
+        /* If it's divisible by 4 *and* not divisible by 100,
+         * it's definitely a leap year */
+        return true;
+    }
+    else if (year % 400 != 0)
+    {
+        /* Special case: years that are divisible by 100, but not by 400
+         * are actually common years */
+        return false;
+    }
+    else
+    {
+        /* In all other cases, the year is a leap year */
+        return true;
+    }
+
 Inline Comments
 ^^^^^^^^^^^^^^^
 
@@ -310,7 +358,28 @@ But sometimes, this style of comment is useful:
 
    x = x + 1                 // Compensate for border
 
+Avoid using inline comments to document structs, except for very simple structs.
+For example, this is generally fine::
 
+    typedef struct complex {
+        float real;   // Real part
+        float imag;   // Imaginary part
+    } complex_t;
+
+For any struct requiring more than a few words to document every field, use
+block comments instead::
+
+    typedef struct ethernet_frame
+    {
+        /* Pointer to byte array with raw Ethernet frame */
+        uint8_t *raw;
+
+        /* Length of the frame */
+        size_t length;
+
+        /* Interface on which the frame arrived */
+        interface_t *in_interface;
+    } ethernet_frame_t;
 
 Naming Conventions
 ------------------
@@ -339,6 +408,26 @@ names.  Use short names for local
 variables.  In general, the further away a variable will be used, the more
 descriptive the name needs to be.
 
+Type definitions
+----------------
+
+struct definitions should be `typedef`'d with a name ending in `_t` to denote
+that the name represents a new type. For example::
+
+    typedef struct complex {
+        float real;   // Real part
+        float imag;   // Imaginary part
+    } complex_t;
+
+Never use a `typedef` in a way that obscures that a type is actually a pointer.
+For example, this is not allowed::
+
+    typedef *list_node_t list_t;
+
+Please note that this is not allowed even if the `typedef`'d somehow conveys that
+the type is a pointer. So, this is also not allowed::
+
+    typedef *ctx_t ctx_ptr_t;
 
 ..
     Printing logging / debug messages
