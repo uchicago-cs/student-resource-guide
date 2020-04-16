@@ -23,7 +23,7 @@ Running the VM will effectively run a full Linux operating system from inside yo
 Recommended code editors
 ------------------------
 
-This section provides a few recommendations on code editors you may want to consider. Some of them are included in the CS machines, but you can also install them on your own computer to write your code there (and then follow the steps found in the :ref:`working-remotely` page to compile and eun your code on a CS machine). All of these tools are available on Windows, Mac, and Linux.
+This section provides a few recommendations on code editors you may want to consider. Some of them are included in the CS machines, but you can also install them on your own computer to write your code there (and then follow the steps found in the :ref:`working-remotely` page to compile and run your code on a CS machine). All of these tools are available on Windows, Mac, and Linux.
 
 You may find that some people are very opinionated about their choice of editor, and will sometimes `argue passionately <https://en.wikipedia.org/wiki/Editor_war>`__ about why their editor is right and yours is wrong. You should ignore these people and ultimately use whatever editor works best for *you* (and don't judge other people for their choice of editor!)
 
