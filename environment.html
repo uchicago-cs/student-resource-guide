@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Environment &mdash; UChicago CS Developer Guide  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Working Remotely" href="remote.html" />
+    <link rel="prev" title="UChicago CS Developer Guide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> UChicago CS Developer Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-cs-software-environment">The CS Software Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-cs-virtual-machine">The CS Virtual Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-code-editors">Recommended code editors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#terminal-based-editors">Terminal-based editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visual-studio-code">Visual Studio Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sublime-text">Sublime Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jetbrains-ides">JetBrains IDEs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide.html">Style Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">UChicago CS Developer Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Software Environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/environment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-environment">
+<span id="id1"></span><h1>Software Environment<a class="headerlink" href="#software-environment" title="Permalink to this headline">¶</a></h1>
+<p>This page describes the software environment you will need to complete your coursework, along with some recommended development tools.</p>
+<div class="section" id="the-cs-software-environment">
+<h2>The CS Software Environment<a class="headerlink" href="#the-cs-software-environment" title="Permalink to this headline">¶</a></h2>
+<p>The Department of Computer Science has an officially supported Linux software environment that can be found on the CS Linux login servers and on the Linux machines in the CSIL labs in Crerar. All of these machines run Ubuntu 16.04 and have most of the tools and software libraries required to complete your CS coursework. Unless told otherwise by your instructor, any code you write must compile and run correctly on this software environment.</p>
+<p>However, that doesn’t necessarily mean that you have to <em>write</em> your code on a CS machine (although you’re welcome to do so), nor does it mean you have to be physically sitting in front of a CS machine to compile and run your code. There are multiple mechanisms to write your code on your own computer (using other software environments, including Windows and Mac operating systems) and to access a CS software environment remotely, all of which are discussed in the <a class="reference internal" href="remote.html#working-remotely"><span class="std std-ref">Working Remotely</span></a> page.</p>
+</div>
+<div class="section" id="the-cs-virtual-machine">
+<h2>The CS Virtual Machine<a class="headerlink" href="#the-cs-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p>The CS department also provides a virtual machine (VM) that approximates the software environment found in the CS machines. You can find the latest version of the CS virtual machine on <a class="reference external" href="https://howto.cs.uchicago.edu/vm:index">this page</a>, which also includes instructions on how to install and run the VM.</p>
+<p>Running the VM will effectively run a full Linux operating system from inside your current operating system, and will feel as if you were logging into one of the Linux machines in the CSIL labs. However, take into account that it is possible to run the VM in “Headless Mode”, which is more similar to running a Linux <em>server</em> inside your computer, which you’ll then be able to access following the same steps found in the <a class="reference internal" href="remote.html#working-remotely"><span class="std std-ref">Working Remotely</span></a> page. This will allow the VM to run faster and consume fewer resources, because you’ll be doing your work on your personal computer, and only accessing the VM to compile and run your code. The CS VM documentation also includes <a class="reference external" href="https://howto.cs.uchicago.edu/vm:headless">instructions on how to set up the VM in Headless Mode</a>.</p>
+</div>
+<div class="section" id="recommended-code-editors">
+<h2>Recommended code editors<a class="headerlink" href="#recommended-code-editors" title="Permalink to this headline">¶</a></h2>
+<p>This section provides a few recommendations on code editors you may want to consider. Some of them are included in the CS machines, but you can also install them on your own computer to write your code there (and then follow the steps found in the <a class="reference internal" href="remote.html#working-remotely"><span class="std std-ref">Working Remotely</span></a> page to compile and eun your code on a CS machine). All of these tools are available on Windows, Mac, and Linux.</p>
+<p>You may find that some people are very opinionated about their choice of editor, and will sometimes <a class="reference external" href="https://en.wikipedia.org/wiki/Editor_war">argue passionately</a> about why their editor is right and yours is wrong. You should ignore these people and ultimately use whatever editor works best for <em>you</em> (and don’t judge other people for their choice of editor!)</p>
+<div class="figure align-center" id="id2">
+<img alt="Use whatever editor works for you" src="_images/editors.jpg" />
+<p class="caption"><span class="caption-text"><em>Design by Borja Sotomayor, artwork by Sarah Becan</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="terminal-based-editors">
+<h3>Terminal-based editors<a class="headerlink" href="#terminal-based-editors" title="Permalink to this headline">¶</a></h3>
+<p>Terminal-based editors, like <a class="reference external" href="https://www.vim.org/">vim</a>, <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a>, and <a class="reference external" href="https://www.nano-editor.org/">nano</a> have the advantage of being found on practically every UNIX system and not requiring a graphical desktop, which means they can be used when logging into a machine remotely via SSH, or on older machines that may feel sluggish when running some of the graphical editors we discuss below. They can also be extremely powerful, and can be customized to work with pretty much any programming language under the sun.</p>
+<p>Even if you don’t use a terminal-based editor as your primary development environment, we recommend building at least some basic familiarity with  vim, Emacs, or nano in case you are ever in a situation where you can only edit a file through a terminal (and can’t launch a graphical editor).</p>
+</div>
+<div class="section" id="visual-studio-code">
+<h3>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">¶</a></h3>
+<p>If you want to use a graphical text editor (i.e., one that uses a graphical user interface from the Linux desktop), a popular option is <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> (not to be confused with its older sibling, <a class="reference external" href="https://visualstudio.microsoft.com/vs/">Visual Studio</a>). It is more powerful than a regular text editor, with features like syntax highlighting, auto completion, Git integration, plugins that integrate with other tools, etc. but it is not a full-fledged <a class="reference external" href="https://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Developent Environment</a> (and, as such, is a more lightweight piece of software requiring less resources).</p>
+<p>Visual Studio Code is open source software and is available for free.</p>
+<div class="figure align-center" id="id3">
+<img alt="Screenshot of Visual Studio Code" src="_images/vscode.png" />
+<p class="caption"><span class="caption-text"><em>Source:</em> <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="sublime-text">
+<h3>Sublime Text<a class="headerlink" href="#sublime-text" title="Permalink to this headline">¶</a></h3>
+<p>Another popular graphical text editor is <a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a>, which tends to be a bit more lightweight than Visual Studio Code. Please note that Sublime Text is not free: while you can download it and use it for a period free of charge, you will be nagged frequently about paying for a license.</p>
+<div class="figure align-center" id="id4">
+<img alt="Screenshot of Sublime Text" src="_images/sublime.png" />
+<p class="caption"><span class="caption-text"><em>Source:</em> <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Sublime_text_mxunit.png">https://commons.wikimedia.org/wiki/File:Sublime_text_mxunit.png</a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="jetbrains-ides">
+<h3>JetBrains IDEs<a class="headerlink" href="#jetbrains-ides" title="Permalink to this headline">¶</a></h3>
+<p>The next step up from code editors like Visual Studio Code and Sublime Text is to use a full-fledged Integrated Developent Environment (IDE). Besides allowing you to edit code, IDEs usually include build automation tools and integrated debuggers. We recommend checking out the <a class="reference external" href="https://www.jetbrains.com/products.html#type=ide">suite of IDEs</a> provided by <a class="reference external" href="https://www.jetbrains.com/">JetBrains</a>, including <a class="reference external" href="https://www.jetbrains.com/clion">CLion</a> for C/C++ development, <a class="reference external" href="https://www.jetbrains.com/pycharm">PyCharm</a> for Python development, and <a class="reference external" href="https://www.jetbrains.com/idea">IntelliJ IDEA</a> for Java development.</p>
+<p>The JetBrains IDEs are commercial software, but they provide free licenses for students and educators, and some of their IDEs also have community editions that are free to use (but less powerful than the paid version).</p>
+<div class="figure align-center" id="id5">
+<img alt="Screenshot of CLion" src="_images/clion.png" />
+<p class="caption"><span class="caption-text"><em>Source:</em> <a class="reference external" href="https://www.jetbrains.com/clion/">https://www.jetbrains.com/clion/</a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="remote.html" class="btn btn-neutral float-right" title="Working Remotely" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="UChicago CS Developer Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Borja Sotomayor
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

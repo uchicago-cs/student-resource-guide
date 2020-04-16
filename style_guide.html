@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Style Guide &mdash; UChicago CS Developer Guide  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Working in Teams" href="teams.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> UChicago CS Developer Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-layout">Code layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-line-length">Maximum Line Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blank-lines">Blank Lines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#whitespace-in-expressions-and-statements">Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avoid-extraneous-whitespace-in-the-following-situations">Avoid extraneous whitespace in the following situations:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#places-to-use-spaces">Places to use spaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-comments">Header Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-comments">Function Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-comments">Block Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-comments">Inline Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-definitions">Type definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#goto-statements"><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-magic-numbers">Avoid Magic Numbers</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">UChicago CS Developer Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Style Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/style_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="style-guide">
+<h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This style guide is intended to provide some basic coding
+conventions for programming assignments and projects in C. These conventions
+are intended to improve the readability of your code. From
+your perspective as a student, the readability of your code
+is important for two big reasons:</p>
+<ol class="arabic simple">
+<li><p>If you have a problem with your code, or have trouble
+debugging a particular issue, it will be easier for us
+to provide assistance (and to provide it quickly) if your
+code is easy to read.</p></li>
+<li><p>Writing readable code makes the lives of our graders easier.
+Remember: a happy grader is a generous grader. Additionally,
+graders <em>will</em> take points off for code that is hard to read
+(which includes, but is not limited to, code that doesn’t
+follow the conventions in this style guide)</p></li>
+</ol>
+<p>This document is not intended to be a comprehensive C style guide.
+When you need guidance on a style issue not specified here,
+we recommend using the <a class="reference external" href="https://www.kernel.org/doc/html/v4.10/process/coding-style.html">Linux Kernel Style Guide</a>
+(however, when that guide contradicts our guide, our guide will
+be considered the normative document).</p>
+</div>
+<div class="section" id="code-layout">
+<h2>Code layout<a class="headerlink" href="#code-layout" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="indentation">
+<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h3>
+<p>You must follow one of the following two indent styles:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Indentation_style#K&amp;R">K&amp;R style</a> (you can use any of the variants listed on that page, except BSD KNF), or</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Indent_style#Allman_style">Allman style</a></p></li>
+</ul>
+<p>Make sure you choose one indent style and use it <strong>consistently</strong>. Please note that you can use <a class="reference external" href="http://astyle.sourceforge.net/">astyle</a> to take existing code and
+convert it to one of the above indent styles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">astyle</span> <span class="o">--</span><span class="n">style</span><span class="o">=</span><span class="n">kr</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;*.c&quot;</span>
+<span class="n">astyle</span> <span class="o">--</span><span class="n">style</span><span class="o">=</span><span class="n">allman</span> <span class="o">-</span><span class="n">r</span> <span class="s2">&quot;*.c&quot;</span>
+</pre></div>
+</div>
+<p>Regardless of the descriptions of K&amp;R and Allman you may find online, <em>you must use 4 spaces per indentation level</em>. This is the
+indentation level used by default by astyle.</p>
+<p><strong>Never use “tab characters”.</strong></p>
+<p>Note that you can configure most text editors to insert 4 spaces whenever you press the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Tab_key">tab key</a>. To check whether your editor is properly
+configured, try the following: press the tab key, and then press the left arrow key. If the
+cursor jumps to the beginning of the line, your editor inserted a single “tab character”.
+If the cursor only goes back one space (and you have to press the left arrow key three more
+times to get to the start of the line), then the editor is correctly inserting four spaces.</p>
+<p>Whether to use <a class="reference external" href="http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e">tabs or spaces</a>
+is one of the many “religious wars” within the programming community.
+So, you may run into people (even people here on campus) who will feel very strongly about
+how tabs are better than spaces, and they may even present to you a number of cogent arguments
+in favor of using tabs.</p>
+<p>Do not listen to these people. They are wrong and cannot be trusted.</p>
+</div>
+<div class="section" id="maximum-line-length">
+<h3>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Permalink to this headline">¶</a></h3>
+<p>Limit all lines to a maximum of 80 characters. This is not a hard limit,
+and breaking it occasionally is fine, as long as you don’t do it repeateadly
+and always by a small number of additional characters. Also, remember that
+most syntactical elements in C are delimited by whitespace, and that
+newlines are considered whitespace. So, the following is correct C:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
+    <span class="n">ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
+    <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="o">...</span> <span class="o">*/</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="blank-lines">
+<h3>Blank Lines<a class="headerlink" href="#blank-lines" title="Permalink to this headline">¶</a></h3>
+<p>Unless a function is very short, the body of the function should include blank lines functions to indicate logical sections (with at most one blank line separating each logical section).</p>
+<p>Separate function definitions with two blank lines.</p>
+<p>Extra blank lines may be used (sparingly) to separate groups of
+related functions.</p>
+</div>
+</div>
+<div class="section" id="whitespace-in-expressions-and-statements">
+<h2>Whitespace in Expressions and Statements<a class="headerlink" href="#whitespace-in-expressions-and-statements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="avoid-extraneous-whitespace-in-the-following-situations">
+<h3>Avoid extraneous whitespace in the following situations:<a class="headerlink" href="#avoid-extraneous-whitespace-in-the-following-situations" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Immediately inside parentheses:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span><span class="p">(</span> <span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span> <span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Immediately before a comma or a semicolon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="n">No</span><span class="p">:</span>  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span> <span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span> <span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Immediately before the open parenthesis that starts the argument list of a function call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span> <span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>Immediately before brackets indicating an array index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">a</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>More than one space around an assignment (or other) operator to align it with another.</p>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="places-to-use-spaces">
+<h3>Places to use spaces<a class="headerlink" href="#places-to-use-spaces" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -=, etc.), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=), Booleans (&amp;&amp;, ||).</p></li>
+<li><p>Use a space after these keywords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">,</span> <span class="n">switch</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="n">do</span><span class="p">,</span> <span class="k">while</span>
+</pre></div>
+</div>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use spaces around arithmetic operators:</p>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">submitted</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Do not include spaces around the dereference, dot, and arrow operators:</p>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">v</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">client</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sam&quot;</span><span class="p">;</span>
+<span class="n">node</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">client</span> <span class="o">.</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sam&quot;</span><span class="p">;</span>
+<span class="n">node</span> <span class="o">-&gt;</span> <span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Compound statements (multiple statements on the same line) are generally discouraged.</p>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">do_blah_thing</span><span class="p">();</span>
+<span class="n">do_one</span><span class="p">();</span>
+<span class="n">do_two</span><span class="p">();</span>
+<span class="n">do_three</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Rather not:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">do_blah_thing</span><span class="p">();</span>
+<span class="n">do_one</span><span class="p">();</span> <span class="n">do_two</span><span class="p">();</span> <span class="n">do_three</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments that contradict the code are worse than no comments. Always
+make a priority of keeping the comments up-to-date when the code
+changes!  Comments should consist of either a single short phrase or
+one or more complete sentences. The first word of a comment should be
+capitalized, unless it is an identifier that begins with a lower case
+letter (never alter the case of identifiers!).</p>
+<p>If a comment is short, the period at the end can be omitted. Block
+comments generally consist of one or more paragraphs built out of
+complete sentences, and each sentence should end in a period.</p>
+<div class="section" id="header-comments">
+<h3>Header Comments<a class="headerlink" href="#header-comments" title="Permalink to this headline">¶</a></h3>
+<p>Header comments appear at the top of a file. These lines typically
+include the filename, author, date, version number, and a description
+of what the file is for and what it contains.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span>  <span class="n">log</span><span class="o">.</span><span class="n">c</span><span class="p">:</span> <span class="n">Logging</span> <span class="n">functions</span>
+ <span class="o">*</span>
+ <span class="o">*</span>  <span class="n">Use</span> <span class="n">these</span> <span class="n">functions</span> <span class="n">to</span> <span class="nb">print</span> <span class="n">log</span> <span class="n">messages</span><span class="o">.</span> <span class="n">Each</span> <span class="n">message</span> <span class="n">has</span> <span class="n">an</span>
+ <span class="o">*</span>  <span class="n">associated</span> <span class="n">log</span> <span class="n">level</span><span class="p">:</span>
+ <span class="o">*</span>
+ <span class="o">*</span>  <span class="n">CRITICAL</span><span class="p">:</span> <span class="n">A</span> <span class="n">critical</span> <span class="n">unrecoverable</span> <span class="n">error</span>
+ <span class="o">*</span>  <span class="n">ERROR</span><span class="p">:</span> <span class="n">A</span> <span class="n">recoverable</span> <span class="n">error</span>
+ <span class="o">*</span>  <span class="n">WARNING</span><span class="p">:</span> <span class="n">A</span> <span class="n">warning</span>
+ <span class="o">*</span>  <span class="n">INFO</span><span class="p">:</span> <span class="n">High</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">progress</span> <span class="n">of</span> <span class="n">the</span> <span class="n">application</span>
+ <span class="o">*</span>  <span class="n">DEBUG</span><span class="p">:</span> <span class="n">Lower</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span>
+ <span class="o">*</span>  <span class="n">TRACE</span><span class="p">:</span> <span class="n">Very</span> <span class="n">low</span><span class="o">-</span><span class="n">level</span> <span class="n">information</span><span class="o">.</span>
+ <span class="o">*</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-comments">
+<h3>Function Comments<a class="headerlink" href="#function-comments" title="Permalink to this headline">¶</a></h3>
+<p>Function comments should be done in the form of a multiline comment
+above the function header.</p>
+<p>This comment must contain information specific to what a function does.
+It should also include a description of the purpose and expected
+input arguments, the expected output values, and how error conditions
+are handled.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span> <span class="n">chilog</span> <span class="o">-</span> <span class="n">Print</span> <span class="n">a</span> <span class="n">log</span> <span class="n">message</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">level</span><span class="p">:</span> <span class="n">Logging</span> <span class="n">level</span> <span class="n">of</span> <span class="n">the</span> <span class="n">message</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">fmt</span><span class="p">:</span> <span class="n">printf</span><span class="o">-</span><span class="n">style</span> <span class="n">formatting</span> <span class="n">string</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="o">...</span><span class="p">:</span> <span class="n">Extra</span> <span class="n">parameters</span> <span class="k">if</span> <span class="n">needed</span> <span class="n">by</span> <span class="n">fmt</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">Returns</span><span class="p">:</span> <span class="n">nothing</span><span class="o">.</span>
+ <span class="o">*/</span>
+<span class="n">void</span> <span class="n">chilog</span><span class="p">(</span><span class="n">loglevel_t</span> <span class="n">level</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="o">...</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="block-comments">
+<h3>Block Comments<a class="headerlink" href="#block-comments" title="Permalink to this headline">¶</a></h3>
+<p>Block comments (<code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code>) generally apply to some (or all) code that follows
+them, and are indented to the same level as that code.</p>
+<p>When commenting on <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statements, block comments for each branch should be
+indented at the same level as the branch. Any comment indented at the same level
+as the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement should be a comment on the entire conditional, not on the
+first branch. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Checks</span> <span class="k">if</span> <span class="n">a</span> <span class="n">year</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span> <span class="o">*/</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">If</span> <span class="n">it</span><span class="s1">&#39;s not divisible by 4, it definitely isn&#39;</span><span class="n">t</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span> <span class="o">*/</span>
+    <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">If</span> <span class="n">it</span><span class="s1">&#39;s divisible by 4 *and* not divisible by 100,</span>
+     <span class="o">*</span> <span class="n">it</span><span class="s1">&#39;s definitely a leap year */</span>
+    <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">Special</span> <span class="n">case</span><span class="p">:</span> <span class="n">years</span> <span class="n">that</span> <span class="n">are</span> <span class="n">divisible</span> <span class="n">by</span> <span class="mi">100</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">by</span> <span class="mi">400</span>
+     <span class="o">*</span> <span class="n">are</span> <span class="n">actually</span> <span class="n">common</span> <span class="n">years</span> <span class="o">*/</span>
+    <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">In</span> <span class="nb">all</span> <span class="n">other</span> <span class="n">cases</span><span class="p">,</span> <span class="n">the</span> <span class="n">year</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">leap</span> <span class="n">year</span> <span class="o">*/</span>
+    <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inline-comments">
+<h3>Inline Comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h3>
+<p>Use inline comments sparingly.  An inline comment is a comment on the
+same line as a statement. Inline comments should be separated by at
+least two spaces from the statement.  They should start with a <code class="docutils literal notranslate"><span class="pre">//</span></code> and a
+single space.</p>
+<p>Inline comments are unnecessary and in fact distracting if they state
+the obvious. Don’t do this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Increment</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>But sometimes, this style of comment is useful:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Compensate</span> <span class="k">for</span> <span class="n">border</span>
+</pre></div>
+</div>
+<p>Avoid using inline comments to document structs, except for very simple structs.
+For example, this is generally fine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="nb">complex</span> <span class="p">{</span>
+    <span class="nb">float</span> <span class="n">real</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Real</span> <span class="n">part</span>
+    <span class="nb">float</span> <span class="n">imag</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Imaginary</span> <span class="n">part</span>
+<span class="p">}</span> <span class="n">complex_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>For any struct requiring more than a few words to document every field, use
+block comments instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">ethernet_frame</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">Pointer</span> <span class="n">to</span> <span class="n">byte</span> <span class="n">array</span> <span class="k">with</span> <span class="n">raw</span> <span class="n">Ethernet</span> <span class="n">frame</span> <span class="o">*/</span>
+    <span class="n">uint8_t</span> <span class="o">*</span><span class="n">raw</span><span class="p">;</span>
+
+    <span class="o">/*</span> <span class="n">Length</span> <span class="n">of</span> <span class="n">the</span> <span class="n">frame</span> <span class="o">*/</span>
+    <span class="n">size_t</span> <span class="n">length</span><span class="p">;</span>
+
+    <span class="o">/*</span> <span class="n">Interface</span> <span class="n">on</span> <span class="n">which</span> <span class="n">the</span> <span class="n">frame</span> <span class="n">arrived</span> <span class="o">*/</span>
+    <span class="n">interface_t</span> <span class="o">*</span><span class="n">in_interface</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">ethernet_frame_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="naming-conventions">
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Variable and function names should use the <a class="reference external" href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a>
+naming convention (i.e., <code class="docutils literal notranslate"><span class="pre">lowercase_with_underscore</span></code>). For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sum_of_squares</span>
+<span class="n">print_happy_birthday</span>
+<span class="n">total_apples</span>
+</pre></div>
+</div>
+<p>Constants names should use snake_case with all caps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PI</span>
+<span class="n">MAX_CLIENTS</span>
+<span class="n">MAX_IRC_MSG_LEN</span>
+</pre></div>
+</div>
+<p>Use descriptive names for parameter names, variables, and function
+names.  Use short names for local
+variables.  In general, the further away a variable will be used, the more
+descriptive the name needs to be.</p>
+</div>
+<div class="section" id="type-definitions">
+<h2>Type definitions<a class="headerlink" href="#type-definitions" title="Permalink to this headline">¶</a></h2>
+<p>struct definitions should be <cite>typedef</cite>’d with a name ending in <cite>_t</cite> to denote
+that the name represents a new type. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="nb">complex</span> <span class="p">{</span>
+    <span class="nb">float</span> <span class="n">real</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Real</span> <span class="n">part</span>
+    <span class="nb">float</span> <span class="n">imag</span><span class="p">;</span>   <span class="o">//</span> <span class="n">Imaginary</span> <span class="n">part</span>
+<span class="p">}</span> <span class="n">complex_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Never use a <cite>typedef</cite> in a way that obscures that a type is actually a pointer.
+For example, this is not allowed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="o">*</span><span class="n">list_node_t</span> <span class="n">list_t</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Please note that this is not allowed even if the <cite>typedef</cite>’d somehow conveys that
+the type is a pointer. So, this is also not allowed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="o">*</span><span class="n">ctx_t</span> <span class="n">ctx_ptr_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="global-variables">
+<h2>Global variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
+<p>The use of global variables is forbidden, except for defining compile-time <em>constants</em>. <strong>There are no other exceptions</strong>.</p>
+<p>A compile-time constant is a global variable with a value that is known and set at compile-time and <em>never</em> changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a <code class="docutils literal notranslate"><span class="pre">struct</span></code>, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have <code class="docutils literal notranslate"><span class="pre">ALL_CAPS</span></code> names, be declared as <code class="docutils literal notranslate"><span class="pre">const</span></code> and, if they are only going to be used in a single module, they must also be declared as <code class="docutils literal notranslate"><span class="pre">static</span></code>. Please note that our definition excludes variables that are initialized when the program starts running, <em>even if the value of that variable won’t change once it has been initialized</em>. If the value of the variable is not known before the program is running, it cannot be a global variable.</p>
+<p>When writing a function, you must make sure that all the data the function is going to operate on is passed to the function via its parameters, and that all data the functions produces is returned via its return value (or through an input/output parameter). If, instead, you write a function that uses a global variable to convey information to/from the function (except when using a compile-time constant), you can expect some pretty hefty point deductions.</p>
+<p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>, which also notes “They are usually considered bad practice”.</p>
+</div>
+<div class="section" id="goto-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements<a class="headerlink" href="#goto-statements" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements can <em>only</em> be used to perform error handling. See this blog post for more details on how to do error handling with <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s in C: <a class="reference external" href="http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c">Using goto for error handling in C</a>. That post describes an additional acceptable use case for <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s (breaking out of deeply-nested loops) and, while we will technically accept that use of <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a <code class="docutils literal notranslate"><span class="pre">goto</span></code> in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).</p>
+</div>
+<div class="section" id="avoid-magic-numbers">
+<h2>Avoid Magic Numbers<a class="headerlink" href="#avoid-magic-numbers" title="Permalink to this headline">¶</a></h2>
+<p>Avoid sprinkling numbers that will have very little meaning to your
+reader throughout your code. For example:</p>
+<p>Yes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_IRC_MSG_LEN</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">510</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="teams.html" class="btn btn-neutral float-left" title="Working in Teams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Borja Sotomayor
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
