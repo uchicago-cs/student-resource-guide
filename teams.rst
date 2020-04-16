@@ -1,5 +1,15 @@
+.. _teams:
+
 Working in Teams
 ================
+
+.. note::
+
+   If you are a CMSC 22000 student, please note that this part of the guide is written mostly for
+   students in other classes who have not taken CMSC 22000 and may need help navigating how to
+   work in pairs or in a team. While you may find some of the advice on this page useful, take
+   into account that any guidance or instructions you receive in CMSC 22000 take precedence
+   over what is on this page.
 
 In some classes, you may need to work on projects in pairs or in teams. This is not a gratuitous
 decision: in practically all contexts, software development is a team sport, and you will
