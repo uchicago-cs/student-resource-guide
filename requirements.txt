@@ -1,2 +1,4 @@
 Sphinx>=2.4.4
 sphinx-rtd-theme>=0.4.3
+jinja2>=2.11.2
+j2cli>=0.3.10

@@ -30,5 +30,7 @@ deploy:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
+	language=c j2 style_guide.rst.j2 -o style_guide_c.rst
+	language=python j2 style_guide.rst.j2 -o style_guide_python.rst
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 

@@ -25,4 +25,5 @@ will find the following:
    environment.rst
    remote.rst
    teams.rst
-   style_guide.rst
+   style_guide_c.rst
+   style_guide_python.rst
