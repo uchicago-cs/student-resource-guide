@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Style Guide &mdash; UChicago CS Developer Guide  documentation</title>
+  <title>Style Guide - C &mdash; UChicago CS Developer Guide  documentation</title>
   
 
   
@@ -35,7 +35,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Style Guide - Python" href="style_guide_python.html" />
+    <link rel="prev" title="Working in Teams" href="teams.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,11 +83,36 @@
             
             
               <p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Software Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide_c.html">Style Guide - C</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Style Guide - C</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-layout">Code layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-line-length">Maximum Line Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blank-lines">Blank Lines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#whitespace-in-expressions-and-statements">Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avoid-extraneous-whitespace-in-the-following-situations">Avoid extraneous whitespace in the following situations:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#places-to-use-spaces">Places to use spaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-comments">Header Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-comments">Function Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-comments">Block Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-comments">Inline Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-definitions">Type definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-magic-numbers">Avoid Magic Numbers</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="style_guide_python.html">Style Guide - Python</a></li>
 </ul>
 
@@ -133,13 +160,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Style Guide</li>
+      <li>Style Guide - C</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/style_guide.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/style_guide_c.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -152,15 +179,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="style-guide">
-<span id="id1"></span><h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="style-guide-c">
+<span id="id1"></span><h1>Style Guide - C<a class="headerlink" href="#style-guide-c" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This style guide is intended to provide some basic coding
 conventions for programming assignments and projects in C. These conventions
 are intended to improve the readability of your code. From
 your perspective as a student, the readability of your code
-is important for three big reasons:</p>
+is important for two big reasons:</p>
 <ol class="arabic simple">
 <li><p>If you have a problem with your code, or have trouble
 debugging a particular issue, it will be easier for us
@@ -171,7 +198,6 @@ Remember: a happy grader is a generous grader. Additionally,
 graders <em>will</em> take points off for code that is hard to read
 (which includes, but is not limited to, code that doesn’t
 follow the conventions in this style guide)</p></li>
-<li><p>Writing readable code is an important professional skill.</p></li>
 </ol>
 <p>This document is not intended to be a comprehensive C style guide.
 When you need guidance on a style issue not specified here,
@@ -203,32 +229,48 @@ configured, try the following: press the tab key, and then press the left arrow 
 cursor jumps to the beginning of the line, your editor inserted a single “tab character”.
 If the cursor only goes back one space (and you have to press the left arrow key three more
 times to get to the start of the line), then the editor is correctly inserting four spaces.</p>
-<p>Whether to use <a class="reference external" href="http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e">tabs or spaces</a>
-is one of the many “religious wars” within the programming community.
-So, you may run into people (even people here on campus) who will feel very strongly about
-how tabs are better than spaces, and they may even present to you a number of cogent arguments
-in favor of using tabs.</p>
-<p>Do not listen to these people. They are wrong and cannot be trusted.</p>
 </div>
 <div class="section" id="maximum-line-length">
 <h3>Maximum Line Length<a class="headerlink" href="#maximum-line-length" title="Permalink to this headline">¶</a></h3>
-<p>Limit all lines to a maximum of 80 characters. This is not a hard limit,
-and breaking it occasionally is fine, as long as you don’t do it repeateadly
-and always by a small number of additional characters. Also, remember that
+<p>In general, you should limit all lines to a maximum of 80 characters.</p>
+<p>While this may seem like a small amount of characters given the size
+of today’s screens, the 80 character limit is still observed by
+most standard style guides including the <a class="reference external" href="https://www.kernel.org/doc/html/v4.10/process/coding-style.html#breaking-long-lines-and-strings">Linux Kernel Style Guide</a>,
+<a class="reference external" href="https://google.github.io/styleguide/cppguide.html#Line_Length">Google’s C++ Style Guide</a>,
+and <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#maximum-line-length">Python’s PEP8</a>.
+Getting into the habit of limiting your lines to 80 characters will serve you
+well in the future.</p>
+<p>From a practical standpoint, keeping lines to 80 characters makes code more
+readable and also makes it easier to have multiple files open side by side
+on a large screen.</p>
+<p>There are two concrete exceptions to this rule (taken from Google’s C++ Style Guide):</p>
+<ul class="simple">
+<li><p>A comment line which is not feasible to split without harming readability, ease of cut and paste or auto-linking
+– e.g., if a line contains an example command or a literal URL longer than 80 characters.</p></li>
+<li><p>A string literal with content that exceeds 80 characters.</p></li>
+</ul>
+<p>More generally, the 80 character limit can usually be broken if doing so
+significantly increases readability <em>and does not hide information</em>
+(notice how both exceptions above meet this rule, since there would be
+no actual code beyond the 80 character limit).</p>
+<p>So, while breaking this limit occasionally is fine, you will usually
+have to break up your code so it will fit into the 80 character limit.
+Remember that
 most syntactical elements in C are delimited by whitespace, and that
 newlines are considered whitespace. So, the following is correct C:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
-    <span class="n">ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
-    <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION</span> <span class="o">||</span>
+<span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="o">/*</span> <span class="o">...</span> <span class="o">*/</span>
+<span class="o">/*</span> <span class="o">...</span> <span class="o">*/</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="blank-lines">
 <h3>Blank Lines<a class="headerlink" href="#blank-lines" title="Permalink to this headline">¶</a></h3>
-<p>Unless a function is very short, the body of the function should include blank lines functions to indicate logical sections (with at most one blank line separating each logical section).</p>
+<p>Unless a function is very short, the body of the function should include blank lines functions to indicate
+logical sections (with at most one blank line separating each logical section).</p>
 <p>Separate function definitions with two blank lines.</p>
 <p>Extra blank lines may be used (sparingly) to separate groups of
 related functions.</p>
@@ -256,16 +298,20 @@ related functions.</p>
 </div>
 </li>
 <li><p>Immediately before the open parenthesis that starts the argument list of a function call:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">chilog</span><span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
 <span class="n">No</span><span class="p">:</span>  <span class="n">chilog</span> <span class="p">(</span><span class="n">INFO</span><span class="p">,</span> <span class="s2">&quot;User </span><span class="si">%s</span><span class="s2"> has connected&quot;</span><span class="p">,</span> <span class="n">user</span><span class="p">);</span>
 </pre></div>
 </div>
+</div></blockquote>
 </li>
 <li><p>Immediately before brackets indicating an array index:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 <span class="n">No</span><span class="p">:</span>  <span class="n">a</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
 </pre></div>
 </div>
+</div></blockquote>
 </li>
 <li><p>More than one space around an assignment (or other) operator to align it with another.</p>
 <p>Yes:</p>
@@ -286,7 +332,8 @@ related functions.</p>
 <div class="section" id="places-to-use-spaces">
 <h3>Places to use spaces<a class="headerlink" href="#places-to-use-spaces" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p>Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -=, etc.), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=), Booleans (&amp;&amp;, ||).</p></li>
+<li><p>Always surround these binary operators with a single space on either side: assignment (=),
+augmented assignment (+=, -=, etc.), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=), Booleans (&amp;&amp;, ||).</p></li>
 <li><p>Use a space after these keywords:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">,</span> <span class="n">switch</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="n">do</span><span class="p">,</span> <span class="k">while</span>
 </pre></div>
@@ -332,8 +379,8 @@ related functions.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Compound statements (multiple statements on the same line) are generally discouraged.</p>
-<p>Yes:</p>
+<li><p>Compound statements (multiple statements on the same line) are generally discouraged.
+Yes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">do_blah_thing</span><span class="p">();</span>
 <span class="n">do_one</span><span class="p">();</span>
@@ -366,6 +413,7 @@ complete sentences, and each sentence should end in a period.</p>
 <p>Header comments appear at the top of a file. These lines typically
 include the filename, author, date, version number, and a description
 of what the file is for and what it contains.</p>
+<p>For class assignments, headers should always include your name!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
  <span class="o">*</span>  <span class="n">log</span><span class="o">.</span><span class="n">c</span><span class="p">:</span> <span class="n">Logging</span> <span class="n">functions</span>
  <span class="o">*</span>
@@ -445,8 +493,8 @@ first branch. For example:</p>
 <h3>Inline Comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h3>
 <p>Use inline comments sparingly.  An inline comment is a comment on the
 same line as a statement. Inline comments should be separated by at
-least two spaces from the statement.  They should start with a <code class="docutils literal notranslate"><span class="pre">//</span></code> and a
-single space.</p>
+least two spaces from the statement.
+They should start with a <code class="docutils literal notranslate"><span class="pre">//</span></code> and a single space.</p>
 <p>Inline comments are unnecessary and in fact distracting if they state
 the obvious. Don’t do this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="o">//</span> <span class="n">Increment</span> <span class="n">x</span>
@@ -500,6 +548,14 @@ naming convention (i.e., <code class="docutils literal notranslate"><span class=
 names.  Use short names for local
 variables.  In general, the further away a variable will be used, the more
 descriptive the name needs to be.</p>
+<p>However, you should not assume from the above that loops should <em>always</em> use
+one-letter variable names. Here is an example where doing so can make your
+code hard to read:</p>
+<p>The names of functions that perform an action should include a verb:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">:</span> <span class="n">read_column_from_csv</span>
+<span class="n">No</span><span class="p">:</span>  <span class="n">column_from_csv</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="type-definitions">
 <h2>Type definitions<a class="headerlink" href="#type-definitions" title="Permalink to this headline">¶</a></h2>
@@ -525,18 +581,30 @@ the type is a pointer. So, this is also not allowed:</p>
 <div class="section" id="global-variables">
 <h2>Global variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
 <p>The use of global variables is forbidden, except for defining compile-time <em>constants</em>. <strong>There are no other exceptions</strong>.</p>
-<p>A compile-time constant is a global variable with a value that is known and set at compile-time and <em>never</em> changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a <code class="docutils literal notranslate"><span class="pre">struct</span></code>, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have <code class="docutils literal notranslate"><span class="pre">ALL_CAPS</span></code> names, be declared as <code class="docutils literal notranslate"><span class="pre">const</span></code> and, if they are only going to be used in a single module, they must also be declared as <code class="docutils literal notranslate"><span class="pre">static</span></code>. Please note that our definition excludes variables that are initialized when the program starts running, <em>even if the value of that variable won’t change once it has been initialized</em>. If the value of the variable is not known before the program is running, it cannot be a global variable.</p>
-<p>When writing a function, you must make sure that all the data the function is going to operate on is passed to the function via its parameters, and that all data the functions produces is returned via its return value (or through an input/output parameter). If, instead, you write a function that uses a global variable to convey information to/from the function (except when using a compile-time constant), you can expect some pretty hefty point deductions.</p>
-<p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>, which also notes “They are usually considered bad practice”.</p>
-</div>
-<div class="section" id="goto-statements">
-<h2><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements<a class="headerlink" href="#goto-statements" title="Permalink to this headline">¶</a></h2>
+<p>A compile-time constant is a global variable with a value that is known and set at compile-time and <em>never</em>
+changed during the runtime of the program (if the variable can be used to access other values, e.g., because
+it is a pointer, a <code class="docutils literal notranslate"><span class="pre">struct</span></code>, etc., all the values reachable from the variable must also be known and set
+at compile-time). Such variables must have <code class="docutils literal notranslate"><span class="pre">ALL_CAPS</span></code> names, be declared as <code class="docutils literal notranslate"><span class="pre">const</span></code> and, if they are only
+going to be used in a single module, they must also be declared as <code class="docutils literal notranslate"><span class="pre">static</span></code>. Please note that our definition
+excludes variables that are initialized when the program starts running, <em>even if the value of that variable won’t
+change once it has been initialized</em>. If the value of the variable is not known before the program is running, it
+cannot be a global variable.</p>
+<p>When writing a function, you must make sure that all the data the function is going to operate on is passed to the
+function via its parameters, and that all data the functions produces is returned via its return value (or through
+an input/output parameter). Writing a function that uses a global variable to convey information
+to/from the function (except when using a constant), will make your code hard to read and debug.</p>
+<p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>,
+which also notes “They are usually considered bad practice”.
+<code class="docutils literal notranslate"><span class="pre">goto</span></code> statements
+——————-</p>
 <p><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements can <em>only</em> be used to perform error handling. See this blog post for more details on how to do error handling with <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s in C: <a class="reference external" href="http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c">Using goto for error handling in C</a>. That post describes an additional acceptable use case for <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s (breaking out of deeply-nested loops) and, while we will technically accept that use of <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a <code class="docutils literal notranslate"><span class="pre">goto</span></code> in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).</p>
 </div>
 <div class="section" id="avoid-magic-numbers">
 <h2>Avoid Magic Numbers<a class="headerlink" href="#avoid-magic-numbers" title="Permalink to this headline">¶</a></h2>
 <p>Avoid sprinkling numbers that will have very little meaning to your
-reader throughout your code. For example:</p>
+reader throughout your code. Instead, you should define constants
+(in <code class="docutils literal notranslate"><span class="pre">ALL_CAPS</span></code>, as specified earlier) and use those instead.</p>
+<p>For example:</p>
 <p>Yes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_IRC_MSG_LEN</span><span class="p">)</span>
 </pre></div>
@@ -553,6 +621,15 @@ reader throughout your code. For example:</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="style_guide_python.html" class="btn btn-neutral float-right" title="Style Guide - Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="teams.html" class="btn btn-neutral float-left" title="Working in Teams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

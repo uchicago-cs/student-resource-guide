@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software Environment" href="environment.html" /> 
@@ -49,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> UChicago CS Developer Guide
+            <a href="#" class="icon icon-home" alt="Documentation Home"> UChicago CS Developer Guide
           
 
           
@@ -72,6 +73,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +86,14 @@
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Software Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide.html">Style Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide_c.html">Style Guide - C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide_python.html">Style Guide - Python</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -128,7 +132,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>UChicago CS Developer Guide</li>
     
@@ -151,21 +155,22 @@
             
   <div class="section" id="uchicago-cs-developer-guide">
 <h1>UChicago CS Developer Guide<a class="headerlink" href="#uchicago-cs-developer-guide" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This guide is currently intended for students in CMSC 22000 Introduction to Software Development.
-Students in other classes are welcome to consult this guide, but should not consider any
-aspect of it to be normative (unless you have been told otherwise by your instructor)</p>
-</div>
-<p>This is a developer guide for students working on C programming assignments and projects. In it, you
-will find the following:</p>
+<p>This is a developer guide for students working on programming assignments and projects. Please note that it is
+not meant to be a normative guide for all CS classes (unless your instructor has explicitly pointed you
+to this guide).</p>
+<p>In this guide, you will find the following:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="environment.html#software-environment"><span class="std std-ref">Software Environment</span></a>: A description of the software environment provided by the CS department,
 and which you will be expected to use to a certain extent.</p></li>
 <li><p><a class="reference internal" href="remote.html#working-remotely"><span class="std std-ref">Working Remotely</span></a>: Suggestions and guidelines on how to access the CS software environment
 remotely.</p></li>
 <li><p><a class="reference internal" href="teams.html#teams"><span class="std std-ref">Working in Teams</span></a>: Suggestions for how to work effectively in pairs and in teams.</p></li>
-<li><p><a class="reference internal" href="style_guide.html#style-guide"><span class="std std-ref">Style Guide</span></a>: A C style guide.</p></li>
+<li><p>Style guides</p>
+<ul>
+<li><p><a class="reference internal" href="style_guide_c.html#style-guide-c"><span class="std std-ref">Style Guide - C</span></a></p></li>
+<li><p><a class="reference internal" href="style_guide_python.html#style-guide-python"><span class="std std-ref">Style Guide - Python</span></a></p></li>
+</ul>
+</li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -189,11 +194,19 @@ remotely.</p></li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, Borja Sotomayor
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -204,7 +217,6 @@ remotely.</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
