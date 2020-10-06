@@ -23,6 +23,8 @@ is important for two big reasons:
    graders *will* take points off for code that is hard to read
    (which includes, but is not limited to, code that doesn't
    follow the conventions in this style guide)
+#. Writing readable code is an important professional skill.
+
 
 
 This document is not intended to be a comprehensive C style guide.
