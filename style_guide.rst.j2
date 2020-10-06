@@ -338,7 +338,7 @@ Places to use spaces
   ::
 
     if foo == 'blah':
-    do_blah_thing()
+        do_blah_thing()
     do_one()
     do_two()
     do_three()
@@ -448,9 +448,11 @@ Example:
     This function solves Pythagorean theorem a^2 + b^2 = c^2
     for the value of c.
 
-    a, b: the lengths of sides of a right triangle.
+    Inputs:
+      a, b (float): the lengths of sides of a right triangle.
 
-    returns: the length of the hypotenuse.
+    Returns:
+      (float) the length of the hypotenuse.
     '''
 
     return math.sqrt(a**2 + b**2)
@@ -767,16 +769,16 @@ For example:
 Yes::
 
     if abs(d-expected) >= TOLERANCE:
-    s = "WRONG: Expected distance between {} and {} to be {:.2f} {}"
-    s = s + "but got {:.2f} {}"
-    print(s.format(c1, c2, expected/scale, unit, d/scale, unit))
+        s = "WRONG: Expected distance between {} and {} to be {:.2f} {}"
+        s = s + "but got {:.2f} {}"
+        print(s.format(c1, c2, expected/scale, unit, d/scale, unit))
 
 No::
 
     if abs(d-expected) >= 10:
-    s = "WRONG: Expected distance between {} and {} to be {:.2f} {}"
-    s = s + "but got {:.2f} {}"
-    print(s.format(c1, c2, expected/scale, unit, d/scale, unit))
+        s = "WRONG: Expected distance between {} and {} to be {:.2f} {}"
+        s = s + "but got {:.2f} {}"
+        print(s.format(c1, c2, expected/scale, unit, d/scale, unit))
 {% elif language == "c" %}
 Yes::
 
