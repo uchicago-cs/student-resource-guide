@@ -12,7 +12,7 @@ This style guide is intended to provide some basic coding
 conventions for programming assignments and projects in C. These conventions
 are intended to improve the readability of your code. From
 your perspective as a student, the readability of your code
-is important for two big reasons:
+is important for three big reasons:
 
 #. If you have a problem with your code, or have trouble
    debugging a particular issue, it will be easier for us
