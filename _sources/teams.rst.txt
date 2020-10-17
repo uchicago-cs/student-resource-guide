@@ -3,14 +3,6 @@
 Working in Teams
 ================
 
-.. note::
-
-   If you are a CMSC 22000 student, please note that this part of the guide is written mostly for
-   students in other classes who have not taken CMSC 22000 and may need help navigating how to
-   work in pairs or in a team. While you may find some of the advice on this page useful, take
-   into account that any guidance or instructions you receive in CMSC 22000 takes precedence
-   over what is on this page.
-
 In some classes, you may need to work on projects in pairs or in teams. This is not a gratuitous
 decision: in practically all contexts, software development is a team sport, and you will
 develop many useful skills by doing these projects with others rather than by working on them
@@ -69,7 +61,9 @@ may want to consider the following before pairing up with someone:
   than you for the express purpose of having a mentorship relationship can be
   a very fulfilling experience for the both of you. However, you need to make sure you're both on
   board with this, and understand that the less experienced partner may need
-  some hand-holding throughout the project.
+  some hand-holding throughout the project (and that the "mentor" will not
+  simply do all the work, but will rather provide guidance to the less
+  experienced student)
 
 
 Communication
@@ -81,7 +75,7 @@ to decide on a plan for completing the work (we provide
 some pointers on this below), and then plan to check in with each other
 at least every 1-2 days. Take into account that
 this doesn't have to be an in-person meeting: you could simply chat online or
-have a quick call. These check-ins can also be pretty informal: in fact,
+have a quick Zoom meeting. These check-ins can also be pretty informal: in fact,
 instead of setting a specific time to meet every 1-2 days, you may simply
 settle into a routine of regularly chatting online about your work.
 
@@ -251,7 +245,7 @@ you can do an improptu Pair Programming session to see if you can get un-stuck.
 
 
 Using Git effectively
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 In most classes, you will be using Git as a version control system. However, you should
 not treat it as a glorified homework submission system, where you just push your
