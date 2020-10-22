@@ -250,18 +250,18 @@ Example:
 ::
 
     def hypotenuse(a, b):
-    '''
-    This function solves Pythagorean theorem a^2 + b^2 = c^2
-    for the value of c.
+        '''
+        This function solves Pythagorean theorem a^2 + b^2 = c^2
+        for the value of c.
 
-    Inputs:
-      a, b (float): the lengths of sides of a right triangle.
+        Inputs:
+          a, b (float): the lengths of sides of a right triangle.
 
-    Returns:
-      (float) the length of the hypotenuse.
-    '''
+        Returns:
+          (float) the length of the hypotenuse.
+        '''
 
-    return math.sqrt(a**2 + b**2)
+        return math.sqrt(a**2 + b**2)
 
 
 Block Comments
