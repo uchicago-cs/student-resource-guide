@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#type-definitions">Type definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#goto-statements"><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#avoid-magic-numbers">Avoid Magic Numbers</a></li>
 </ul>
 </li>
@@ -595,9 +596,10 @@ function via its parameters, and that all data the functions produces is returne
 an input/output parameter). Writing a function that uses a global variable to convey information
 to/from the function (except when using a constant), will make your code hard to read and debug.</p>
 <p>For more details, see the Wikipedia entry on <a class="reference external" href="https://en.wikipedia.org/wiki/Global_variable">Global Variables</a>,
-which also notes “They are usually considered bad practice”.
-<code class="docutils literal notranslate"><span class="pre">goto</span></code> statements
-——————-</p>
+which also notes “They are usually considered bad practice”.</p>
+</div>
+<div class="section" id="goto-statements">
+<h2><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements<a class="headerlink" href="#goto-statements" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements can <em>only</em> be used to perform error handling. See this blog post for more details on how to do error handling with <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s in C: <a class="reference external" href="http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c">Using goto for error handling in C</a>. That post describes an additional acceptable use case for <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s (breaking out of deeply-nested loops) and, while we will technically accept that use of <code class="docutils literal notranslate"><span class="pre">goto</span></code>’s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a <code class="docutils literal notranslate"><span class="pre">goto</span></code> in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).</p>
 </div>
 <div class="section" id="avoid-magic-numbers">

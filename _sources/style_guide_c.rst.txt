@@ -510,6 +510,7 @@ to/from the function (except when using a constant), will make your code hard to
 
 For more details, see the Wikipedia entry on `Global Variables <https://en.wikipedia.org/wiki/Global_variable>`_,
 which also notes "They are usually considered bad practice".
+
 ``goto`` statements
 -------------------
 
