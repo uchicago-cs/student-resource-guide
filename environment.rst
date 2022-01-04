@@ -8,12 +8,16 @@ This page describes the software environment you will need to complete your cour
 The CS Software Environment
 ---------------------------
 
-The Department of Computer Science has an officially supported Linux software environment that can be found on the CS Linux login servers and on the Linux machines in the CSIL labs in Crerar. All of these machines run Ubuntu 16.04 and have most of the tools and software libraries required to complete your CS coursework. Unless told otherwise by your instructor, any code you write must compile and run correctly on this software environment.
+The Department of Computer Science has an officially supported Linux software environment that can be found on the CS Linux login servers and on the Linux machines in the CSIL labs in Crerar. All of these machines run Ubuntu 20.04 and have most of the tools and software libraries required to complete your CS coursework. Unless told otherwise by your instructor, any code you write must compile and run correctly on this software environment.
 
 However, that doesn't necessarily mean that you have to *write* your code on a CS machine (although you're welcome to do so), nor does it mean you have to be physically sitting in front of a CS machine to compile and run your code. There are multiple mechanisms to write your code on your own computer (using other software environments, including Windows and Mac operating systems) and to access a CS software environment remotely, all of which are discussed in the :ref:`working-remotely` page.
 
 The CS Virtual Machine
 ----------------------
+
+.. note::
+
+   The CS Virtual Machine still uses Ubuntu 16.04 and, while it may still prove useful for certain tasks, we recommend you do not rely on it unless specifically instructed to in your class.
 
 The CS department also provides a virtual machine (VM) that approximates the software environment found in the CS machines. You can find the latest version of the CS virtual machine on `this page <https://howto.cs.uchicago.edu/vm:index>`__, which also includes instructions on how to install and run the VM. Make sure to also check out the `VM FAQ <https://howto.cs.uchicago.edu/vm:faq>`__, which covers a number of common issues when running the VM (including how to deal with a slow/sluggish VM).
 
