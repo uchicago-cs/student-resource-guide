@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Style Guide &mdash; UChicago CS Developer Guide  documentation</title>
   
@@ -13,10 +13,15 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -26,16 +31,17 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Working in Teams" href="teams.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> UChicago CS Developer Guide
+            <a href="index.html" class="icon icon-home"> UChicago CS Developer Guide
           
 
           
@@ -80,13 +86,38 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Software Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
 <li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide_c.html">Style Guide - C</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide_python.html">Style Guide - Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-layout">Code layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-line-length">Maximum Line Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blank-lines">Blank Lines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#whitespace-in-expressions-and-statements">Whitespace in Expressions and Statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avoid-extraneous-whitespace-in-the-following-situations">Avoid extraneous whitespace in the following situations:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#places-to-use-spaces">Places to use spaces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-comments">Header Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-comments">Function Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#block-comments">Block Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-comments">Inline Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-definitions">Type definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables">Global variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#goto-statements"><code class="docutils literal notranslate"><span class="pre">goto</span></code> statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-magic-numbers">Avoid Magic Numbers</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -127,6 +158,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -138,7 +171,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/style_guide.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -160,7 +193,7 @@
 conventions for programming assignments and projects in C. These conventions
 are intended to improve the readability of your code. From
 your perspective as a student, the readability of your code
-is important for three big reasons:</p>
+is important for two big reasons:</p>
 <ol class="arabic simple">
 <li><p>If you have a problem with your code, or have trouble
 debugging a particular issue, it will be easier for us
@@ -171,7 +204,6 @@ Remember: a happy grader is a generous grader. Additionally,
 graders <em>will</em> take points off for code that is hard to read
 (which includes, but is not limited to, code that doesn’t
 follow the conventions in this style guide)</p></li>
-<li><p>Writing readable code is an important professional skill.</p></li>
 </ol>
 <p>This document is not intended to be a comprehensive C style guide.
 When you need guidance on a style issue not specified here,
@@ -553,28 +585,28 @@ reader throughout your code. For example:</p>
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="teams.html" class="btn btn-neutral float-left" title="Working in Teams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Borja Sotomayor
+        &#169; Copyright 2020, Borja Sotomayor.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
