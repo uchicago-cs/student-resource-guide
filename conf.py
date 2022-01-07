@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'UChicago CS Developer Guide'
-copyright = '2020, Borja Sotomayor'
+copyright = '2022, Borja Sotomayor'
 author = 'Borja Sotomayor'
 
 
