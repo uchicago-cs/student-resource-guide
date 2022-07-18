@@ -3,29 +3,26 @@
 Linux Tutorial
 ==============
 
-Linux is an operating system much like macOS or Windows. It has
-windows, programs, web browsers, and so on. Files are stored in
-directories (folders) that, in turn, are stored in other
-directories. Although you can access Linux's features using your
-mouse, as you perform more and more complex tasks, you will find that
-using the mouse is ineffective. Linux allows us to interact with the
-computer entirely through text using a program called the
-terminal. (Mac provides a similar terminal application, and there are
-ways to use text-based commands on Windows too. But, Linux provides
-the lowest barrier to entry.) In this tutorial you will learn how to use
-the terminal to perform some basic operations in Linux. You will need
-these skills for the rest of your time at UChicago.
+Linux is an operating system, just like Windows and MacOS. It allows
+you (the user) to interact with your computer, and provides many
+of the same tools you're accustomed to in Windows and MacOS (web
+browsers, word processors, etc.)
 
-We show many examples of sample output below. The output you see when
-you run the commands may vary a bit.
+In almost all CS classes, instructors will assume that you know your
+way around a Linux environment, and may require that you compile and
+run code in a Linux system. While there are many things you'll
+be able to do from a Linux desktop environment, it is also important
+that you be come comfortable using the *terminal*, a command-line
+interface for interacting with the filesystem, running programs, etc.
 
-In this tutorial...
+In this tutorial you will learn how to use
+the terminal to perform some basic operations in Linux, including:
 
-#. Learn basic terminal commands and how to work with a text editor
-#. Become familiar with the Linux environment
-#. Learn to run a Python program from the command-line
-#. Learn about redirection and pipes
-#. Learn about file permissions
+#. Basic terminal commands and how to work with a text editor
+#. Basic familiarity with the Linux environment
+#. Running a Python program from the command-line
+#. Redirection and pipes
+#. File permissions
 
 Where should you do this tutorial?
 ----------------------------------
@@ -34,10 +31,17 @@ Since one of the goals of this tutorial is for you to be able to use
 the CS department's Linux environment, we strongly suggest you work
 through this tutorial on a :ref:`UChicago CS software environment <software-environment>`
 (follow the link for more details on how to access such an environment).
+We particularly recommend using SSH to log into a CS Linux server from
+your personal computer, as this will likely be the primary way you'll
+be interacting with the CS department's Linux systems.
 
-That said, it should also be possible for you to work through this
+It should also be possible for you to work through this
 tutorial in other UNIX environments, such as the MacOS terminal
-or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows.
+or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows, but we
+recommend against it, since you should try to become familiar
+specifically with the Linux environment provided by the CS department.
+
+
 
 Terminal/Shell
 --------------
@@ -49,12 +53,17 @@ the music files over 5 MB that you haven't listened to in over a
 year. This task is very hard to do with the standard double-click
 interface but is relatively simple using the terminal.
 
-To start a terminal (in either CSIL or the Virtual Desktop),
-click on the Application icon (3x3 grid of dots) at the bottom left of
-the screen. Then,  type "terminal" in the input box. Click the "terminal"
+If you are using a desktop environment (e.g., you are sitting in CSIL
+or you're using the Virtual Desktop), you can start a terminal by
+clicking on the Application icon (3x3 grid of dots) at the bottom left of
+the screen. Then, type "terminal" in the input box. Click the "terminal"
 icon to open a terminal window.  You can also use the keyboard shortcut: ``Ctrl+Alt+t.``
 
-A terminal window will open and you will see text of the form::
+If you are using SSH, connecting to a CS Linux server will directly
+open a terminal for you.
+
+Regardless of how you open the terminal, you will see something
+like this::
 
     username@computer:~$
 
@@ -68,9 +77,13 @@ commands the you type is called a *shell*.  We use ``bash``, which is
 the default shell on most Linux distributions, but there are other
 popular shells, such as ``ksh``, ``tcsh``, etc.
 
-The procedure for completing this tutorial is as follows. For each section,
-read through the explanatory text and the examples. Then, try these
-ideas by doing the exercises listed at the bottom of the section.
+In the remaining sections, we will introduce a new concept or skill
+in each section, and will provide a few simple examples. In fact, we show many
+examples of sample output throughout the tutorial. Bear in mind that the
+output you see when you run through our examples may vary a bit; this is normal.
+We have also included a few exercises in each section so you can practice
+those skills. Please note that we show many examples of sample output throughout
+the tutorial. The output you see when you run the commands may vary a bit.
 
 Navigating the File System
 --------------------------
@@ -95,16 +108,17 @@ etc.:
 
 .. note::
 
-    The machine you are using (either a CSIL machine or a Virtual Desktop)
-    is connected to a network file system. This means that there is effectively
+    If you are connected to a CS machine, either because you're physically sitting
+    at a CSIL machine or have logged in remotely via SSH or the Remote Desktop,
+    that machine is connected to a *network file system*. This means that there is effectively
     one very large hard drive shared by all the CS machines, and that you
     will have access to those files regardless of what machine you use.
     For example, if you create some files while logged into a CSIL machine,
-    and then sit at a different CSIL machine the next day (or use the Virtual Desktop),
+    and then sit at a different CSIL machine the next day (or SSH into the CS Linux servers),
     you will see the exact same files there.
 
 The figure above illustrates how Linux organizes the file system. Your
-own computer  might have a slightly different organization
+own computer might have a slightly different organization
 (e.g., you might replace ``/`` with ``C:``), but the idea is the
 same.
 
@@ -271,14 +285,13 @@ will use in certain examples and exercises. To fetch these files,
 run the following commands::
 
     cd
-    wget -nv https://classes.cs.uchicago.edu/archive/2021/fall/12100-1/tutorials/tutorial-linux/cs121-linux-tutorial-files.zip
-    unzip cs121-linux-tutorial-files.zip
+    wget -nv https://uchicago-cs.github.io/dev-guide/_static/linux-tutorial-files.zip
+    unzip linux-tutorial-files.zip
 
 
 
 After you run these commands, your home directory will contain a
-``cmsc12100`` directory, which will in turn contain a
-``tutorial-linux`` directory that has some files
+``linux-tutorial-files`` directory that has some files
 for us to play with. You will learn how to manipulate these files in
 the next section.
 
@@ -286,8 +299,8 @@ Exercises
 ~~~~~~~~~
 
 Use ``pwd``, ``ls``, and ``cd`` to explore the tutorial files and to
-navigate to the ``tutorial-linux`` subdirectory. The next examples
-will assume that your current directory is the ``tutorial-linux`` directory.
+navigate to the ``linux-tutorial-files`` directory. The next examples
+will assume that your current directory is the ``linux-tutorial-files`` directory.
 
 
 
@@ -377,7 +390,7 @@ these terminal commands.
    ``backups`` directory.
 
 6. Now that we have a copy of ``test.txt`` in the ``backups`` directory we
-   no longer need ``copy2.txt``. Remove the file ``copy2.txt`` in the ``tutorial-linux``
+   no longer need ``copy2.txt``. Remove the file ``copy2.txt`` in the ``linux-tutorial-files``
    directory.
 
 7. Print the contents of the ``hello_world.py`` file.
@@ -428,26 +441,34 @@ Exercise
 ~~~~~~~~
 
 By default, the ``ls`` command does not include files with names that start with a dot (``.``).
-The ``tutorial-linux`` directory contains a file that starts with a dot.  Use ``man`` to identify the flag to use with ``ls`` to include this file when listing the contents of ``tutorial-linux``.
+The ``linux-tutorial-files`` directory contains a file that starts with a dot.  Use ``man`` to identify the flag to use with ``ls`` to include this file when listing the contents of ``linux-tutorial-files``.
 
 
-Editing and running a Python Program
-------------------------------------
+Editing files
+-------------
 
-In this section, you will walk through the steps to edit and run a
-Python program.  We'll start with editing a text file.
+TODO: Explain difference between terminal and graphical editors, and why it's important
+to know both.
 
-Using an Editor
----------------
+Using a terminal editor
+~~~~~~~~~~~~~~~~~~~~~~~
 
-List the files in the ``tutorial-linux`` directory. You should see the following::
+List the files in the ``linux-tutorial-files`` directory. You should see the following::
 
     backups hello_world.py  my_echo.py  my-input.txt  test.txt
 
 How do we view and edit the contents of these files? There are many
-high-quality text editors for Linux. We will use `Visual Studio Code
-<https://code.visualstudio.com>`_, which is good for writing code.
+high-quality text editors for Linux.
 
+TODO: Explain the very basics of vi and emacs.
+
+
+Using a graphical editor
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are using a desktop environment, you can also use a number of different
+graphical editors. We will use `Visual Studio Code
+<https://code.visualstudio.com>`_, which is good for writing code.
 
 You can open a specific file, say ``test.txt``, using the ``code``
 command from the Linux command-line by typing::
@@ -471,8 +492,7 @@ Specifically, you'll see the following text::
 If the file is blank, quit ``code`` and ensure that the file
 ``test.txt`` exists in your local directory (use ``ls`` to list the
 files in your local directory). If it does not, use ``cd`` to navigate
-to the ``tutorial-linux`` subdirectory inside the ``cmsc12100``
-directory.
+to the ``linux-tutorial-files`` directory.
 
 Note: somewhat counterintuitively, the menu bar for Visual Studio Code
 is at the top of the Browser window.  You need to run your mouse over
@@ -514,27 +534,17 @@ Run a Python Program
 |  ``python3 file.py`` |  runs the python program file.py   |
 +----------------------+------------------------------------+
 
-In this class, you will learn Python.  To run a Python program, use the
+To run a Python program, use the
 command ``python3`` and the name of the file that contains your program.
 
 Use ``ls`` to verify that there there is a file named
-``hello_world.py`` in your ``tutorial-linux`` directory.  Now, run the program in
+``hello_world.py`` in your ``linux-tutorial-files`` directory.  Now, run the program in
 ``hello_world.py`` by typing (don't forget about auto-complete!)::
 
      python3 hello_world.py
 
 This program is a very simple. It just prints "Hello, World!" to the
 screen.
-
-.. note::
-
-    There are several variants of Python, including Python 2.7 and
-    Python 3.  We will be using Python 3 and the corresponding
-    ``python3`` interpreter.  The CS machines have Python 2.7
-    installed as the default Python.  As a result, the command
-    ``python`` runs a version of Python 2.7.  There are some
-    differences between the two languages and Python 3 programs may
-    not run properly using a Python 2.7 interpreter.
 
 
 Edit and Run a Python Program
@@ -726,7 +736,7 @@ done with the ``<`` operator.  For example::
 
         $ python3 my_echo.py < my-input.txt
 
-(Change back to your ``tutorial-linux`` directory before you try this command.)
+(Change back to your ``linux-tutorial-files`` directory before you try this command.)
 
 In general, all Linux processes can perform input/output operations
 through, at least, the keyboard and the screen. More specifically,
@@ -863,7 +873,7 @@ for user and group.
 Exercise
 ~~~~~~~~
 
-#. Verify this claim by running ``ls -l backups/copy2.txt`` and ``ls -ld  backups`` in your ``tutorial-linux`` directory.
+#. Verify this claim by running ``ls -l backups/copy2.txt`` and ``ls -ld  backups`` in your ``linux-tutorial-files`` directory.
 
 The ``-d`` flag tells ``ls`` to list the directory, instead of its
 contents. Notice that that the first letter in the permissions string
@@ -968,15 +978,9 @@ you may need to type ``Ctrl-C`` a few times.  As noted earlier, typing
 no more information is coming.
 
 
-Log out
--------
+Acknowledgements
+----------------
 
-Clicking on the power button icon in the top right corner of the
-screen will give you a menu.  To log out, choose "Power Off/Log Out"
-from this menu, choose `Log out` from the menu that pops up, and then
-click the "Log out" option in the widget that pops up (rather than the
-cancel option).
-
-**Make sure to always log out from your machine before you leave CSIL.**
-
-
+Parts of this tutorial are based on a Linux lab originally written for CMSC 12100
+by Prof. Anne Rogers and Prof. Borja Sotomayor, and edited by numerous instructors
+and TAs over the years.

@@ -63,7 +63,7 @@ To work through this tutorial, you will need to create a repository on
 GitHub. To do this, log into GitHub, and click on the "+" icon on the top-right
 of the page, and then on "New Repository":
 
-.. image:: new-repository-png
+.. image:: new-repository.png
    :align: center
 
 Then, under "Repository name" enter ``uchicago-cs-git-tutorial``. Do
@@ -345,8 +345,7 @@ You’ve created a commit, but you’re not done yet: you haven’t uploaded
 it to GitHub yet. Forgetting this step is actually a very common
 pitfall, so don’t forget to upload your changes. You must use the
 ``git push`` command for your changes to be uploaded to the Git
-server. *If you don’t, the course staff will not be able to see your work*.
-Simply run the following command from the Linux command-line:
+server. Simply run the following command from the Linux command-line:
 
 ::
 
