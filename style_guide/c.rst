@@ -1,8 +1,8 @@
 
 .. _style-guide-c:
 
-Style Guide - C
-================================
+C Style Guide
+=============
 
 
 Introduction

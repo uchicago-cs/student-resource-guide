@@ -1,8 +1,8 @@
 
 .. _style-guide-python:
 
-Style Guide - Python
-================================
+Python Style Guide
+==================
 
 
 Introduction

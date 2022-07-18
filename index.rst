@@ -26,6 +26,11 @@ In this guide, you will find the following:
    environment.rst
    remote.rst
    teams.rst
-   style_guide_c.rst
-   style_guide_python.rst
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Style Guides
+
+   style_guide/c.rst
+   style_guide/python.rst
