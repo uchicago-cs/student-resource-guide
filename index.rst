@@ -21,7 +21,6 @@ In this guide, you will find the following:
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Contents
 
    environment.rst
    remote.rst
