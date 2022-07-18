@@ -3,18 +3,6 @@
 Linux Tutorial
 ==============
 
-.. note::
-
-   While you will be able to complete most of your coursework in your own computer,
-   you must work through this tutorial on a CS machine, either by going to the
-   `Computer Science Instructional Laboratory (CSIL) <https://csil.cs.uchicago.edu/>`__
-   in the first floor of Crerar Library, or by connecting remotely to a CS environment
-   using a `virtual desktop <../../resources/virtual-desktop.html>`__.
-
-   Please note that, during the first week of the quarter, we will be reserving the
-   CSIL labs at several times for students to work through this tutorial. At those
-   times, a TA will be present to help with any issues or questions you may have.
-
 Linux is an operating system much like macOS or Windows. It has
 windows, programs, web browsers, and so on. Files are stored in
 directories (folders) that, in turn, are stored in other
@@ -31,8 +19,7 @@ these skills for the rest of your time at UChicago.
 We show many examples of sample output below. The output you see when
 you run the commands may vary a bit.
 
-Objectives
-----------
+In this tutorial...
 
 #. Learn basic terminal commands and how to work with a text editor
 #. Become familiar with the Linux environment
@@ -40,6 +27,17 @@ Objectives
 #. Learn about redirection and pipes
 #. Learn about file permissions
 
+Where should you do this tutorial?
+----------------------------------
+
+Since one of the goals of this tutorial is for you to be able to use
+the CS department's Linux environment, we strongly suggest you work
+through this tutorial on a :ref:`UChicago CS software environment <software-environment>`
+(follow the link for more details on how to access such an environment).
+
+That said, it should also be possible for you to work through this
+tutorial in other UNIX environments, such as the MacOS terminal
+or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows.
 
 Terminal/Shell
 --------------
