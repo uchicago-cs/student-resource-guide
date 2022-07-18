@@ -3,14 +3,14 @@
 Git Tutorial
 ============
 
-In some of your previous CS courses, you may have become familiar with
-using either Subversion (SVN) or Git to store a copy of your code
-in a remote server, and to submit your work for grading.
-In the course project, you will be using Git for its intended purpose:
-as a version control tool that will facilitate collaboration between
-multiple developers.
+In many of your CS classes, you will use a system called **Git**
+to manage the code you write in that class. In a nutshell,
+you can think of Git as a system to conveniently store your
+code in a remote server, and to keep track of changes to that
+code. Git also makes it easier for an instructor (and other
+course staff) to access your code.
 
-In a nutshell, Git is a *version control system* that maintains files in a
+More specifically, Git is a *version control system* that maintains files in a
 *repository* that contains not just files, but also a record of all the
 changes made to those files. Git tracks every version of a file or
 directory using *commits*. When you have made changes to one or more
@@ -21,117 +21,98 @@ checkpoint. This mechanism makes it possible to look at and even revert
 to older versions of a file by going back to your code as it was when
 you “checkpointed” it with a commit.
 
-For each homework assignment, a Git repository will be created for you on
-`GitHub <https://github.com/>`__, a web-based hosting service for Git
-repositories. However, before that repository can be created for you,
-you need to have a GitHub account. If you do not yet have one, you can
+In this tutorial, we will be using `GitHub <https://github.com/>`__,
+a web-based hosting service for Git repositories, to learn the basics
+of Git. So, before working through the tutorial,
+you will need to have a GitHub account. If you do not yet have one, you can
 get an account here: https://github.com/join. Once you create your
 account, you may want to get the `Student Developer
 Pack <https://education.github.com/pack>`__, which will give you access
 to a lot of other features (please note that having the Student
-Developer Pack is not necessary for CS 220; it’s just a nice benefit you
+Developer Pack is not necessary for your UChicago classes; it’s just a nice benefit you
 get as a student)
 
-Where should you do this homework assignment?
----------------------------------------------
+Where should you do this tutorial?
+----------------------------------
 
-For this homework, we will specifically need you to work on a CS environment.
-You can this in one of several ways:
+Since you will often have to use Git on the CS department's Linux
+environment, we strongly suggest you work
+through this tutorial on a :ref:`UChicago CS software environment <software-environment>`
+(follow the link for more details on how to access such an environment).
+That said, you should also be able to work through this
+tutorial in other UNIX environments, such as the MacOS terminal
+or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows.
 
--  Going to the
-   `Computer Science Instructional Laboratory (CSIL) <https://csil.cs.uchicago.edu/>`__
-   in the first floor of Crerar Library and using one of the Linux
-   machines in CSIL 3, CSIL 4, or CSIL 5.
--  Using SSH, which will allow you to open a command-line terminal on a
-   CS machine. The CS techstaff provides `detailed
-   instructions <https://howto.cs.uchicago.edu/remote_access>`__ on how
-   to do this.
--  Connecting to a `Virtual
-   Desktop <https://howto.cs.uchicago.edu/techstaff:vdesk>`__. This will
-   show you, on your computer, effectively the exact same desktop you
-   would see if you physically logged into a CSIL machine. However, this
-   option may not work well for low-bandwidth Internet connections.
+Please note that this tutorial assumes familiarity with using a UNIX
+environment. If you are unfamiliar with how to use a UNIX environment, such
+as Linux, you should work through the :ref:`Linux Tutorial <tutorial-linux>` first.
 
-Throughout the homework assignment, you will have to make some simple edits
-to a few text files. If you are using SSH, we suggest you use a command-line
-editor for this (like Vi, emacs, nano, etc.), or Ubuntu's built-in Text Editor
-if using the Virtual Desktop. You do not need to use a full-featured code editor
-in this homework assignment.
+Throughout the tutorial, you will have to make some simple edits
+to a few text files. If you are using SSH to connect to a CS Linux server,
+we suggest you use a command-line
+editor for this (like Vi, emacs, nano, etc.). If you are using a desktop
+environment (such as a CSIL machine or a Virtual Desktop), then Ubuntu's built-in Text Editor
+should be enough. You will not need to use a full-featured code editor
+in this tutorial.
 
-In future homeworks, there will be more flexibility on where you can do your
-work, including working locally on your own computer.
 
-How to complete this homework
------------------------------
+Creating a repository
+---------------------
 
-This homework is divided into three parts. The first two parts provide
-a tutorial-style introduction to various aspects of Git. All you need
-to do is follow the instructions
-(we will be able to tell whether you followed our instructions by
-looking at your repository). That said, please make sure you understand
-what is accomplished in each step and, if you have any questions, please
-don't hesitate to `ask for help <help.html>`__.
+To work through this tutorial, you will need to create a repository on
+GitHub. To do this, log into GitHub, and click on the "+" icon on the top-right
+of the page, and then on "New Repository":
 
-The third part of the homework involves a series of exercises
-that require you to find a new Git command (or series
-of Git commands) on your own. This will involve explaining how you solved
-a given exercise, and you will submit your answers on
-`Gradescope <https://gradescope.com/>`__, which you can access through
-our Canvas site.
+.. image:: new-repository-png
+   :align: center
 
-Once in Gradescope, simply select assignment “Homework #1: Git”, and fill in
-the answers for the Part III exercises. Please note that you will also see
-"questions" corresponding to Parts I and II, but you will not be able to
-enter any answers there, since those will be based
-on the graders’ inspection of your GitHub repository (but we still need
-to include those tasks on Gradescope so we can grade them as part of
-this homework).
+Then, under "Repository name" enter ``uchicago-cs-git-tutorial``. Do
+not change any other setting, and click on the green "Create repository"
+button.
 
-To see how this homework assignment will be graded, please see the
-`Homework 1 Rubric <hw1_rubric.html>`__
-
-Creating your homework repository
----------------------------------
-
-For each homework assignment, we will provide you with an *invitation URL*
-that will allow you sign up for the homework assignment on GitHub. When you
-open the invitation URL in a browser tab, you will have to complete
-the following steps:
-
-#. You will need to select your name (and CnetID) from a list. This step will allow us to know what student is associated with each GitHub account. This step is only done for the very first invitation you accept.
-
-#. You must click “Accept this assignment” or your repository will not actually be created.
-
-This will result in the creation of a repository called
-``hwN-GITHUB_USERNAME`` inside our ``uchicago-cmsc22000-2022`` organization
-on GitHub (a GitHub “organization” is basically a way to group together
-related repositories). For example, if your GitHub username is
-``jrandom``, your repository will be called ``hw1-jrandom``. This
-repository will be private, and can only be viewed by you and the CS 220
-course staff.
-
-Part I: First steps with Git
-----------------------------
-
-You will start by initializing your repository. Your
-repository is hosted on GitHub, but you can create a local copy in your
-home directory (we will refer to this as your *local repository*).
-
-First, make sure you are logged into the GitHub website, and go to
-https://github.com/uchicago-cmsc22000-2022 (you may want to bookmark this
-page, as you'll likely be accessing it a lot throughout the quarter).
-Your homework repository,
-``uchicago-cmsc22000-2022/hwN-GITHUB_USERNAME`` should appear under
-“Repositories”.
-
-Click on the link for your repository. This will take you to a page where you can browse your
+Once you do this, you will be taken to a page where you can browse your
 repository through GitHub’s web interface. However, you haven’t
 initialized your repository yet, so GitHub will provide you with the
 instructions to initialize your repository.
 
-Don't try to run these commands from the terminal just yet! You will first
+*Don't try to run these commands from the terminal just yet!* You will first
 need to perform some setup steps that will allow you to access
 your Git repository from the command-line.
+
+.. note::
+
+    Before continuing, it is important that you know how to locate
+    your repository on GitHub's website. You can find a link to
+    the repository in your GitHub profile::
+
+        https://github.com/GITHUB_USERNAME
+
+    Where ``GITHUB_USERNAME`` is your GitHub username.
+
+    From that page, simply click on the "Repositories" tab, and you will
+    find the repository you've just created.
+
+    You can also access these pages by logging into GitHub,
+    clicking on the profile icon on the top-right of the page, and
+    then clicking on "Your profile" or "Your repositories".
+
+
+Part I: First steps with Git
+----------------------------
+
+We are going to start by initializing the repository
+you just created. Before we can do this, we need to take a short
+detour to create an SSH key and upload it to GitHub, which will
+allow you to access your GitHub repository from the terminal.
+
+While these steps may seem a bit intricate, you only need to
+do them once. If you are logging into a CS Linux environment,
+the SSH key you create now will be available the next time you
+log in (regardless of what CS machine you're logging into).
+However, if you want to access your repository from a different
+computer (e.g., your personal computer), you will have to
+create a new SSH key and upload it to GitHub.
+
 
 Creating an SSH Key
 ~~~~~~~~~~~~~~~~~~~
@@ -174,7 +155,7 @@ Press Enter (this will select the default file path shown in the prompt: ``/home
       skip ahead to the "Uploading your SSH key to GitHub" section below.
    2. If you do not know why you have an SSH key in your directory,
       it's possible it was created for you if you've taken another
-      CMSC class in the past. Type "n" and then run the following commands
+      CS class in the past. Type "n" and then run the following commands
       to create a backup of your existing key::
 
             mv ~/.ssh/id_rsa ~/.ssh/id_rsa.bak
@@ -195,8 +176,8 @@ Just press Enter here. You will be asked to confirm (just press Enter again)::
 .. note::
 
     While it may seem counterintuitive, we don't want our SSH
-    key to have a passphrase (this is an added layer of security which we won't
-    need for this class; your GitHub account will still be secure even if your
+    key to have a passphrase (this is an added layer of security which we don't
+    need here; your GitHub account will still be secure even if your
     SSH key doesn't have a password)
 
 If all goes well, you should see something like this::
@@ -262,7 +243,7 @@ This means your SSH key is properly set up (don't worry about the "does not prov
 normal).
 
 If you are unable to set up your SSH key, please make sure to ask for help. You will not
-be able to complete the rest of the homework until you've set up your SSH key.
+be able to complete the rest of the tutorial until you've set up your SSH key.
 
 If you would like to set up SSH access from your personal computer at a later time,
 GitHub provides some pretty detailed documentation on how to do this in a number
@@ -276,7 +257,7 @@ Initializing your repository (continued)
 Ok, now we're actually ready to initialize your repository.
 Do the following:
 
--  Create a directory in your home directory for CMSC 22000. The name
+-  Create a directory in your home directory for the Git tutorial. The name
    and location of this directory is not important, so if you already
    have a preferred directory structure, you’re welcome to use it.
    Otherwise, we suggest you simply do this:
@@ -284,12 +265,9 @@ Do the following:
    ::
 
       cd
-      mkdir -p cs220/hw1
-      cd cs220/hw1
+      mkdir git-tutorial
+      cd git-tutorial
 
-   (the ``-p`` flag to mkdir will create all the parent directories if
-   needed; i.e., if you don't already have a ``cs220`` directory, it will
-   create one, and then will create a ``hw1`` directory inside it)
 
 -  Inside that folder, create a file called ``README.md`` and add your
    full name to the file. Remember you can create an empty file by
@@ -301,13 +279,12 @@ Do the following:
    there is a URL field with two buttons: HTTPS and SSH.
    Make sure that “SSH” is selected.
 
-Now, from inside your CMSC 22000 directory, run the commands that appear
+Now, from inside your tutorial directory, run the commands that appear
 under “…or create a new repository on the command line” *except* the
 first one (the one that starts with ``echo``).
 
 Don’t worry about what each individual command does; we will be seeing
-what most of these commands do in this homework. However, if you encounter
-any error messages, please make sure to let us know.
+what most of these commands do in this tutorial.
 
 You can verify that your repository was correctly set up by going back
 to your repository’s page on GitHub, you should now see it contains a
@@ -383,7 +360,7 @@ This should output something like this:
     Counting objects: 100% (5/5), done.
     Writing objects: 100% (3/3), 279 bytes | 279.00 KiB/s, done.
     Total 3 (delta 0), reused 0 (delta 0)
-    To https://github.com/uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+    To git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
        392555e..0c85752  main -> main
 
 You can ignore most of those messages. The important thing is to not see
@@ -393,7 +370,7 @@ any warnings or error messages.
 
    When you push for the first time, you may get a message
    saying that ``push.default is unset``, and suggesting two possible
-   commands to remedy the situation. While the rest of the commands in this homework
+   commands to remedy the situation. While the rest of the commands in this tutorial
    will work fine if you don’t run either of these commands, you should run the
    command to use “simple” (this will prevent the warning from appearing
    every time you push)
@@ -413,7 +390,7 @@ the server.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let’s make a further change to ``README.md``: Add a line with the text
-``CMSC 22000 - Introduction to Software Development``.
+``UChicago CS Git Tutorial``.
 
 So, at this point, we have a file we have already committed
 (``README.md``) but where the *local* version is now out of sync with
@@ -559,7 +536,7 @@ Now, type in the following commit message above the lines that start with ``#``:
 
 ::
 
-   Homework 1 updates:
+   Tutorial updates:
 
    - Added test.txt
    - Updated README.md file
@@ -573,7 +550,7 @@ This will complete the commit, and you will see a message like this:
 
 ::
 
-    [main 1810c54] Homework 1 updates:
+    [main 1810c54] Tutorial updates:
      2 files changed, 3 insertions(+), 1 deletion(-)
      create mode 100644 test.txt
 
@@ -656,7 +633,7 @@ this:
     Writing objects: 100% (8/8), 728 bytes | 728.00 KiB/s, done.
     Total 8 (delta 1), reused 0 (delta 0)
     remote: Resolving deltas: 100% (1/1), done.
-    To git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+    To git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
        0c85752..e3f9ef1  main -> main
 
 
@@ -692,19 +669,19 @@ command (don’t run this command just yet):
 
 ::
 
-   git clone git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+   git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 
 This will create a local repository that “clones” the version of the
 repository that is currently stored on GitHub.
-For the purposes of this homework, we'll create this second copy in a
+For the purposes of this tutorial, we'll create this second copy in a
 separate directory of the same machine where you've been running Git
 commands so far. Open a second terminal window, and run the following:
 
 ::
 
-   mkdir -p /tmp/$USER/cs220
-   cd /tmp/$USER/cs220
-   git clone git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+   mkdir -p /tmp/$USER/git-tutorial
+   cd /tmp/$USER/git-tutorial
+   git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 
 Make sure to replace ``GITHUB_USERNAME`` with your GitHub username!
 
@@ -715,9 +692,9 @@ directory, and you will need to ``cd`` into it to use Git commands for
 that repository.
 
 You now have two local copies of the repository: one in your home
-directory (``/home/USER/cs220/hw1``), which we will refer to as your
+directory (``/home/USER/git-tutorial``), which we will refer to as your
 *home* repository for now and one in ``/tmp``
-(``/tmp/USER/cs220/hw1-GITHUB_USERNAME``) which we will
+(``/tmp/USER/git-tutorial/uchicago-cs-git-tutorial``) which we will
 refer to as your *temp* repository.
 
 
@@ -749,7 +726,7 @@ This should output something like this:
     remote: Compressing objects: 100% (2/2), done.
     remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
     Unpacking objects: 100% (3/3), 312 bytes | 20.00 KiB/s, done.
-    From git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+    From git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
        e3f9ef1..5716877  main       -> origin/main
     Updating e3f9ef1..5716877
     Fast-forward
@@ -776,7 +753,7 @@ easy to inspect the history of changes to a given file, as well as to
 undo changes we did not intend to make.
 
 For example, edit ``test.txt`` to remove all its contents. Make sure you
-do this in your home repository (``/home/USER/cs220/hw1``)
+do this in your home repository (``/home/USER/git-tutorial/``)
 and not in the temp repository you created earlier.
 
 ``git status`` will tell us this:
@@ -863,12 +840,12 @@ Go ahead and commit this change::
 
 The commit will now include only ``README.md``.
 
-We're nearing the end of the first part of the homework so, before
-continuing to the second part of the homework, let's make sure all
+We're nearing the end of the first part of the tutorial so, before
+continuing to the second part of the tutorial, let's make sure all
 our changes have been committed and pushed::
 
     git add -u
-    git commit -m"Wrapping up first part of the homework"
+    git commit -m"Wrapping up first part of the tutorial"
     git push
 
 Before continuing, make sure ``git status`` shows this::
@@ -1055,7 +1032,7 @@ conflict, which we discuss in the following sections.
 Branches
 ~~~~~~~~
 
-So far, the commits in your homework repository have created a linear
+So far, the commits in your tutorial repository have created a linear
 sequence of changes like this:
 
 .. figure:: git-branches.png
@@ -1083,7 +1060,7 @@ case, on an additional ``foobar.c`` file where we are implementing a ``foo()``
 function).  This
 separate branch allows us to work on this task independently from other
 tasks; this may seem over-complicated, but suppose you were working on
-this homework with a classmate: branches would allow you to work independently
+a homework or project with a classmate: branches would allow you to work independently
 without having to step on each other’s toes. This is similar to the
 first example we showed above (where two developers could be working on
 separate functions, ``bar()`` and ``baz()``).
@@ -1192,9 +1169,9 @@ provided in the error message:
     remote: Resolving deltas: 100% (1/1), completed with 1 local object.
     remote:
     remote: Create a pull request for 'add-author' on GitHub by visiting:
-    remote:      https://github.com/uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME/pull/new/add-author
+    remote:      https://github.com/GITHUB_USERNAME/uchicago-cs-git-tutorial/pull/new/add-author
     remote:
-    To git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+    To git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
      * [new branch]      add-author -> add-author
     Branch 'add-author' set up to track remote branch 'add-author' from 'origin'.
 
@@ -1272,7 +1249,7 @@ commit” in the log history:
     Author: Borja Sotomayor <borja@cs.uchicago.edu>
     Date:   Sat Mar 27 11:00:12 2021 -0500
 
-        Wrapping up first part of the homework
+        Wrapping up first part of the tutorial
 
     commit 6b336a1d68b868da708c38bf3e1683155ae2967f
     Author: Borja Sotomayor <borja@cs.uchicago.edu>
@@ -1310,9 +1287,9 @@ Let's commit and push this change::
     Total 0 (delta 0), reused 0 (delta 0)
     remote:
     remote: Create a pull request for 'update-buffer-size' on GitHub by visiting:
-    remote:      https://github.com/uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME/pull/new/update-buffer-size
+    remote:      https://github.com/GITHUB_USERNAME/uchicago-cs-git-tutorial/pull/new/update-buffer-size
     remote:
-    To git@github.com:uchicago-cmsc22000-2022/hw1-GITHUB_USERNAME.git
+    To git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
      * [new branch]      update-buffer-size -> update-buffer-size
     Branch 'update-buffer-size' set up to track remote branch 'update-buffer-size' from 'origin'.
 
@@ -1477,7 +1454,7 @@ This will open up an editor with a default commit message like
 ``Merge branch 'update-buffer-size' into main``. You could change this
 to something like ``Merging 'update-buffer-size' (buffer should actually be 300)``
 to indicate that you did not actually accept the changes from the ``update-buffer-size``
-branch but, for the purposes of this homework, you can also just use the default message.
+branch but, for the purposes of this tutorial, you can also just use the default message.
 
 Once you save the commit message, the
 merge will be completed and you will see something like this:
@@ -1513,160 +1490,11 @@ will see that the commit history now includes the commit from
         Updated buffer size to 1000
 
 
-Before continuing with the rest of the homework, make sure to ``git push``
-your work.
-
-Part III: Additional Exercises
-------------------------------
-
-The remainder of the homework involves a series of short exercises
-that require you to find a new Git command (or series
-of Git commands) on your own (i.e., these exercises cannot be solved
-just with the commands we've explained so far).
-
-This is a very useful skill to develop:
-most software developers never take a course on Git or read a full book
-on Git before starting to use it; they learn the basics (like you did in
-this homework), and then rely on online documentation to fill the gaps.
-
-So, for the following tasks, you are allowed to obtain the answers in
-any way you want **EXCEPT** by asking someone (other than a CS 220
-instructor or TA) to help you. This means you cannot ask for hints,
-solutions, pointers to documentation, etc. from *anyone* (classmates,
-roommates, friends, parents, etc.). There is one exception, though: if
-someone asks a question on the ``#course-homework`` channel on Slack, you
-are allowed to help them out there, as long as you don’t provide them
-with the answer (however, you are allowed to provide them with links to
-resources they may find useful to figure out the task). See our `Getting Help <help.html>`__ page for more details on the
-``#course-homework`` channel.
-
-Please note that you are welcome to take the answer verbatim from a
-website, online reference, online forum, etc. as long as you provide
-*attribution* (i.e., you need to tell us where you found the answer). Of
-course, you must also follow the instructions you find in those
-references to complete the task you’ve been given.
-
-Pro tip: Sometimes, just Googling for “how do I…” will yield the answer
-or, at least, some solid leads.
-
-Finally, remember that, for these exercises, we will be looking at repository
-to check whether you performed the requested actions, but you will also have
-to provide a brief explanation on Gradescope.
-
-Exercise 1
-~~~~~~~~~~
-
-(5 points) Add the following line to the ``test.txt`` file:
-
-::
-
-   Yet another change!
-
-Create a commit for this change with commit message ``Updated README.md for Exercise 1``
-(yes, exactly that commit message) but make sure you *don’t push it*.
-
-Wait! What an embarrassing mistake! (you means to say you're updating ``test.txt``,
-not ``README.md``). Find out how you can edit the commit
-message of an existing commit (i.e., the solution is not to create a new
-commit; you have to find out how to edit the commit message of the
-commit you just created). Update the commit message to be ``Updated test.txt for Exercise 1``.
-
-On Gradescope, explain how you updated the commit message (feel
-free to simply copy-paste the command you ran and its output). Make sure
-to explain how you found out the answer to this questions! (including
-citing any relevant sources).
-
-Exercise 2
-~~~~~~~~~~
-
-(5 points) Take a look at the following project on GitHub:
-https://github.com/junegunn/fzf. All you need to know about this project
-is that it provides a very handy tool called ``fzf`` that is run from
-the terminal, and which can take some number of command-line arguments.
-
-Clone this repository on your machine, but make sure you clone it in a
-directory *outside* the local repository you’ve been using so far in
-this homework. Then, find the exact commit where the authors of this project
-added a ``--no-mouse`` option to the ``fzf`` command (hint: commit
-messages will usually mention when a new feature is added, and this
-project is no exception).
-
-Take into account that, while you should be able to find this out using
-only Git commands, you may need to find out a convenient way of
-exploring the commit log (instead of just scrolling endlessly until you
-find some mention of the ``--no-mouse`` option).
-
-On Gradescope, provide the commit SHA and commit message of the commit
-that added the ``--no-mouse`` option, and explain how you located that commit.
-
-.. warning::
-
-   You should ignore any Git instructions provided in the
-   ``fzf`` documentation (specially in their ``README`` file). These will
-   lead you down the wrong path.
-
-Exercise 3
-~~~~~~~~~~
-
-(5 point) Edit ``README.md`` (in your repository, not in the ``fzf``
-repository you just cloned) and add any content to the file. Figure out
-how you can get Git to tell you the changes you’ve made to the file
-relative to the latest commit. Note that this is different from using
-``git show``, as we have not yet committed these changes.
-
-On Gradescope, specify what command you used.
-
-Before continuing, undo your changes using ``git restore``.
-
-Exercise 4
-~~~~~~~~~~
-
-(5 points) Create a file called ``mistake.txt`` with any content. Add,
-commit, and push it to your repository.
-
-Actually, adding that file was a mistake (duh!). Figure out how to
-remove that file from your repository, while keeping a record of the
-fact that the file existed at some point. In other words, we are not
-asking you to *undo* the commit that created the file. We’re asking you
-to create a commit that will remove the file.
-
-On Gradescope, explain how you did this.
-
-Note: The next task asks you to do something similar, and this task can
-technically be accomplished using the same (more general) mechanism in
-the next exercise. For this task, you should find a command that specifically
-allows you to remove files.
-
-Exercise 5
-~~~~~~~~~~
-
-(5 points) Edit ``README.md`` to add the text ``This is a mistake``.
-Add and commit (but do not push) this change. Edit the file again to add
-the test ``This is also a mistake``. Add and commit (but do not push)
-this change.
-
-Now, let’s say we want to remove those two changes. We could, of course,
-just edit the file again, remove those lines, and add/commit the updated
-file (the commit could have a message like
-``Reverting changes from commits A and B``). However, if those two
-commits contained a large number of changes, removing those changes
-manually could get really messy. Fortunately, Git provides a command
-that will take one or more commits, and create a new commit with the
-opposite changes from those commits (effectively undoing those commits)
-
-On Gradescope, explain what command you used. Remember to actually
-run the command and push your changes!
-
-Note: You may encounter instructions online on how to “undo” a commit
-(in the sense of completely removing it from the commit log). This is
-not what we’re asking you to do: you must find a command that
-specifically takes one or more commits, and undoes them by creating a
-new commit (thus preserving the record of those original commits).
 
 Acknowledgements
 ----------------
 
-Parts of this homework are based on a Git lab originally written for CMSC 12100
+Parts of this tutorial are based on a Git lab originally written for CMSC 12100
 by Prof. Anne Rogers, and edited by numerous TAs over the years. The
-Working Collaboratively part of the homework is based on materials
+Working Collaboratively part of the tutorial is based on materials
 originally written by Isha Mehrotra (SB'19)
