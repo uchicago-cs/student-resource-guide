@@ -34,3 +34,11 @@ In this guide, you will find the following:
 
    style_guide/c.rst
    style_guide/python.rst
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Tutorials
+
+   tutorials/linux.rst
+   tutorials/git.rst
