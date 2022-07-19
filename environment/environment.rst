@@ -1,23 +1,32 @@
 .. _software-environment:
 
-Software Environment
-====================
+The UChicago CS Software Environment
+====================================
 
 This page describes the software environment you will need to complete your coursework, along with some recommended development tools.
 
-The CS Software Environment
----------------------------
 
 The Department of Computer Science has an officially supported Linux software environment that can be found on the CS Linux login servers and on the Linux machines in the CSIL labs in Crerar. All of these machines run Ubuntu 20.04 and have most of the tools and software libraries required to complete your CS coursework. Unless told otherwise by your instructor, any code you write must compile and run correctly on this software environment.
 
 However, that doesn't necessarily mean that you have to *write* your code on a CS machine (although you're welcome to do so), nor does it mean you have to be physically sitting in front of a CS machine to compile and run your code. There are multiple mechanisms to write your code on your own computer (using other software environments, including Windows and Mac operating systems) and to access a CS software environment remotely, all of which are discussed in the :ref:`working-remotely` page.
 
+Accessing a CS Software Environment
+-----------------------------------
+
+Remote SSH Access
+~~~~~~~~~~~~~~~~~
+
 The CS Virtual Machine
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The CS department also provides a virtual machine (VM) that approximates the software environment found in the CS machines. You can find the latest version of the CS virtual machine on `this page <https://howto.cs.uchicago.edu/vm:index>`__, which also includes instructions on how to install and run the VM. Make sure to also check out the `VM FAQ <https://howto.cs.uchicago.edu/vm:faq>`__, which covers a number of common issues when running the VM (including how to deal with a slow/sluggish VM).
 
 Running the VM will effectively run a full Linux operating system from inside your current operating system, and will feel as if you were logging into one of the Linux machines in the CSIL labs. However, take into account that it is possible to run the VM in "Headless Mode", which is more similar to running a Linux *server* inside your computer, which you'll then be able to access following the same steps found in the :ref:`working-remotely` page. This will allow the VM to run faster and consume fewer resources, because you'll be doing your work on your personal computer, and only accessing the VM to compile and run your code. The CS VM documentation also includes `instructions on how to set up the VM in Headless Mode <https://howto.cs.uchicago.edu/vm:headless>`__.
+
+Virtual Desktop
+~~~~~~~~~~~~~~~
+
+Another option for working remotely on a CS software environment is to use a `Virtual Desktop <https://howto.cs.uchicago.edu/techstaff:vdesk>`__. Please note that this is different from a Virtual Machine; with a Virtual Desktop, you are connecting to a CS server and will be given access to a desktop environment similar to the one you would encounter if you were sitting at a Linux machine in a CSIL lab. However, this requires more bandwidth than using SSH, and can feel sluggish depending on the latency of your connection.
 
 
 Recommended code editors
@@ -27,7 +36,7 @@ This section provides a few recommendations on code editors you may want to cons
 
 You may find that some people are very opinionated about their choice of editor, and will sometimes `argue passionately <https://en.wikipedia.org/wiki/Editor_war>`__ about why their editor is right and yours is wrong. You should ignore these people and ultimately use whatever editor works best for *you* (and don't judge other people for their choice of editor!)
 
-.. figure:: _static/editors.jpg
+.. figure:: ../_static/editors.jpg
    :align: center
    :alt: Use whatever editor works for you
 
@@ -48,7 +57,7 @@ If you want to use a graphical text editor (i.e., one that uses a graphical user
 
 Visual Studio Code is open source software and is available for free.
 
-.. figure:: _static/vscode.png
+.. figure:: ../_static/vscode.png
    :align: center
    :alt: Screenshot of Visual Studio Code
 
@@ -60,7 +69,7 @@ Sublime Text
 
 Another popular graphical text editor is `Sublime Text <https://www.sublimetext.com/>`__, which tends to be a bit more lightweight than Visual Studio Code. Please note that Sublime Text is not free: while you can download it and use it for a period free of charge, you will be nagged frequently about paying for a license.
 
-.. figure:: _static/sublime.png
+.. figure:: ../_static/sublime.png
    :align: center
    :alt: Screenshot of Sublime Text
 
@@ -73,7 +82,7 @@ The next step up from code editors like Visual Studio Code and Sublime Text is t
 
 The JetBrains IDEs are commercial software, but they provide free licenses for students and educators, and some of their IDEs also have community editions that are free to use (but less powerful than the paid version).
 
-.. figure:: _static/clion.png
+.. figure:: ../_static/clion.png
    :align: center
    :alt: Screenshot of CLion
 

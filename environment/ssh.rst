@@ -1,7 +1,7 @@
-.. _working-remotely:
+.. _ssh:
 
-Working Remotely
-================
+Remote SSH Access
+=================
 
 While your code must compile and run in a :ref:`CS Software Environment <software-environment>` that doesn't mean you have to do all your work on a CS machine (although that is certainly an option too). This page describes a number of ways in which you can do some or most of your work from your personal computer, and accessing a CS software environment when needed.
 
@@ -27,10 +27,6 @@ Here are links to instructions on how to do this on some of the editors we recom
 - Some (but not all) JetBrain IDEs have built-in support for this. In CLion, this is known as `Full Remote Mode <https://www.jetbrains.com/help/clion/remote-projects-support.html>`__
 
 
-Virtual Desktop
----------------
-
-Another option for working remotely on a CS software environment is to use a `Virtual Desktop <https://howto.cs.uchicago.edu/techstaff:vdesk>`__. Please note that this is different from a Virtual Machine; with a Virtual Desktop, you are connecting to a CS server and will be given access to a desktop environment similar to the one you would encounter if you were sitting at a Linux machine in a CSIL lab. However, this requires more bandwidth than using SSH, and can feel sluggish depending on the latency of your connection.
 
 
 What *not* to do: Synchronizing with Git
