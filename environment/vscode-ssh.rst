@@ -1,3 +1,5 @@
+.. _vscode-ssh:
+
 Using Visual Studio Code and SSH
 ********************************
 
