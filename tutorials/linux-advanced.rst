@@ -1,9 +1,11 @@
-.. _tutorial-linux:
+.. _tutorial-linux-advanced:
 
 Tutorial - Advanced Linux
 =========================
 
+.. todo::
 
+   Introductory blurb
 
 Running Commands Sequentially
 -----------------------------

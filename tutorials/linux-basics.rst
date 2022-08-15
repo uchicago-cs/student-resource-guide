@@ -462,8 +462,10 @@ The ``linux-tutorial-files`` directory contains a file that starts with a dot.  
 Editing files
 -------------
 
-TODO: Explain difference between terminal and graphical editors, and why it's important
-to know both.
+.. todo::
+
+   Explain difference between terminal and graphical editors, and why it's important
+   to know both.
 
 Using a terminal editor
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -475,7 +477,9 @@ List the files in the ``linux-tutorial-files`` directory. You should see the fol
 How do we view and edit the contents of these files? There are many
 high-quality text editors for Linux.
 
-TODO: Explain the very basics of vi and emacs.
+.. todo::
+
+   Explain the very basics of vi and emacs.
 
 
 Using a graphical editor
@@ -541,79 +545,33 @@ Make sure that you are comfortable with this level of usage:
 #. Finally, close ``code``.
 
 
-Editing/Compiling/Running Programs in the Terminal
---------------------------------------------------
+The edit/compile/run cycle in the terminal
+------------------------------------------
 
+.. todo::
+
+   Explain the edit/compile/run cycle
 
 Python
 ~~~~~~
 
-+----------------------+------------------------------------+
-|  ``python3 file.py`` |  runs the python program file.py   |
-+----------------------+------------------------------------+
+.. todo::
 
-To run a Python program, use the
-command ``python3`` and the name of the file that contains your program.
-
-Use ``ls`` to verify that there there is a file named
-``hello_world.py`` in your ``linux-tutorial-files`` directory.  Now, run the program in
-``hello_world.py`` by typing (don't forget about auto-complete!)::
-
-     python3 hello_world.py
-
-This program is a very simple. It just prints "Hello, World!" to the
-screen.
+   Explain how to compile/run C/C++ programs
 
 C/C++
 ~~~~~~
 
+.. todo::
+
+   Explain how to compile/run C/C++ programs
 
 Java
 ~~~~
 
+.. todo::
 
-Editing a Program
-~~~~~~~~~~~~~~~~~
-
-In this section you will modify and rerun the program in
-``hello_world.py``. This change is very simple but goes through all
-the mechanical steps needed to program.
-
-Open the file ``hello_world.py`` with the command::
-
-        code hello_world.py
-
-The file contains a single line of code::
-
-        print("Hello, World!")
-
-Change this line so that it instead says "Hello " and then your name.
-For example if your name were Gustav Larsson, the line would read::
-
-        print("Hello, Gustav!")
-
-Do the following steps:
-
-#. Save the file ``hello_world.py`` in Visual Studio Code (forgetting to save is a
-   surprisingly common error)
-#. Rerun the program using ``python3``
-
-Let's reinforce the steps to programming in Python with the terminal:
-
-#. Change your ``.py`` file with an editor
-#. Save the file
-#. Run the file with ``python3``
-
-Forgetting to save the file (step 2) is a very common mistake!
-
-In addition to the command-line version of Python, programmers often
-use Jupyter notebooks and other interactive version of Python.  We
-will be using ``ipython3``, an interaction version of the Python
-interpreter, in this course.  We'll introduce it during the first week
-of the quarter.
-
-
-
+   Explain how to compile/run Java programs
 
 
 Tips and Tricks

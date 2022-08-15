@@ -1,8 +1,11 @@
-.. _tutorial-git:
+.. _tutorial-git-advanced:
 
 Tutorial - Advanced Git
 =======================
 
+.. todo::
+
+   Introductory blurb
 
 Working collaboratively with Git
 --------------------------------
