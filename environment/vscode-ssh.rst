@@ -1,11 +1,73 @@
 .. _vscode-ssh:
 
+================================
 Using Visual Studio Code and SSH
-********************************
+================================
 
-Visual Studio Code (VS Code) is a text editor that is particularly well suited for programming in a variety of languages, including Python. It also provides a way to remotely connect to the Linux computers on campus, via SSH (Secure Shell). You can use it to do your work for CS 121, and you should especially consider it if the :ref:`virtual_desktop` is running slowly for you.
+Visual Studio Code (VSCode) is a text editor that is particularly well
+suited for programming in a variety of languages. It also
+provides a way to connect remotely to the CS Linux servers
+via SSH. This means you can run VSCode on your personal computer
+to edit files that live in the CS Linux servers, as well as interact
+with those files from a terminal built into VSCode (e.g., to run your
+code).
 
-This document covers installing the software you need, and how to use Visual Studio Code and SSH for this class.
+This document covers installing VSCode and setting it up to connect
+to the CS Linux servers.
+
+
+Server assignments
+==================
+
+In the instructions below, you will be asked to connect to a Linux
+server.  The main linux server (linux.cs.uchicago.edu) acts as a front
+end for specific linux machines (named ``linux1.cs.uchicago.edu``
+through ``linux7.cs.uchicago.edu``).  VSCode works best when connected
+with a specific machine rather than to the front end.
+
+We would like to avoid having everyone using
+``linux1.cs.uchicago.edu``, so we suggest you connect
+to one of the following servers, based on the first
+letter of your CNetID:
+
++------------+--------------------------------+
+| A          | linux1.cs.uchicago.edu         |
++------------+--------------------------------+
+| B,C        | linux2.cs.uchicago.edu         |
++------------+--------------------------------+
+| D,E        | linux3.cs.uchicago.edu         |
++------------+--------------------------------+
+| F,G,H,I,J  | linux4.cs.uchicago.edu         |
++------------+--------------------------------+
+| K,L,M      | linux5.cs.uchicago.edu         |
++------------+--------------------------------+
+| N,O,P,Q,R  | linux6.cs.uchicago.edu         |
++------------+--------------------------------+
+| S, T, U, V,|                                |
+| W, X, Y, Z | linux7.cs.uchicago.edu         |
++------------+--------------------------------+
+
+For example, Anne Rogers would use ``linux1.cs.uchicago.edu``, because
+her CNetID (``ar0r``) starts with an ``A``, while Hannah Morgan would
+use ``linux4.cs.uchicago.edu`` because her CNetID (``hmmorgan``)
+starts with an ``H``.
+
+In the instructions below, you will be asked to replace ``username``
+with your CNetID and ``LINUX_SERVER`` with your assigned linux server.
+For example, if the text says run the command:
+
+::
+
+   ssh username@LINUX_SERVER
+
+Anne Rogers would run:
+
+::
+
+   ssh ar0r@linux1.cs.uchicago.edu
+
+because her CnetID (username) is ``ar0r`` and her assigned linux
+server is ``linux1.cs.uchicago,edu``.
 
 Installation
 ============
@@ -18,7 +80,7 @@ Follow the instructions for your operating system:
 Windows
 ~~~~~~~
 
-Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Windows, Stable Build*.
+Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Windows, Universal Build*.
 
 .. figure:: code-img/install-code-win-1.png
 
@@ -33,15 +95,15 @@ Click *Next >*, then click *Install*. When the progress bar fills, click *Finish
 macOS
 ~~~~~
 
-Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Mac, Stable Build*.
+Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Mac Universal, Stable Build*.
 
 .. figure:: code-img/install-code-mac-1.png
 
-Click on this button to download. When the download is complete, you will have a new application file called *Visual Studio Code* (You might instead have zip file, with a name like ``VSCode-darwin-stable.zip``; in this case, open the file to unzip it, and the *Visual Studio Code* application file should appear). Open a *Finder* window and navigate to *Downloads* (it will likely be listed under "Favorites" in the left sidebar). Locate the file named *Visual Studio Code*, and drag it on top of *Applications* in the left side bar.
+Click on this button to download. When the download is complete, you will have a new application file called *Visual Studio Code* (You might instead have zip file, with a name like ``VSCode-darwin-universal.zip``; in this case, open the file to unzip it, and the *Visual Studio Code* application file should appear). Open a *Finder* window and navigate to *Downloads* (it will likely be listed under "Favorites" in the left sidebar). Locate the file named *Visual Studio Code*, and drag it on top of *Applications* in the left side bar.
 
 .. figure:: code-img/install-code-mac-2.png
 
-Now, you can find VS Code in your Applications folder, and can open it with a click.
+Now, you can find VSCode in your Applications folder, and can open it with a click.
 
 
 Linux
@@ -59,7 +121,7 @@ Follow the instructions for your operating system:
 Windows 10
 ~~~~~~~~~~
 
-*These instructions are specific to Windows 10. If you are running Windows 7 or Windows 8, please contact us on Ed Discussion for instructions.*
+*These instructions are specific to Windows 10. If you are running Windows 7 or Windows 8, please contact us on Piazza for instructions.*
 
 In this step, you will install Windows OpenSSH Client.
 
@@ -121,13 +183,15 @@ Note that Windows PowerShell looks similar to the Linux terminal, even though is
 
 ::
 
-    ssh username@linux.cs.uchicago.edu
+    ssh username@LINUX_SERVER
 
-where ``username`` should be replaced by your CNetID.
+where ``username`` should be replaced by your CNetID and
+``LINUX_SERVER`` should be replaced by the linux server you identified
+as associated with your CnetID at the start of the setup process.
 
 .. figure:: code-img/install-ssh-win10-10.png
 
-You should be prompted for your password. If you are not, check that you followed the SSH installation steps correctly, and try again. If you are still not prompted for your password, ask us about it on Ed Discussion.
+You should be prompted for your password. If you are not, check that you followed the SSH installation steps correctly, and try again. If you are still not prompted for your password, ask us about it on Piazza.
 
 Type the password associated with your CNetID and press enter (nothing will appear on the screen as you type your password, but this is normal; your keypresses are still being registered).
 
@@ -137,7 +201,7 @@ You should see a message about when you last logged on, followed by a prompt tha
 
     username@linuxX:~$
 
-where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 5. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``.
+where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 7. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``. If you already did the `Virtual Linux lab`_, you should be able to find the files that you created for it.
 
 Type ``logout`` and press enter to close your connection to the campus Linux computers. Type ``exit`` again and press enter to exit Windows PowerShell.
 
@@ -150,13 +214,14 @@ Press Command-Space to open Spotlight Search. Begin typing *Terminal*, and click
 
 .. figure:: code-img/install-ssh-mac-1.png
 
-At the prompt, type
+At the terminal prompt, type
 
 ::
 
-    ssh username@linux.cs.uchicago.edu
+    ssh username@LINUX_SERVER
 
-where ``username`` should be replaced by your CNetID.
+where ``username`` should be replaced by your CNetID and
+``LINUX_SERVER`` should be replaced with your assigned linux server.
 
 .. figure:: code-img/install-ssh-mac-2.png
 
@@ -168,7 +233,7 @@ You should see a message about when you last logged on, followed by a prompt tha
 
     username@linuxX:~$
 
-where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 5. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``.
+where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 7. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``.
 
 Type ``logout`` and press enter to close your connection to the campus Linux computers and return to your own computer's terminal prompt.
 
@@ -186,33 +251,38 @@ After installing, you should verify that you can connect to the Linux computers 
 
 ::
 
-    ssh username@linux.cs.uchicago.edu
+    ssh username@LINUX_SERVER
 
-where ``username`` is replaced by your CNetID. You should be prompted for the password associated with your CNetID. Then you should be able to run terminal commands on the campus Linux computers.
+where ``username`` is replaced by your CNetID and ``LINUX_SERVER`` is replaced with your assigned linux server. You should be prompted for the password associated with your CNetID. Then you should be able to run terminal commands on the campus Linux computers.
 
-Step 3: Install Extensions for VS Code
---------------------------------------
+Step 3: Install Extensions for VSCode
+-------------------------------------
 
-At this point, Visual Studio Code should be among your installed applications. Open it. In the left sidebar, there is an icon consisting of four squares, with one square separated off from the other three. This is the icon for VS Code extensions. Click it (alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on macOS).
+At this point, Visual Studio Code should be among your installed
+applications. Open it. In the left sidebar, there is an icon
+consisting of four squares, with one square separated off from the
+other three. This is the icon for VSCode extensions. Click it
+(alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on
+macOS).
 
 .. figure:: code-img/install-ext-1.png
 
-This opens the *Extensions* panel. From here, you can search for and install extensions. You should install the following extensions:
+This opens the *Extensions* panel. From here, you can search for and install extensions. You should install the following extension:
 
-- Python (Microsoft)
-
-- Remote - SSH (Microsoft)
+- C/C++ Extension Pack (Microsoft)
 
 To do this, click in the search bar ("Search Extensions in Marketplace") and start typing the name of the extension. When it appears, make sure the name and publisher matches exactly, and click *Install*.
 
-.. figure:: code-img/install-ext-2.png
+.. figure:: code-img/install-ext-4.png
 
-.. figure:: code-img/install-ext-3.png
 
 Using Visual Studio Code and SSH
 ================================
 
-You will be able to use Visual Studio Code to replicate the two most important features from the Virtual Desktop. You will be able to remotely connect to the Linux computers on campus to (1) use the terminal (to execute shell commands, run Python code, and conduct automated tests), and (2) edit text files (usually Python code).
+You will be able to use Visual Studio Code to connect remotely to the
+Linux computers on campus to (1) use the terminal (to execute shell
+commands, compile and run C code, and conduct automated tests),
+and (2) to edit text files (usually C code).
 
 Open Visual Studio Code now.
 
@@ -221,13 +291,13 @@ Remotely connecting to the CS Department Linux computers
 
 **Initial setup**
 
-You only need to follow the steps in this section once (or more accurately, once per computer). If you've already done this part, you can continue to "Connecting".
+You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you've already done this part, you can continue to "Connecting".
 
-In the lower-left corner of VS Code, there should be a rectangle with an icon that looks like *><*, but skewed. In the example images, it is green, but depending on the color scheme you select for VS Code, it may be purple, or a different color. If you do not see this icon, check that you have completed *all* the installation steps above. Click on this icon.
+In the lower-left corner of VSCode, there should be a green rectangle with an icon that looks like *><*, but skewed (if you do not see this, check that you have completed *all* the installation steps above). Click on this icon.
 
 .. figure:: code-img/connect-1.png
 
-In the menu that appears, click *Remote-SSH: Connect to Host...* (Note: this may appear just as "Connect to Host...")
+In the menu that appears, click *Remote-SSH: Connect to Host...*.
 
 .. figure:: code-img/connect-2.png
 
@@ -237,54 +307,43 @@ Click *+ Add New SSH Host...*.
 
 .. figure:: code-img/connect-3.png
 
-A textbox will appear with the heading *Enter SSH Connection Commnand*. The
-command you use will depends on the *first letter of your last name*:
+A textbox will appear with the heading *Enter SSH Connection Commnand*. In the box, type
 
-+----------------------------------+-----------------------------------------+
-| If your last name starts with... | Use this command:                       |
-+==================================+=========================================+
-| A-C                              | ``ssh username@linux1.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| D-G                              | ``ssh username@linux2.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| H-K                              | ``ssh username@linux3.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| L                                | ``ssh username@linux4.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| M-R                              | ``ssh username@linux5.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| S-V                              | ``ssh username@linux6.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
-| W-Z                              | ``ssh username@linux7.cs.uchicago.edu`` |
-+----------------------------------+-----------------------------------------+
+.. code-block:: bash
 
-Enter the appropriate command, replacing ``username`` with your CNetID, and press Enter.
+    ssh username@LINUX_SERVER
+
+with ``username`` replaced by your CNetID  and ``LINUX_SERVER`` is replaced with your assigned Linux server, and press enter.  This example uses Anne Rogers' CNetID and assigned Linux server.  Make sure to use **your** CnetID and assigned Linux server.
 
 .. figure:: code-img/connect-4.png
 
-Next, you will see the heading *Select SSH configuration file to update*. Press enter to select the first option (which should contain the string "User" or "home").
+Next, you will see the heading *Select SSH configuration file to update*. Press enter to select the first option (which should contain the string "User" or "home" and the username you use on your laptop).
 
 .. figure:: code-img/connect-5.png
+
+If you see a a pop-up that looks like this:
+
+.. figure:: code-img/connect-5a.png
+
+click the ``x`` to make it go away.  (Don't connect just yet.)
 
 You are ready to connect.
 
 **Connecting**
 
-Click the green rectangle in the lower-left corner with the *><* icon. Click *Remote-SSH: Connect to Host...*. You should see the heading *Select configured SSH host or enter user@host*. This time, you should see the option *linuxN.cs.uchicago.edu*, where *N* is a number between 1 and 7 (if not, you should retry "Initial Setup"). Click on this option.
+Click the green rectangle in the lower-left corner with the *><* icon. Click *Remote-SSH: Connect to Host...*. You should see the heading *Select configured SSH host or enter user@host*. This time, you should see the option ``LINUX_SERVER`` (where ``LINUX_SERVER`` is your assigned linux server) (if not, you should retry "Initial Setup"). Click on this option.
 
 .. figure:: code-img/connect-6.png
 
-A new VS Code Window will open. After a moment, you will see a pop-up.
+A new VSCode Window will open. After a moment, you will see a pop-up.
 
-You may see a message starting with "linuxN.cs.uchicago.edu has fingerprint..." and asking "Are you sure you want to continue?". You can safely select "Continue" here.
-
-You may see a pop-up prompting *Select the platform of the remote host*; if so, click *Linux*. You will then see a box with the heading *Enter password for username@linux.cs.uchicago.edu* (with *username* replaced by your CNetID). Enter the password corresponding to your CNetID, and press enter.
+You may see a pop-up prompting *Select the platform of the remote host*; if so, click *Linux*. You will then see a box with the heading *Enter password for username@LINUX_SERVER* (with *username* replaced by your CNetID  and ``LINUX_SERVER`` is replaced with your assigned linux server). Enter the password corresponding to your CNetID, and press enter.
 
 .. figure:: code-img/connect-7.png
 
 If the connection is not successful, you may be given an option to try again; click *Retry*.
 
-If you succeed at connecting, there will be a green box in the lower-left corner of the window with the text *SSH: linuxN.cs.uchicago.edu*.
+If you succeed at connecting, there will be a green box in the lower-left corner of the window with the text *SSH: LINUX_SERVER*.
 
 .. figure:: code-img/connect-8.png
 
@@ -295,15 +354,15 @@ If at any point you get disconnected from the server unintentionally, this will 
 
 .. figure:: code-img/connect-9.png
 
-VS Code may show a pop-up asking if you want to reconnect. You can follow the prompts to reconnect. If that does not work, go back and follow the steps under *Connecting* again.
+VSCode may show a pop-up asking if you want to reconnect. You can follow the prompts to reconnect. If that does not work, go back and follow the steps under *Connecting* again.
 
-If you would like to disconnect from the server intentionally, click the green box in the lower-left corner with the text *SSH: linuxN.cs.uchicago.edu*, then click *Close Remote Connection*.
+If you would like to disconnect from the server intentionally, click the green box in the lower-left corner with the text *SSH: LINUX_SERVER*, then click *Close Remote Connection*.
 
 
 Using the terminal
 ------------------
 
-Have your VS Code window open, and check that you are connected to SSH. Open the *View* menu from the menu bar and click *Terminal* (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some "welcome" text). The bottom pane has the terminal.
+Have your VSCode window open, and check that you are connected to SSH. Open the *View* menu from the menu bar and click *Terminal* (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some "welcome" text). The bottom pane has the terminal.
 
 .. figure:: code-img/connect-10.png
 
@@ -313,57 +372,35 @@ In the body of the bottom pane, you will see a Linux prompt of the form
 
 .. code-block:: bash
 
-    username@linuxN:~$
+    username@computer:~$
 
-Where ``N`` will be a number between 1 and 7.
 
 Editing text files
 ------------------
 
-When you get down to the section of the Virtual Linux lab titled `Using an Editor <../labs/lab0/index.html#using-an-editor>`__, you will see it asks you to open a file in the editor by running
+You can open a file to edit using the file menu on VSCode or by
+running the ``code`` command in the VSCode terminal window.  For
+example, to open a file called ``hello.c``, you would run:
 
 .. code-block:: bash
 
-    code test.txt
+    code hello.c
 
-If you are using VSCode in your machine, and connecting to a Linux server via SSH, you can
-run that same command to open a file from the terminal into your VSCode.
+If you already have a file in your CS home directory named ``hello.c``, you will see the file open in the top pane of your VSCode window.  If you don't already have a file named ``hello.c``, you will see a new file in the top pane.
 
-You *can* run this command (so if you had previously completed the lab up to this point, you can now continue). You will see the file open in the top pane of your VS Code window.
-
-.. figure:: code-img/connect-11.png
-
-Working with VS Code via SSH works almost the same as using VS Code from CSIL or on the virtual desktop (except if you are using macOS, replace Ctrl with Command in most shortcuts --- so Command-s instead of Ctrl-s). When you save, you are saving to the Linux computers on campus (it may take a few moments). Make sure to save often!
+When you save a file (using the menu or ``Ctrl-s``) while using with
+VSCode via ssh, you are saving to the CS Linux servers on campus (it may
+take a few moments). Make sure to save often!
 
 .. admonition:: Optional Note
 
-   When you use VSCode in CSIL (or the Virtual Desktop) or with SSH from your computer, the effect is the same: you are opening files stored on the Linux computers on campus, not files stored locally on your own computer. While not necessary for this class, it is also possible to use the ``code`` command in your computer's own terminal to open files on your own computer (or just to launch VS Code).
+    The ``code`` terminal command works from within VSCode when you are connected to the campus Linux computers by SSH. In this case, you are opening files stored on the CS Linux severs on campus, not files stored locally on your own computer. While not necessary for this class, it is also possible to use the ``code`` command in your computer's own terminal to open files on your own computer (or just to launch VSCode).
 
     To enable this feature...
 
-    - *...on Windows:* This feature is enabled by default. If you are familiar with Windows PowerShell or Command Prompt, you can open VS Code by typing ``code`` at the prompt. If you are not familiar with Windows PowerShell or Command Prompt, you do not need to learn them for this class; while they look a bit like the Linux terminal, they use different commands.
+    - *...on Windows:* This feature is enabled by default. If you are familiar with Windows PowerShell or Command Prompt, you can open VSCode by typing ``code`` at the prompt. If you are not familiar with Windows PowerShell or Command Prompt, you do not need to learn them for this class; while they look a bit like the Linux terminal, they use different commands.
 
-    - *...on macOS:* Open VS Code, then press Command-Shift-P to open the Command Palette. Begin typing *Shell Command: Install 'code' command in PATH*, and click on the option when it appears. From this point on, you will be able to open VS Code from the macOS terminal by typing ``code``.
-
-
-Running multiple instances of the terminal
-------------------------------------------
-
-When working on assignments, you will want to have two instances of the terminal running, one for testing code by hand, and the other for running automated tests.
-
-Make sure you are connected to SSH, and open the Terminal pane if is not yet open. To the right of the tab names (*Terminal*, *Debug Console*, etc.), you will see a dropdown menu and some icons. Here is what these do:
-
-- The dropdown menu lets you select between the instances of the terminal that you currently have running. Right now, *1: bash* will be selected. Right now, we only have one instance of the terminal running, but...
-
-- Clicking the *+* icon allows you to create a new instance of the terminal (the equivalent of opening another terminal window).
-
-- To the right of this is an icon of a rectangle divided vertically in half; this allows you to see two terminal instances at once. You probably do not need to use this.
-
-- Next is an icon of a trash can; clicking this will close the current terminal instance.
-
-- Clicking the *^* icon will allow the terminal pane to take up the entire window.
-
-- Clicking the *x* will close the terminal pane.
+    - *...on macOS:* Open VSCode, then press Command-Shift-P to open the Command Palette. Begin typing *Shell Command: Install 'code' command in PATH*, and click on the option when it appears. From this point on, you will be able to open VSCode from the macOS terminal by typing ``code``.
 
 
 Troubleshooting
