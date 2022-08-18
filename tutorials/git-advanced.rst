@@ -7,6 +7,9 @@ Tutorial - Advanced Git
 
    Introductory blurb
 
+   Mention that, if they have not completed the Git Basics tutorial, they should
+   create a GitHub repository with just a README in it.
+
 Working collaboratively with Git
 --------------------------------
 
@@ -482,9 +485,14 @@ This is Git telling you “this is the version of the code in branch
 ``branch1`` and the version of the code in ``branch2``; tell me which
 one to use”.
 
-In some cases, this will just involve editing the file to keep the
-exact version in one of the two branches. However, we are not required
-to do so. For example, the developer handling this merge conflict
+In some cases, resolving the merge conflict will involve editing the file to keep the
+exact version from one of the two branches. In a graphical code editor,
+you may not even have to edit the file, and may encounter a
+convenient interface asking you which of the two versions you'd like to keep.
+
+However, we are not required to resolve the merge conflict by choosing
+one of the two versions.
+For example, the developer handling this merge conflict
 may look at this and realize that the buffer size should actually be
 300. In that case, we would just replace this:
 
