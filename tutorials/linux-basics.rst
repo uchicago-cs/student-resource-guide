@@ -58,7 +58,7 @@ or you're using the Virtual Desktop), you can start a terminal by
 clicking on the Application icon (3x3 grid of dots) at the bottom left of
 the screen:
 
-.. figure:: ubuntu-3x3png
+.. figure:: ubuntu-3x3.png
    :alt: Application icon in Ubuntu
 
 Then, type "terminal" in the input box. Click the "terminal"
