@@ -29,9 +29,9 @@ Where should you do this tutorial?
 
 Since one of the goals of this tutorial is for you to be able to use
 the CS department's Linux environment, we strongly suggest you work
-through this tutorial on a :ref:`UChicago CS software environment <software-environment>`
-(follow the link for more details on how to access such an environment).
-We particularly recommend using SSH to log into a CS Linux server from
+through this tutorial on a :ref:`UChicago CS software environment <software-environment>`.
+While you can work through the tutorial in one of our computer labs,
+we recommend :ref:`using SSH <ssh>` to log into a CS Linux server from
 your personal computer, as this will likely be the primary way you'll
 be interacting with the CS department's Linux systems.
 
@@ -56,7 +56,12 @@ interface but is relatively simple using the terminal.
 If you are using a desktop environment (e.g., you are sitting in CSIL
 or you're using the Virtual Desktop), you can start a terminal by
 clicking on the Application icon (3x3 grid of dots) at the bottom left of
-the screen. Then, type "terminal" in the input box. Click the "terminal"
+the screen:
+
+.. figure:: ubuntu-3x3png
+   :alt: Application icon in Ubuntu
+
+Then, type "terminal" in the input box. Click the "terminal"
 icon to open a terminal window.  You can also use the keyboard shortcut: ``Ctrl+Alt+t.``
 
 If you are using SSH, connecting to a CS Linux server will directly
@@ -106,6 +111,15 @@ etc.:
    :width: 650
    :height: 250
 
+The figure above illustrates how Linux organizes the file system. Your
+own computer might have a slightly different organization
+(e.g., you might replace ``/`` with ``C:``), but the idea is the
+same.
+
+For the above and from this point forward, consider that the text
+"username" is replaced with your own actual username, which is just
+your CNetID.
+
 .. note::
 
     If you are connected to a CS machine, either because you're physically sitting
@@ -116,16 +130,6 @@ etc.:
     For example, if you create some files while logged into a CSIL machine,
     and then sit at a different CSIL machine the next day (or SSH into the CS Linux servers),
     you will see the exact same files there.
-
-The figure above illustrates how Linux organizes the file system. Your
-own computer might have a slightly different organization
-(e.g., you might replace ``/`` with ``C:``), but the idea is the
-same.
-
-For the above and from this point forward, consider that the text
-"username" is replaced with your own actual username, which is just
-your CNetID.
-
 
 
 Show Files
@@ -172,6 +176,8 @@ Change Directory
 |  ``cd ..``        |            move up/back one directory                        |
 +-------------------+--------------------------------------------------------------+
 |   ``cd``          |             move to your home directory                      |
++-------------------+--------------------------------------------------------------+
+|   ``cd -``        |             move to the previous directory you were in       |
 +-------------------+--------------------------------------------------------------+
 
 How can we move around in the file system? If we were using a
@@ -271,9 +277,21 @@ For example::
     username@computer:~$ pwd
     /home/username
 
+Finally, running ``cd -`` will take you to the previous directory you
+were in. For example, suppose we go into the ``Desktop`` directory and,
+from there, switch to the ``Documents`` directory. If we wanted to
+go back to the ``Desktop`` directory, we can just write ``cd -``::
+
+        username@computer:~$ cd Desktop
+        username@computer:~/Desktop$ cd ../Documents
+        username@computer:~/Documents$  cd -
+        username@computer:~/Desktop$ pwd
+        /home/username/Desktop
+
+
 To improve the readability of our examples, we will use ``$`` as the
 prompt rather than the full text ``username@computer:~$`` in the rest
-of this tutorial and, more generally, in the course going forward.  Keep in
+of this tutorial.  Keep in
 mind, though, that the prompt shows your current working directory.
 
 
@@ -427,7 +445,7 @@ assumed to be a comment and is ignored.
 Exercises
 ^^^^^^^^^
 
-#. Navigate to the ``cmsc12100`` directory.  What do you see when you run ``ls tutorial*``?  What about ``ls tutorial*/*.py``?
+#. Navigate to your home directory.  What do you see when you run ``ls tutorial*``?  What about ``ls tutorial*/*.py``?
 
 Man Pages
 ---------
@@ -513,9 +531,11 @@ If the file is blank, quit ``code`` and ensure that the file
 files in your local directory). If it does not, use ``cd`` to navigate
 to the ``linux-tutorial-files`` directory.
 
-Note: somewhat counterintuitively, the menu bar for Visual Studio Code
-is at the top of the Browser window.  You need to run your mouse over
-the name to see the menu options.
+.. note::
+
+    Somewhat counterintuitively, the menu bar for Visual Studio Code
+    is at the top of the Browser window.  You need to run your mouse over
+    the name to see the menu options.
 
 For now, we will use Visual Studio Code (``code``) in a very basic
 way.  You can navigate to a particular place in a file using the arrow
@@ -590,7 +610,7 @@ no more information is coming.
 Keyboard shortcuts
 ~~~~~~~~~~~~~~~~~~
 
-Used at the Linux prompt, the keyboard shortcut ``Ctrl-P`` will roll
+Used in the terminal, the keyboard shortcut ``Ctrl-P`` will roll
 back to the previous command.  If you type ``Ctrl-P`` twice, you will
 roll back by two commands.  If you type ``Ctrl-P`` too many times, you
 can use ``Ctrl-N`` to move forward.  You can also use the arrow keys:
