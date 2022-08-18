@@ -7,6 +7,8 @@ Tutorial - Advanced Linux
 
    Introductory blurb
 
+   Must mention that you need to download the tutorial files (from the Linux Basics tutorial)
+
 Running Commands Sequentially
 -----------------------------
 
@@ -19,7 +21,7 @@ the files and directories contained inside, you would use the following commands
         $ ls
         Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
 
-You could also run them together, like so::
+You could also run them together by separating them with a semicolon, like so::
 
         $ pwd ; ls
         /home/username/
@@ -33,13 +35,15 @@ if there is a group of commands that you want to execute sequentially.
 
 .. note::
 
-    The shell is generally pretty flexible about the amount of white space separating commands,
+    What actually acts as a separator between the comments is the semicolon,
+    and the shell is generally pretty flexible about the amount of white space separating commands,
     arguments, etc., so it will run any of the following as well::
 
         $ pwd;ls
         $ pwd ;ls
         $ pwd; ls
         $ pwd       ;        ls
+
 
 Working with Input/Output Streams
 ---------------------------------
@@ -114,7 +118,8 @@ standard output (or ``stdout``), and standard error (or ``stderr``).
 The code in ``my_echo.py`` simply reads information from ``stdin`` and
 writes it back out to ``stdout``.  The redirection operators change
 the bindings of these streams from the keyboard and/or screen to files.
-We'll discuss ``stderr`` later in the term.
+For the purposes of this tutorial, we will only care about standard
+input and standard output.
 
 Exercises
 ~~~~~~~~~
@@ -124,7 +129,9 @@ Exercises
 #. Run ``my_echo.py``  redirecting the input from ``test.txt`` and the output to ``output2.txt``.  Check the contents of ``output2.txt``.
 #. When you are done, remove ``output.txt`` and ``output2.txt``.
 
-By the way, if you run ``python3 my_echo.py`` without redirecting the input, it will patiently wait for you to type some input for it to echo.  Once you type some input and hit return, the program will echo your input, and then resume waiting for input.  It will continue to do so until you exit by typing ``Ctrl-d``.  Give it a try!
+.. note::
+
+   Notice how, if you run ``python3 my_echo.py`` without redirecting the input, it will patiently wait for you to type some input for it to echo.  Once you type some input and hit return, the program will echo your input, and then resume waiting for input.  It will continue to do so until you exit by typing ``Ctrl-d``.  Give it a try!
 
 
 Piping
@@ -141,7 +148,8 @@ program2.  Or to put it more technically, the ``stdout`` of
 ``program1`` is connected to the ``stdin`` of ``program2``.
 
 As another more concrete example, consider the ``man`` command with the ``-k`` option that we've
-previously discussed. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
+previously discussed (in the :ref:`tutorial-linux-basics-man-pages` section of
+the :ref:`Linux Basics Tutorial <tutorial-linux-basics>`. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
 How would you look for the command to create a directory? First attempts::
 
         $ man -k "create directory"
@@ -151,7 +159,7 @@ How would you look for the command to create a directory? First attempts::
 
 As we can see, neither of these options is particularly helpful. However, with
 piping, we can combine ``man -k`` with a powerful command line utility called
-``grep`` (see man pages) to find what we need::
+``grep`` to find what we need::
 
         $ man -k "directory" | grep "create"
         mkdir (2)            - create a directory
@@ -217,9 +225,13 @@ For example, if we want information on ``/usr/bin/python3.8``::
 
 
 First thing we can notice is that the owner of the file is a user
-named ``root``. (FYI, ``root`` is a name for an account that has access
-to *all* commands and files on a Linux system.  Other accounts may
-also have "root" privileges.) The file's group is also ``root``.
+named ``root``. The file's group is also ``root``.
+
+.. note::
+
+    ``root`` is a name for an account that has access
+    to *all* commands and files on a Linux system.  Other accounts may
+    also have "root" privileges.
 
 The permissions are ``-rwxr-xr-x``.  The initial dash (``-``)
 indicates that ``/usr/bin/python3.8`` is a file, not a directory.
@@ -242,7 +254,17 @@ for user and group.
 Exercise
 ~~~~~~~~
 
-#. Verify this claim by running ``ls -l backups/copy2.txt`` and ``ls -ld  backups`` in your ``linux-tutorial-files`` directory.
+.. note::
+
+   If you have not completed the :ref:`Linux Basics Tutorial <tutorial-linux-basics>`,
+   create a new directory and file by running the following in your
+   ``linux-tutorial-files`` directory::
+
+       $ mkdir backups
+       $ cp test.txt backups/copy2.txt
+
+Verify that the permissions in your directories and files were set
+correctly by running ``ls -l backups/copy2.txt`` and ``ls -ld  backups`` in your ``linux-tutorial-files`` directory.
 
 The ``-d`` flag tells ``ls`` to list the directory, instead of its
 contents. Notice that that the first letter in the permissions string
@@ -324,14 +346,13 @@ To change a file's group (if you are the owner or root), use the command::
 
     chgrp <new group> <path to file>
 
-It is unlikely that you will need to use these two commands for
-this course.
+
 
 Exercises
 ~~~~~~~~~
 
 #. Run ``echo "Hello!" > testfile`` to construct ``testfile``.  Look at the permissions using ``ls -l``.
-#. Change the permissions on ``testfile`` to allow and read access for others.  Run ``ls -l testfile`` to check the new permissions.
+#. Change the permissions on ``testfile`` to allow write and read access for others.  Run ``ls -l testfile`` to check the new permissions.
 #. Remove group write access from ``testfile``.  Check the corrected permissions.
 #. Remove ``testfile`` using ``rm``.
 

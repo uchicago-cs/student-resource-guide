@@ -447,6 +447,8 @@ Exercises
 
 #. Navigate to your home directory.  What do you see when you run ``ls tutorial*``?  What about ``ls tutorial*/*.py``?
 
+.. _tutorial-linux-basics-man-pages:
+
 Man Pages
 ---------
 
