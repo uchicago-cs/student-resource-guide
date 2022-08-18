@@ -215,8 +215,8 @@ of different operating systems: `Connecting to GitHub with SSH <https://docs.git
 Please note that we may not be able to assist you with SSH issues on your own computer.
 
 
-Creating a repository
----------------------
+Creating and initializing a repository
+--------------------------------------
 
 To work through this tutorial, you will need to create a repository on
 GitHub. To do this, log into GitHub, and click on the "+" icon on the top-right
@@ -232,37 +232,13 @@ button.
 Once you do this, you will be taken to a page where you can browse your
 repository through GitHub’s web interface. However, you haven’t
 initialized your repository yet, so GitHub will provide you with the
-instructions to initialize your repository.
+instructions to initialize your repository. This page will look something like this:
 
-*Don't try to run these commands from the terminal just yet!* You will first
-need to perform some setup steps that will allow you to access
-your Git repository from the command-line.
+.. image:: github-new-repository.png
+   :align: center
 
-.. note::
-
-    Before continuing, it is important that you know how to locate
-    your repository on GitHub's website. You can find a link to
-    the repository in your GitHub profile::
-
-        https://github.com/GITHUB_USERNAME
-
-    Where ``GITHUB_USERNAME`` is your GitHub username.
-
-    From that page, simply click on the "Repositories" tab, and you will
-    find the repository you've just created.
-
-    You can also access these pages by logging into GitHub,
-    clicking on the profile icon on the top-right of the page, and
-    then clicking on "Your profile" or "Your repositories".
-
-
-
-
-Initializing your repository
-----------------------------
-
-Ok, now we're actually ready to initialize your repository.
-Do the following:
+Don't run any of the commands shown on that page just yet. Instead,
+follow these steps:
 
 -  Create a directory in your home directory for the Git tutorial. The name
    and location of this directory is not important, so if you already
@@ -296,6 +272,23 @@ what most of these commands do in this tutorial.
 You can verify that your repository was correctly set up by going back
 to your repository’s page on GitHub, you should now see it contains a
 ``README.md`` file. If you click on it, you can see its contents.
+
+.. note::
+
+    Before continuing, it is important that you know how to locate
+    your repository on GitHub's website. You can find a link to
+    the repository in your GitHub profile::
+
+        https://github.com/GITHUB_USERNAME
+
+    Where ``GITHUB_USERNAME`` is your GitHub username.
+
+    From that page, simply click on the "Repositories" tab, and you will
+    find the repository you've just created.
+
+    You can also access these pages by logging into GitHub,
+    clicking on the profile icon on the top-right of the page, and
+    then clicking on "Your profile" or "Your repositories".
 
 Creating a commit
 -----------------
