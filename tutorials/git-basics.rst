@@ -55,55 +55,14 @@ environment (such as a CSIL machine or a Virtual Desktop), then Ubuntu's built-i
 should be enough. You will not need to use a full-featured code editor
 in this tutorial.
 
-
-Creating a repository
----------------------
-
-To work through this tutorial, you will need to create a repository on
-GitHub. To do this, log into GitHub, and click on the "+" icon on the top-right
-of the page, and then on "New Repository":
-
-.. image:: new-repository.png
-   :align: center
-
-Then, under "Repository name" enter ``uchicago-cs-git-tutorial``. Do
-not change any other setting, and click on the green "Create repository"
-button.
-
-Once you do this, you will be taken to a page where you can browse your
-repository through GitHub’s web interface. However, you haven’t
-initialized your repository yet, so GitHub will provide you with the
-instructions to initialize your repository.
-
-*Don't try to run these commands from the terminal just yet!* You will first
-need to perform some setup steps that will allow you to access
-your Git repository from the command-line.
-
-.. note::
-
-    Before continuing, it is important that you know how to locate
-    your repository on GitHub's website. You can find a link to
-    the repository in your GitHub profile::
-
-        https://github.com/GITHUB_USERNAME
-
-    Where ``GITHUB_USERNAME`` is your GitHub username.
-
-    From that page, simply click on the "Repositories" tab, and you will
-    find the repository you've just created.
-
-    You can also access these pages by logging into GitHub,
-    clicking on the profile icon on the top-right of the page, and
-    then clicking on "Your profile" or "Your repositories".
-
-
 Setting up SSH access
 ---------------------
 
-We are going to start by initializing the repository
-you just created. Before we can do this, we need to take a short
+Before we create a repository or do anything with it,
+we need to take a short
 detour to create an SSH key and upload it to GitHub, which will
-allow you to access your GitHub repository from the terminal.
+allow you to access your GitHub repositories from the terminal
+(including the one you'll create in this tutorial)
 
 While these steps may seem a bit intricate, you only need to
 do them once. If you are logging into a CS Linux environment,
@@ -209,7 +168,12 @@ and go to your Settings page (by clicking on the top-right account icon, and the
 in the drop-down menu. Then, click on "SSH and GPG keys".
 
 Now, click on the green "New SSH key" button. This will take you to a page where you can upload your
-SSH key. You will be asked for two values: a "Title" and the key itself. The title can be anything
+SSH key:
+
+.. figure:: github-ssh-key.png
+   :alt: "SSH keys / Add new" page on GitHub
+
+You will be asked for two values: a "Title" and the key itself. The title can be anything
 you want, but we suggest something like "CS SSH Key".
 
 The value of the key is contained in the ``.ssh/id_rsa.pub`` file in your home directory. To print
@@ -249,6 +213,49 @@ If you would like to set up SSH access from your personal computer at a later ti
 GitHub provides some pretty detailed documentation on how to do this in a number
 of different operating systems: `Connecting to GitHub with SSH <https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh>`__
 Please note that we may not be able to assist you with SSH issues on your own computer.
+
+
+Creating a repository
+---------------------
+
+To work through this tutorial, you will need to create a repository on
+GitHub. To do this, log into GitHub, and click on the "+" icon on the top-right
+of the page, and then on "New Repository":
+
+.. image:: new-repository.png
+   :align: center
+
+Then, under "Repository name" enter ``uchicago-cs-git-tutorial``. Do
+not change any other setting, and click on the green "Create repository"
+button.
+
+Once you do this, you will be taken to a page where you can browse your
+repository through GitHub’s web interface. However, you haven’t
+initialized your repository yet, so GitHub will provide you with the
+instructions to initialize your repository.
+
+*Don't try to run these commands from the terminal just yet!* You will first
+need to perform some setup steps that will allow you to access
+your Git repository from the command-line.
+
+.. note::
+
+    Before continuing, it is important that you know how to locate
+    your repository on GitHub's website. You can find a link to
+    the repository in your GitHub profile::
+
+        https://github.com/GITHUB_USERNAME
+
+    Where ``GITHUB_USERNAME`` is your GitHub username.
+
+    From that page, simply click on the "Repositories" tab, and you will
+    find the repository you've just created.
+
+    You can also access these pages by logging into GitHub,
+    clicking on the profile icon on the top-right of the page, and
+    then clicking on "Your profile" or "Your repositories".
+
+
 
 
 Initializing your repository
