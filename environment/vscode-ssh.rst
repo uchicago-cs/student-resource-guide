@@ -75,6 +75,11 @@ Installation
 Step 1: Install Visual Studio Code
 ----------------------------------
 
+.. Todo::
+    Update screenshots to use the general downloads page.
+    Windows: how to check architecture, and pick matching installer
+    Linux: how to pick matching installer
+
 Follow the instructions for your operating system:
 
 Windows
@@ -361,6 +366,10 @@ If you would like to disconnect from the server intentionally, click the green b
 
 Using the terminal
 ------------------
+
+.. todo::
+    Installing and setting up gitbash and default for Windows
+    Settingu bash as default for Mac
 
 Have your VSCode window open, and check that you are connected to SSH. Open the *View* menu from the menu bar and click *Terminal* (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some "welcome" text). The bottom pane has the terminal.
 
