@@ -116,149 +116,11 @@ Linux
 
 Go to https://code.visualstudio.com/download to view installation options.
 
-
-Step 2: Install an SSH client
------------------------------
-
-Follow the instructions for your operating system:
-
-
-Windows 10
-~~~~~~~~~~
-
-*These instructions are specific to Windows 10. If you are running Windows 7 or Windows 8, please contact us on Piazza for instructions.*
-
-In this step, you will install Windows OpenSSH Client.
-
-For this step, you will open various applications and settings by searching for them. To do this, open the Start menu by pressing the Windows key on the keyboard, or clicking the Windows icon in the corner of your screen. Begin typing the name of the application or setting, like *About your PC* (even though there is no visible search bar, one will appear when you begin typing). When the *About your PC* option appears, click on it.
-
-**Checking your version of Windows 10**
-
-You need to be running a recent version of Windows 10. To check your current version, open the Start menu, begin typing *About your PC*, and click on the option when it appears.
-
-.. figure:: code-img/install-ssh-win10-1.png
-
-Scroll down to the heading *Windows specifications*. Next to *Edition*, you should see *Windows 10 Home* or *Windows 10 Pro* (or similar).
-
-.. figure:: code-img/install-ssh-win10-2.png
-
-Below that you should see *Version* and a number like 2004. If this number is less than 1803, then you need to update Windows 10.
-
-**Updating Windows 10**
-
-To update Windows 10, open the Start menu, begin typing *Check for updates*, and click on the option when it appears.
-
-.. figure:: code-img/install-ssh-win10-3.png
-
-The window that opens should have the heading *Windows Update*. It may tell you that you have updates avialable; otherwise, click the button that says *Check for updates*.
-
-.. figure:: code-img/install-ssh-win10-4.png
-
-Follow the instructions to install the available updates. This may take a few minutes, and your computer may restart. When the update completes, check your version of Windows 10 again, and verify that it now reads as 1803 or greater.
-
-**Installing Windows OpenSSH Client**
-
-Open the Start menu, begin typing *Manage Optional Features*, and click the option when it appears.
-
-.. figure:: code-img/install-ssh-win10-5.png
-
-You should see a window that looks like this, with the heading *Optional features*.
-
-.. figure:: code-img/install-ssh-win10-6.png
-
-Scroll through the list of *Installed features*. If *OpenSSH Client* appears in the list, you are done with this step. Otherwise, click on *+ Add a feature* at the top of the page. You will get a pop-up window with the heading *Add an optional feature*. Start typing *OpenSSH Client*. When the option appears, click on the checkbox next to it.
-
-.. figure:: code-img/install-ssh-win10-7.png
-
-Then click on the button labeled *Install (1)*. Wait for the progress bar to fill.
-
-.. figure:: code-img/install-ssh-win10-8.png
-
-The installation is complete.
-
-.. Does this process add ssh to the PATH?
-
-**Checking that the installation was successful**
-
-Open the Start menu, begin typing *Windows PowerShell*, and click on the option when it appears.
-
-.. figure:: code-img/install-ssh-win10-9.png
-
-Note that Windows PowerShell looks similar to the Linux terminal, even though is *not* the same as the Linux terminal. At the prompt, type
-
-::
-
-    ssh username@LINUX_SERVER
-
-where ``username`` should be replaced by your CNetID and
-``LINUX_SERVER`` should be replaced by the linux server you identified
-as associated with your CnetID at the start of the setup process.
-
-.. figure:: code-img/install-ssh-win10-10.png
-
-You should be prompted for your password. If you are not, check that you followed the SSH installation steps correctly, and try again. If you are still not prompted for your password, ask us about it on Piazza.
-
-Type the password associated with your CNetID and press enter (nothing will appear on the screen as you type your password, but this is normal; your keypresses are still being registered).
-
-You should see a message about when you last logged on, followed by a prompt that looks like
-
-::
-
-    username@linuxX:~$
-
-where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 7. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``. If you already did the `Virtual Linux lab`_, you should be able to find the files that you created for it.
-
-Type ``logout`` and press enter to close your connection to the campus Linux computers. Type ``exit`` again and press enter to exit Windows PowerShell.
-
-macOS
-~~~~~
-
-An SSH client comes pre-installed. However, you should check that it works as expected before moving on.
-
-Press Command-Space to open Spotlight Search. Begin typing *Terminal*, and click on the option when it appears.
-
-.. figure:: code-img/install-ssh-mac-1.png
-
-At the terminal prompt, type
-
-::
-
-    ssh username@LINUX_SERVER
-
-where ``username`` should be replaced by your CNetID and
-``LINUX_SERVER`` should be replaced with your assigned linux server.
-
-.. figure:: code-img/install-ssh-mac-2.png
-
-You should be prompted for your password. Type the password associated with your CNetID and press enter (nothing will appear on the screen as you type your password, but this is normal; your keypresses are still being registered).
-
-You should see a message about when you last logged on, followed by a prompt that looks like
-
-::
-
-    username@linuxX:~$
-
-where ``username`` is replaced by your CNetID, and `X` is replaced by a number from 1 to 7. You are now connected to the Linux computers on campus. Try running a few terminal commands, like ``pwd``, ``ls`` and ``cd``.
-
-Type ``logout`` and press enter to close your connection to the campus Linux computers and return to your own computer's terminal prompt.
-
-
-Linux
-~~~~~
-
-.. These instructions are essentially copied from https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client .
-
-Debian/Ubuntu: Run ``sudo apt-get install openssh-client``
-
-RHEL/Fedora/CentOS: Run ``sudo yum install openssh-clients``
-
-After installing, you should verify that you can connect to the Linux computers on campus. In the terminal, type,
-
-::
-
-    ssh username@LINUX_SERVER
-
-where ``username`` is replaced by your CNetID and ``LINUX_SERVER`` is replaced with your assigned linux server. You should be prompted for the password associated with your CNetID. Then you should be able to run terminal commands on the campus Linux computers.
+Step 2: Set up VSCode Configurations
+------------------------------------
+
+.. todo::
+    update this to reflect the movement of the ssh installation guide
 
 Step 3: Install Extensions for VSCode
 -------------------------------------
@@ -417,3 +279,18 @@ Troubleshooting
 
 If you run into issues with VSCode and SSH, please make sure to check out
 the troubleshooting guide prepared by the CS Techstaff: https://howto.cs.uchicago.edu/techstaff:vscode
+
+Tips and Tricks
+===============
+
+.. todo::
+    write this section
+
+Shortcuts
+---------
+
+Panels
+------
+
+Extensions
+----------
