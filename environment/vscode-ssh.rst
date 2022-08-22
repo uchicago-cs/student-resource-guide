@@ -120,7 +120,7 @@ Step 2: Set up VSCode Configurations
 ------------------------------------
 
 .. todo::
-    update this to reflect the movement of the ssh installation guide
+    Add images for configuration.
 
 Your VS Code environment should conform to certain configuration guidelines. This is so that your code adheres to the style guide.
 
@@ -140,7 +140,20 @@ Your code should, generally, not have lines longer than 80 characters. To make s
 
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#ff4081"
-    }    
+    }
+
+Terminal
+~~~~~~~~
+
+.. todo::
+    Why should they use bash?
+
+As part of installing Git on Windows, the installer will install Git Bash, an emulation layer for the bash shell. Because course work will generally be run on Linux, we recommend you use Git Bash as bash is the default shell in Linux. macOS already has bash installed, but not set as the default shell. You can set bash/Git Bash as the default shell on the integrated VS Code terminal by following these steps:
+
+#. Open the integrated terminal by pressing *Ctr + `*, even on macOS.
+#. Click on the drop down next to the plus sign.
+#. Click *Select Profile*
+#. Select bash or Git Bash.
 
 Step 3: Install Extensions for VSCode
 -------------------------------------
