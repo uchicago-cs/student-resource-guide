@@ -322,6 +322,34 @@ Tips and Tricks
 Shortcuts
 ---------
 
+For Windows and Linux systems, use `Ctrl` and `Alt` as instructed. For macOS systems, replace `Ctrl` with `Cmmd` and `Alt` with `Opt`.
+
+.. list-table:: Common Shortcuts
+    :header-rows: 1
+
+    * - Shortcut
+      - Action
+    * - Ctrl + X
+      - Cut line (or selection)
+    * - Ctrl + C
+      - Copy line (or selection)
+    * - Ctrl + V
+      - Paste
+    * - Ctrl + ] / [
+      - Indent/outdent line
+    * - Ctrl + /
+      - Toggle line comment
+    * - Shift + Alt + A
+      - Toggle block comment
+    * - Alt + Z
+      - Toggle word wrap 
+
+For a full list of shortcuts see the following links:
+
+    - `On Windows <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf>`__
+    - `On macOS <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf>`__
+    - `On Linux <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf>`__
+
 Panels
 ------
 
