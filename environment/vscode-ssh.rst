@@ -323,7 +323,7 @@ Tips and Tricks
 ===============
 
 .. todo::
-    write this section
+    Decide if we should keep the panel section, and add images for it.
 
 Shortcuts
 ---------
@@ -362,8 +362,14 @@ Panels
 Explorer
 ~~~~~~~~
 
+The *Explorer* panel is an integrated file explorer interface. It allows you to easily manage the files in your working directory.
+
 Source Control
 ~~~~~~~~~~~~~~
 
+The *Source Control* panel is an integrated GUI to use git or any other source control system set up in your working directory. It enables one-click use of common actions like staging, commiting, and pushing.
+
 Extensions
 ~~~~~~~~~~
+
+The *Extensions* panel is an interface for managing VS Code extensions. Extensions are simply packages that extend some functionality of the editor. You may have to install some extensions for some of your coursework.
