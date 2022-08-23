@@ -114,7 +114,13 @@ Now, you can find VSCode in your Applications folder, and can open it with a cli
 Linux
 ~~~~~
 
-Go to https://code.visualstudio.com/download to view installation options.
+Go to https://code.visualstudio.com/. You should see two blue buttons labeled *.deb* and *.rpm*. Since most of you will be using Ubuntu, click on the *.deb* button.
+
+.. figure:: code-img/install-code-deb-1.png
+
+Open the directory where you downloaded the .deb file and right click on it. Click on *open with* and select *Software Install*. Follow the prompts on the installer to install the package.
+
+.. figure:: code-img/install-code-deb-2.png
 
 Step 2: Set up VSCode Configurations
 ------------------------------------
@@ -146,7 +152,7 @@ Terminal
 ~~~~~~~~
 
 .. todo::
-    Why should they use bash?
+    Why should they use bash? Should they use bash? I would argue so since it standardizes shell commmands.
 
 As part of installing Git on Windows, the installer will install Git Bash, an emulation layer for the bash shell. Because course work will generally be run on Linux, we recommend you use Git Bash as bash is the default shell in Linux. macOS already has bash installed, but not set as the default shell. You can set bash/Git Bash as the default shell on the integrated VS Code terminal by following these steps:
 
@@ -353,5 +359,11 @@ For a full list of shortcuts see the following links:
 Panels
 ------
 
+Explorer
+~~~~~~~~
+
+Source Control
+~~~~~~~~~~~~~~
+
 Extensions
-----------
+~~~~~~~~~~
