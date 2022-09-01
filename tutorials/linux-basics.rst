@@ -404,7 +404,7 @@ these terminal commands.
    no longer need ``copy2.txt``. Remove the file ``copy2.txt`` in the ``linux-tutorial-files``
    directory.
 
-7. Print the contents of the ``hello_world.py`` file.
+7. Print the contents of the ``hello.py`` file.
 
 
 It can be tedious (and, when you are tired, challenging) to spell
@@ -482,25 +482,55 @@ The ``linux-tutorial-files`` directory contains a file that starts with a dot.  
 Editing files
 -------------
 
-.. todo::
-
-   Explain difference between terminal and graphical editors, and why it's important
-   to know both.
+In many of your classes, you will have to edit text files containing programming code.
+While there are many graphical editors you could use (either on a CS Linux environment,
+or on your own computer), it is also important to be familiar with *terminal editors*
+that run exclusively from a terminal and don't require a desktop environment.
+These editors can be particularly useful if you *only* have access to a terminal
+(e.g., if you're logging into a CS Linux server using SSH).
 
 Using a terminal editor
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 List the files in the ``linux-tutorial-files`` directory. You should see the following::
 
-    backups hello_world.py  my_echo.py  my-input.txt  test.txt
+    backups hello.py  my_echo.py  my-input.txt  test.txt
 
-How do we view and edit the contents of these files? There are many
-high-quality text editors for Linux.
+Let's say we wanted to edit the file ``test.txt``. There are many different terminal
+editors we could use, but we will start with a simple and fairly intuitive one: ``nano``.
+To edit the file, run the following::
 
-.. todo::
+    nano test.txt
 
-   Explain the very basics of vi and emacs.
+This will open the ``test.txt`` file in the nano editor, which will look something like this:
 
+.. image:: nano.png
+   :align: center
+
+The way you interact with this editor will be very similar to how you use a text editor (or
+a word processor) in a graphical desktop environment: you can use the arrow keys to move
+around the text, and typing text will insert that text at the location of the cursor.
+You can also use the Backspace key to delete text.
+
+Try removing the text ``Firstname Lastname`` and replacing it with your name. Then,
+save the file by pressing Ctrl-O (i.e., the Control key and the O key at the same time).
+You will see the following prompt at the bottom of the screen::
+
+    File Name to Write: test.txt
+
+You can just press Enter to confirm you'd like to save the changes to the same file
+(however, you could also specify a different file).
+
+The bottom of the screen actually specifies some of the most common commands you
+can run in the editor. For example, ``^O Write Out`` refers to what we just did:
+Pressing Ctrl-O allows your "write out" (i.e., save) the file (a common abbreviation
+for the Control key is ``^``).
+
+Another common command is ``^X Exit``. Just press Control-X to exit the editor.
+
+While ``nano`` is a simple and intuitive editor, there are many other editors
+out there. If you're interested in a more powerful terminal editor, you
+may want to check out `Vim <https://www.vim.org/>`__ or `Emacs <https://www.gnu.org/software/emacs/>`__.
 
 Using a graphical editor
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -509,92 +539,107 @@ If you are using a desktop environment, you can also use a number of different
 graphical editors. We will use `Visual Studio Code
 <https://code.visualstudio.com>`_, which is good for writing code.
 
-You can open a specific file, say ``test.txt``, using the ``code``
+You can open a specific file, say ``hello.py``, using the ``code``
 command from the Linux command-line by typing::
 
-    code test.txt
+    code hello.py
 
 When you run this command, you will get a new window that looks like this:
 
 .. image:: ubuntu-vscode-1.png
    :align: center
-   :width: 780px
    :alt:
 
 Specifically, you'll see the following text::
 
-    Linux Tutorial - Test file
-    ==========================
+    print("Hello, World!")
 
-    Name: Firstname Lastname
 
 If the file is blank, quit ``code`` and ensure that the file
-``test.txt`` exists in your local directory (use ``ls`` to list the
+``hello.py`` exists in your local directory (use ``ls`` to list the
 files in your local directory). If it does not, use ``cd`` to navigate
 to the ``linux-tutorial-files`` directory.
-
-.. note::
-
-    Somewhat counterintuitively, the menu bar for Visual Studio Code
-    is at the top of the Browser window.  You need to run your mouse over
-    the name to see the menu options.
 
 For now, we will use Visual Studio Code (``code``) in a very basic
 way.  You can navigate to a particular place in a file using the arrow
 keys (or your mouse) and then type typical characters and delete them
 as you would in a regular text editor.  You can save your changes
-using the ``save`` option in the file menu or use the keyboard
-shortcut ``Ctrl-s``.  To quit, you can use the file menu ``quit``
-option or the keyboard shortcut ``Ctrl-q``.
+using the Save option in the File menu or use the keyboard
+shortcut ``Ctrl-s``.  To quit, you can use the Exit option in the File
+menu or the keyboard shortcut ``Ctrl-q``.
 
 As an aside, you can also launch ``code`` from the application
 launcher: simply click the Application button (at the top left of your
 screen), type "code" in the input box, and then click on the Visual
-Studio Code icon.  You can then use the ``file`` menu to navigate the
-correct file. As with the terminal application, you might want to pin
-the icon for launching Visual Studio Code to your launch bar (right
-click your mouse and choose the "Lock to Launcher" menu item.)
-
-Exercises
-~~~~~~~~~
-
-Make sure that you are comfortable with this level of usage:
-
-#. Add your name after ``Author:`` in this file
-#. Save the file
-#. Close and reopen the file in ``code`` and ensuring that your
-   name is still there
-#. Finally, close ``code``.
+Studio Code icon.  You can then use the "Open File..." option in the
+File menu to open the correct file.
 
 
 The edit/compile/run cycle in the terminal
 ------------------------------------------
 
-.. todo::
+When writing code, you will very often go through several cycles
+of the edit/compile/run cycle:
 
-   Explain the edit/compile/run cycle
+1. Edit: You edit the source code file to add or modify some code.
+2. Compile: You compile the code into a runnable executable.
+3. Run: You run the executable to verify that the code you added/modified
+   works as expected.
+
+We have previously covered how to edit files from the terminal, but
+now we'll see the basic commands to compile and run your code from the terminal.
+We have included four example programs in the tutorial files which you
+can use for this purpose:
+
+- ``hello.py`` (Python)
+- ``hello.c`` (C)
+- ``hello.cpp`` (C++)
+- ``Hello.java`` (Java)
+
 
 Python
 ~~~~~~
 
-.. todo::
+::
 
-   Explain how to compile/run C/C++ programs
+    $ python3 hello.py
+    Hello, world!
 
-C/C++
-~~~~~~
 
-.. todo::
+C
+~
 
-   Explain how to compile/run C/C++ programs
+::
+    gcc hello.c -o hello
+
+::
+
+    $ ./hello
+    Hello, world!
+
+C++
+~~~
+
+::
+    g++ hello.cpp -o hello++
+
+::
+
+    $ ./hello++
+    Hello, world!
+
 
 Java
 ~~~~
 
-.. todo::
+::
 
-   Explain how to compile/run Java programs
+    javac Hello.java
 
+::
+
+    $ java Hello
+    Hello, world!
 
 Tips and Tricks
 ---------------
