@@ -552,7 +552,7 @@ When you run this command, you will get a new window that looks like this:
 
 Specifically, you'll see the following text::
 
-    print("Hello, World!")
+    print("Hello, world!")
 
 
 If the file is blank, quit ``code`` and ensure that the file
@@ -610,6 +610,7 @@ C
 ~
 
 ::
+
     gcc hello.c -o hello
 
 ::
@@ -621,6 +622,7 @@ C++
 ~~~
 
 ::
+
     g++ hello.cpp -o hello++
 
 ::
