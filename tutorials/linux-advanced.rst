@@ -9,7 +9,7 @@ but some classes may assume that you are familiar with the topics covered in thi
 tutorial.
 
 This tutorial assumes that you have worked through the
-:ref:`Linux Basics tutorial <tutorial-linux-basics>`__, or are already familiar
+:ref:`Linux Basics tutorial <tutorial-linux-basics>`, or are already familiar
 with the topics covered in that tutorial. If you did not work through the Linux Basics tutorial
 (but are comfortable with the material covered in it),
 make sure you download the files from the Linux Basics tutorial, as we will be using them
