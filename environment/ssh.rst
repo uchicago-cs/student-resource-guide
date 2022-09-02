@@ -33,6 +33,8 @@ it will look basically the same, except it will say "PowerShell" at the top):
 
 On MacOS, the terminal should look something like this:
 
+.. figure:: macos-terminal.png
+
 On Linux, the terminal should look something like this:
 
 .. figure:: linux-terminal.png
