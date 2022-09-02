@@ -1,14 +1,18 @@
-.. _tutorial-git-advanced:
+.. _tutorial-git-basics:
 
 Tutorial - Advanced Git
 =======================
 
-.. todo::
+This tutorial covers a few advanced topics related to working with Git, mostly
+related to how to work collaboratively with other students on the same
+Git repository.
 
-   Introductory blurb
-
-   Mention that, if they have not completed the Git Basics tutorial, they should
-   create a GitHub repository with just a README in it.
+This tutorial assumes that you have worked through the
+:ref:`Git Basics tutorial <tutorial-git-basics>`__, or are already familiar
+with the topics covered in that tutorial. If you did not work through the
+Git Basics tutorial (but are comfortable with the material covered in it),
+make sure to create a repository on GitHub with just a README in it, as
+you will need it to work through this tutorial.
 
 Working collaboratively with Git
 --------------------------------

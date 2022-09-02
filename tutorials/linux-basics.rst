@@ -582,7 +582,8 @@ When writing code, you will very often go through several cycles
 of the edit/compile/run cycle:
 
 1. Edit: You edit the source code file to add or modify some code.
-2. Compile: You compile the code into a runnable executable.
+2. Compile: You compile the code into a runnable executable (only in compiled
+   languages; e.g., this step doesn't apply in Python)
 3. Run: You run the executable to verify that the code you added/modified
    works as expected.
 
@@ -600,33 +601,45 @@ can use for this purpose:
 Python
 ~~~~~~
 
-::
+In Python, given a ``.py`` file, such as our ``hello.py`` file, we can run it from the terminal like this::
 
     $ python3 hello.py
     Hello, world!
 
 
+Now, try editing the file (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``)
+and running the program again. You should now see the updated message.
+
 C
 ~
 
-::
+C is a *compiled* language, which means that we first need to compile our program
+to produce an executable file. For example, we can compile our ``hello.c`` program
+like this::
 
     gcc hello.c -o hello
 
-::
+We are using the ``gcc`` compiler, but some classes may use the ``clang`` compiler.
+The first parameter (``hello.c``) specifies the C file we want to compile, and
+the ``-o`` option specifies the executable file we want to produce.
+
+Running the above command will produce a ``hello`` file that you can run like this::
 
     $ ./hello
     Hello, world!
 
+Now, try editing ``hello.c`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
+If you re-run ``./hello``, you'll see that the old message is still being printed out:
+this is because you need to compile the ``hello.c`` file to produce an updated executable.
+Once you do so, you should see the updated message when you run ``./hello``
+
 C++
 ~~~
 
-::
+The process for compiling/running programs in C++ is basically the same
+as in C, except we will use the ``g++`` compiler::
 
-    g++ hello.cpp -o hello++
-
-::
-
+    $ g++ hello.cpp -o hello++
     $ ./hello++
     Hello, world!
 
@@ -634,14 +647,26 @@ C++
 Java
 ~~~~
 
-::
+Like C/C++, Java is a compiled language, although the Java compiler
+doesn't produce an executable in the same way that the C/C++ compiler
+does (we'll see why momentarily).
+
+To compile a Java file, you need to run this::
 
     javac Hello.java
 
-::
+Unlike the C/C++ example we just saw, this will actually produce a
+file called ``Hello.class`` that is not directly runnable from the terminal
+(i.e., running ``./Hello.class`` like we did in the C/C++ example won't
+work). Instead, we need to use the ``java`` command to run it::
 
     $ java Hello
     Hello, world!
+
+Notice how we don't have to include the ``.class`` extension.
+
+Now, try editing ``Hello.java`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
+If you re-compile the file and run it again, you should see the updated message.
 
 Tips and Tricks
 ---------------
