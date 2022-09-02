@@ -414,8 +414,7 @@ Global variables
 ----------------
 
 
-The use of global variables is forbidden, except for defining *constants* that are set once and never changed
-throughout the runtime of the program. **There are no other exceptions**.
+Mutable global or shared variables can introduce bugs that are hard to detect and require careful design to ensure correctness. Unless a class you are taking specifically allows you to use global variables, the use of global variables is forbidden, except for defining *constants* that are set once and never changed throughout the runtime of the program.
 
 
 When writing a function, you must make sure that all the data the function is going to operate on is passed to the

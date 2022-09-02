@@ -490,8 +490,7 @@ the type is a pointer. So, this is also not allowed::
 Global variables
 ----------------
 
-
-The use of global variables is forbidden, except for defining compile-time *constants*. **There are no other exceptions**.
+Mutable global or shared variables can introduce bugs that are hard to detect and require careful design to ensure correctness. Unless a class you are taking specifically allows you to use global variables, the use of global variables is forbidden, except for defining compile-time *constants*.
 
 A compile-time constant is a global variable with a value that is known and set at compile-time and *never*
 changed during the runtime of the program (if the variable can be used to access other values, e.g., because

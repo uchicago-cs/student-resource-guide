@@ -3,11 +3,23 @@
 Tutorial - Advanced Linux
 =========================
 
-.. todo::
+This tutorial covers a few advanced topics related to using a Linux environment.
+These topics are typically not essential to perform basic tasks in a Linux environment,
+but some classes may assume that you are familiar with the topics covered in this
+tutorial.
 
-   Introductory blurb
+This tutorial assumes that you have worked through the
+:ref:`Linux Basics tutorial <tutorial-linux-basics>`__, or are already familiar
+with the topics covered in that tutorial. If you did not work through the Linux Basics tutorial
+(but are comfortable with the material covered in it),
+make sure you download the files from the Linux Basics tutorial, as we will be using them
+in this tutorial as well. You can do so like this::
 
-   Must mention that you need to download the tutorial files (from the Linux Basics tutorial)
+    wget -nv https://uchicago-cs.github.io/dev-guide/_static/linux-tutorial-files.zip
+    unzip linux-tutorial-files.zip
+
+This will create a ``linux-tutorial-files`` directory that has some files
+for us to play with.
 
 Running Commands Sequentially
 -----------------------------
