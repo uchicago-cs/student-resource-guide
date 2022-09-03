@@ -115,7 +115,9 @@ Visual Studio Code
 
 If you want to use a graphical text editor (i.e., one that uses a graphical user interface from the Linux desktop), a popular option is `Visual Studio Code <https://code.visualstudio.com/>`__ (not to be confused with its older sibling, `Visual Studio <https://visualstudio.microsoft.com/vs/>`__). It is more powerful than a regular text editor, with features like syntax highlighting, auto completion, Git integration, plugins that integrate with other tools, etc. but it is not a full-fledged `Integrated Developent Environment <https://en.wikipedia.org/wiki/Integrated_development_environment>`__ (and, as such, is a more lightweight piece of software requiring less resources).
 
-Visual Studio Code is open source software and is available for free.
+Visual Studio Code is open source software and is available for free. Since it is a popular option
+for many students, particular beginner students, this guide includes an :ref:`entire section <vscode-about>`
+on how to set up and use Visual Studio Code.
 
 .. figure:: ../_static/vscode.png
    :align: center

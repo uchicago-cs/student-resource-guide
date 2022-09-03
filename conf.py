@@ -55,4 +55,4 @@ html_theme = "sphinx_rtd_theme"
 
 extensions.append("sphinx.ext.todo")
 
-todo_include_todos = True
+todo_include_todos = False
