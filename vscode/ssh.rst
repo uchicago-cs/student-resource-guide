@@ -1,28 +1,26 @@
 .. _vscode-ssh:
 
-================================
 Using Visual Studio Code and SSH
 ================================
 
-Visual Studio Code (VSCode) is a text editor that is particularly well
-suited for programming in a variety of languages. It also
-provides a way to connect remotely to the CS Linux servers
-via SSH. This means you can run VSCode on your personal computer
+VS Code provides a convenient mechanism to connect remotely to the CS Linux servers
+from inside VS Code, using SSH. This means you can run VSCode on your personal computer
 to edit files that live in the CS Linux servers, as well as interact
 with those files from a terminal built into VSCode (e.g., to run your
 code).
 
-This document covers installing VSCode and setting it up to connect
-to the CS Linux servers.
+In this page, we will specifically explain how to connect
+to the CS Linux servers. We assume that you are already familiar
+with SSH; if you are not, please make sure to read the :ref:`ssh` page.
 
 
 Server assignments
-==================
+------------------
 
 In the instructions below, you will be asked to connect to a Linux
-server.  The main linux server (linux.cs.uchicago.edu) acts as a front
+server.  The main linux server (``linux.cs.uchicago.edu``) acts as a front
 end for specific linux machines (named ``linux1.cs.uchicago.edu``
-through ``linux7.cs.uchicago.edu``).  VSCode works best when connected
+through ``linux7.cs.uchicago.edu``).  VS Code works best when connected
 with a specific machine rather than to the front end.
 
 We would like to avoid having everyone using
@@ -69,137 +67,23 @@ Anne Rogers would run:
 because her CnetID (username) is ``ar0r`` and her assigned linux
 server is ``linux1.cs.uchicago,edu``.
 
-Installation
-============
 
-Step 1: Install Visual Studio Code
-----------------------------------
-
-.. Todo::
-    Update screenshots to use the general downloads page.
-    Windows: how to check architecture, and pick matching installer
-    Linux: how to pick matching installer
-
-Follow the instructions for your operating system:
-
-Windows
-~~~~~~~
-
-Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Windows, Universal Build*.
-
-.. figure:: code-img/install-code-win-1.png
-
-Click this button to download. Once it is downloaded, run the installer (``VSCodeUserSetup-<version>.exe``).
-
-After you accept the licence agreement, click *Next >*. On the page titled *Select Additional Tasks*, we recommend you check all the boxes (but it is up to you).
-
-.. figure:: code-img/install-code-win-2.png
-
-Click *Next >*, then click *Install*. When the progress bar fills, click *Finish*.
-
-macOS
-~~~~~
-
-Go to https://code.visualstudio.com/. You should see a blue button labeled *Download for Mac Universal, Stable Build*.
-
-.. figure:: code-img/install-code-mac-1.png
-
-Click on this button to download. When the download is complete, you will have a new application file called *Visual Studio Code* (You might instead have zip file, with a name like ``VSCode-darwin-universal.zip``; in this case, open the file to unzip it, and the *Visual Studio Code* application file should appear). Open a *Finder* window and navigate to *Downloads* (it will likely be listed under "Favorites" in the left sidebar). Locate the file named *Visual Studio Code*, and drag it on top of *Applications* in the left side bar.
-
-.. figure:: code-img/install-code-mac-2.png
-
-Now, you can find VSCode in your Applications folder, and can open it with a click.
-
-
-Linux
-~~~~~
-
-Go to https://code.visualstudio.com/. You should see two blue buttons labeled *.deb* and *.rpm*. Since most of you will be using Ubuntu, click on the *.deb* button.
-
-.. figure:: code-img/install-code-deb-1.png
-
-Open the directory where you downloaded the .deb file and right click on it. Click on *open with* and select *Software Install*. Follow the prompts on the installer to install the package.
-
-.. figure:: code-img/install-code-deb-2.png
-
-Step 2: Set up VSCode Configurations
-------------------------------------
-
-.. todo::
-    Add images for configuration.
-
-Your VS Code environment should conform to certain configuration guidelines. This is so that your code adheres to the style guide.
-
-Space Indentation
-~~~~~~~~~~~~~~~~~
-
-Your editor should be set such that tabs are equivalent to four spaces. This guide focuses on how to configure indentation in VS Code. First, set the tab size to four spaces. Go to *Preferences*, *Settings*, and select *Commonly Used*. Under *Commonly Used* find *Editor: Tab Size* and set it to four. Next, set tabs as spaces. Go to *Commonly Used* again, and set *Editor: Insert Spaces* to true.
-
-Rulers
-~~~~~~
-
-Your code should, generally, not have lines longer than 80 characters. To make sure you do not go over that line limit, you should configure VS Code to render line rulers. Go to *Preferences*, *Settings*, and look up *Editor: Rulers*. Open the *settings.json* file and copy the following at the end of the file.
-
-.. code-block::
-
-    "editor.rulers": [80,120]
-
-    "workbench.colorCustomizations": {
-        "editorRuler.foreground": "#ff4081"
-    }
-
-Terminal
-~~~~~~~~
-
-.. todo::
-    Why should they use bash? Should they use bash? I would argue so since it standardizes shell commmands.
-
-As part of installing Git on Windows, the installer will install Git Bash, an emulation layer for the bash shell. Because course work will generally be run on Linux, we recommend you use Git Bash as bash is the default shell in Linux. macOS already has bash installed, but not set as the default shell. You can set bash/Git Bash as the default shell on the integrated VS Code terminal by following these steps:
-
-#. Open the integrated terminal by pressing *Ctr + `*, even on macOS.
-#. Click on the drop down next to the plus sign.
-#. Click *Select Profile*
-#. Select bash or Git Bash.
-
-Step 3: Install Extensions for VSCode
--------------------------------------
-
-At this point, Visual Studio Code should be among your installed
-applications. Open it. In the left sidebar, there is an icon
-consisting of four squares, with one square separated off from the
-other three. This is the icon for VSCode extensions. Click it
-(alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on
-macOS).
-
-.. figure:: code-img/install-ext-1.png
-
-This opens the *Extensions* panel. From here, you can search for and install extensions. You should install the following extension:
-
-- C/C++ Extension Pack (Microsoft)
-
-To do this, click in the search bar ("Search Extensions in Marketplace") and start typing the name of the extension. When it appears, make sure the name and publisher matches exactly, and click *Install*.
-
-.. figure:: code-img/install-ext-4.png
-
-
-Using Visual Studio Code and SSH
-================================
+Remotely connecting to the CS Linux servers
+-------------------------------------------
 
 You will be able to use Visual Studio Code to connect remotely to the
 Linux computers on campus to (1) use the terminal (to execute shell
-commands, compile and run C code, and conduct automated tests),
-and (2) to edit text files (usually C code).
+commands, compile and run code, run automated tests, etc.),
+and (2) to edit text files (usually code).
 
 Open Visual Studio Code now.
 
-Remotely connecting to the CS Department Linux computers
---------------------------------------------------------
-
-**Initial setup**
+Initial setup
+~~~~~~~~~~~~~
 
 You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you've already done this part, you can continue to "Connecting".
 
-In the lower-left corner of VSCode, there should be a green rectangle with an icon that looks like *><*, but skewed (if you do not see this, check that you have completed *all* the installation steps above). Click on this icon.
+In the lower-left corner of VSCode, there should be a green rectangle with an icon that looks like *><*, but skewed (if you do not see this, make sure you have installed the "Remote - SSH" extension, as described in :ref:`vscode-install-extensions`). Click on this icon.
 
 .. figure:: code-img/connect-1.png
 
@@ -235,7 +119,8 @@ click the ``x`` to make it go away.  (Don't connect just yet.)
 
 You are ready to connect.
 
-**Connecting**
+Connecting
+~~~~~~~~~~
 
 Click the green rectangle in the lower-left corner with the *><* icon. Click *Remote-SSH: Connect to Host...*. You should see the heading *Select configured SSH host or enter user@host*. This time, you should see the option ``LINUX_SERVER`` (where ``LINUX_SERVER`` is your assigned linux server) (if not, you should retry "Initial Setup"). Click on this option.
 
@@ -254,7 +139,8 @@ If you succeed at connecting, there will be a green box in the lower-left corner
 .. figure:: code-img/connect-8.png
 
 
-**Getting Disconnected**
+Getting Disconnected
+~~~~~~~~~~~~~~~~~~~~
 
 If at any point you get disconnected from the server unintentionally, this will be indicated in the green box in the lower-left corner (with text such as "Disconnected from SSH").
 
@@ -302,7 +188,7 @@ When you save a file (using the menu or ``Ctrl-s``) while using with
 VSCode via ssh, you are saving to the CS Linux servers on campus (it may
 take a few moments). Make sure to save often!
 
-.. admonition:: Optional Note
+.. admonition::
 
     The ``code`` terminal command works from within VSCode when you are connected to the campus Linux computers by SSH. In this case, you are opening files stored on the CS Linux severs on campus, not files stored locally on your own computer. While not necessary for this class, it is also possible to use the ``code`` command in your computer's own terminal to open files on your own computer (or just to launch VSCode).
 
@@ -319,57 +205,3 @@ Troubleshooting
 If you run into issues with VSCode and SSH, please make sure to check out
 the troubleshooting guide prepared by the CS Techstaff: https://howto.cs.uchicago.edu/techstaff:vscode
 
-Tips and Tricks
-===============
-
-.. todo::
-    Decide if we should keep the panel section, and add images for it.
-
-Shortcuts
----------
-
-For Windows and Linux systems, use `Ctrl` and `Alt` as instructed. For macOS systems, replace `Ctrl` with `Cmmd` and `Alt` with `Opt`.
-
-.. list-table:: Common Shortcuts
-    :header-rows: 1
-
-    * - Shortcut
-      - Action
-    * - Ctrl + X
-      - Cut line (or selection)
-    * - Ctrl + C
-      - Copy line (or selection)
-    * - Ctrl + V
-      - Paste
-    * - Ctrl + ] / [
-      - Indent/outdent line
-    * - Ctrl + /
-      - Toggle line comment
-    * - Shift + Alt + A
-      - Toggle block comment
-    * - Alt + Z
-      - Toggle word wrap 
-
-For a full list of shortcuts see the following links:
-
-    - `On Windows <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf>`__
-    - `On macOS <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf>`__
-    - `On Linux <https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf>`__
-
-Panels
-------
-
-Explorer
-~~~~~~~~
-
-The *Explorer* panel is an integrated file explorer interface. It allows you to easily manage the files in your working directory.
-
-Source Control
-~~~~~~~~~~~~~~
-
-The *Source Control* panel is an integrated GUI to use git or any other source control system set up in your working directory. It enables one-click use of common actions like staging, commiting, and pushing.
-
-Extensions
-~~~~~~~~~~
-
-The *Extensions* panel is an interface for managing VS Code extensions. Extensions are simply packages that extend some functionality of the editor. You may have to install some extensions for some of your coursework.

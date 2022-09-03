@@ -29,15 +29,15 @@ following one of these instructions:
 On Windows, the command prompt should look something like this (if you're using the PowerShell,
 it will look basically the same, except it will say "PowerShell" at the top):
 
-.. figure:: windows-command-prompt.png
+.. figure:: ssh-img/windows-command-prompt.png
 
 On MacOS, the terminal should look something like this:
 
-.. figure:: macos-terminal.png
+.. figure:: ssh-img/macos-terminal.png
 
 On Linux, the terminal should look something like this:
 
-.. figure:: linux-terminal.png
+.. figure:: ssh-img/linux-terminal.png
 
 Regardless of the operating system you're using, the command prompt or terminal
 will allow you to enter text-based commands. To use SSH to connect to
@@ -89,11 +89,11 @@ In these instructions, you will open various applications and settings by search
 
 You need to be running a recent version of Windows 10. To check your current version, open the Start menu, begin typing *About your PC*, and click on the option when it appears.
 
-.. figure:: code-img/install-ssh-win10-1.png
+.. figure:: ssh-img/install-ssh-win10-1.png
 
 Scroll down to the heading *Windows specifications*. Next to *Edition*, you should see *Windows 10 Home* or *Windows 10 Pro* (or similar).
 
-.. figure:: code-img/install-ssh-win10-2.png
+.. figure:: ssh-img/install-ssh-win10-2.png
 
 Below that you should see *Version* and a number like 2004. If this number is less than 1803, then you need to update Windows 10.
 
@@ -101,11 +101,11 @@ Below that you should see *Version* and a number like 2004. If this number is le
 
 To update Windows 10, open the Start menu, begin typing *Check for updates*, and click on the option when it appears.
 
-.. figure:: code-img/install-ssh-win10-3.png
+.. figure:: ssh-img/install-ssh-win10-3.png
 
 The window that opens should have the heading *Windows Update*. It may tell you that you have updates avialable; otherwise, click the button that says *Check for updates*.
 
-.. figure:: code-img/install-ssh-win10-4.png
+.. figure:: ssh-img/install-ssh-win10-4.png
 
 Follow the instructions to install the available updates. This may take a few minutes, and your computer may restart. When the update completes, check your version of Windows 10 again, and verify that it now reads as 1803 or greater.
 
@@ -113,19 +113,19 @@ Follow the instructions to install the available updates. This may take a few mi
 
 Open the Start menu, begin typing *Manage Optional Features*, and click the option when it appears.
 
-.. figure:: code-img/install-ssh-win10-5.png
+.. figure:: ssh-img/install-ssh-win10-5.png
 
 You should see a window that looks like this, with the heading *Optional features*.
 
-.. figure:: code-img/install-ssh-win10-6.png
+.. figure:: ssh-img/install-ssh-win10-6.png
 
 Scroll through the list of *Installed features*. If *OpenSSH Client* appears in the list, you are done with this step. Otherwise, click on *+ Add a feature* at the top of the page. You will get a pop-up window with the heading *Add an optional feature*. Start typing *OpenSSH Client*. When the option appears, click on the checkbox next to it.
 
-.. figure:: code-img/install-ssh-win10-7.png
+.. figure:: ssh-img/install-ssh-win10-7.png
 
 Then click on the button labeled *Install (1)*. Wait for the progress bar to fill.
 
-.. figure:: code-img/install-ssh-win10-8.png
+.. figure:: ssh-img/install-ssh-win10-8.png
 
 The installation is complete. You should now re-try the instructions at the top of this page.
 

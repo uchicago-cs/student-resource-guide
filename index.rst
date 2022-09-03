@@ -21,7 +21,16 @@ This guide is divided into four sections:
 
    environment/environment.rst
    environment/ssh.rst
-   environment/vscode-ssh.rst
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Visual Studio Code
+
+   About VS Code <vscode/about.rst>
+   Installation <vscode/install.rst>
+   Configuration/Usage <vscode/config-usage.rst>
+   Using VS Code and SSH <vscode/ssh.rst>
 
 .. toctree::
    :maxdepth: 2
@@ -47,3 +56,4 @@ This guide is divided into four sections:
    :caption: Other Resources
 
    teams.rst
+   The Debugging Guide 🔗<https://uchicago-cs.github.io/debugging-guide/>
