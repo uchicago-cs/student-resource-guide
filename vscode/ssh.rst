@@ -188,7 +188,7 @@ When you save a file (using the menu or ``Ctrl-s``) while using with
 VSCode via ssh, you are saving to the CS Linux servers on campus (it may
 take a few moments). Make sure to save often!
 
-.. admonition::
+.. admonition:: Hint
 
     The ``code`` terminal command works from within VSCode when you are connected to the campus Linux computers by SSH. In this case, you are opening files stored on the CS Linux severs on campus, not files stored locally on your own computer. While not necessary for this class, it is also possible to use the ``code`` command in your computer's own terminal to open files on your own computer (or just to launch VSCode).
 
