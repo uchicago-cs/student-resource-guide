@@ -49,7 +49,7 @@ Remote SSH Access
 
 While the CSIL labs provide a convenient way to access a ready-to-use
 Linux environment, it is also possible to access this same environment
-remotely (i.e., without having to be physically sitting at an on-campus
+remotely (i.e., without having to be physically sitting in an on-campus
 computer lab).
 
 A common way to do this is with **SSH**, a system that will allow
@@ -64,7 +64,7 @@ from a Linux terminal, and most student get by just with SSH
 access to the UChicago CS Linux environment.
 
 We explain how to use SSH to connect to our Linux servers in the
-:ref:<ssh> page. There you will find instructions on how to
+:ref:`ssh` page. There you will find instructions on how to
 set up SSH access from Windows, Mac, or another Linux system.
 
 SSH can also be used to seamlessly edit files that are stored
@@ -77,7 +77,7 @@ editor, Visual Studio Code, in :ref:`vscode-ssh`.
 Virtual Desktop
 ~~~~~~~~~~~~~~~
 
-Another option for working remotely on a CS software environment is to use a `Virtual Desktop <https://howto.cs.uchicago.edu/techstaff:vdesk>`__. This will allow you to connect to a CS server that will give you access to a desktop environment similar to the one you would encounter if you were sitting at a Linux machine in a CSIL lab. However, this requires more bandwidth than using SSH, and can feel sluggish depending on the latency of your connection. We recommend this option only if you are first getting started with Linux, or in cases when you need to use a specific graphical tool in the UChicago CS Linux environment.
+Another option for working remotely on a CS software environment is to use a `Virtual Desktop <https://howto.cs.uchicago.edu/techstaff:vdesk>`__. This will allow you to connect to a CS server that will give you access to a desktop environment similar to the one you would encounter if you were sitting at a Linux machine in a CSIL lab. This approach, however, requires more bandwidth than using SSH, and can feel sluggish depending on the latency of your connection. We recommend this option only if you are first getting started with Linux, or in cases when you need to use a specific graphical tool in the UChicago CS Linux environment.
 
 The CS Virtual Machine
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -113,7 +113,7 @@ Even if you don't use a terminal-based editor as your primary development enviro
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
 
-If you want to use a graphical text editor (i.e., one that uses a graphical user interface from the Linux desktop), a popular option is `Visual Studio Code <https://code.visualstudio.com/>`__ (not to be confused with its older sibling, `Visual Studio <https://visualstudio.microsoft.com/vs/>`__). It is more powerful than a regular text editor, with features like syntax highlighting, auto completion, Git integration, plugins that integrate with other tools, etc. but it is not a full-fledged `Integrated Developent Environment <https://en.wikipedia.org/wiki/Integrated_development_environment>`__ (and, as such, is a more lightweight piece of software requiring less resources).
+If you want to use a graphical text editor (i.e., one that uses a graphical user interface from the Linux desktop), a popular option is `Visual Studio Code <https://code.visualstudio.com/>`__ (not to be confused with its older sibling, `Visual Studio <https://visualstudio.microsoft.com/vs/>`__). It is more powerful than a regular text editor, with features like syntax highlighting, auto completion, Git integration, plugins that integrate with other tools, etc. but it is not a full-fledged `Integrated Development Environment <https://en.wikipedia.org/wiki/Integrated_development_environment>`__ (and, as such, is a more lightweight piece of software requiring fewer resources).
 
 Visual Studio Code is open source software and is available for free. Since it is a popular option
 for many students, particular beginner students, this guide includes an :ref:`entire section <vscode-about>`
@@ -140,7 +140,7 @@ Another popular graphical text editor is `Sublime Text <https://www.sublimetext.
 JetBrains IDEs
 ~~~~~~~~~~~~~~
 
-The next step up from code editors like Visual Studio Code and Sublime Text is to use a full-fledged Integrated Developent Environment (IDE). Besides allowing you to edit code, IDEs usually include build automation tools and integrated debuggers. We recommend checking out the `suite of IDEs <https://www.jetbrains.com/products.html#type=ide>`__ provided by `JetBrains <https://www.jetbrains.com/>`__, including `CLion <https://www.jetbrains.com/clion>`__ for C/C++ development, `PyCharm <https://www.jetbrains.com/pycharm>`__ for Python development, and `IntelliJ IDEA <https://www.jetbrains.com/idea>`__ for Java development.
+The next step up from code editors like Visual Studio Code and Sublime Text is to use a full-fledged Integrated Development Environment (IDE). Besides allowing you to edit code, IDEs usually include build automation tools and integrated debuggers. We recommend checking out the `suite of IDEs <https://www.jetbrains.com/products.html#type=ide>`__ provided by `JetBrains <https://www.jetbrains.com/>`__, including `CLion <https://www.jetbrains.com/clion>`__ for C/C++ development, `PyCharm <https://www.jetbrains.com/pycharm>`__ for Python development, and `IntelliJ IDEA <https://www.jetbrains.com/idea>`__ for Java development.
 
 The JetBrains IDEs are commercial software, but they provide free licenses for students and educators, and some of their IDEs also have community editions that are free to use (but less powerful than the paid version).
 
