@@ -72,6 +72,10 @@ If you see the above, you've connected successfully to a UChicago CS Linux serve
 If you came to this page from the :ref:`Linux Basics tutorial <tutorial-linux-basics>`,
 you should continue working on the tutorial through the SSH connection you just opened.
 
+When you are finished using your SSH connection, close  it by
+typing Ctrl-D or ``exit`` at the Linux prompt.
+
+
 Installing an SSH Client
 ------------------------
 
@@ -103,7 +107,7 @@ To update Windows 10, open the Start menu, begin typing *Check for updates*, and
 
 .. figure:: ssh-img/install-ssh-win10-3.png
 
-The window that opens should have the heading *Windows Update*. It may tell you that you have updates avialable; otherwise, click the button that says *Check for updates*.
+The window that opens should have the heading *Windows Update*. It may tell you that you have updates available; otherwise, click the button that says *Check for updates*.
 
 .. figure:: ssh-img/install-ssh-win10-4.png
 
@@ -136,7 +140,7 @@ Linux
 Linux systems typically include an SSH client but may occasionally not include one.
 The exact process to install the client may vary from one Linux distribution to another,
 but the following commands should allow you to install SSH in some of the most popular
-Linux distributions out there:
+Linux distributions:
 
 - **Debian/Ubuntu**: Run ``sudo apt-get install openssh-client``
 - **RHEL/Fedora/CentOS**: Run ``sudo yum install openssh-clients``
