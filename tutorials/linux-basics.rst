@@ -20,8 +20,15 @@ the terminal to perform some basic operations in Linux, including how to:
 
 #. Use basic terminal commands
 #. Edit, compile, and run a program
-#. Use redirection and pipes
-#. Understand and set file permissions
+#. Use keyboard shortcuts.
+
+TODO:
+
+(1) Point students using ssh to the VSCode installation instructions.
+(2) add .c, .java, .c++ programs to distribution and to the ls exampls.
+(3) Label the work in edit, compile, run section as "Exercises"
+    
+
 
 Where should you do this tutorial?
 ----------------------------------
@@ -702,7 +709,7 @@ like auto-completion, getting in the habit of using keyboard shortcuts
 will reduce frustration as well save time.
 
 
-Acknowledgements
+Acknowledgments
 ----------------
 
 Parts of this tutorial are based on a Linux lab originally written for CMSC 12100
