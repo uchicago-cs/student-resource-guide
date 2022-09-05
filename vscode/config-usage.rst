@@ -17,15 +17,22 @@ Your editor should be set such that tabs are equivalent to four spaces. This gui
 Rulers
 ------
 
-Your code should, generally, not have lines longer than 80 characters. To make sure you do not go over that line limit, you should configure VS Code to render line rulers. Go to *Preferences*, *Settings*, and look up *Editor: Rulers*. Open the *settings.json* file and copy the following at the end of the file.
+Your code should, generally, not have lines longer than 80 characters. To make sure you do not go over that line limit, you should configure VS Code to render line rulers. Go to *Preferences*, *Settings*, and look up *Editor: Rulers*. Open the *settings.json* file and copy the following to the file.  Add the text after the last item within the curly braces.
 
 .. code-block::
 
-    "editor.rulers": [80,120]
+    "editor.rulers": [80,120],
 
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#ff4081"
     }
+
+
+Make sure to save the file using ``Ctrl-s``, if you are using a
+Windows or Linux Machine or ``Command-s``, if you are using a MacOS
+machine.  If your changes worked properly, you will see a vertical
+red-line at 80 characters.  If your VSCode window is wide enough, you
+will see a second vertical line at 120 characters.
 
 Terminal
 --------
@@ -43,7 +50,7 @@ If you are on a Linux or Mac, Bash is already pre-installed.
 Regardless of what operating system you use, you should make sure that Bash is set up as your
 default shell in VS Code:
 
-#. Open the integrated terminal by pressing *Ctr + `*
+#. Open the integrated terminal by pressing :code:`Ctrl-Shift-``
 #. Click on the drop down next to the plus sign.
 #. Click *Select Profile*
 #. Select bash or Git Bash.
@@ -58,26 +65,37 @@ Tips and Tricks
 Shortcuts
 ~~~~~~~~~
 
-VS Code includes a number of keyboard shortcuts that can come in handy. For Windows and Linux systems, use `Ctrl` and `Alt` as instructed. For macOS systems, replace `Ctrl` with `Cmd` and `Alt` with `Opt`.
+VS Code includes a number of keyboard shortcuts that can come in handy.  Linux and Windows use Control (``Ctrl``) and Alt (``Alt`)`, while MacOS uses Command (``Cmd``) and Option (``Opt``).
 
 .. list-table:: Common Shortcuts
     :header-rows: 1
 
-    * - Shortcut
+    * - Shortcuts for Linux and Windows
+      - Shortcuts for MacOS
       - Action
     * - Ctrl + X
+      - Cmd + X
       - Cut line (or selection)
     * - Ctrl + C
+      - Cmd + C
       - Copy line (or selection)
     * - Ctrl + V
+      - Cmd + V
       - Paste
-    * - Ctrl + ] / [
-      - Indent/outdent line
+    * - Ctrl + ]
+      - Cmd + ]
+      - Indent line
+    * - Ctrl + [
+      - Cmd + [
+      - Outdent line
     * - Ctrl + /
+      - Cmd + /
       - Toggle line comment
     * - Shift + Alt + A
+      - Shift + Opt + A
       - Toggle block comment
     * - Alt + Z
+      - Option + Z
       - Toggle word wrap 
 
 For a full list of shortcuts see the following links:
