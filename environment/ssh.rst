@@ -24,7 +24,7 @@ following one of these instructions:
 
 - **Windows**: `How to Open Command Prompt (Windows 11, 10, 8, 7, etc.) <https://www.lifewire.com/how-to-open-command-prompt-2618089>`__
 - **MacOS**: `Open or quit Terminal on Mac <https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac>`__
-- **Linux**: In most Linux distributions, pressing Ctrl-Alt-T will open a terminal.
+- **Linux**: In most Linux distributions, pressing ``Ctrl-Alt-T`` will open a terminal.
 
 On Windows, the command prompt should look something like this (if you're using the PowerShell,
 it will look basically the same, except it will say "PowerShell" at the top):
@@ -73,7 +73,7 @@ If you came to this page from the :ref:`Linux Basics tutorial <tutorial-linux-ba
 you should continue working on the tutorial through the SSH connection you just opened.
 
 When you are finished using your SSH connection, close  it by
-typing Ctrl-D or ``exit`` at the Linux prompt.
+typing ``Ctrl-D`` or ``exit`` at the Linux prompt.
 
 
 Installing an SSH Client

@@ -16,13 +16,12 @@ that you be come comfortable using the *terminal*, a command-line
 interface for interacting with the filesystem, running programs, etc.
 
 In this tutorial you will learn how to use
-the terminal to perform some basic operations in Linux, including:
+the terminal to perform some basic operations in Linux, including how to:
 
-#. Basic terminal commands and how to work with a text editor
-#. Basic familiarity with the Linux environment
-#. Running a Python program from the command-line
-#. Redirection and pipes
-#. File permissions
+#. Use basic terminal commands
+#. Edit, compile, and run a program
+#. Use redirection and pipes
+#. Understand and set file permissions
 
 Where should you do this tutorial?
 ----------------------------------
@@ -87,8 +86,7 @@ in each section, and will provide a few simple examples. In fact, we show many
 examples of sample output throughout the tutorial. Bear in mind that the
 output you see when you run through our examples may vary a bit; this is normal.
 We have also included a few exercises in each section so you can practice
-those skills. Please note that we show many examples of sample output throughout
-the tutorial. The output you see when you run the commands may vary a bit.
+those skills.
 
 Navigating the File System
 --------------------------
@@ -368,8 +366,8 @@ Some useful terminology: the ``-r`` argument in ``cp -r`` or ``rm -r`` is known 
 of different flags; later in this tutorial, we'll see how to look up the documentation for
 specific commands, where we will be able to see the list of supported flags in each command.
 
-You can make a new directory with ``mkdir directoryname``, where
-``directoryname`` is the desired name for the new directory.
+You can make a new directory with ``mkdir <directoryname>``, where
+the placeholder ``<directoryname>`` is replaced with the desired name for the new directory.
 
 Sometimes, we may want to take a look at the contents of a file from the terminal, without
 opening the file in an editor. We can do this with the ``cat`` command. For example::
@@ -427,7 +425,7 @@ mistyping filenames when you are tired or distracted.
 Wild Cards (using an asterisk)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sometimes when we enter a string, we want part of it to be variable, or a wildcard. A common task is to list all files that end with a given extension, such as ``.txt``.  The wildcard functionality, through an asterisk, allows to simply say::
+Sometimes when we enter a string, we want part of it to be variable, or a wildcard. A common task is to list all files that end with a given extension, such as ``.txt``.  The wildcard functionality, through an asterisk, allows us to simply say::
 
     $ ls *.txt
 
@@ -440,19 +438,19 @@ It is important to be **careful** using wildcards, especially for commands like 
 will delete **all** of the files in your working directory!
 
 FYI, the text that follows a ``#`` on the linux command-line is
-assumed to be a comment and is ignored.
+treated as a comment and is ignored.
 
 Exercises
 ^^^^^^^^^
 
-#. Navigate to your home directory.  What do you see when you run ``ls tutorial*``?  What about ``ls tutorial*/*.py``?
+#. Navigate to your home directory.  What do you see when you run ``ls linux-tutorial*``?  What about ``ls linux-tutorial*/*.py``?
 
 .. _tutorial-linux-basics-man-pages:
 
 Man Pages
 ---------
 
-A man page (short for manual page) documents or describes topics applicable to Linux programming. These topics include Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
+A man page (short for manual page) documents or describes topics related to working with Linux. These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
 
 To get the man page for a Linux command, you can type::
 
@@ -462,7 +460,7 @@ So in order to get the man page for ``ls``, you would type::
 
     man ls
 
-This command displays a man page that gives information on the ``ls`` command, including a description, flags, instructions on use, and other information.
+This command displays a man page that gives information on the ``ls`` command, including a description of the command, a list of the flags it supports, instructions on how to use it, and other information.
 
 Each man page has a description. The ``-k`` flag for ``man`` allows you to search these descriptions using a keyword. For example::
 
