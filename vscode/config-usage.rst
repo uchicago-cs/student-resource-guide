@@ -12,12 +12,32 @@ options. Many of these will make it easier to conform to our style guides.
 Space Indentation
 -----------------
 
-Your editor should be set such that tabs are equivalent to four spaces. This guide focuses on how to configure indentation in VS Code. First, set the tab size to four spaces. Go to *Preferences*, *Settings*, and select *Commonly Used*. Under *Commonly Used* find *Editor: Tab Size* and set it to four. Next, set tabs as spaces. Go to *Commonly Used* again, and set *Editor: Insert Spaces* to true.
+Your editor should be set such that tabs are equivalent to four spaces. This guide focuses on how to configure indentation in VS Code. First, set the tab size to four spaces. Go to *Preferences*, *Settings*, and select *Commonly Used*.
+
+.. figure:: code-img/setup-mac-1.png
+
+Under *Commonly Used* find *Editor: Tab Size* and set it to four.
+
+.. figure:: code-img/setup-mac-2.png
+
+Next, set tabs as spaces. Go to *Commonly Used* again, and set *Editor: Insert Spaces* to true.
+
+.. figure:: code-img/setup-mac-3.png
+
+Lastly, turn off detect indentation. Go to *Editor: Detect Indentation* and set it to false.
+
+.. figure:: code-img/setup-mac-4.png
 
 Rulers
 ------
 
-Your code should, generally, not have lines longer than 80 characters. To make sure you do not go over that line limit, you should configure VS Code to render line rulers. Go to *Preferences*, *Settings*, and look up *Editor: Rulers*. Open the *settings.json* file and copy the following to the file.  Add the text after the last item within the curly braces.
+Your code should, generally, not have lines longer than 80 characters. To make sure you do not go over that line limit, you should configure VS Code to render line rulers. Go to *Preferences*, *Settings*, and look up *Editor: Rulers*.
+
+.. figure:: code-img/setup-mac-5.png
+
+Open the *settings.json* file and copy the following to the file.  Add the text after the last item within the curly braces.
+
+.. figure:: code-img/setup-mac-6.png
 
 .. code-block::
 
