@@ -1,7 +1,7 @@
 .. _vscode-config:
 
-Configuring and Using Visual Studio Code
-========================================
+Configuring Visual Studio Code
+==============================
 
 .. todo::
     Add images for configuration.
