@@ -84,9 +84,7 @@ The CS Virtual Machine
 
 The CS department also provides a virtual machine (VM) that approximates the software environment found in the CS machines. You can find the latest version of the CS virtual machine on `this page <https://howto.cs.uchicago.edu/vm:index>`__, which also includes instructions on how to install and run the VM. Make sure to also check out the `VM FAQ <https://howto.cs.uchicago.edu/vm:faq>`__, which covers a number of common issues when running the VM (including how to deal with a slow/sluggish VM).
 
-Running the VM will effectively run a full Linux operating system from inside your current operating system, and will feel as if you were logging into one of the Linux machines in the CSIL labs. However, take into account that it is possible to run the VM in "Headless Mode", which is more similar to running a Linux *server* inside your computer, which you'll then be able to access following the same steps found in the :ref:`ssh` page. This will allow the VM to run faster and consume fewer resources, because you'll be doing your work on your personal computer, and only accessing the VM to compile and run your code. The CS VM documentation also includes `instructions on how to set up the VM in Headless Mode <https://howto.cs.uchicago.edu/vm:headless>`__.
-
-
+Running the VM will effectively run a full Linux operating system from inside your current operating system, and will feel as if you were logging into one of the Linux machines in the CSIL labs.  However, take into account that the virtual machine is a completely standalone machine, and will not have access to the CS filesystem that is available when you SSH into a CS Linux server or log into a CSIL machine.
 
 
 Recommended code editors
