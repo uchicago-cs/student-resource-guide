@@ -83,7 +83,18 @@ Initial setup
 
 You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you've already done this part, you can continue to "Connecting".
 
-In the lower-left corner of VSCode, there should be a green rectangle with an icon that looks like *><*, but skewed (if you do not see this, make sure you have installed the "Remote - SSH" extension, as described in :ref:`vscode-install-extensions`). Click on this icon.
+First, of all, you will need to install an extension that will allow VS Code
+to use SSH. In the left sidebar of VS Code, there is an icon
+consisting of four squares, with one square separated off from the
+other three. This is the icon for VSCode extensions. Click it
+(alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on
+macOS).
+
+.. figure:: code-img/install-ext-1.png
+
+This opens the *Extensions* panel. From here, you can search for and install extensions. Search for "the "Remote - SSH" and click "Install".
+
+Once you do so, there should be a green rectangle with an icon that looks like *><*, but skewed in the lower-left corner of VSCode. Click on this icon.
 
 .. figure:: code-img/connect-1.png
 

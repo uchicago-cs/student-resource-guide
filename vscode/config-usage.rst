@@ -9,6 +9,43 @@ Configuring and Using Visual Studio Code
 In this page, you will find instructions on how to set some common configuration
 options. Many of these will make it easier to conform to our style guides.
 
+
+.. _vscode-install-extensions:
+
+Install Extensions for VS Code
+-------------------------------
+
+In the left sidebar of VS Code, there is an icon
+consisting of four squares, with one square separated off from the
+other three. This is the icon for VSCode extensions. Click it
+(alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on
+macOS).
+
+.. figure:: code-img/install-ext-1.png
+
+This opens the *Extensions* panel. From here, you can search for and install extensions. You should install the extensions for the language(s) you intend to use:
+
+- **Python**
+
+  - Python
+
+- **C/C++**
+
+  - C/C++
+  - C/C++ Extension Pack
+
+- **Java**
+
+  - Extension Pack for Java
+
+Please note that all of these extensions should list "Microsoft" as the publisher of the extension.
+
+To install an extension, click in the search bar ("Search Extensions in Marketplace") and start typing the name of the extension. When it appears, make sure the name and publisher matches exactly, and click *Install*.
+
+.. figure:: code-img/install-ext-4.png
+
+
+
 Space Indentation
 -----------------
 
