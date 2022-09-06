@@ -25,7 +25,7 @@ the terminal to perform some basic operations in Linux, including how to:
 TODO:
 
 (1) Point students using ssh to the VSCode installation instructions.
-(2) add .c, .java, .c++ programs to distribution and to the ls exampls.
+(2) add .c, .java, .c++ programs to distribution and to the ls examples.
 (3) Label the work in edit, compile, run section as "Exercises"
     
 
