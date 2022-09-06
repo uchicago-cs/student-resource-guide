@@ -5,9 +5,7 @@ Installing Visual Studio Code
 =============================
 
 .. Todo::
-    Update screenshots to use the general downloads page.
-    Windows: how to check architecture, and pick matching installer
-    Linux: how to pick matching installer
+    Linux: how to pick matching installer -- Add Annotations
 
 Follow the instructions for your operating system:
 
