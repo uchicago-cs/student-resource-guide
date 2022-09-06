@@ -9,11 +9,14 @@ Configuring and Using Visual Studio Code
 In this page, you will find instructions on how to set some common configuration
 options. Many of these will make it easier to conform to our style guides.
 
+If you are planning to primarily use VS Code with SSH, please make sure you
+connect to a CS Linux Server (as described in :ref:`vscode-ssh`) before
+following these extensions.
 
 .. _vscode-install-extensions:
 
-Install Extensions for VS Code
--------------------------------
+Install Language Extensions for VS Code
+---------------------------------------
 
 In the left sidebar of VS Code, there is an icon
 consisting of four squares, with one square separated off from the
