@@ -19,16 +19,9 @@ In this tutorial you will learn how to use
 the terminal to perform some basic operations in Linux, including how to:
 
 #. Use basic terminal commands
+#. Navigate a UNIX filesystem
 #. Edit, compile, and run a program
 #. Use keyboard shortcuts.
-
-TODO:
-
-(1) Point students using ssh to the VSCode installation instructions.
-(2) add .c, .java, .c++ programs to distribution and to the ls examples.
-(3) Label the work in edit, compile, run section as "Exercises"
-    
-
 
 Where should you do this tutorial?
 ----------------------------------
@@ -540,9 +533,15 @@ may want to check out `Vim <https://www.vim.org/>`__ or `Emacs <https://www.gnu.
 Using a graphical editor
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are using a desktop environment, you can also use a number of different
-graphical editors. We will use `Visual Studio Code
-<https://code.visualstudio.com>`_, which is good for writing code.
+A graphical editor requires a desktop environment so, if you
+have been working through this tutorial using SSH, you should
+skip this section, as SSH won't allow you to run graphical programs.
+
+If you are using a desktop environment (e.g., if you are logging into
+a CSIL computer, or using the UChicago CS Virtual Machine or Virtual Desktop),
+you can try out `Visual Studio Code
+<https://code.visualstudio.com>`_ to see an example of what a graphical
+editor looks like.
 
 You can open a specific file, say ``hello.py``, using the ``code``
 command from the Linux command-line by typing::
@@ -612,7 +611,7 @@ In Python, given a ``.py`` file, such as our ``hello.py`` file, we can run it fr
     Hello, world!
 
 
-Now, try editing the file (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``)
+**Exercise:** Try editing the file (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``)
 and running the program again. You should now see the updated message.
 
 C
@@ -633,7 +632,7 @@ Running the above command will produce a ``hello`` file that you can run like th
     $ ./hello
     Hello, world!
 
-Now, try editing ``hello.c`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
+**Exercise:** Try editing ``hello.c`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
 If you re-run ``./hello``, you'll see that the old message is still being printed out:
 this is because you need to compile the ``hello.c`` file to produce an updated executable.
 Once you do so, you should see the updated message when you run ``./hello``
@@ -670,7 +669,7 @@ work). Instead, we need to use the ``java`` command to run it::
 
 Notice how we don't have to include the ``.class`` extension.
 
-Now, try editing ``Hello.java`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
+**Exercise:** Try editing ``Hello.java`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
 If you re-compile the file and run it again, you should see the updated message.
 
 Tips and Tricks
