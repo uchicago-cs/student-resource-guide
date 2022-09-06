@@ -30,7 +30,8 @@ This guide is divided into four sections:
    About VS Code <vscode/about.rst>
    Installation <vscode/install.rst>
    Using VS Code and SSH <vscode/ssh.rst>
-   Configuration/Usage <vscode/config-usage.rst>
+   Configuration <vscode/config.rst>
+   Tips & Tricks <vscode/tips.rst>
 
 .. toctree::
    :maxdepth: 2
