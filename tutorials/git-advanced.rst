@@ -287,7 +287,10 @@ provided in the error message:
     Branch 'add-author' set up to track remote branch 'add-author' from 'origin'.
 
 Note: You should ignore the "pull request" instructions in the above message.
-We will cover pull requests later in the quarter.
+
+.. todo::
+
+   Once we add some content on pull requests, add a reference to it here.
 
 If you now go to your repository on GitHub,
 and click on the “Branch” pull-down list, you will see ``add-author`` in
@@ -374,6 +377,11 @@ be *fast-forwarded*, because the commit in ``add-author``
 (``Updated author in echo.c``) descends directly from the
 ``Added echo.c`` commit in ``main``, so we can simply take
 that commit and add it to ``main``.
+
+Before continuing, make sure to push the changes we just
+made to the ``main`` branch::
+
+    git push
 
 Merge conflicts
 ---------------
