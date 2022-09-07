@@ -183,7 +183,7 @@ out the contents of that file, we can just use the ``cat`` command::
 
 This will print a few lines of output starting with ``ssh-rsa`` and ending in something like ``username@machine``.
 Copy the whole output to the clipboard; you can do this by clicking and dragging the mouse from the first
-character to the last character, and then pressing Ctrl-Shift-C.
+character to the last character, and then pressing ``Ctrl-Shift-C``. (If you are doing this tutorial using SSH on your personal machine, use the copy command that is native to your operating system (*e.g.* ``Cmd-C`` for MacOS).)
 
 Then, paste the key into the "Key" field on the GitHub page. Then click on the green "Add SSH Key"
 button.
@@ -253,8 +253,8 @@ follow these steps:
 
 
 -  Inside that folder, create a file called ``README.md`` and add your
-   full name to the file. Remember you can create an empty file by
-   running the command ``touch README.md`` and then opening that file
+   full name to the file. You can create an empty file by
+   running the command ``touch README.md`` and then open that file
    with your editor of choice.
 
 -  On your repository’s GitHub page (on the GitHub website), right
@@ -331,7 +331,7 @@ struct”.
    you forgot to specify a commit message. It will graciously open up a
    default editor so that you can enter such a message. This can be useful
    if you want to enter a longer commit message (including multi-line
-   messages). We will experiment with this later.
+   messages). We will experiment with this behavior later.
 
 Once you run the above command, you will see something like the
 following output:
@@ -430,7 +430,7 @@ This command should output something like this:
 Notice that there are two types of files listed here:
 
 -  ``Changes not staged for commit``: This is a list of files that Git
-   knows about and have been modified since your last commit, but which
+   knows about and that have been modified since your last commit, but which
    have not been added to a commit (with ``git add``). Note that we
    *did* use ``git add`` previously with ``README.md`` (which is why Git
    is “tracking” that file), but we have not run ``git add`` since our
@@ -594,7 +594,7 @@ this:
 
 This command will add every file that Git is tracking, and will ignore untracked
 files. There are a few other shortcuts for adding multiple files, like
-``git add .`` and ``git add --all``, but we strongly suggest you avoid them,
+``git add .`` and ``git add --all``, but we **strongly** suggest you avoid them,
 since they can result in adding files you did not intend to add to your
 repository.
 
@@ -654,7 +654,7 @@ Now, ``git status`` will look like this:
 If you see ``nothing to commit, working tree clean``, that means
 that there are no changes in your local repository since the last commit
 you created (and, additionally, the above output also tells us that all
-our commits have also been uploaded to GitHub)
+our commits have also been uploaded to GitHub).
 
 Working from multiple locations
 -------------------------------
@@ -701,6 +701,7 @@ Now, switch to the window that is open to your home repository, add a
 line to ``test.txt`` with the text ``One more change!``. Create a
 commit for that change::
 
+    git add test.txt
     git commit -m"Adding one more change"
 
 And push it to GitHub (you should know how to
@@ -738,7 +739,7 @@ one on your laptop), it is very important that you remember to run
 ``git pull`` before you start working, and that you ``git push`` any
 changes you make. Otherwise, your local repositories (and the repository
 on GitHub) may *diverge* leading to a messy situation called a *merge
-conflict* (we discuss conflicts in more detail below). This will be
+conflict* (we discuss conflicts in the second part of the tutorial). This will be
 specially important once you start using Git for its intended purpose:
 to collaborate with multiple developers, where each developer will have
 their own local repository, and it will become easier for some
@@ -902,7 +903,7 @@ Git will only complain if there is more than one commit that starts with
 that same prefix.
 
 
-Acknowledgements
+Acknowledgments
 ----------------
 
 Parts of this tutorial are based on a Git lab originally written for CMSC 12100
