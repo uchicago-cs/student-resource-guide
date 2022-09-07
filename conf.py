@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'UChicago CS Developer Guide'
+project = 'UChicago CS Student Resource Guide'
 copyright = '2022, University of Chicago - Department of Computer Science'
 author = 'University of Chicago - Department of Computer Science'
 
