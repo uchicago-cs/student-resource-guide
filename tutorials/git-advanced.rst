@@ -613,7 +613,10 @@ will see that the commit history now includes the commit from
 
         Updated buffer size to 1000
 
+.. todo::
 
+   Add note on how merge conflicts can happen even if you are not working
+   with branches.
 
 Acknowledgements
 ----------------
