@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using Visual Studio Code and SSH &mdash; UChicago CS Student Resource Guide  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuring Visual Studio Code" href="config.html" />
+    <link rel="prev" title="Installing Visual Studio Code" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> UChicago CS Student Resource Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using VS Code and SSH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#server-assignments">Server assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remotely-connecting-to-the-cs-linux-servers">Remotely connecting to the CS Linux servers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup">Initial setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting">Connecting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-disconnected">Getting Disconnected</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-terminal">Using the terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-text-files">Editing text files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/linux-basics.html">Linux Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/linux-advanced.html">Advanced Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git-basics.html">Git Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git-advanced.html">Advanced Git</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style_guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style_guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Using Visual Studio Code and SSH</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/vscode/ssh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-visual-studio-code-and-ssh">
+<span id="vscode-ssh"></span><h1>Using Visual Studio Code and SSH<a class="headerlink" href="#using-visual-studio-code-and-ssh" title="Permalink to this heading">¶</a></h1>
+<p>VS Code provides a convenient mechanism to connect remotely to the CS Linux servers
+from inside VS Code, using SSH. This means you can run VSCode on your personal computer
+to edit files that live in the CS Linux servers, as well as interact
+with those files from a terminal built into VSCode (e.g., to run your
+code).</p>
+<p>In this page, we will specifically explain how to connect
+to the CS Linux servers. We assume that you are already familiar
+with SSH; if you are not, please make sure to read the <a class="reference internal" href="../environment/ssh.html#ssh"><span class="std std-ref">Remote SSH Access</span></a> page.</p>
+<div class="section" id="server-assignments">
+<h2>Server assignments<a class="headerlink" href="#server-assignments" title="Permalink to this heading">¶</a></h2>
+<p>In the instructions below, you will be asked to connect to a Linux
+server.  The main linux server (<code class="docutils literal notranslate"><span class="pre">linux.cs.uchicago.edu</span></code>) acts as a front
+end for specific linux machines (named <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code>
+through <code class="docutils literal notranslate"><span class="pre">linux7.cs.uchicago.edu</span></code>).  VS Code works best when connected
+with a specific machine rather than to the front end.</p>
+<p>We would like to avoid having everyone using
+<code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code>, so we suggest you connect
+to one of the following servers, based on the first
+letter of your CNetID:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>A</p></td>
+<td><p>linux1.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-even"><td><p>B,C</p></td>
+<td><p>linux2.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-odd"><td><p>D,E</p></td>
+<td><p>linux3.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-even"><td><p>F,G,H,I,J</p></td>
+<td><p>linux4.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-odd"><td><p>K,L,M</p></td>
+<td><p>linux5.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-even"><td><p>N,O,P,Q,R</p></td>
+<td><p>linux6.cs.uchicago.edu</p></td>
+</tr>
+<tr class="row-odd"><td><p>S, T, U, V,
+W, X, Y, Z</p></td>
+<td><p>linux7.cs.uchicago.edu</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example, Anne Rogers would use <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code>, because
+her CNetID (<code class="docutils literal notranslate"><span class="pre">ar0r</span></code>) starts with an <code class="docutils literal notranslate"><span class="pre">A</span></code>, while Hannah Morgan would
+use <code class="docutils literal notranslate"><span class="pre">linux4.cs.uchicago.edu</span></code> because her CNetID (<code class="docutils literal notranslate"><span class="pre">hmmorgan</span></code>)
+starts with an <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p>
+<p>In the instructions below, you will be asked to replace <code class="docutils literal notranslate"><span class="pre">username</span></code>
+with your CNetID and <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> with your assigned linux server.
+For example, if the text says run the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@LINUX_SERVER</span>
+</pre></div>
+</div>
+<p>Anne Rogers would run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">ar0r</span><span class="nd">@linux1</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p>because her CnetID (username) is <code class="docutils literal notranslate"><span class="pre">ar0r</span></code> and her assigned linux
+server is <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago,edu</span></code>.</p>
+</div>
+<div class="section" id="remotely-connecting-to-the-cs-linux-servers">
+<h2>Remotely connecting to the CS Linux servers<a class="headerlink" href="#remotely-connecting-to-the-cs-linux-servers" title="Permalink to this heading">¶</a></h2>
+<p>You will be able to use Visual Studio Code to connect remotely to the
+Linux computers on campus to (1) use the terminal (to execute shell
+commands, compile and run code, run automated tests, etc.),
+and (2) to edit text files (usually code).</p>
+<p>Open Visual Studio Code now.</p>
+<div class="section" id="initial-setup">
+<h3>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this heading">¶</a></h3>
+<p>You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you’ve already done this part, you can continue to “Connecting”.</p>
+<p>First, of all, you will need to install an extension that will allow VS Code
+to use SSH. In the left sidebar of VS Code, there is an icon
+consisting of four squares, with one square separated off from the
+other three. This is the icon for VSCode extensions. Click it
+(alternatively, you can press Ctrl-Shift-X, or Command-Shift-X on
+macOS).</p>
+<div class="figure align-default">
+<img alt="../_images/install-ext-1.png" src="../_images/install-ext-1.png" />
+</div>
+<p>This opens the <em>Extensions</em> panel. From here, you can search for and install extensions. Search for “the “Remote - SSH” and click “Install”.</p>
+<p>Once you do so, there should be a green rectangle with an icon that looks like <em>&gt;&lt;</em>, but skewed in the lower-left corner of VSCode. Click on this icon.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-1.png" src="../_images/connect-1.png" />
+</div>
+<p>In the menu that appears, click <em>Remote-SSH: Connect to Host…</em>.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-2.png" src="../_images/connect-2.png" />
+</div>
+<p>You should see the heading <em>Select configured SSH host or enter user&#64;host</em>.</p>
+<p>Click <em>+ Add New SSH Host…</em>.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-3.png" src="../_images/connect-3.png" />
+</div>
+<p>A textbox will appear with the heading <em>Enter SSH Connection Commnand</em>. In the box, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh username@LINUX_SERVER
+</pre></div>
+</div>
+<p>with <code class="docutils literal notranslate"><span class="pre">username</span></code> replaced by your CNetID  and <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> is replaced with your assigned Linux server, and press enter.  This example uses Anne Rogers’ CNetID and assigned Linux server.  Make sure to use <strong>your</strong> CnetID and assigned Linux server.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-4.png" src="../_images/connect-4.png" />
+</div>
+<p>Next, you will see the heading <em>Select SSH configuration file to update</em>. Press enter to select the first option (which should contain the string “User” or “home” and the username you use on your laptop).</p>
+<div class="figure align-default">
+<img alt="../_images/connect-5.png" src="../_images/connect-5.png" />
+</div>
+<p>If you see a a pop-up that looks like this:</p>
+<div class="figure align-default">
+<img alt="../_images/connect-5a.png" src="../_images/connect-5a.png" />
+</div>
+<p>click the <code class="docutils literal notranslate"><span class="pre">x</span></code> to make it go away.  (Don’t connect just yet.)</p>
+<p>You are ready to connect.</p>
+</div>
+<div class="section" id="connecting">
+<h3>Connecting<a class="headerlink" href="#connecting" title="Permalink to this heading">¶</a></h3>
+<p>Click the green rectangle in the lower-left corner with the <em>&gt;&lt;</em> icon. Click <em>Remote-SSH: Connect to Host…</em>. You should see the heading <em>Select configured SSH host or enter user&#64;host</em>. This time, you should see the option <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> (where <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> is your assigned linux server) (if not, you should retry “Initial Setup”). Click on this option.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-6.png" src="../_images/connect-6.png" />
+</div>
+<p>A new VSCode Window will open. After a moment, you will see a pop-up.</p>
+<p>You may see a pop-up prompting <em>Select the platform of the remote host</em>; if so, click <em>Linux</em>. You will then see a box with the heading <em>Enter password for username&#64;LINUX_SERVER</em> (with <em>username</em> replaced by your CNetID  and <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> is replaced with your assigned linux server). Enter the password corresponding to your CNetID, and press enter.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-7.png" src="../_images/connect-7.png" />
+</div>
+<p>If the connection is not successful, you may be given an option to try again; click <em>Retry</em>.</p>
+<p>If you succeed at connecting, there will be a green box in the lower-left corner of the window with the text <em>SSH: LINUX_SERVER</em>.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-8.png" src="../_images/connect-8.png" />
+</div>
+</div>
+<div class="section" id="getting-disconnected">
+<h3>Getting Disconnected<a class="headerlink" href="#getting-disconnected" title="Permalink to this heading">¶</a></h3>
+<p>If at any point you get disconnected from the server unintentionally, this will be indicated in the green box in the lower-left corner (with text such as “Disconnected from SSH”).</p>
+<div class="figure align-default">
+<img alt="../_images/connect-9.png" src="../_images/connect-9.png" />
+</div>
+<p>VSCode may show a pop-up asking if you want to reconnect. You can follow the prompts to reconnect. If that does not work, go back and follow the steps under <em>Connecting</em> again.</p>
+<p>If you would like to disconnect from the server intentionally, click the green box in the lower-left corner with the text <em>SSH: LINUX_SERVER</em>, then click <em>Close Remote Connection</em>.</p>
+</div>
+</div>
+<div class="section" id="using-the-terminal">
+<h2>Using the terminal<a class="headerlink" href="#using-the-terminal" title="Permalink to this heading">¶</a></h2>
+<p>Have your VSCode window open, and check that you are connected to SSH. Open the <em>View</em> menu from the menu bar and click <em>Terminal</em> (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some “welcome” text). The bottom pane has the terminal.</p>
+<div class="figure align-default">
+<img alt="../_images/connect-10.png" src="../_images/connect-10.png" />
+</div>
+<p>You will see the bottom pane has several tabs: <em>Terminal</em>, <em>Debug Console</em>, <em>Problems</em>, and <em>Output</em> (if your window is narrow, some of these may be hidden under a three-dots menu icon). We only care about <em>Terminal</em> for now, so make sure that is selected. To the right of these tabs, you will see a dropdown menu and some additional icons. You will use these later, but you won’t need them for now.</p>
+<p>In the body of the bottom pane, you will see a Linux prompt of the form</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>username@computer:~$
+</pre></div>
+</div>
+</div>
+<div class="section" id="editing-text-files">
+<h2>Editing text files<a class="headerlink" href="#editing-text-files" title="Permalink to this heading">¶</a></h2>
+<p>You can open a file to edit using the file menu on VSCode or by
+running the <code class="docutils literal notranslate"><span class="pre">code</span></code> command in the VSCode terminal window.  For
+example, to open a file called <code class="docutils literal notranslate"><span class="pre">hello.c</span></code>, you would run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code hello.c
+</pre></div>
+</div>
+<p>If you already have a file in your CS home directory named <code class="docutils literal notranslate"><span class="pre">hello.c</span></code>, you will see the file open in the top pane of your VSCode window.  If you don’t already have a file named <code class="docutils literal notranslate"><span class="pre">hello.c</span></code>, you will see a new file in the top pane.</p>
+<p>When you save a file (using the menu or <code class="docutils literal notranslate"><span class="pre">Ctrl-s</span></code>) while using with
+VSCode via ssh, you are saving to the CS Linux servers on campus (it may
+take a few moments). Make sure to save often!</p>
+<div class="admonition-hint admonition">
+<p class="admonition-title">Hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">code</span></code> terminal command works from within VSCode when you are connected to the campus Linux computers by SSH. In this case, you are opening files stored on the CS Linux severs on campus, not files stored locally on your own computer. While not necessary for this class, it is also possible to use the <code class="docutils literal notranslate"><span class="pre">code</span></code> command in your computer’s own terminal to open files on your own computer (or just to launch VSCode).</p>
+<p>To enable this feature…</p>
+<ul class="simple">
+<li><p><em>…on Windows:</em> This feature is enabled by default. If you are familiar with Windows PowerShell or Command Prompt, you can open VSCode by typing <code class="docutils literal notranslate"><span class="pre">code</span></code> at the prompt. If you are not familiar with Windows PowerShell or Command Prompt, you do not need to learn them for this class; while they look a bit like the Linux terminal, they use different commands.</p></li>
+<li><p><em>…on macOS:</em> Open VSCode, then press Command-Shift-P to open the Command Palette. Begin typing <em>Shell Command: Install ‘code’ command in PATH</em>, and click on the option when it appears. From this point on, you will be able to open VSCode from the macOS terminal by typing <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<p>If you run into issues with VSCode and SSH, please make sure to check out
+the troubleshooting guide prepared by the CS Techstaff: <a class="reference external" href="https://howto.cs.uchicago.edu/techstaff:vscode">https://howto.cs.uchicago.edu/techstaff:vscode</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="config.html" class="btn btn-neutral float-right" title="Configuring Visual Studio Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installing Visual Studio Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, University of Chicago - Department of Computer Science.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

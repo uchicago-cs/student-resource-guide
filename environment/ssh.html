@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Remote SSH Access &mdash; UChicago CS Student Resource Guide  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visual Studio Code" href="../vscode/about.html" />
+    <link rel="prev" title="The UChicago CS Software Environment" href="environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> UChicago CS Student Resource Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Remote SSH Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-an-ssh-client">Installing an SSH Client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows-10">Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/linux-basics.html">Linux Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/linux-advanced.html">Advanced Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git-basics.html">Git Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/git-advanced.html">Advanced Git</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style_guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style_guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Remote SSH Access</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/environment/ssh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="remote-ssh-access">
+<span id="ssh"></span><h1>Remote SSH Access<a class="headerlink" href="#remote-ssh-access" title="Permalink to this heading">¶</a></h1>
+<p>A common way of interacting with the CS Linux environment is via <strong>SSH</strong>,
+which will allow you to connect to a Linux server from your own personal
+computer (which doesn’t have to run Linux).</p>
+<p>Nowadays, most operating systems include an <em>SSH client</em>, so you will likely
+not have to install any additional software. We’ll start by checking that
+you can run the SSH client on your computer (if not, we provide installation
+instructions further below in this page).</p>
+<p>The first step will be to open one of the following:</p>
+<ul class="simple">
+<li><p><strong>Windows</strong>: “Command Prompt” or PowerShell</p></li>
+<li><p><strong>MacOS</strong>: Terminal</p></li>
+<li><p><strong>Linux</strong>: Terminal</p></li>
+</ul>
+<p>Try searching for these tools on your operating system (e.g., by using the Start
+menu on Windows, or the search icon on MacOS). If you can’t find them, try
+following one of these instructions:</p>
+<ul class="simple">
+<li><p><strong>Windows</strong>: <a class="reference external" href="https://www.lifewire.com/how-to-open-command-prompt-2618089">How to Open Command Prompt (Windows 11, 10, 8, 7, etc.)</a></p></li>
+<li><p><strong>MacOS</strong>: <a class="reference external" href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac">Open or quit Terminal on Mac</a></p></li>
+<li><p><strong>Linux</strong>: In most Linux distributions, pressing <code class="docutils literal notranslate"><span class="pre">Ctrl-Alt-T</span></code> will open a terminal.</p></li>
+</ul>
+<p>On Windows, the command prompt should look something like this (if you’re using the PowerShell,
+it will look basically the same, except it will say “PowerShell” at the top):</p>
+<div class="figure align-default">
+<img alt="../_images/windows-command-prompt.png" src="../_images/windows-command-prompt.png" />
+</div>
+<p>On MacOS, the terminal should look something like this:</p>
+<div class="figure align-default">
+<img alt="../_images/macos-terminal.png" src="../_images/macos-terminal.png" />
+</div>
+<p>On Linux, the terminal should look something like this:</p>
+<div class="figure align-default">
+<img alt="../_images/linux-terminal.png" src="../_images/linux-terminal.png" />
+</div>
+<p>Regardless of the operating system you’re using, the command prompt or terminal
+will allow you to enter text-based commands. To use SSH to connect to
+one of the UChicago CS Linux servers, you will need to type the following,
+taking care to replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">CNETID</span><span class="nd">@linux</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p>Press Enter. If you get any sort of error message telling you that there
+is no <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command available on your computer, that means you will
+need to install SSH on your computer. You can find instructions
+on how to do this in the “Installing an SSH Client” section below.</p>
+<p>If SSH is installed on your computer, the command may first
+print out a message like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;linuxX.cs.uchicago.edu (128.135.XXX.XXX)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:...
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre></div>
+</div>
+<p>If so, just type <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p>
+<p>Then, when prompted for a password, just enter your CNetID password. If your
+connection is successful, you may see a series of messages, ending with
+this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CNETID@linuxN:~$
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> will be your CNetID, and <code class="docutils literal notranslate"><span class="pre">N</span></code> will be a number between 1 and 7.</p>
+<p>If you see the above, you’ve connected successfully to a UChicago CS Linux server!
+If you came to this page from the <a class="reference internal" href="../tutorials/linux-basics.html#tutorial-linux-basics"><span class="std std-ref">Linux Basics tutorial</span></a>,
+you should continue working on the tutorial through the SSH connection you just opened.</p>
+<p>When you are finished using your SSH connection, close  it by
+typing <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span></code> or <code class="docutils literal notranslate"><span class="pre">exit</span></code> at the Linux prompt.</p>
+<div class="section" id="installing-an-ssh-client">
+<h2>Installing an SSH Client<a class="headerlink" href="#installing-an-ssh-client" title="Permalink to this heading">¶</a></h2>
+<p>If your operating system does not have an SSH client installed, please following
+the instructions below to install it. Please note that MacOS systems always include
+an SSH client, so we have not included instructions on how to install SSH on MacOS.</p>
+<div class="section" id="windows-10">
+<h3>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this heading">¶</a></h3>
+<p>In these instructions, you will open various applications and settings by searching for them. To do this, open the Start menu by pressing the Windows key on the keyboard, or clicking the Windows icon in the corner of your screen. Begin typing the name of the application or setting, like <em>About your PC</em> (even though there is no visible search bar, one will appear when you begin typing). When the <em>About your PC</em> option appears, click on it.</p>
+<p><strong>Checking your version of Windows 10</strong></p>
+<p>You need to be running a recent version of Windows 10. To check your current version, open the Start menu, begin typing <em>About your PC</em>, and click on the option when it appears.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-1.png" src="../_images/install-ssh-win10-1.png" />
+</div>
+<p>Scroll down to the heading <em>Windows specifications</em>. Next to <em>Edition</em>, you should see <em>Windows 10 Home</em> or <em>Windows 10 Pro</em> (or similar).</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-2.png" src="../_images/install-ssh-win10-2.png" />
+</div>
+<p>Below that you should see <em>Version</em> and a number like 2004. If this number is less than 1803, then you need to update Windows 10.</p>
+<p><strong>Updating Windows 10</strong></p>
+<p>To update Windows 10, open the Start menu, begin typing <em>Check for updates</em>, and click on the option when it appears.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-3.png" src="../_images/install-ssh-win10-3.png" />
+</div>
+<p>The window that opens should have the heading <em>Windows Update</em>. It may tell you that you have updates available; otherwise, click the button that says <em>Check for updates</em>.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-4.png" src="../_images/install-ssh-win10-4.png" />
+</div>
+<p>Follow the instructions to install the available updates. This may take a few minutes, and your computer may restart. When the update completes, check your version of Windows 10 again, and verify that it now reads as 1803 or greater.</p>
+<p><strong>Installing Windows OpenSSH Client</strong></p>
+<p>Open the Start menu, begin typing <em>Manage Optional Features</em>, and click the option when it appears.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-5.png" src="../_images/install-ssh-win10-5.png" />
+</div>
+<p>You should see a window that looks like this, with the heading <em>Optional features</em>.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-6.png" src="../_images/install-ssh-win10-6.png" />
+</div>
+<p>Scroll through the list of <em>Installed features</em>. If <em>OpenSSH Client</em> appears in the list, you are done with this step. Otherwise, click on <em>+ Add a feature</em> at the top of the page. You will get a pop-up window with the heading <em>Add an optional feature</em>. Start typing <em>OpenSSH Client</em>. When the option appears, click on the checkbox next to it.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-7.png" src="../_images/install-ssh-win10-7.png" />
+</div>
+<p>Then click on the button labeled <em>Install (1)</em>. Wait for the progress bar to fill.</p>
+<div class="figure align-default">
+<img alt="../_images/install-ssh-win10-8.png" src="../_images/install-ssh-win10-8.png" />
+</div>
+<p>The installation is complete. You should now re-try the instructions at the top of this page.</p>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
+<p>Linux systems typically include an SSH client but may occasionally not include one.
+The exact process to install the client may vary from one Linux distribution to another,
+but the following commands should allow you to install SSH in some of the most popular
+Linux distributions:</p>
+<ul class="simple">
+<li><p><strong>Debian/Ubuntu</strong>: Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">openssh-client</span></code></p></li>
+<li><p><strong>RHEL/Fedora/CentOS</strong>: Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">openssh-clients</span></code></p></li>
+</ul>
+<p>Once you’ve installed SSH, you should re-try the instructions at the top of the page.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../vscode/about.html" class="btn btn-neutral float-right" title="Visual Studio Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="environment.html" class="btn btn-neutral float-left" title="The UChicago CS Software Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, University of Chicago - Department of Computer Science.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

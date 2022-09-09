@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>UChicago CS Developer Guide &mdash; UChicago CS Developer Guide  documentation</title>
+  <title>UChicago CS Student Resource Guide &mdash; UChicago CS Student Resource Guide  documentation</title>
   
 
   
@@ -34,6 +34,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -41,7 +42,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Software Environment" href="environment.html" /> 
+    <link rel="next" title="The UChicago CS Software Environment" href="environment/environment.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +56,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> UChicago CS Developer Guide
+            <a href="#" class="icon icon-home"> UChicago CS Student Resource Guide
           
 
           
@@ -86,13 +87,35 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="environment.html">Software Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote.html">Working Remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/linux-basics.html">Linux Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/linux-advanced.html">Advanced Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/git-basics.html">Git Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/git-advanced.html">Advanced Git</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="style_guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="teams.html">Working in Teams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide_c.html">Style Guide - C</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide_python.html">Style Guide - Python</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
 </ul>
 
             
@@ -108,7 +131,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">UChicago CS Developer Guide</a>
+          <a href="#">UChicago CS Student Resource Guide</a>
         
       </nav>
 
@@ -141,7 +164,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>UChicago CS Developer Guide</li>
+      <li>UChicago CS Student Resource Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -160,25 +183,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="uchicago-cs-developer-guide">
-<h1>UChicago CS Developer Guide<a class="headerlink" href="#uchicago-cs-developer-guide" title="Permalink to this headline">¶</a></h1>
-<p>This is a developer guide for students working on programming assignments and projects. Please note that it is
-not meant to be a normative guide for all CS classes (unless your instructor has explicitly pointed you
-to this guide).</p>
-<p>In this guide, you will find the following:</p>
+  <div class="section" id="uchicago-cs-student-resource-guide">
+<h1>UChicago CS Student Resource Guide<a class="headerlink" href="#uchicago-cs-student-resource-guide" title="Permalink to this heading">¶</a></h1>
+<p>This resource guide is intended for students working on programming assignments and projects in UChicago CS classes.
+Please note that it is not meant to be a normative guide for all CS classes (unless your instructor has
+explicitly pointed you to this guide).</p>
+<p>This guide is divided into four sections:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="environment.html#software-environment"><span class="std std-ref">Software Environment</span></a>: A description of the software environment provided by the CS department,
-and which you will be expected to use to a certain extent.</p></li>
-<li><p><a class="reference internal" href="remote.html#working-remotely"><span class="std std-ref">Working Remotely</span></a>: Suggestions and guidelines on how to access the CS software environment
-remotely.</p></li>
-<li><p><a class="reference internal" href="teams.html#teams"><span class="std std-ref">Working in Teams</span></a>: Suggestions for how to work effectively in pairs and in teams.</p></li>
-<li><p>Style guides</p>
-<ul>
-<li><p><a class="reference internal" href="style_guide_c.html#style-guide-c"><span class="std std-ref">Style Guide - C</span></a></p></li>
-<li><p><a class="reference internal" href="style_guide_python.html#style-guide-python"><span class="std std-ref">Style Guide - Python</span></a></p></li>
+<li><p><strong>Software Environment</strong>: Information about the Linux software environment provided by the CS department,
+and which you will be using in most of your classes. This section includes instructions on how to access
+this environment, including when working off-campus.</p></li>
+<li><p><strong>Visual Studio Code</strong>: Instructions on how to use Visual Studio Code, a popular code editor.</p></li>
+<li><p><strong>Tutorials</strong>: A couple of useful tutorials covering certain tools and skills you may need in your classes.</p></li>
+<li><p><strong>Style Guides</strong>: Style guides you may be required to follow in your programming assignments.</p></li>
+<li><p><strong>Other Resources</strong>: Other useful resources.</p></li>
 </ul>
-</li>
-</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -189,14 +216,14 @@ remotely.</p></li>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="environment.html" class="btn btn-neutral float-right" title="Software Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="environment/environment.html" class="btn btn-neutral float-right" title="The UChicago CS Software Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, Borja Sotomayor.
+        &#169; Copyright 2022, University of Chicago - Department of Computer Science.
 
     </p>
   </div>
