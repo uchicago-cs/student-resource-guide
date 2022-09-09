@@ -1,7 +1,8 @@
-.. _style-guide:
 
-Style Guide
-===========
+.. _style-guide-c:
+
+C Style Guide
+=============
 
 
 Introduction
@@ -11,7 +12,7 @@ This style guide is intended to provide some basic coding
 conventions for programming assignments and projects in C. These conventions
 are intended to improve the readability of your code. From
 your perspective as a student, the readability of your code
-is important for two big reasons:
+is important for three big reasons:
 
 #. If you have a problem with your code, or have trouble
    debugging a particular issue, it will be easier for us
@@ -22,6 +23,9 @@ is important for two big reasons:
    graders *will* take points off for code that is hard to read
    (which includes, but is not limited to, code that doesn't
    follow the conventions in this style guide)
+#. Writing readable code is an important professional skill.
+
+
 
 This document is not intended to be a comprehensive C style guide.
 When you need guidance on a style issue not specified here,
@@ -29,11 +33,14 @@ we recommend using the `Linux Kernel Style Guide <https://www.kernel.org/doc/htm
 (however, when that guide contradicts our guide, our guide will
 be considered the normative document).
 
+
+
 Code layout
 ------------
 
 Indentation
 ^^^^^^^^^^^
+
 
 You must follow one of the following two indent styles:
 
@@ -49,6 +56,7 @@ convert it to one of the above indent styles::
 Regardless of the descriptions of K&R and Allman you may find online, *you must use 4 spaces per indentation level*. This is the
 indentation level used by default by astyle.
 
+
 **Never use "tab characters".**
 
 Note that you can configure most text editors to insert 4 spaces whenever you press the
@@ -58,35 +66,54 @@ cursor jumps to the beginning of the line, your editor inserted a single "tab ch
 If the cursor only goes back one space (and you have to press the left arrow key three more
 times to get to the start of the line), then the editor is correctly inserting four spaces.
 
-Whether to use `tabs or spaces <http://programmers.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e>`_
-is one of the many "religious wars" within the programming community.
-So, you may run into people (even people here on campus) who will feel very strongly about
-how tabs are better than spaces, and they may even present to you a number of cogent arguments
-in favor of using tabs.
-
-Do not listen to these people. They are wrong and cannot be trusted.
-
 
 Maximum Line Length
 ^^^^^^^^^^^^^^^^^^^
 
-Limit all lines to a maximum of 80 characters. This is not a hard limit,
-and breaking it occasionally is fine, as long as you don't do it repeateadly
-and always by a small number of additional characters. Also, remember that
+In general, you should limit all lines to a maximum of 80 characters.
+
+While this may seem like a small amount of characters given the size
+of today's screens, the 80 character limit is still observed by
+most standard style guides including the `Linux Kernel Style Guide <https://www.kernel.org/doc/html/v4.10/process/coding-style.html#breaking-long-lines-and-strings>`__,
+`Google's C++ Style Guide <https://google.github.io/styleguide/cppguide.html#Line_Length>`__,
+and `Python's PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`__.
+Getting into the habit of limiting your lines to 80 characters will serve you
+well in the future.
+
+From a practical standpoint, keeping lines to 80 characters makes code more
+readable and also makes it easier to have multiple files open side by side
+on a large screen.
+
+There are two concrete exceptions to this rule (taken from Google's C++ Style Guide):
+
+- A comment line which is not feasible to split without harming readability, ease of cut and paste or auto-linking
+  -- e.g., if a line contains an example command or a literal URL longer than 80 characters.
+- A string literal with content that exceeds 80 characters.
+
+More generally, the 80 character limit can usually be broken if doing so
+significantly increases readability *and does not hide information*
+(notice how both exceptions above meet this rule, since there would be
+no actual code beyond the 80 character limit).
+
+So, while breaking this limit occasionally is fine, you will usually
+have to break up your code so it will fit into the 80 character limit.
+Remember that
 most syntactical elements in C are delimited by whitespace, and that
 newlines are considered whitespace. So, the following is correct C::
 
     if (VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
-        ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
-        strlen(s) < 100)
+    ANOTHER_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONDITION ||
+    strlen(s) < 100)
     {
-        /* ... */
+    /* ... */
     }
+
 
 Blank Lines
 ^^^^^^^^^^^
 
-Unless a function is very short, the body of the function should include blank lines functions to indicate logical sections (with at most one blank line separating each logical section).
+Unless a function is very short, the body of the function should include blank lines functions to indicate
+logical sections (with at most one blank line separating each logical section).
 
 Separate function definitions with two blank lines.
 
@@ -94,11 +121,13 @@ Extra blank lines may be used (sparingly) to separate groups of
 related functions.
 
 
+
 Whitespace in Expressions and Statements
 ----------------------------------------
 
 Avoid extraneous whitespace in the following situations:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 - Immediately inside parentheses:
 
@@ -119,19 +148,21 @@ Avoid extraneous whitespace in the following situations:
     Yes: chilog(INFO, "User %s has connected", user);
     No:  chilog(INFO , "User %s has connected" , user);
 
+
 - Immediately before the open parenthesis that starts the argument list of a function call:
 
-  ::
 
-    Yes: chilog(INFO, "User %s has connected", user);
-    No:  chilog (INFO, "User %s has connected", user);
+    ::
+
+        Yes: chilog(INFO, "User %s has connected", user);
+        No:  chilog (INFO, "User %s has connected", user);
 
 - Immediately before brackets indicating an array index:
 
-  ::
+    ::
 
-    Yes: a[N] = b[i]
-    No:  a [N] = b [i]
+        Yes: a[N] = b[i]
+        No:  a [N] = b [i]
 
 - More than one space around an assignment (or other) operator to align it with another.
 
@@ -154,8 +185,8 @@ Avoid extraneous whitespace in the following situations:
 
 Places to use spaces
 ^^^^^^^^^^^^^^^^^^^^
-
-- Always surround these binary operators with a single space on either side: assignment (=), augmented assignment (+=, -=, etc.), comparisons (==, <, >, !=, <>, <=, >=), Booleans (&&, ||).
+- Always surround these binary operators with a single space on either side: assignment (=),
+  augmented assignment (+=, -=, etc.), comparisons (==, <, >, !=, <>, <=, >=), Booleans (&&, ||).
 
 - Use a space after these keywords::
 
@@ -194,7 +225,6 @@ Places to use spaces
         x = x*2 - 1
         hypot2 = x*x + y*y
         c = (a+b) * (a-b)
-
 - Do not include spaces around the dereference, dot, and arrow operators:
 
   Yes:
@@ -213,10 +243,7 @@ Places to use spaces
         client . name = "Sam";
         node -> next = NULL;
 
-
 - Compound statements (multiple statements on the same line) are generally discouraged.
-
-
   Yes:
 
   ::
@@ -257,6 +284,7 @@ Header comments appear at the top of a file. These lines typically
 include the filename, author, date, version number, and a description
 of what the file is for and what it contains.
 
+For class assignments, headers should always include your name!
 ::
 
     /*
@@ -277,7 +305,6 @@ of what the file is for and what it contains.
 
 Function Comments
 ^^^^^^^^^^^^^^^^^
-
 Function comments should be done in the form of a multiline comment
 above the function header.
 
@@ -287,7 +314,6 @@ input arguments, the expected output values, and how error conditions
 are handled.
 
 Example:
-
 ::
 
     /*
@@ -306,7 +332,6 @@ Example:
 
 Block Comments
 ^^^^^^^^^^^^^^
-
 Block comments (``/* ... */``) generally apply to some (or all) code that follows
 them, and are indented to the same level as that code.
 
@@ -314,6 +339,7 @@ When commenting on ``if-else`` statements, block comments for each branch should
 indented at the same level as the branch. Any comment indented at the same level
 as the ``if`` statement should be a comment on the entire conditional, not on the
 first branch. For example::
+
 
     /* Checks if a year is a leap year */
     if (year % 4 != 0)
@@ -339,26 +365,26 @@ first branch. For example::
         return true;
     }
 
+
 Inline Comments
 ^^^^^^^^^^^^^^^
 
 Use inline comments sparingly.  An inline comment is a comment on the
 same line as a statement. Inline comments should be separated by at
-least two spaces from the statement.  They should start with a ``//`` and a
-single space.
+least two spaces from the statement.
+They should start with a ``//`` and a single space.
 
 Inline comments are unnecessary and in fact distracting if they state
 the obvious. Don't do this:
-
 ::
 
    x = x + 1                 // Increment x
 
 But sometimes, this style of comment is useful:
-
 ::
 
    x = x + 1                 // Compensate for border
+
 
 Avoid using inline comments to document structs, except for very simple structs.
 For example, this is generally fine::
@@ -383,6 +409,8 @@ block comments instead::
         interface_t *in_interface;
     } ethernet_frame_t;
 
+
+
 Naming Conventions
 ------------------
 
@@ -394,6 +422,7 @@ naming convention (i.e., ``lowercase_with_underscore``). For example:
           sum_of_squares
           print_happy_birthday
           total_apples
+
 
 
 Constants names should use snake_case with all caps:
@@ -409,6 +438,19 @@ Use descriptive names for parameter names, variables, and function
 names.  Use short names for local
 variables.  In general, the further away a variable will be used, the more
 descriptive the name needs to be.
+
+However, you should not assume from the above that loops should *always* use
+one-letter variable names. Here is an example where doing so can make your
+code hard to read:
+
+
+The names of functions that perform an action should include a verb:
+
+::
+
+    Yes: read_column_from_csv
+    No:  column_from_csv
+
 
 Type definitions
 ----------------
@@ -431,6 +473,8 @@ the type is a pointer. So, this is also not allowed::
 
     typedef *ctx_t ctx_ptr_t;
 
+
+
 ..
     Printing logging / debug messages
     ---------------------------------
@@ -446,39 +490,48 @@ the type is a pointer. So, this is also not allowed::
 Global variables
 ----------------
 
-The use of global variables is forbidden, except for defining compile-time *constants*. **There are no other exceptions**.
+Mutable global or shared variables can introduce bugs that are hard to detect and require careful design to ensure correctness. Unless a class you are taking specifically allows you to use global variables, the use of global variables is forbidden, except for defining compile-time *constants*.
 
-A compile-time constant is a global variable with a value that is known and set at compile-time and *never* changed during the runtime of the program (if the variable can be used to access other values, e.g., because it is a pointer, a ``struct``, etc., all the values reachable from the variable must also be known and set at compile-time). Such variables must have ``ALL_CAPS`` names, be declared as ``const`` and, if they are only going to be used in a single module, they must also be declared as ``static``. Please note that our definition excludes variables that are initialized when the program starts running, *even if the value of that variable won't change once it has been initialized*. If the value of the variable is not known before the program is running, it cannot be a global variable.
+A compile-time constant is a global variable with a value that is known and set at compile-time and *never*
+changed during the runtime of the program (if the variable can be used to access other values, e.g., because
+it is a pointer, a ``struct``, etc., all the values reachable from the variable must also be known and set
+at compile-time). Such variables must have ``ALL_CAPS`` names, be declared as ``const`` and, if they are only
+going to be used in a single module, they must also be declared as ``static``. Please note that our definition
+excludes variables that are initialized when the program starts running, *even if the value of that variable won't
+change once it has been initialized*. If the value of the variable is not known before the program is running, it
+cannot be a global variable.
 
-When writing a function, you must make sure that all the data the function is going to operate on is passed to the function via its parameters, and that all data the functions produces is returned via its return value (or through an input/output parameter). If, instead, you write a function that uses a global variable to convey information to/from the function (except when using a compile-time constant), you can expect some pretty hefty point deductions.
 
-For more details, see the Wikipedia entry on `Global Variables <https://en.wikipedia.org/wiki/Global_variable>`_, which also notes "They are usually considered bad practice".
+When writing a function, you must make sure that all the data the function is going to operate on is passed to the
+function via its parameters, and that all data the functions produces is returned via its return value (or through
+an input/output parameter). Writing a function that uses a global variable to convey information
+to/from the function (except when using a constant), will make your code hard to read and debug.
 
+For more details, see the Wikipedia entry on `Global Variables <https://en.wikipedia.org/wiki/Global_variable>`_,
+which also notes "They are usually considered bad practice".
 
 ``goto`` statements
 -------------------
 
 ``goto`` statements can *only* be used to perform error handling. See this blog post for more details on how to do error handling with ``goto``'s in C: `Using goto for error handling in C <http://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c>`_. That post describes an additional acceptable use case for ``goto``'s (breaking out of deeply-nested loops) and, while we will technically accept that use of ``goto``'s as well, none of your code should require such a level of loop nesting (or, rather, if you find yourself needing to use a ``goto`` in this way, you should reconsider whether you need to re-design your code or break it up into more functions to avoid so many nested loops in the same function).
 
-
 Avoid Magic Numbers
 -------------------
 
 Avoid sprinkling numbers that will have very little meaning to your
-reader throughout your code. For example:
+reader throughout your code. Instead, you should define constants
+(in ``ALL_CAPS``, as specified earlier) and use those instead.
 
-Yes:
+For example:
 
-::
+
+Yes::
 
     if (strlen(msg) > MAX_IRC_MSG_LEN)
 
-No:
-
-::
+No::
 
     if (strlen(msg) > 510)
-
 
 
 

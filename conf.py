@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'UChicago CS Developer Guide'
-copyright = '2020, Borja Sotomayor'
-author = 'Borja Sotomayor'
+project = 'UChicago CS Student Resource Guide'
+copyright = '2022, University of Chicago - Department of Computer Science'
+author = 'University of Chicago - Department of Computer Science'
 
 
 # -- General configuration ---------------------------------------------------
@@ -51,3 +51,8 @@ import sphinx_rtd_theme
 extensions.append("sphinx_rtd_theme")
 
 html_theme = "sphinx_rtd_theme"
+
+
+extensions.append("sphinx.ext.todo")
+
+todo_include_todos = False
