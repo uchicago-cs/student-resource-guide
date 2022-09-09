@@ -198,10 +198,11 @@ to your repository, with the following contents:
         return 1;
     }
 
-Make sure to add and commit the file::
+Make sure to add, commit, and push the file::
 
     git add echo.c
     git commit -m"Added echo.c"
+    git push
 
 
 Now, let’s create a new branch in your repository. The
@@ -251,7 +252,7 @@ add and commit this change::
     git add echo.c
     git commit -m"Updated author in echo.c"
 
-Now, let's push this change. We'll actually be prevented from doing so:
+Now, let's try to push this change. We'll actually be prevented from doing so:
 
 ::
 
@@ -451,7 +452,7 @@ Merge conflicts will also be shown on ``git status``:
 
     $ git status
     On branch main
-    Your branch is ahead of 'origin/main' by 2 commits.
+    Your branch is ahead of 'origin/main' by 1 commit.
       (use "git push" to publish your local commits)
 
     You have unmerged paths.
@@ -460,9 +461,10 @@ Merge conflicts will also be shown on ``git status``:
 
     Unmerged paths:
       (use "git add <file>..." to mark resolution)
-        both modified:   echo.c
+            both modified:   echo.c
 
     no changes added to commit (use "git add" and/or "git commit -a")
+
 
 
 If you open ``echo.c``, you will see something like this:
@@ -558,14 +560,15 @@ resolved, but has yet to be committed:
 
     $ git status
     On branch main
-    Your branch is ahead of 'origin/main' by 2 commits.
+    Your branch is ahead of 'origin/main' by 1 commit.
       (use "git push" to publish your local commits)
 
     All conflicts fixed but you are still merging.
       (use "git commit" to conclude merge)
 
     Changes to be committed:
-        modified:   echo.c
+            modified:   echo.c
+
 
 
 So, all we need to do is to run this command:
