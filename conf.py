@@ -52,6 +52,13 @@ extensions.append("sphinx_rtd_theme")
 
 html_theme = "sphinx_rtd_theme"
 
+html_context = {
+    "display_github": True,
+    "github_user": "uchicago-cs",
+    "github_repo": "student-resource-guide",
+    "github_version": "main",
+    "conf_py_path": "/"
+}
 
 extensions.append("sphinx.ext.todo")
 
