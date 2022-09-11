@@ -14,13 +14,19 @@ help:
 
 .PHONY: help Makefile
 
+_static/linux-tutorial-files.zip: tutorials/linux-tutorial-files/*
+	(cd tutorials; zip -r ../_static/linux-tutorial-files.zip linux-tutorial-files/;)
+
+tutorials/linux-tutorial-files/*:
+	@:
+
 # For the deploy target to work, a worktree must be created
 # in _build/html that tracks the gh-pages branch. You can do
 # so by running this from a freshly cloned version of the repo:
 #
 #   git worktree add -B gh-pages _build/html origin/gh-pages
 
-deploy:
+deploy: _static/linux-tutorial-files.zip
 	echo gitdir: $(shell pwd)/.git/worktrees/html > $(BUILDDIR)/html/.git
 	touch $(BUILDDIR)/html/.nojekyll
 	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git add -A .

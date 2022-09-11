@@ -301,7 +301,7 @@ will use in certain examples and exercises. To fetch these files,
 run the following commands::
 
     cd
-    wget -nv https://uchicago-cs.github.io/dev-guide/_static/linux-tutorial-files.zip
+    wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
     unzip linux-tutorial-files.zip
 
 After you run these commands, your home directory will contain a
@@ -492,7 +492,7 @@ Using a terminal editor
 
 List the files in the ``linux-tutorial-files`` directory. You should see the following::
 
-    backups hello.py  my_echo.py  my-input.txt  test.txt
+    backups  hello.c  hello.cpp  Hello.java  hello.py  my_echo.py  my-input.txt  test.txt
 
 Let's say we wanted to edit the file ``test.txt``. There are many different terminal
 editors we could use, but we will start with a simple and fairly intuitive one: ``nano``.
