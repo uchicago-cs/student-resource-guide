@@ -59,3 +59,11 @@ This guide is divided into four sections:
 
    teams.rst
    The Debugging Guide 🔗<https://uchicago-cs.github.io/debugging-guide/>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: About This Guide
+
+   Report an Issue <about/issue.rst>
+   Acknowledgements <about/acknowledgements.rst>
