@@ -19,5 +19,6 @@ contributed to this guide:
    * Tim Black
    * Gustav Larsson
    * Isha Mehrotra
+   * Hannah Morgan
    * Anne Rogers
    * Borja Sotomayor
