@@ -1,74 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Tutorial - Git Basics &mdash; UChicago CS Student Resource Guide  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tutorial - Advanced Git" href="git-advanced.html" />
     <link rel="prev" title="Tutorial - Advanced Linux" href="linux-advanced.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> UChicago CS Student Resource Guide
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
@@ -134,73 +83,32 @@
 <li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">UChicago CS Student Resource Guide</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Tutorial - Git Basics</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/tutorials/git-basics.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/git-basics.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="tutorial-git-basics">
-<span id="id1"></span><h1>Tutorial - Git Basics<a class="headerlink" href="#tutorial-git-basics" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>Tutorial - Git Basics<a class="headerlink" href="#tutorial-git-basics" title="Permalink to this heading"></a></h1>
 <p>In many of your CS classes, you will use a system called <strong>Git</strong>
 to manage the code you write in that class. In a nutshell,
 you can think of Git as a system to conveniently store your
@@ -228,7 +136,7 @@ to a lot of other features (please note that having the Student
 Developer Pack is not necessary for your UChicago classes; it’s just a nice benefit you
 get as a student)</p>
 <div class="section" id="where-should-you-do-this-tutorial">
-<h2>Where should you do this tutorial?<a class="headerlink" href="#where-should-you-do-this-tutorial" title="Permalink to this heading">¶</a></h2>
+<h2>Where should you do this tutorial?<a class="headerlink" href="#where-should-you-do-this-tutorial" title="Permalink to this heading"></a></h2>
 <p>Since you will often have to use Git on the CS department’s Linux
 environment, we strongly suggest you work
 through this tutorial on a <a class="reference internal" href="../environment/environment.html#software-environment"><span class="std std-ref">UChicago CS software environment</span></a>
@@ -248,7 +156,7 @@ should be enough. You will not need to use a full-featured code editor
 in this tutorial.</p>
 </div>
 <div class="section" id="setting-up-ssh-access">
-<h2>Setting up SSH access<a class="headerlink" href="#setting-up-ssh-access" title="Permalink to this heading">¶</a></h2>
+<h2>Setting up SSH access<a class="headerlink" href="#setting-up-ssh-access" title="Permalink to this heading"></a></h2>
 <p>Before we create a repository or do anything with it,
 we need to take a short
 detour to create an SSH key and upload it to GitHub, which will
@@ -262,7 +170,7 @@ However, if you want to access your repository from a different
 computer (e.g., your personal computer), you will have to
 create a new SSH key and upload it to GitHub.</p>
 <div class="section" id="creating-an-ssh-key">
-<h3>Creating an SSH Key<a class="headerlink" href="#creating-an-ssh-key" title="Permalink to this heading">¶</a></h3>
+<h3>Creating an SSH Key<a class="headerlink" href="#creating-an-ssh-key" title="Permalink to this heading"></a></h3>
 <p>When you log into the GitHub website, you use the username and
 password associated with your GitHub account. However, when using
 Git commands from the terminal, things are a bit different.
@@ -347,7 +255,7 @@ SSH key doesn’t have a password)</p>
 <p>This means your key was created correctly.</p>
 </div>
 <div class="section" id="uploading-your-ssh-key-to-github">
-<h3>Uploading your SSH key to GitHub<a class="headerlink" href="#uploading-your-ssh-key-to-github" title="Permalink to this heading">¶</a></h3>
+<h3>Uploading your SSH key to GitHub<a class="headerlink" href="#uploading-your-ssh-key-to-github" title="Permalink to this heading"></a></h3>
 <p>Now, we need to instruct GitHub to accept our SSH key. To do this, log into <a class="reference external" href="https://github.com/">https://github.com/</a>
 and go to your Settings page (by clicking on the top-right account icon, and then selecting “Settings”
 in the drop-down menu. Then, click on “SSH and GPG keys”.</p>
@@ -394,7 +302,7 @@ Please note that we may not be able to assist you with SSH issues on your own co
 </div>
 </div>
 <div class="section" id="creating-and-initializing-a-repository">
-<h2>Creating and initializing a repository<a class="headerlink" href="#creating-and-initializing-a-repository" title="Permalink to this heading">¶</a></h2>
+<h2>Creating and initializing a repository<a class="headerlink" href="#creating-and-initializing-a-repository" title="Permalink to this heading"></a></h2>
 <p>To work through this tutorial, you will need to create a repository on
 GitHub. To do this, log into GitHub, and click on the “+” icon on the top-right
 of the page, and then on “New Repository”:</p>
@@ -454,7 +362,7 @@ then clicking on “Your profile” or “Your repositories”.</p>
 </div>
 </div>
 <div class="section" id="creating-a-commit">
-<h2>Creating a commit<a class="headerlink" href="#creating-a-commit" title="Permalink to this heading">¶</a></h2>
+<h2>Creating a commit<a class="headerlink" href="#creating-a-commit" title="Permalink to this heading"></a></h2>
 <p>If you make changes to your repository, the way to store those changes
 (and the updated versions of the modified files) is by creating a
 <em>commit</em>. So, let’s start by making some changes:</p>
@@ -509,7 +417,7 @@ server. Simply run the following command from the Linux command-line:</p>
 <span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">279</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">279.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
 <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">To</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="n">uchicago</span><span class="o">-</span><span class="n">cs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">git</span>
-   <span class="mi">392555</span><span class="n">e</span><span class="o">.</span><span class="mf">.0</span><span class="n">c85752</span>  <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
+   <span class="mi">392555</span><span class="n">e</span><span class="o">..</span><span class="mi">0</span><span class="n">c85752</span>  <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
 </pre></div>
 </div>
 <p>You can ignore most of those messages. The important thing is to not see
@@ -534,7 +442,7 @@ to add your files, create a commit, and push the most recent commit to
 the server.</p>
 </div>
 <div class="section" id="git-add-revisited-and-git-status">
-<h2><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> revisited and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code><a class="headerlink" href="#git-add-revisited-and-git-status" title="Permalink to this heading">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> revisited and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code><a class="headerlink" href="#git-add-revisited-and-git-status" title="Permalink to this heading"></a></h2>
 <p>Let’s make a further change to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>: Add a line with the text
 <code class="docutils literal notranslate"><span class="pre">UChicago</span> <span class="pre">CS</span> <span class="pre">Git</span> <span class="pre">Tutorial</span></code>.</p>
 <p>So, at this point, we have a file we have already committed
@@ -758,7 +666,7 @@ you created (and, additionally, the above output also tells us that all
 our commits have also been uploaded to GitHub).</p>
 </div>
 <div class="section" id="working-from-multiple-locations">
-<h2>Working from multiple locations<a class="headerlink" href="#working-from-multiple-locations" title="Permalink to this heading">¶</a></h2>
+<h2>Working from multiple locations<a class="headerlink" href="#working-from-multiple-locations" title="Permalink to this heading"></a></h2>
 <p>So far, you have a local repository in your CS home directory, which you
 have been uploading to GitHub using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command. However,
 if you work from multiple locations (e.g., on a CS machine but also from
@@ -813,8 +721,8 @@ repository. You can do this by running this command:</p>
 <span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
 <span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">312</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">20.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
 <span class="n">From</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="n">uchicago</span><span class="o">-</span><span class="n">cs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">git</span>
-   <span class="n">e3f9ef1</span><span class="o">.</span><span class="mf">.5716877</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
-<span class="n">Updating</span> <span class="n">e3f9ef1</span><span class="o">.</span><span class="mf">.5716877</span>
+   <span class="n">e3f9ef1</span><span class="o">..</span><span class="mi">5716877</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+<span class="n">Updating</span> <span class="n">e3f9ef1</span><span class="o">..</span><span class="mi">5716877</span>
 <span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
  <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="mi">3</span> <span class="o">++-</span>
  <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
@@ -832,7 +740,7 @@ their own local repository, and it will become easier for some
 developers’ code to diverge from others’.</p>
 </div>
 <div class="section" id="discarding-changes-and-unstaging">
-<h2>Discarding changes and unstaging<a class="headerlink" href="#discarding-changes-and-unstaging" title="Permalink to this heading">¶</a></h2>
+<h2>Discarding changes and unstaging<a class="headerlink" href="#discarding-changes-and-unstaging" title="Permalink to this heading"></a></h2>
 <p>One of the benefits of using a version control system is that it is very
 easy to inspect the history of changes to a given file, as well as to
 undo changes we did not intend to make.</p>
@@ -927,7 +835,7 @@ our changes have been committed and pushed:</p>
 </div>
 </div>
 <div class="section" id="looking-at-the-commit-log">
-<h2>Looking at the commit log<a class="headerlink" href="#looking-at-the-commit-log" title="Permalink to this heading">¶</a></h2>
+<h2>Looking at the commit log<a class="headerlink" href="#looking-at-the-commit-log" title="Permalink to this heading"></a></h2>
 <p>Once you have made multiple commits, you can see these commits, their
 dates, commit messages, author, etc. by typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>. This command
 will open a scrollable interface (using the up/down arrow keys) that you
@@ -964,7 +872,7 @@ this:</p>
 that same prefix.</p>
 </div>
 <div class="section" id="acknowledgments">
-<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">¶</a></h2>
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading"></a></h2>
 <p>Parts of this tutorial are based on a Git lab originally written for CMSC 12100
 by Prof. Anne Rogers, and edited by numerous TAs over the years.</p>
 </div>
@@ -972,50 +880,33 @@ by Prof. Anne Rogers, and edited by numerous TAs over the years.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="git-advanced.html" class="btn btn-neutral float-right" title="Tutorial - Advanced Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="linux-advanced.html" class="btn btn-neutral float-left" title="Tutorial - Advanced Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-advanced.html" class="btn btn-neutral float-right" title="Tutorial - Advanced Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, University of Chicago - Department of Computer Science.
-
-    </p>
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
