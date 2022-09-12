@@ -19,13 +19,12 @@ a few tips on how to get the most out of office hours.
   question to the one you want to ask. In attending office hours,
   you may get an answer to your question without having to ask it yourself.
 - Prepare questions ahead of time. Time in office hours can be
-  limited–particularly near exams–and so knowing what you need help
+  limited–particularly near assignments deadlines and exams–and so knowing what you need help
   with beforehand will let you make the most of your time.
 - Make a list of known unknowns. Along the lines of the previous point,
   knowing what you do not fully understand is a time saver.
 - When formulating your questions try to make them specific and clear.
-  The course staff cannot help you if they do not know what you are
-  talking about.
+  The course staff cannot help you if they do not understand your question.
 - On days when there are not a lot of pressing questions during office
   hours, you can just talk to the course staff and faculty about what you
   find interesting about the material. It can be outside the scope of what
