@@ -47,7 +47,7 @@ This guide is divided into four sections:
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Getting Help
+   :caption: Getting Help in Your Classes
 
    Asking Questions <getting-help/questions.rst>
    Office Hours <getting-help/office-hours.rst>
