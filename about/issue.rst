@@ -5,6 +5,14 @@ Reporting an Issue
 
 If you spot an issue while reading this guide, such as a typo or an example that doesn't work,
 you can report it to us using **GitHub Issues**.
+
+.. note::
+
+   In general, you should only report an issue if you spot something in the guide that
+   needs to be fixed or added. If you need assistance with any of the instructions in the
+   guide *do not file an issue using GitHub Issues*. Instead, please use the support mechanisms
+   described in our :ref:`Getting Help <about_help>` page.
+
 To do so, go to our GitHub repository (https://github.com/uchicago-cs/student-resource-guide/)
 and click on the "Issues" tab (or use this `direct link <https://github.com/uchicago-cs/student-resource-guide/issues>`__).
 

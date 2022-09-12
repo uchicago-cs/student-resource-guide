@@ -14,6 +14,8 @@ This guide is divided into four sections:
 - **Tutorials**: A couple of useful tutorials covering certain tools and skills you may need in your classes.
 - **Style Guides**: Style guides you may be required to follow in your programming assignments.
 - **Other Resources**: Other useful resources.
+- **About This Guide**: Information about the guide itself, including how to get assistance or suggest
+  changes/improvements.
 
 .. toctree::
    :maxdepth: 2
@@ -65,5 +67,6 @@ This guide is divided into four sections:
    :hidden:
    :caption: About This Guide
 
+   Getting Help <about/getting-help.rst>
    Report an Issue <about/issue.rst>
    Acknowledgements <about/acknowledgements.rst>
