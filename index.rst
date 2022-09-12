@@ -47,6 +47,14 @@ This guide is divided into four sections:
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :caption: Getting Help
+
+   Asking Questions <getting-help/questions.rst>
+   Office Hours <getting-help/office-hours.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
    :caption: Style Guides
 
    C <style_guide/c.rst>
