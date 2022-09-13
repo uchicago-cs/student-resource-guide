@@ -1,7 +1,7 @@
 UChicago CS Student Resource Guide
 ==================================
 
-This resource guide is intended for students working on programming assignments and projects in UChicago CS classes.
+This resource guide is intended for students taking Computer Science classes at the University of Chicago.
 Please note that it is not meant to be a normative guide for all CS classes (unless your instructor has
 explicitly pointed you to this guide).
 
