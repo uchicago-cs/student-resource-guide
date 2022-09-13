@@ -61,9 +61,13 @@ html_context = {
 }
 
 html_theme_options = {
-    'analytics_id': 'G-MRE434GGPY',
     "prev_next_buttons_location": "both"
 }
+
+html_js_files = [
+    'https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY',
+    'analytics.js',
+]
 
 html_title = 'UChicago CS Student Resource Guide'
 
