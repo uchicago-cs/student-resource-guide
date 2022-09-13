@@ -60,6 +60,8 @@ html_context = {
     "conf_py_path": "/"
 }
 
+html_title = 'UChicago CS Student Resource Guide'
+
 extensions.append("sphinx.ext.todo")
 
 todo_include_todos = False
