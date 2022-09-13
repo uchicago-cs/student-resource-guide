@@ -5,7 +5,7 @@ This resource guide is intended for students taking Computer Science classes at 
 Please note that it is not meant to be a normative guide for all CS classes (unless your instructor has
 explicitly pointed you to this guide).
 
-This guide is divided into four sections:
+This guide is divided into the following sections:
 
 - **Software Environment**: Information about the Linux software environment provided by the CS department,
   and which you will be using in most of your classes. This section includes instructions on how to access
