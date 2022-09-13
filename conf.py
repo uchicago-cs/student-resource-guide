@@ -61,6 +61,7 @@ html_context = {
 }
 
 html_theme_options = {
+    'analytics_id': 'G-MRE434GGPY',
     "prev_next_buttons_location": "both"
 }
 
