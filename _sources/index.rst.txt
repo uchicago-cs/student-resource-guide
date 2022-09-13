@@ -12,6 +12,7 @@ This guide is divided into four sections:
   this environment, including when working off-campus.
 - **Visual Studio Code**: Instructions on how to use Visual Studio Code, a popular code editor.
 - **Tutorials**: A couple of useful tutorials covering certain tools and skills you may need in your classes.
+- **Getting Help in Your Classes**: Tips and suggestions on how to get help in your classes.
 - **Style Guides**: Style guides you may be required to follow in your programming assignments.
 - **Other Resources**: Other useful resources.
 - **About This Guide**: Information about the guide itself, including how to get assistance or suggest
