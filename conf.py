@@ -57,7 +57,11 @@ html_context = {
     "github_user": "uchicago-cs",
     "github_repo": "student-resource-guide",
     "github_version": "main",
-    "conf_py_path": "/"
+    "conf_py_path": "/",
+}
+
+html_theme_options = {
+    "prev_next_buttons_location": "both"
 }
 
 html_title = 'UChicago CS Student Resource Guide'
