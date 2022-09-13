@@ -3,6 +3,14 @@
 Asking Questions
 ================
 
+.. note::
+
+   This page provides some useful guidelines on how to ask questions
+   in your classes (and more specifically on an online discussion board).
+   If you have questions about this guide (e.g., if you need help working
+   through any of the instructions provided in this guide), please see the
+   :ref:`Getting Help <about_help>` page in the "About This Guide" section.
+
 As you work through your coursework, many of you will probably have
 questions or will encounter issues that you are not sure how to
 handle. Your course staff will typically set up some form of online
