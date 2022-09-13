@@ -59,8 +59,8 @@ This guide is divided into four sections:
    :hidden:
    :caption: Style Guides
 
-   C <style_guide/c.rst>
-   Python <style_guide/python.rst>
+   C <style-guide/c.rst>
+   Python <style-guide/python.rst>
 
 .. toctree::
    :maxdepth: 2
