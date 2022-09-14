@@ -414,39 +414,58 @@ block comments instead::
 Naming Conventions
 ------------------
 
-Variable and function names should use the `snake_case <https://en.wikipedia.org/wiki/Snake_case>`_
-naming convention (i.e., ``lowercase_with_underscore``). For example:
-
-::
+- Variable and function names should use the `snake_case <https://en.wikipedia.org/wiki/Snake_case>`_
+  naming convention (i.e., ``lowercase_with_underscore``). For example::
 
           sum_of_squares
           print_happy_birthday
           total_apples
 
-
-
-Constants names should use snake_case with all caps:
-
-::
+- Constants names should use snake_case with all caps::
 
     PI
     MAX_CLIENTS
     MAX_IRC_MSG_LEN
 
 
-Use descriptive names for parameter names, variables, and function
-names.  Use short names for local
-variables.  In general, the further away a variable will be used, the more
-descriptive the name needs to be.
+- Use descriptive names for parameter names, variables, and function
+  names.  Use short names for local
+  variables.  In general, the further away a variable will be used, the more
+  descriptive the name needs to be.
 
-However, you should not assume from the above that loops should *always* use
-one-letter variable names. Here is an example where doing so can make your
-code hard to read:
+- However, you should not assume from the above that loops should *always* use
+  one-letter variable names. Here is an example where doing so can make your
+  code hard to read:
 
+  No::
 
-The names of functions that perform an action should include a verb:
+        for (int i = 0; i < num_employees; i++)
+        {
+            // ...
+            // 10 lines of code
+            // ...
+            float y = m / 60;
+            // ...
+            // 50 lines of code
+            // ...
+            data[i] += y
+        }
 
-::
+  Yes::
+
+        for (int employee_id = 0; employee_id < num_employees; employee_id++)
+        {
+            // ...
+            // 10 lines of code
+            // ...
+            float hours_worked = m / 60;
+            // ...
+            // 50 lines of code
+            // ...
+            data[employee_id] += hours_worked;
+        }
+
+- The names of functions that perform an action should include a verb::
 
     Yes: read_column_from_csv
     No:  column_from_csv
