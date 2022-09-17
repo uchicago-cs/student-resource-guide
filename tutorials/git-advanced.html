@@ -285,15 +285,15 @@ to your repository, with the following contents:</p>
 </pre></div>
 </div>
 <p>Make sure to add, commit, and push the file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">echo</span><span class="o">.</span><span class="n">c</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="s2">&quot;Added echo.c&quot;</span>
-<span class="n">git</span> <span class="n">push</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add echo.c
+$ git commit -m&quot;Added echo.c&quot;
+$ git push
 </pre></div>
 </div>
 <p>Now, let’s create a new branch in your repository. The
 branch will be called <code class="docutils literal notranslate"><span class="pre">add-author</span></code> and you can create it by running
 this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">add</span><span class="o">-</span><span class="n">author</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b add-author
 </pre></div>
 </div>
 <p>If you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>, you can see the list of branches in the
@@ -326,8 +326,8 @@ $ git branch
 <p>Now, let’s add a commit to the <code class="docutils literal notranslate"><span class="pre">add-author</span></code> branch. Simply edit the
 <code class="docutils literal notranslate"><span class="pre">echo.c</span></code> file and replace <code class="docutils literal notranslate"><span class="pre">[AUTHOR</span> <span class="pre">GOES</span> <span class="pre">HERE]</span></code> with your name. Let’s
 add and commit this change:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">echo</span><span class="o">.</span><span class="n">c</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="s2">&quot;Updated author in echo.c&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add echo.c
+$ git commit -m&quot;Updated author in echo.c&quot;
 </pre></div>
 </div>
 <p>Now, let’s try to push this change. We’ll actually be prevented from doing so:</p>
@@ -389,12 +389,12 @@ example, in this diagram, commit <code class="docutils literal notranslate"><spa
 </div>
 <p>Now, let’s say we want to merge the changes from our <code class="docutils literal notranslate"><span class="pre">add-author</span></code> branch into
 the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. We first need to switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout main
 </pre></div>
 </div>
 <p>Then, we use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> to specify that we want to merge
 <code class="docutils literal notranslate"><span class="pre">add-author</span></code> into the current branch (<code class="docutils literal notranslate"><span class="pre">main</span></code>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="n">add</span><span class="o">-</span><span class="n">author</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git merge add-author
 </pre></div>
 </div>
 <p>If the merge works, you should see the following:</p>
@@ -434,7 +434,7 @@ be <em>fast-forwarded</em>, because the commit in <code class="docutils literal 
 that commit and add it to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <p>Before continuing, make sure to push the changes we just
 made to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push
 </pre></div>
 </div>
 </div>
@@ -443,7 +443,7 @@ made to the <code class="docutils literal notranslate"><span class="pre">main</s
 <p>Things get a bit trickier if we try to merge branches where
 the code has diverged in some way. For example, let’s create
 a new branch called <code class="docutils literal notranslate"><span class="pre">update-buffer-size</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">update</span><span class="o">-</span><span class="n">buffer</span><span class="o">-</span><span class="n">size</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b update-buffer-size
 </pre></div>
 </div>
 <p>Now, update <code class="docutils literal notranslate"><span class="pre">echo.c</span></code> so the size of the <code class="docutils literal notranslate"><span class="pre">input</span></code> array is <code class="docutils literal notranslate"><span class="pre">1000</span></code>
@@ -466,7 +466,7 @@ Branch &#39;update-buffer-size&#39; set up to track remote branch &#39;update-bu
 </pre></div>
 </div>
 <p>Now, let’s switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout main
 </pre></div>
 </div>
 <p>The buffer size in <code class="docutils literal notranslate"><span class="pre">echo.c</span></code> will still be 500. Let’s make a change
@@ -581,7 +581,7 @@ may look at this and realize that the buffer size should actually be
 </div>
 <p>Now, we need to tell Git that we’ve resolved the merge conflict. We do
 this by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">echo</span><span class="o">.</span><span class="n">c</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add echo.c
 </pre></div>
 </div>
 <p>Note how now <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> recognizes that the merge conflict has been
@@ -599,7 +599,7 @@ Changes to be committed:
 </pre></div>
 </div>
 <p>So, all we need to do is to run this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit
 </pre></div>
 </div>
 <p>This will open up an editor with a default commit message like

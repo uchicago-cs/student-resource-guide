@@ -15,8 +15,8 @@ with the topics covered in that tutorial. If you did not work through the Linux 
 make sure you download the files from the Linux Basics tutorial, as we will be using them
 in this tutorial as well. You can do so like this::
 
-    wget -nv https://uchicago-cs.github.io/dev-guide/_static/linux-tutorial-files.zip
-    unzip linux-tutorial-files.zip
+    $ wget -nv https://uchicago-cs.github.io/dev-guide/_static/linux-tutorial-files.zip
+    $ unzip linux-tutorial-files.zip
 
 This will create a ``linux-tutorial-files`` directory that has some files
 for us to play with.

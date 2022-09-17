@@ -349,7 +349,7 @@ In the case of <code class="docutils literal notranslate"><span class="pre">&lt;
 a file or directory.  More about path-names later.)  For example if we want to
 change to the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory, we type the following in the
 terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Desktop</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>username@computer:~$ cd Desktop
 </pre></div>
 </div>
 <p>Here is an example of changing to the desktop directory in the terminal.
@@ -461,9 +461,9 @@ mind, though, that the prompt shows your current working directory.</p>
 <p>For the remainder of this tutorial, we will need a series of files that you
 will use in certain examples and exercises. To fetch these files,
 run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
-<span class="n">wget</span> <span class="o">-</span><span class="n">nv</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">uchicago</span><span class="o">-</span><span class="n">cs</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">student</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">guide</span><span class="o">/</span><span class="n">_static</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">tutorial</span><span class="o">-</span><span class="n">files</span><span class="o">.</span><span class="n">zip</span>
-<span class="n">unzip</span> <span class="n">linux</span><span class="o">-</span><span class="n">tutorial</span><span class="o">-</span><span class="n">files</span><span class="o">.</span><span class="n">zip</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
+$ unzip linux-tutorial-files.zip
 </pre></div>
 </div>
 <p>After you run these commands, your home directory will contain a
@@ -607,12 +607,12 @@ treated as a comment and is ignored.</p>
 </pre></div>
 </div>
 <p>So in order to get the man page for <code class="docutils literal notranslate"><span class="pre">ls</span></code>, you would type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">ls</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man ls
 </pre></div>
 </div>
 <p>This command displays a man page that gives information on the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command, including a description of the command, a list of the flags it supports, instructions on how to use it, and other information.</p>
 <p>Each man page has a description. The <code class="docutils literal notranslate"><span class="pre">-k</span></code> flag for <code class="docutils literal notranslate"><span class="pre">man</span></code> allows you to search these descriptions using a keyword. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="o">-</span><span class="n">k</span> <span class="n">printf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man -k printf
 </pre></div>
 </div>
 <p>This searches all the descriptions for the keyword <code class="docutils literal notranslate"><span class="pre">printf</span></code> and prints the names of the man pages with matches.</p>
@@ -640,7 +640,7 @@ These editors can be particularly useful if you <em>only</em> have access to a t
 <p>Let’s say we wanted to edit the file <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>. There are many different terminal
 editors we could use, but we will start with a simple and fairly intuitive one: <code class="docutils literal notranslate"><span class="pre">nano</span></code>.
 To edit the file, run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano test.txt
 </pre></div>
 </div>
 <p>This will open the <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> file in the nano editor, which will look something like this:</p>
@@ -677,7 +677,7 @@ you can try out <a class="reference external" href="https://code.visualstudio.co
 editor looks like.</p>
 <p>You can open a specific file, say <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, using the <code class="docutils literal notranslate"><span class="pre">code</span></code>
 command from the Linux command-line by typing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">code</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ code hello.py
 </pre></div>
 </div>
 <p>When you run this command, you will get a new window that looks like this:</p>
@@ -740,7 +740,7 @@ and running the program again. You should now see the updated message.</p>
 <p>C is a <em>compiled</em> language, which means that we first need to compile our program
 to produce an executable file. For example, we can compile our <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> program
 like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="n">hello</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">hello</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gcc hello.c -o hello
 </pre></div>
 </div>
 <p>We are using the <code class="docutils literal notranslate"><span class="pre">gcc</span></code> compiler, but some classes may use the <code class="docutils literal notranslate"><span class="pre">clang</span></code> compiler.
@@ -772,7 +772,7 @@ Hello, world!
 doesn’t produce an executable in the same way that the C/C++ compiler
 does (we’ll see why momentarily).</p>
 <p>To compile a Java file, you need to run this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">javac</span> <span class="n">Hello</span><span class="o">.</span><span class="n">java</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ javac Hello.java
 </pre></div>
 </div>
 <p>Unlike the C/C++ example we just saw, this will actually produce a

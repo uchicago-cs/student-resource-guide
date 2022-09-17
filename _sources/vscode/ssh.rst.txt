@@ -83,7 +83,7 @@ Initial setup
 
 You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you've already done this part, you can continue to "Connecting".
 
-First, of all, you will need to install an extension that will allow VS Code
+First, you will need to install an extension that will allow VS Code
 to use SSH. In the left sidebar of VS Code, there is an icon
 consisting of four squares, with one square separated off from the
 other three. This is the icon for VSCode extensions. Click it

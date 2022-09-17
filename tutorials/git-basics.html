@@ -201,6 +201,7 @@ we can just think of them as extra-secure passwords)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen
 </pre></div>
 </div>
+<p>(Recall that we use <code class="docutils literal notranslate"><span class="pre">$</span></code> to signify the prompt;  it is not part of the command.)</p>
 <p>You will see the following prompt:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">rsa</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
 <span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">):</span>
@@ -293,7 +294,7 @@ character to the last character, and then pressing <code class="docutils literal
 <p>Then, paste the key into the “Key” field on the GitHub page. Then click on the green “Add SSH Key”
 button.</p>
 <p>To verify that you correctly uploaded the key, try running the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh -T git@github.com
 </pre></div>
 </div>
 <p>You may see a message like this:</p>
@@ -338,9 +339,9 @@ follow these steps:</p>
 and location of this directory is not important, so if you already
 have a preferred directory structure, you’re welcome to use it.
 Otherwise, we suggest you simply do this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span>
-<span class="n">mkdir</span> <span class="n">git</span><span class="o">-</span><span class="n">tutorial</span>
-<span class="n">cd</span> <span class="n">git</span><span class="o">-</span><span class="n">tutorial</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ mkdir git-tutorial
+$ cd git-tutorial
 </pre></div>
 </div>
 </li>
@@ -391,14 +392,14 @@ what files you want to include in your commit. Let’s say we want to
 create a commit that only includes the updated <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file. We
 can specify this operation explicitly using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command from
 the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add README.md
 </pre></div>
 </div>
 <p>This command will not print any output if it is successful.</p>
 <p>To create the commit, use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command. This command will
 take all the files you added with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> and will bundle them into
 a commit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Updated README.md&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m &quot;Updated README.md&quot;
 </pre></div>
 </div>
 <p>The text after the <code class="docutils literal notranslate"><span class="pre">-m</span></code> is a short message that describes the changes
@@ -424,7 +425,7 @@ it to GitHub yet. Forgetting this step is actually a very common
 pitfall, so don’t forget to upload your changes. You must use the
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command for your changes to be uploaded to the Git
 server. Simply run the following command from the Linux command-line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push
 </pre></div>
 </div>
 <p>This should output something like this:</p>
@@ -466,7 +467,7 @@ the server.</p>
 the version on GitHub. Furthermore, earlier we created a <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>
 file. Is it a part of our repository? You can use the following command
 to ask Git for a summary of the files it is tracking:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
 </pre></div>
 </div>
 <p>This command should output something like this:</p>
@@ -519,7 +520,7 @@ repository. Other people should be able to generate their own versions,
 if necessary.</p>
 </div>
 <p>So, let’s go ahead and add <code class="docutils literal notranslate"><span class="pre">README.md</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add README.md
 </pre></div>
 </div>
 <p>And re-run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>. You should see something like this:</p>
@@ -548,7 +549,7 @@ Git you have installed, the message under <code class="docutils literal notransl
 file to your repository, it also staged it into the next commit (which,
 remember, won’t happen until you actually run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>).</p>
 <p>If we now add <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add test.txt
 </pre></div>
 </div>
 <p>The output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> should now look like this:</p>
@@ -563,7 +564,7 @@ remember, won’t happen until you actually run <code class="docutils literal no
 </div>
 <p>Now, we are going to create a commit with these changes. Notice how we
 are not going to use the <code class="docutils literal notranslate"><span class="pre">-m</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit
 </pre></div>
 </div>
 <p>When you omit <code class="docutils literal notranslate"><span class="pre">-m</span></code>, Git will open a terminal text editor where you can
@@ -627,7 +628,7 @@ following:</p>
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">README.md</span> <span class="pre">test.txt</span></code>, but this can get cumbersome if we want to
 add a lot of files. Fortunately, we can also do
 this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">u</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add -u
 </pre></div>
 </div>
 <p>This command will add every file that Git is tracking, and will ignore untracked
@@ -636,7 +637,7 @@ files. There are a few other shortcuts for adding multiple files, like
 since they can result in adding files you did not intend to add to your
 repository.</p>
 <p>So, if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span></code> and create a commit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;A few more changes&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m &quot;A few more changes&quot;
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will now show this:</p>
@@ -689,7 +690,7 @@ if you work from multiple locations (e.g., on a CS machine but also from
 your laptop), you will need to be able to create a local repository in
 those locations too. You can do this by running the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>
 command (don’t run this command just yet):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="n">uchicago</span><span class="o">-</span><span class="n">cs</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 </pre></div>
 </div>
 <p>This will create a local repository that “clones” the version of the
@@ -697,9 +698,9 @@ repository that is currently stored on GitHub.
 For the purposes of this tutorial, we’ll create this second copy in a
 separate directory of the same machine where you’ve been running Git
 commands so far. Open a second terminal window, and run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir -p /tmp/$USER/git-tutorial
-cd /tmp/$USER/git-tutorial
-git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir -p /tmp/$USER/git-tutorial
+$ cd /tmp/$USER/git-tutorial
+$ git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 </pre></div>
 </div>
 <p>Make sure to replace <code class="docutils literal notranslate"><span class="pre">GITHUB_USERNAME</span></code> with your GitHub username!</p>
@@ -716,8 +717,8 @@ refer to as your <em>temp</em> repository.</p>
 <p>Now, switch to the window that is open to your home repository, add a
 line to <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> with the text <code class="docutils literal notranslate"><span class="pre">One</span> <span class="pre">more</span> <span class="pre">change!</span></code>. Create a
 commit for that change:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="s2">&quot;Adding one more change&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add test.txt
+$ git commit -m&quot;Adding one more change&quot;
 </pre></div>
 </div>
 <p>And push it to GitHub (you should know how to
@@ -727,7 +728,7 @@ you’re unsure of how to proceed).</p>
 if that change appears in the <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> file. It will not, because
 you have not yet downloaded the latest commits from the
 repository. You can do this by running this command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git pull
 </pre></div>
 </div>
 <p>This should output something like this:</p>
@@ -775,14 +776,14 @@ and not in the temp repository you created earlier.</p>
 </div>
 <p>If we want to discard the changes we made to <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>, all we have
 to do is follow the helpful advice provided by the above output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">restore</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git restore test.txt
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In older versions of Git, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> may refer to the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command.
 In that case, run this command instead:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -- test.txt
 </pre></div>
 </div>
 </div>
@@ -804,14 +805,14 @@ commit it just yet. <code class="docutils literal notranslate"><span class="pre"
 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, but not to <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>. However, we’ve already told git
 that we want to include <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> in the commit. Fortunately, we can
 “un-include” it (or “unstage” it, in Git lingo) by running this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">restore</span> <span class="o">--</span><span class="n">staged</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git restore --staged test.txt
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In older versions of Git, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> may refer to the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command.
 In that case, run this command instead:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="n">HEAD</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git reset HEAD test.txt
 </pre></div>
 </div>
 </div>
@@ -830,16 +831,16 @@ In that case, run this command instead:</p>
 </pre></div>
 </div>
 <p>Go ahead and commit this change:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="s2">&quot;Our last change?&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m&quot;Our last change?&quot;
 </pre></div>
 </div>
 <p>The commit will now include only <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
 <p>We’re nearing the end of the first part of the tutorial so, before
 continuing to the second part of the tutorial, let’s make sure all
 our changes have been committed and pushed:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">u</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span><span class="s2">&quot;Wrapping up first part of the tutorial&quot;</span>
-<span class="n">git</span> <span class="n">push</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add -u
+$ git commit -m&quot;Wrapping up first part of the tutorial&quot;
+$ git push
 </pre></div>
 </div>
 <p>Before continuing, make sure <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows this:</p>
@@ -867,7 +868,7 @@ terminal, without having to open a browser.</p>
 <p>This is a unique identifier that we can use to refer to that commit
 elsewhere. For example, choose any commit from the commit log and run
 the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">show</span> <span class="n">COMMIT_SHA</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show COMMIT_SHA
 </pre></div>
 </div>
 <p>Make sure to replace <code class="docutils literal notranslate"><span class="pre">COMMIT_SHA</span></code> with a commit SHA that appears in
@@ -881,7 +882,7 @@ denotes a line that was removed.</p>
 just write the first few characters of the commit SHA. For example, for
 commit <code class="docutils literal notranslate"><span class="pre">9119c6ffcebc2e3540d587180236aaf1222ee63c</span></code> we could write just
 this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">show</span> <span class="mi">9119</span><span class="n">c6f</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show 9119c6f
 </pre></div>
 </div>
 <p>Git will only complain if there is more than one commit that starts with

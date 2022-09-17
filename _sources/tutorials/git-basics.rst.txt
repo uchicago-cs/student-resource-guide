@@ -92,6 +92,8 @@ To create an SSH key, run the following command from the terminal::
 
     $ ssh-keygen
 
+(Recall that we use ``$`` to signify the prompt;  it is not part of the command.)
+
 You will see the following prompt::
 
     Generating public/private rsa key pair.
@@ -190,7 +192,7 @@ button.
 
 To verify that you correctly uploaded the key, try running the following command::
 
-    ssh -T git@github.com
+    $ ssh -T git@github.com
 
 You may see a message like this::
 
@@ -247,9 +249,9 @@ follow these steps:
 
    ::
 
-      cd
-      mkdir git-tutorial
-      cd git-tutorial
+      $ cd
+      $ mkdir git-tutorial
+      $ cd git-tutorial
 
 
 -  Inside that folder, create a file called ``README.md`` and add your
@@ -308,7 +310,7 @@ the terminal:
 
 ::
 
-   git add README.md
+   $ git add README.md
 
 This command will not print any output if it is successful.
 
@@ -318,7 +320,7 @@ a commit:
 
 ::
 
-   git commit -m "Updated README.md"
+   $ git commit -m "Updated README.md"
 
 The text after the ``-m`` is a short message that describes the changes
 you have made since your last commit. Common examples of commit messages
@@ -349,7 +351,7 @@ server. Simply run the following command from the Linux command-line:
 
 ::
 
-   git push
+   $ git push
 
 This should output something like this:
 
@@ -399,7 +401,7 @@ to ask Git for a summary of the files it is tracking:
 
 ::
 
-   git status
+   $ git status
 
 This command should output something like this:
 
@@ -457,7 +459,7 @@ So, let’s go ahead and add ``README.md``:
 
 ::
 
-   git add README.md
+   $ git add README.md
 
 And re-run ``git status``. You should see something like this:
 
@@ -491,7 +493,7 @@ If we now add ``test.txt``:
 
 ::
 
-   git add test.txt
+   $ git add test.txt
 
 The output of ``git status`` should now look like this:
 
@@ -510,7 +512,7 @@ are not going to use the ``-m`` parameter to ``git commit``:
 
 ::
 
-   git commit
+   $ git commit
 
 When you omit ``-m``, Git will open a terminal text editor where you can
 write your commit message, including multi-line commit messages. By
@@ -590,7 +592,7 @@ this:
 
 ::
 
-   git add -u
+   $ git add -u
 
 This command will add every file that Git is tracking, and will ignore untracked
 files. There are a few other shortcuts for adding multiple files, like
@@ -602,7 +604,7 @@ So, if you run ``git add -u`` and create a commit:
 
 ::
 
-   git commit -m "A few more changes"
+   $ git commit -m "A few more changes"
 
 ``git status`` will now show this:
 
@@ -668,7 +670,7 @@ command (don’t run this command just yet):
 
 ::
 
-   git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
+   $ git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 
 This will create a local repository that “clones” the version of the
 repository that is currently stored on GitHub.
@@ -678,9 +680,9 @@ commands so far. Open a second terminal window, and run the following:
 
 ::
 
-   mkdir -p /tmp/$USER/git-tutorial
-   cd /tmp/$USER/git-tutorial
-   git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
+   $ mkdir -p /tmp/$USER/git-tutorial
+   $ cd /tmp/$USER/git-tutorial
+   $ git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
 
 Make sure to replace ``GITHUB_USERNAME`` with your GitHub username!
 
@@ -701,8 +703,8 @@ Now, switch to the window that is open to your home repository, add a
 line to ``test.txt`` with the text ``One more change!``. Create a
 commit for that change::
 
-    git add test.txt
-    git commit -m"Adding one more change"
+    $ git add test.txt
+    $ git commit -m"Adding one more change"
 
 And push it to GitHub (you should know how to
 do this by now, but make sure to ask for help if
@@ -715,7 +717,7 @@ repository. You can do this by running this command:
 
 ::
 
-   git pull
+   $ git pull
 
 This should output something like this:
 
@@ -774,14 +776,14 @@ to do is follow the helpful advice provided by the above output:
 
 ::
 
-   git restore test.txt
+   $ git restore test.txt
 
 .. note::
 
    In older versions of Git, ``git status`` may refer to the ``git checkout`` command.
    In that case, run this command instead::
 
-        git checkout -- test.txt
+        $ git checkout -- test.txt
 
 If you open ``test.txt``, you’ll see that its contents have been
 magically restored!
@@ -808,14 +810,14 @@ that we want to include ``test.txt`` in the commit. Fortunately, we can
 
 ::
 
-   git restore --staged test.txt
+   $ git restore --staged test.txt
 
 .. note::
 
    In older versions of Git, ``git status`` may refer to the ``git reset`` command.
    In that case, run this command instead::
 
-        git reset HEAD test.txt
+        $ git reset HEAD test.txt
 
 Now, ``git status`` will show the following:
 
@@ -836,7 +838,7 @@ Now, ``git status`` will show the following:
 
 Go ahead and commit this change::
 
-   git commit -m"Our last change?"
+   $ git commit -m"Our last change?"
 
 The commit will now include only ``README.md``.
 
@@ -844,9 +846,9 @@ We're nearing the end of the first part of the tutorial so, before
 continuing to the second part of the tutorial, let's make sure all
 our changes have been committed and pushed::
 
-    git add -u
-    git commit -m"Wrapping up first part of the tutorial"
-    git push
+    $ git add -u
+    $ git commit -m"Wrapping up first part of the tutorial"
+    $ git push
 
 Before continuing, make sure ``git status`` shows this::
 
@@ -879,7 +881,7 @@ the following:
 
 ::
 
-   git show COMMIT_SHA
+   $ git show COMMIT_SHA
 
 Make sure to replace ``COMMIT_SHA`` with a commit SHA that appears in
 your commit log.
@@ -897,7 +899,7 @@ this:
 
 ::
 
-   git show 9119c6f
+   $ git show 9119c6f
 
 Git will only complain if there is more than one commit that starts with
 that same prefix.
