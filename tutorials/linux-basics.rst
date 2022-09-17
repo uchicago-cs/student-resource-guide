@@ -190,7 +190,7 @@ a file or directory.  More about path-names later.)  For example if we want to
 change to the ``Desktop`` directory, we type the following in the
 terminal::
 
-    cd Desktop
+    username@computer:~$ cd Desktop
 
 Here is an example of changing to the desktop directory in the terminal.
 We use ``pwd`` and ``ls`` to verify where we are and where we can go::
@@ -300,9 +300,9 @@ For the remainder of this tutorial, we will need a series of files that you
 will use in certain examples and exercises. To fetch these files,
 run the following commands::
 
-    cd
-    wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
-    unzip linux-tutorial-files.zip
+    $ cd
+    $ wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
+    $ unzip linux-tutorial-files.zip
 
 After you run these commands, your home directory will contain a
 ``linux-tutorial-files`` directory that has some files
@@ -458,13 +458,13 @@ To get the man page for a Linux command, you can type::
 
 So in order to get the man page for ``ls``, you would type::
 
-    man ls
+    $ man ls
 
 This command displays a man page that gives information on the ``ls`` command, including a description of the command, a list of the flags it supports, instructions on how to use it, and other information.
 
 Each man page has a description. The ``-k`` flag for ``man`` allows you to search these descriptions using a keyword. For example::
 
-    man -k printf
+    $ man -k printf
 
 This searches all the descriptions for the keyword ``printf`` and prints the names of the man pages with matches.
 
@@ -498,7 +498,7 @@ Let's say we wanted to edit the file ``test.txt``. There are many different term
 editors we could use, but we will start with a simple and fairly intuitive one: ``nano``.
 To edit the file, run the following::
 
-    nano test.txt
+    $ nano test.txt
 
 This will open the ``test.txt`` file in the nano editor, which will look something like this:
 
@@ -546,7 +546,7 @@ editor looks like.
 You can open a specific file, say ``hello.py``, using the ``code``
 command from the Linux command-line by typing::
 
-    code hello.py
+    $ code hello.py
 
 When you run this command, you will get a new window that looks like this:
 
@@ -621,7 +621,7 @@ C is a *compiled* language, which means that we first need to compile our progra
 to produce an executable file. For example, we can compile our ``hello.c`` program
 like this::
 
-    gcc hello.c -o hello
+    $ gcc hello.c -o hello
 
 We are using the ``gcc`` compiler, but some classes may use the ``clang`` compiler.
 The first parameter (``hello.c``) specifies the C file we want to compile, and
@@ -657,7 +657,7 @@ does (we'll see why momentarily).
 
 To compile a Java file, you need to run this::
 
-    javac Hello.java
+    $ javac Hello.java
 
 Unlike the C/C++ example we just saw, this will actually produce a
 file called ``Hello.class`` that is not directly runnable from the terminal

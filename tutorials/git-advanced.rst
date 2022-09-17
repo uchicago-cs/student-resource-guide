@@ -200,9 +200,9 @@ to your repository, with the following contents:
 
 Make sure to add, commit, and push the file::
 
-    git add echo.c
-    git commit -m"Added echo.c"
-    git push
+    $ git add echo.c
+    $ git commit -m"Added echo.c"
+    $ git push
 
 
 Now, let’s create a new branch in your repository. The
@@ -211,7 +211,7 @@ this:
 
 ::
 
-   git checkout -b add-author
+   $ git checkout -b add-author
 
 If you run ``git branch``, you can see the list of branches in the
 repository, with the current branch highlighted with an asterisk:
@@ -249,8 +249,8 @@ Now, let’s add a commit to the ``add-author`` branch. Simply edit the
 ``echo.c`` file and replace ``[AUTHOR GOES HERE]`` with your name. Let's
 add and commit this change::
 
-    git add echo.c
-    git commit -m"Updated author in echo.c"
+    $ git add echo.c
+    $ git commit -m"Updated author in echo.c"
 
 Now, let's try to push this change. We'll actually be prevented from doing so:
 
@@ -328,14 +328,14 @@ the ``main`` branch. We first need to switch to the ``main`` branch:
 
 ::
 
-   git checkout main
+   $ git checkout main
 
 Then, we use ``git merge`` to specify that we want to merge
 ``add-author`` into the current branch (``main``):
 
 ::
 
-   git merge add-author
+   $ git merge add-author
 
 If the merge works, you should see the following:
 
@@ -382,7 +382,7 @@ that commit and add it to ``main``.
 Before continuing, make sure to push the changes we just
 made to the ``main`` branch::
 
-    git push
+    $ git push
 
 Merge conflicts
 ---------------
@@ -391,7 +391,7 @@ Things get a bit trickier if we try to merge branches where
 the code has diverged in some way. For example, let's create
 a new branch called ``update-buffer-size``::
 
-    git checkout -b update-buffer-size
+    $ git checkout -b update-buffer-size
 
 Now, update ``echo.c`` so the size of the ``input`` array is ``1000``
 instead of ``500`` (similarly, update the second parameter to ``fgets``
@@ -416,7 +416,7 @@ Let's commit and push this change::
 
 Now, let's switch to the ``main`` branch::
 
-    git checkout main
+    $ git checkout main
 
 The buffer size in ``echo.c`` will still be 500. Let's make a change
 that will conflict with the change we made on a separate branch:
@@ -551,7 +551,7 @@ this by using ``git add``:
 
 ::
 
-   git add echo.c
+   $ git add echo.c
 
 Note how now ``git status`` recognizes that the merge conflict has been
 resolved, but has yet to be committed:
@@ -575,7 +575,7 @@ So, all we need to do is to run this command:
 
 ::
 
-   git commit
+   $ git commit
 
 This will open up an editor with a default commit message like
 ``Merge branch 'update-buffer-size' into main``. You could change this
