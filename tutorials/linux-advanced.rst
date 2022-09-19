@@ -77,7 +77,7 @@ The examples in this section will use commands that we've not yet
 discussed.  Refer to the man pages for information about unfamiliar
 commands.
 
-As we already know, commands like ``pwd`` and``ls``, and ``cat`` will
+As we already know, commands like ``pwd`` and ``ls``, and ``cat`` will
 print output to screen by default.  Sometimes, however, we may prefer
 to write the output of these commands to a file. In Linux, we can
 redirect the output of a program to a file of our choosing. This
