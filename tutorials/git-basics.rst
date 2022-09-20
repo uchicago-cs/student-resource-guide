@@ -425,7 +425,7 @@ This command should output something like this:
 
    When working on CS machines, you should see the message above.  At
    some point, you will start using git with your own machine.
-   depending on the version of Git you have installed, the message
+   Depending on the version of Git you have installed, the message
    under ``Changes not staged for commit`` may refer to a command
    called ``git checkout`` (instead of ``git restore``).
 
