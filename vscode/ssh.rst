@@ -29,25 +29,24 @@ to one of the following servers, based on the first
 letter of your CNetID:
 
 +------------+--------------------------------+
-| A          | linux1.cs.uchicago.edu         |
+| A,B        | linux1.cs.uchicago.edu         |
 +------------+--------------------------------+
-| B,C        | linux2.cs.uchicago.edu         |
+| C,D,E,F    | linux2.cs.uchicago.edu         |
 +------------+--------------------------------+
-| D,E        | linux3.cs.uchicago.edu         |
+| G,H,I,J    | linux3.cs.uchicago.edu         |
 +------------+--------------------------------+
-| F,G,H,I,J  | linux4.cs.uchicago.edu         |
+| K,L,M      | linux4.cs.uchicago.edu         |
 +------------+--------------------------------+
-| K,L,M      | linux5.cs.uchicago.edu         |
+| N,O,P,Q,R  | linux5.cs.uchicago.edu         |
 +------------+--------------------------------+
-| N,O,P,Q,R  | linux6.cs.uchicago.edu         |
+| S,T,U,V    | linux6.cs.uchicago.edu         |
 +------------+--------------------------------+
-| S, T, U, V,|                                |
 | W, X, Y, Z | linux7.cs.uchicago.edu         |
 +------------+--------------------------------+
 
 For example, Anne Rogers would use ``linux1.cs.uchicago.edu``, because
 her CNetID (``ar0r``) starts with an ``A``, while Hannah Morgan would
-use ``linux4.cs.uchicago.edu`` because her CNetID (``hmmorgan``)
+use ``linux3.cs.uchicago.edu`` because her CNetID (``hmmorgan``)
 starts with an ``H``.
 
 In the instructions below, you will be asked to replace ``username``
