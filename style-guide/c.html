@@ -410,6 +410,18 @@ are handled.</p>
 <span class="n">void</span> <span class="n">chilog</span><span class="p">(</span><span class="n">loglevel_t</span> <span class="n">level</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="o">...</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>Often, a function that is implemented in a C file (e.g., <code class="docutils literal notranslate"><span class="pre">log.c</span></code>) will have a
+declaration in a corresponding header file (e.g., <code class="docutils literal notranslate"><span class="pre">log.h</span></code>). In this case, the function
+comment must appear in the header file, and the function’s implementation must
+include a comment indicating where the full description of the function
+can be found. For example, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">See</span> <span class="n">log</span><span class="o">.</span><span class="n">h</span> <span class="o">*/</span>
+<span class="n">void</span> <span class="n">chilog</span><span class="p">(</span><span class="n">loglevel_t</span> <span class="n">level</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="block-comments">
 <h3>Block Comments<a class="headerlink" href="#block-comments" title="Permalink to this heading"></a></h3>
