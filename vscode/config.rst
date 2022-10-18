@@ -65,6 +65,21 @@ Lastly, turn off detect indentation. Go to *Editor: Detect Indentation* and set 
 
 .. figure:: code-img/detect-indentation.png
 
+
+Turning Off Auto-import
+-----------------------
+
+By default, VS Code will automatically add `import` statements if it thinks you are using a module that has not been imported. The system is prone to false positives, leading to unnecessary import statements. Ths part of the guide shows you how to turn off this auto-import feature. Go to *Preferences*, *Settings*, and search for *Suggest: Auto Imports*.
+
+It should look something like this.
+
+.. figure:: code-img/vs-auto-import-1.png
+
+Make sure to uncheck both of the present TypeScript options.
+
+.. figure:: code-img/vs-autoimport-2.png
+
+
 Rulers
 ------
 
