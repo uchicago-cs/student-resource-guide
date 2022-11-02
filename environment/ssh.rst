@@ -42,7 +42,7 @@ On Linux, the terminal should look something like this:
 Regardless of the operating system you're using, the command prompt or terminal
 will allow you to enter text-based commands. To use SSH to connect to
 one of the UChicago CS Linux servers, you will need to type the following,
-taking care to replace ``CNETID`` with your CNetID::
+taking care to replace ``CNETID`` with your CNetID in all lowercase::
 
     ssh CNETID@linux.cs.uchicago.edu
 
@@ -60,8 +60,14 @@ print out a message like this::
 
 If so, just type ``yes``.
 
-Then, when prompted for a password, just enter your CNetID password. If your
-connection is successful, you may see a series of messages, ending with
+Then, when prompted for a password, just enter your CNetID password.
+Two troubleshooting hints:
+
+- passwords are case-sensitive, that is, upper-case ``S`` is different from lower-case ``s``.  Make sure you type your password exactly as you created it.
+
+- ``ssh`` will *not* echo your password back to you as you type it.
+
+If your connection is successful, you may see a series of messages, ending with
 this::
 
     CNETID@linuxN:~$
