@@ -60,10 +60,9 @@ print out a message like this::
 
 If so, just type ``yes``.
 
-Then, when prompted for a password, just enter your CNetID password.
-Two troubleshooting hints:
+Then, when prompted for a password, just enter your CNetID password. Here are two troubleshooting hints:
 
-- passwords are case-sensitive, that is, upper-case ``S`` is different from lower-case ``s``.  Make sure you type your password exactly as you created it.
+- passwords are case-sensitive, that is, upper-case ``S`` is different from lower-case ``s``.  Make sure you type your CNetID password exactly as you created it.
 
 - ``ssh`` will *not* echo your password back to you as you type it.
 
@@ -80,6 +79,12 @@ you should continue working on the tutorial through the SSH connection you just 
 
 When you are finished using your SSH connection, close  it by
 typing ``Ctrl-D`` or ``exit`` at the Linux prompt.
+
+.. note:: Troubleshooting UChicago Campus Network Issues
+
+   There are at least three wireless networks on campus: ``uchicago-secure``, ``eduroam``, ``uchicago``. The first two–``uchicago-secure`` and ``eduroam``–can be used with ``ssh``. The third–``uchicago``– CANNOT does not support ``ssh`` connections.
+
+   If you are on campus and have trouble logging into one of the servers, please verify that you are using either ``uchicago-secure`` or ``eduroam`` as your wireless network.  The following is a common error message that occurs when trying to use a network that does not support ``ssh`` connections : ``Could not establish connection to "linuxX.cs.uchicago.edu": The operation timed out.``
 
 
 Installing an SSH Client
