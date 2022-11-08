@@ -509,3 +509,63 @@ sequences are false.
     No:  if len(seq)
          if not len(seq)
 
+
+Linters
+-------
+
+There are quite a few tools that exist to help check adherence to style
+guidelines and detect common mistakes such as unused variables and imports.
+
+Many companies and open source projects rely on these tools to ensure
+consistency across large codebases.
+
+.. note::
+   While linters can be very useful, neither will catch every
+   error. You should still be familiar with the basic practices
+   of writing clean code, such as using good variable names and proper
+   use of comments and docstrings.
+
+Linters report on code style errors, ranging from the things covered
+in this guide to additional things you might want to watch out for like
+functions with excessive numbers of arguments and unused imports.
+
+The most popular linters are
+`flake8 <https://github.com/PyCQA/flake8>`__
+and 
+`pylint <https://github.com/PyCQA/pylint>`__.
+
+After installing either package, you can run them via the command line. 
+
+Example::
+
+      # example.py - with intentional errors
+
+      l = [1,2, 3]
+      for item in l:
+          if(item>2):
+              print(item)
+
+:command:`flake8` output::
+
+   $ flake8 example.py
+   test.py:3:1: E741 ambiguous variable name 'l'
+   test.py:3:7: E231 missing whitespace after ','
+   test.py:5:7: E275 missing whitespace after keyword
+   test.py:5:13: E225 missing whitespace around operator
+
+:command:`pylint` output::
+
+   $ pylint example.py
+   ************* Module example
+   test.py:4:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)
+   test.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+
+   -----------------------------------
+   Your code has been rated at 5.00/10
+
+
+Most editors have plugins that will automatically run your preferred linter
+against your code, allowing you to keep your code clean as you write it.
+
+If you are using VSCode, they have a guide on enabling the linter(s) of your
+choice: `Linting Python in Visual Studio Code <https://code.visualstudio.com/docs/python/linting>`__.
