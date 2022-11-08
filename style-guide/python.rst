@@ -510,22 +510,20 @@ sequences are false.
          if not len(seq)
 
 
-Linters & Auto-formatters
--------------------------
+Linters
+-------
 
-There are quite a few tools that exist to help maintain good code style.
-These tools come in two varieties: linters, and auto-formatters.  Many
-companies and open source projects rely on these tools to ensure consistency
-across large codebases.
+There are quite a few tools that exist to help check adherence to style
+guidelines and detect common mistakes such as unused variables and imports.
+
+Many companies and open source projects rely on these tools to ensure
+consistency across large codebases.
 
 .. note::
-   While both types of tools can be very useful, neither will catch every
+   While linters can be very useful, neither will catch every
    error. You should still be familiar with the basic practices
    of writing clean code, such as using good variable names and proper
    use of comments and docstrings.
-
-Linters
-^^^^^^^
 
 Linters report on code style errors, ranging from the things covered
 in this guide to additional things you might want to watch out for like
@@ -571,32 +569,3 @@ against your code, allowing you to keep your code clean as you write it.
 
 If you are using VSCode, they have a guide on enabling the linter(s) of your
 choice: `Linting Python in Visual Studio Code <https://code.visualstudio.com/docs/python/linting>`__.
-
-
-Auto-formatters
-^^^^^^^^^^^^^^^
-
-Auto-formatters take things a step further and automatically reformat code.
-
-The most popular auto-formatter is `black <https://github.com/psf/black>`__.
-Others include `autopep8 <https://pypi.org/project/autopep8/>`__ and
-`yapf <https://github.com/google/yapf>`__.
-
-Running :command:`black` on the above file::
-
-   $ black example.py
-   reformatted example.py
-
-   All done! ✨ 🍰 ✨
-   1 file reformatted.
-
-The reformatted example.py::
-
-   l = [1, 2, 3]
-   for item in l:
-       if item > 2:
-           print(item)
-
-Like linters, most editors have a way to automatically run :program:`black` on files.
-
-For VSCode, refer to `Configuring auto-formatters in VSCode <https://code.visualstudio.com/docs/python/editing#_general-formatting-settings>`__.
