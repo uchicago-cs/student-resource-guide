@@ -82,7 +82,7 @@ typing ``Ctrl-D`` or ``exit`` at the Linux prompt.
 
 .. note:: Troubleshooting UChicago Campus Network Issues
 
-   There are at least three wireless networks on campus: ``uchicago-secure``, ``eduroam``, ``uchicago``. The first two–``uchicago-secure`` and ``eduroam``–can be used with ``ssh``. The third–``uchicago``– CANNOT does not support ``ssh`` connections.
+   There are at least three wireless networks on campus: ``uchicago-secure``, ``eduroam``, ``uchicago``. The first two–``uchicago-secure`` and ``eduroam``–can be used with ``ssh``. The third–``uchicago``– DOES NOT support ``ssh`` connections.
 
    If you are on campus and have trouble logging into one of the servers, please verify that you are using either ``uchicago-secure`` or ``eduroam`` as your wireless network.  The following is a common error message that occurs when trying to use a network that does not support ``ssh`` connections : ``Could not establish connection to "linuxX.cs.uchicago.edu": The operation timed out.``
 
