@@ -329,6 +329,17 @@ Example:
      */
     void chilog(loglevel_t level, char *fmt, ...);
 
+Often, a function that is implemented in a C file (e.g., ``log.c``) will have a
+declaration in a corresponding header file (e.g., ``log.h``). In this case, the function
+comment must appear in the header file, and the function's implementation must
+include a comment indicating where the full description of the function
+can be found. For example, like this::
+
+    /* See log.h */
+    void chilog(loglevel_t level, char *fmt, ...)
+    {
+       ...
+    }
 
 Block Comments
 ^^^^^^^^^^^^^^
