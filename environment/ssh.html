@@ -254,7 +254,7 @@ it will look basically the same, except it will say “PowerShell” at the top)
 <p>Regardless of the operating system you’re using, the command prompt or terminal
 will allow you to enter text-based commands. To use SSH to connect to
 one of the UChicago CS Linux servers, you will need to type the following,
-taking care to replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID:</p>
+taking care to replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID in all lowercase:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">CNETID</span><span class="nd">@linux</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
@@ -270,8 +270,12 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 </pre></div>
 </div>
 <p>If so, just type <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p>
-<p>Then, when prompted for a password, just enter your CNetID password. If your
-connection is successful, you may see a series of messages, ending with
+<p>Then, when prompted for a password, just enter your CNetID password. Here are two troubleshooting hints:</p>
+<ul class="simple">
+<li><p>passwords are case-sensitive, that is, upper-case <code class="docutils literal notranslate"><span class="pre">S</span></code> is different from lower-case <code class="docutils literal notranslate"><span class="pre">s</span></code>.  Make sure you type your CNetID password exactly as you created it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span></code> will <em>not</em> echo your password back to you as you type it.</p></li>
+</ul>
+<p>If your connection is successful, you may see a series of messages, ending with
 this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CNETID@linuxN:~$
 </pre></div>
@@ -282,6 +286,12 @@ If you came to this page from the <a class="reference internal" href="../tutoria
 you should continue working on the tutorial through the SSH connection you just opened.</p>
 <p>When you are finished using your SSH connection, close  it by
 typing <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span></code> or <code class="docutils literal notranslate"><span class="pre">exit</span></code> at the Linux prompt.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Troubleshooting UChicago Campus Network Issues</p>
+<p>There are at least three wireless networks on campus: <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code>, <code class="docutils literal notranslate"><span class="pre">eduroam</span></code>, <code class="docutils literal notranslate"><span class="pre">uchicago</span></code>. The first two–<code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> and <code class="docutils literal notranslate"><span class="pre">eduroam</span></code>–can be used with <code class="docutils literal notranslate"><span class="pre">ssh</span></code>. The third–<code class="docutils literal notranslate"><span class="pre">uchicago</span></code>– DOES NOT support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections.</p>
+<p>If you are on campus and have trouble logging into one of the servers, please verify that you are using either <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> or <code class="docutils literal notranslate"><span class="pre">eduroam</span></code> as your wireless network.  The following is a common error message that occurs when trying to use a network that does not support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections : <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">establish</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">&quot;linuxX.cs.uchicago.edu&quot;:</span> <span class="pre">The</span> <span class="pre">operation</span> <span class="pre">timed</span> <span class="pre">out.</span></code></p>
+</div>
 <div class="section" id="installing-an-ssh-client">
 <h2>Installing an SSH Client<a class="headerlink" href="#installing-an-ssh-client" title="Permalink to this heading">¶</a></h2>
 <p>If your operating system does not have an SSH client installed, please following
