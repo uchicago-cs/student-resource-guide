@@ -569,3 +569,5 @@ against your code, allowing you to keep your code clean as you write it.
 
 If you are using VSCode, they have a guide on enabling the linter(s) of your
 choice: `Linting Python in Visual Studio Code <https://code.visualstudio.com/docs/python/linting>`__.
+
+If you want to learn more about python in detail you can learn here: `Learn Python Programming <https://www.scaler.com/topics/python/>`__.
