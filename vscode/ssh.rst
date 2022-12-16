@@ -161,6 +161,44 @@ VSCode may show a pop-up asking if you want to reconnect. You can follow the pro
 If you would like to disconnect from the server intentionally, click the green box in the lower-left corner with the text *SSH: LINUX_SERVER*, then click *Close Remote Connection*.
 
 
+Adding SSH Keys
+---------------
+
+.. todo::
+    Write intro paragraph with raison d'etre for adding ssh keys.
+
+Adding SSH keys to allow log in with the linux servers can be accomplished in two steps. First, we mus generate a key to use with the SSH server. To generate the key, simply run these commands in the terminal.
+
+.. code-block:: bash
+
+    ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    chmod 0600 ~/.ssh/authorized_keys
+
+After generating the key, we now need a way to tell SSH to use it whenever we try to connect to the department Linux servers. To accomplish this, run the following command to edit the configuration file,
+
+.. code-block:: bash
+
+    nano ~/.ssh/config
+
+and add the following text to it.
+
+.. code-block:: bash
+
+    Host uchicago
+    Hostname <linux num>.cs.uchicago.edu
+    User <CNet ID>
+    IdentityFile ~/.ssh/id_rsa
+
+Make sure to replace `<linux num>` with the Linux server you are assigned to and `<CNet ID>` with your own CNet ID.
+
+Now, you should be able to sign onto the Linux severs by running this command.
+
+.. code-block:: bash
+
+    ssh uchicago
+
+
 Using the terminal
 ------------------
 
