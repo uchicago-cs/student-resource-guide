@@ -587,7 +587,7 @@ of the edit/compile/run cycle:
 
 1. Edit: You edit the source code file to add or modify some code.
 2. Compile: You compile the code into a runnable executable (only in compiled
-   languages; e.g., this step doesn't apply in Python)
+   languages; e.g., this step doesn't apply in Python).
 3. Run: You run the executable to verify that the code you added/modified
    works as expected.
 

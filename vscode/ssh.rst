@@ -63,7 +63,7 @@ Anne Rogers would run:
 
    ssh ar0r@linux1.cs.uchicago.edu
 
-because her CnetID (username) is ``ar0r`` and her assigned linux
+because her CNetID (username) is ``ar0r`` and her assigned linux
 server is ``linux1.cs.uchicago,edu``.
 
 
@@ -107,13 +107,13 @@ Click *+ Add New SSH Host...*.
 
 .. figure:: code-img/connect-3.png
 
-A textbox will appear with the heading *Enter SSH Connection Commnand*. In the box, type
+A text box will appear with the heading *Enter SSH Connection Command*. In the box, type
 
 .. code-block:: bash
 
     ssh username@LINUX_SERVER
 
-with ``username`` replaced by your CNetID  and ``LINUX_SERVER`` is replaced with your assigned Linux server, and press enter.  This example uses Anne Rogers' CNetID and assigned Linux server.  Make sure to use **your** CnetID and assigned Linux server.
+with ``username`` replaced by your CNetID  and ``LINUX_SERVER`` is replaced with your assigned Linux server, and press enter.  This example uses Anne Rogers' CNetID and assigned Linux server.  Make sure to use **your** CNetID and assigned Linux server.
 
 .. figure:: code-img/connect-4.png
 
@@ -166,7 +166,7 @@ Using the terminal
 
 .. todo::
     Installing and setting up gitbash and default for Windows
-    Settingu bash as default for Mac
+    Setting bash as default for Mac
 
 Have your VSCode window open, and check that you are connected to SSH. Open the *View* menu from the menu bar and click *Terminal* (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some "welcome" text). The bottom pane has the terminal.
 
