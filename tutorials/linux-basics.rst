@@ -153,7 +153,7 @@ The following is an example using these two commands in a terminal window::
     username@computer:~$ pwd
     /home/username/
     username@computer:~$ ls
-    Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+    cs   html
     username@computer:~$
 
 Try these commands yourself to verify that everything looks similar.
@@ -187,46 +187,46 @@ inside angle brackets, such as ``<path-name>`` as a place holder.  The
 text informally describes the type of value that should be supplied.
 In the case of ``<path-name>``, the desired value is the path-name for
 a file or directory.  More about path-names later.)  For example if we want to
-change to the ``Desktop`` directory, we type the following in the
+change to the ``cs`` directory, we type the following in the
 terminal::
 
-    username@computer:~$ cd Desktop
+    username@computer:~$ cd cs
 
-Here is an example of changing to the desktop directory in the terminal.
+Here is an example of changing to the ``cs`` directory in the terminal.
 We use ``pwd`` and ``ls`` to verify where we are and where we can go::
 
     username@computer:~$ pwd
     /home/username/
     username@computer:~$ ls
-    Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
-    username@computer:~$ cd Desktop
-    username@computer:~/Desktop$ pwd
-    /home/username/Desktop/
-    username@computer:~/Desktop$ ls
+    cs  html
+    username@computer:~$ cd cs
+    username@computer:~/cs$ pwd
+    /home/username/cs/
+    username@computer:~/cs$ ls
 
-    username@computer:~/Desktop$
+    username@computer:~/cs$
 
-Notice that after we ``cd`` into the ``Desktop`` the command ``pwd`` now
+Notice that after we ``cd`` into the ``cs`` the command ``pwd`` now
 prints out::
 
-    /home/username/Desktop/
+    /home/username/cs/
 
 rather than::
 
     /home/username/
 
-In the beginning, there are no files in the Desktop directory, which is
+In the beginning, there are no files in the ``cs`` directory, which is
 why the output of ``ls`` in this directory is empty.
 
 We can move up one step in the directory tree (e.g., from
-``/home/username/Desktop`` to ``/home/username`` or from
+``/home/username/cs`` to ``/home/username`` or from
 ``/home/username`` to ``/home``) by typing ``cd ..`` Here "up" is
 represented by "``..``" In this context, this command will move us up
 one level back to our home directory::
 
-    username@computer:~/Desktop$ pwd
-    /home/username/Desktop/
-    username@computer:~/Desktop$ cd ..
+    username@computer:~/cs$ pwd
+    /home/username/cs/
+    username@computer:~/cs$ cd ..
     username@computer:~$ pwd
     /home/username/
 
@@ -246,7 +246,7 @@ Usually when you use ``cd``, you will specify what is called a
 *relative* path, that is, you are telling the computer to take you to
 a directory where the location of the directory is described relative
 to the current directory. The only reason that the computer knows that
-we can ``cd`` to ``Desktop`` is because ``Desktop`` is a folder within
+we can ``cd`` to ``cs`` is because ``cs`` is a folder within
 the ``/home/username`` directory.  But, if we use a ``/`` at the
 *beginning* of our path, we are specifying an absolute path or one
 that is relative to the the "root" or top of the file system.  For
@@ -254,15 +254,15 @@ example::
 
         username@computer:~$ pwd
         /home/username/
-        username@computer:~$ cd /home/username/Desktop
-        username@computer:~/Desktop$ pwd
-        /home/username/Desktop
-        username@computer:~/Desktop$ cd /home/username
+        username@computer:~$ cd /home/username/cs
+        username@computer:~/cs$ pwd
+        /home/username/cs
+        username@computer:~/cs$ cd /home/username
         username@computer:~$ pwd
         /home/username
 
 These commands achieve the same thing as the ones above: we ``cd``
-into ``Desktop``, a folder within our home directory, and then back to
+into ``cs``, a folder within our home directory, and then back to
 our home directory.  Paths that start with a ``/`` are known as
 *absolute paths* because they always lead to the same place,
 regardless of your current working directory.
@@ -271,20 +271,20 @@ Running ``cd`` without an argument will take you back to your home
 directory without regard to your current location in the file system.
 For example::
 
-    username@computer:~/Desktop$ cd
+    username@computer:~/cs$ cd
     username@computer:~$ pwd
     /home/username
 
 Finally, running ``cd -`` will take you to the previous directory you
-were in. For example, suppose we go into the ``Desktop`` directory and,
-from there, switch to the ``Documents`` directory. If we wanted to
-go back to the ``Desktop`` directory, we can just write ``cd -``::
+were in. For example, suppose we go into the ``cs`` directory and,
+from there, switch to the ``html`` directory. If we wanted to
+go back to the ``cs`` directory, we can just write ``cd -``::
 
-        username@computer:~$ cd Desktop
-        username@computer:~/Desktop$ cd ../Documents
-        username@computer:~/Documents$  cd -
-        username@computer:~/Desktop$ pwd
-        /home/username/Desktop
+        username@computer:~$ cd cs
+        username@computer:~/cs$ cd ../html
+        username@computer:~/html$ cd -
+        username@computer:~/cs$ pwd
+        /home/username/cs
 
 
 To improve the readability of our examples, we will use ``$`` as the
