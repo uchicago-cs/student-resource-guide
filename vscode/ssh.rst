@@ -91,7 +91,11 @@ macOS).
 
 .. figure:: code-img/install-ext-1.png
 
-This opens the *Extensions* panel. From here, you can search for and install extensions. Search for "the "Remote - SSH" and click "Install".
+This opens the *Extensions* panel. From here, you can search for and install extensions. Search for the "Remote - SSH" entry and click "Install". Below you can find images of the search and of the extension.
+
+.. figure:: code-img/ssh-1.png
+
+.. figure:: code-img/ssh-2.png
 
 Once you do so, there should be a green rectangle with an icon that looks like *><*, but skewed in the lower-left corner of VSCode. Click on this icon.
 
