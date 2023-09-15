@@ -18,7 +18,7 @@ Go to https://code.visualstudio.com/. You should see a blue button labeled *Down
 
 Click this button to download. Once it is downloaded, run the installer (``VSCodeUserSetup-<version>.exe``).
 
-After you accept the licence agreement, click *Next >*. On the page titled *Select Additional Tasks*, we recommend you check all the boxes (but it is up to you).
+After you accept the license agreement, click *Next >*. On the page titled *Select Additional Tasks*, we recommend you check all the boxes (but it is up to you).
 
 .. figure:: code-img/install-code-win-2.png
 
@@ -31,7 +31,7 @@ Go to https://code.visualstudio.com/. You should see a blue button labeled *Down
 
 .. figure:: code-img/install-code-mac-1.png
 
-Click on this button to download. When the download is complete, you will have a new application file called *Visual Studio Code* (You might instead have zip file, with a name like ``VSCode-darwin-universal.zip``; in this case, open the file to unzip it, and the *Visual Studio Code* application file should appear). Open a *Finder* window and navigate to *Downloads* (it will likely be listed under "Favorites" in the left sidebar). Locate the file named *Visual Studio Code*, and drag it on top of *Applications* in the left side bar.
+Click on this button to download. When the download is complete, you will have a new application file called *Visual Studio Code*. You might instead have zip file, with a name like ``VSCode-darwin-universal.zip``; in this case, open the file to unzip it, and the *Visual Studio Code* application file should appear. Open a *Finder* window and navigate to *Downloads* (it will likely be listed under "Favorites" in the left sidebar). Locate the file named *Visual Studio Code*, and drag it on top of *Applications* in the left side bar.
 
 .. figure:: code-img/install-code-mac-2.png
 

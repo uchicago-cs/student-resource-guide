@@ -28,9 +28,9 @@ you will need to have a GitHub account. If you do not yet have one, you can
 get an account here: https://github.com/join. Once you create your
 account, you may want to get the `Student Developer
 Pack <https://education.github.com/pack>`__, which will give you access
-to a lot of other features (please note that having the Student
+to a lot of other features. Please note that having the Student
 Developer Pack is not necessary for your UChicago classes; it’s just a nice benefit you
-get as a student)
+get as a student.
 
 Where should you do this tutorial?
 ----------------------------------
@@ -62,14 +62,14 @@ Before we create a repository or do anything with it,
 we need to take a short
 detour to create an SSH key and upload it to GitHub, which will
 allow you to access your GitHub repositories from the terminal
-(including the one you'll create in this tutorial)
+(including the one you'll create in this tutorial).
 
 While these steps may seem a bit intricate, you only need to
 do them once. If you are logging into a CS Linux environment,
 the SSH key you create now will be available the next time you
-log in (regardless of what CS machine you're logging into).
+log in, regardless of what CS machine you're logging into.
 However, if you want to access your repository from a different
-computer (e.g., your personal computer), you will have to
+computer (e.g. your personal computer), you will have to
 create a new SSH key and upload it to GitHub.
 
 
@@ -99,7 +99,7 @@ You will see the following prompt::
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/username/.ssh/id_rsa):
 
-Press Enter (this will select the default file path shown in the prompt: ``/home/username/.ssh/id_rsa``
+Press Enter. This will select the default file path shown in the prompt: ``/home/username/.ssh/id_rsa``.
 
 .. note::
 
@@ -166,7 +166,7 @@ Uploading your SSH key to GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now, we need to instruct GitHub to accept our SSH key. To do this, log into https://github.com/
-and go to your Settings page (by clicking on the top-right account icon, and then selecting "Settings"
+and go to your Settings page by clicking on the top-right account icon, and then selecting "Settings"
 in the drop-down menu. Then, click on "SSH and GPG keys".
 
 Now, click on the green "New SSH key" button. This will take you to a page where you can upload your
@@ -205,7 +205,7 @@ You can safely enter "yes" here. You should then see a message like this::
     Hi username! You've successfully authenticated, but GitHub does
     not provide shell access.
 
-This means your SSH key is properly set up (don't worry about the "does not provide shell access"; that is
+This means your SSH key is properly set up (don't worry about the "does not provide shell access," that is
 normal).
 
 If you are unable to set up your SSH key, please make sure to ask for help. You will not

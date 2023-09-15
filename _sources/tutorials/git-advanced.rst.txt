@@ -10,7 +10,7 @@ Git repository.
 This tutorial assumes that you have worked through the
 :ref:`Git Basics tutorial <tutorial-git-basics>`, or are already familiar
 with the topics covered in that tutorial. If you did not work through the
-Git Basics tutorial (but are comfortable with the material covered in it),
+Git Basics tutorial but are comfortable with the material covered in it,
 make sure to create a repository on GitHub with just a README in it, as
 you will need it to work through this tutorial.
 
@@ -201,7 +201,7 @@ to your repository, with the following contents:
 Make sure to add, commit, and push the file::
 
     $ git add echo.c
-    $ git commit -m"Added echo.c"
+    $ git commit -m "Added echo.c"
     $ git push
 
 
@@ -250,7 +250,7 @@ Now, let’s add a commit to the ``add-author`` branch. Simply edit the
 add and commit this change::
 
     $ git add echo.c
-    $ git commit -m"Updated author in echo.c"
+    $ git commit -m "Updated author in echo.c"
 
 Now, let's try to push this change. We'll actually be prevented from doing so:
 
@@ -423,7 +423,7 @@ that will conflict with the change we made on a separate branch:
 change the buffer to ``250``, and commit that change::
 
     $ git add echo.c
-    $ git commit -m"Updated buffer size to 250"
+    $ git commit -m "Updated buffer size to 250"
     [main e5ec414] Updated buffer size to 250
      1 file changed, 2 insertions(+), 2 deletions(-)
 

@@ -268,9 +268,9 @@ Block Comments
 ^^^^^^^^^^^^^^
 Block comments generally apply to some (or all) code that follows
 them, and are indented to the same level as that code. Each line of a
-block comment starts with a # and a single space (unless it is
+block comment starts with a ``#`` and a single space (unless it is
 indented text inside the comment).  Paragraphs inside a block comment
-are separated by a line containing a single #.
+are separated by a line containing a single ``#``.
 
 When commenting on ``if-else`` statements, block comments for each branch should be
 indented at the same level as the branch. Any comment indented at the same level
@@ -517,7 +517,7 @@ There are quite a few tools that exist to help check adherence to style
 guidelines and detect common mistakes such as unused variables and imports.
 
 Many companies and open source projects rely on these tools to ensure
-consistency across large codebases.
+consistency across large code bases.
 
 .. note::
    While linters can be very useful, neither will catch every

@@ -11,7 +11,7 @@ tutorial.
 This tutorial assumes that you have worked through the
 :ref:`Linux Basics tutorial <tutorial-linux-basics>`, or are already familiar
 with the topics covered in that tutorial. If you did not work through the Linux Basics tutorial
-(but are comfortable with the material covered in it),
+but are comfortable with the material covered in it,
 make sure you download the files from the Linux Basics tutorial, as we will be using them
 in this tutorial as well. You can do so like this::
 
@@ -160,7 +160,7 @@ program2.  Or to put it more technically, the ``stdout`` of
 ``program1`` is connected to the ``stdin`` of ``program2``.
 
 As another more concrete example, consider the ``man`` command with the ``-k`` option that we've
-previously discussed (in the :ref:`tutorial-linux-basics-man-pages` section of
+previously discussed in the :ref:`tutorial-linux-basics-man-pages` section of
 the :ref:`Linux Basics Tutorial <tutorial-linux-basics>`. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
 How would you look for the command to create a directory? First attempts::
 

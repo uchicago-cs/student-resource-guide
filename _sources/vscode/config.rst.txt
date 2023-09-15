@@ -8,7 +8,7 @@ options. Many of these will make it easier to conform to our style guides.
 
 If you are planning to primarily use VS Code with SSH, please make sure you
 connect to a CS Linux Server (as described in :ref:`vscode-ssh`) before
-following these instrutions.
+following these instructions.
 
 .. _vscode-install-extensions:
 
