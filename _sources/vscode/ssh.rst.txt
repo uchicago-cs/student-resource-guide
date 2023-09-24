@@ -17,6 +17,9 @@ with SSH; if you are not, please make sure to read the :ref:`ssh` page.
 Server assignments
 ------------------
 
+**Some classes, like CMSC 14100, use a different set of servers than the ones listed here. If you are in such a class, you should skip this section, and follow the instructions provided by your instructor(s).**
+
+
 In the instructions below, you will be asked to connect to a Linux
 server.  The main linux server (``linux.cs.uchicago.edu``) acts as a front
 end for specific linux machines (named ``linux1.cs.uchicago.edu``
