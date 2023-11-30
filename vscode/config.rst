@@ -49,7 +49,7 @@ To install an extension, click in the search bar ("Search Extensions in Marketpl
 Space Indentation
 -----------------
 
-Your editor should be set such that tabs are equivalent to four spaces. This guide focuses on how to configure indentation in VS Code. First, set the tab size to four spaces. Go to *Preferences*, *Settings*, and select *Commonly Used*.
+Your editor should be set such that tabs are equivalent to four spaces. This guide focuses on how to configure indentation in VS Code. First, set the tab size to four spaces. Go to *Settings...*, *Settings*, and select *Commonly Used*.
 
 .. figure:: code-img/vscode-settings.png
 
