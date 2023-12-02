@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial - Linux Basics &mdash; UChicago CS Student Resource Guide</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
-        <script src="../_static/analytics.js"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -156,7 +159,7 @@
            <div itemprop="articleBody">
              
   <section id="tutorial-linux-basics">
-<span id="id1"></span><h1>Tutorial - Linux Basics<a class="headerlink" href="#tutorial-linux-basics" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Tutorial - Linux Basics<a class="headerlink" href="#tutorial-linux-basics" title="Link to this heading"></a></h1>
 <p>Linux is an operating system, just like Windows and MacOS. It allows
 you (the user) to interact with your computer, and provides many
 of the same tools you’re accustomed to in Windows and MacOS (web
@@ -176,7 +179,7 @@ the terminal to perform some basic operations in Linux, including how to:</p>
 <li><p>Use keyboard shortcuts.</p></li>
 </ol>
 <section id="where-should-you-do-this-tutorial">
-<h2>Where should you do this tutorial?<a class="headerlink" href="#where-should-you-do-this-tutorial" title="Permalink to this heading"></a></h2>
+<h2>Where should you do this tutorial?<a class="headerlink" href="#where-should-you-do-this-tutorial" title="Link to this heading"></a></h2>
 <p>Since one of the goals of this tutorial is for you to be able to use
 the CS department’s Linux environment, we strongly suggest you work
 through this tutorial on a <a class="reference internal" href="../environment/environment.html#software-environment"><span class="std std-ref">UChicago CS software environment</span></a>.
@@ -191,7 +194,7 @@ recommend against it, since you should try to become familiar
 specifically with the Linux environment provided by the CS department.</p>
 </section>
 <section id="terminal-shell">
-<h2>Terminal/Shell<a class="headerlink" href="#terminal-shell" title="Permalink to this heading"></a></h2>
+<h2>Terminal/Shell<a class="headerlink" href="#terminal-shell" title="Link to this heading"></a></h2>
 <p>On your personal computer, you probably navigate your hard drive by
 double clicking on icons. While convenient for simple tasks, this
 approach is limited. For example, imagine that you want to delete all of
@@ -230,7 +233,7 @@ We have also included a few exercises in each section so you can practice
 those skills.</p>
 </section>
 <section id="navigating-the-file-system">
-<h2>Navigating the File System<a class="headerlink" href="#navigating-the-file-system" title="Permalink to this heading"></a></h2>
+<h2>Navigating the File System<a class="headerlink" href="#navigating-the-file-system" title="Link to this heading"></a></h2>
 <p>Files in Linux are stored in directories/folders, just like in
 macOS/Windows. Directories can hold files or other subdirectories and
 there are special directories for your personal files, your Desktop,
@@ -276,7 +279,7 @@ and then sit at a different CSIL machine the next day (or SSH into the CS Linux 
 you will see the exact same files there.</p>
 </div>
 <section id="show-files">
-<h3>Show Files<a class="headerlink" href="#show-files" title="Permalink to this heading"></a></h3>
+<h3>Show Files<a class="headerlink" href="#show-files" title="Link to this heading"></a></h3>
 <p>The terminal will start in your home directory, <code class="docutils literal notranslate"><span class="pre">/home/username/</span></code>,
 which is a special directory assigned to your user account. Any CS
 machine that you use (either in CSIL or remotely) will automatically
@@ -311,7 +314,7 @@ to write a script that, say, processes all the Python files in a
 directory.</p>
 </section>
 <section id="change-directory">
-<h3>Change Directory<a class="headerlink" href="#change-directory" title="Permalink to this heading"></a></h3>
+<h3>Change Directory<a class="headerlink" href="#change-directory" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;path-name&gt;</span></code></p></td>
@@ -443,7 +446,7 @@ of this tutorial.  Keep in
 mind, though, that the prompt shows your current working directory.</p>
 </section>
 <section id="pick-up-the-tutorial-materials">
-<h3>Pick Up the Tutorial Materials<a class="headerlink" href="#pick-up-the-tutorial-materials" title="Permalink to this heading"></a></h3>
+<h3>Pick Up the Tutorial Materials<a class="headerlink" href="#pick-up-the-tutorial-materials" title="Link to this heading"></a></h3>
 <p>For the remainder of this tutorial, we will need a series of files that you
 will use in certain examples and exercises. To fetch these files,
 run the following commands:</p>
@@ -457,14 +460,14 @@ $ unzip linux-tutorial-files.zip
 for us to play with. You will learn how to manipulate these files in
 the next section.</p>
 <section id="exercises">
-<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h4>
+<h4>Exercises<a class="headerlink" href="#exercises" title="Link to this heading"></a></h4>
 <p>Use <code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to explore the tutorial files and to
 navigate to the <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory. The next examples
 will assume that your current directory is the <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory.</p>
 </section>
 </section>
 <section id="useful-commands">
-<h3>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this heading"></a></h3>
+<h3>Useful commands<a class="headerlink" href="#useful-commands" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> &lt;source&gt; &lt;destination&gt;</p></td>
@@ -526,7 +529,7 @@ Name: Firstname Lastname
 </div>
 <p>Later in the tutorial, we’ll see how to edit this file.</p>
 <section id="id2">
-<h4>Exercises<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<h4>Exercises<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
 <p>Try the following tasks to practice and check your understanding of
 these terminal commands.</p>
 <ol class="arabic simple">
@@ -560,7 +563,7 @@ mistyping filenames when you are tired or distracted.</p>
 </section>
 </section>
 <section id="wild-cards-using-an-asterisk">
-<h3>Wild Cards (using an asterisk)<a class="headerlink" href="#wild-cards-using-an-asterisk" title="Permalink to this heading"></a></h3>
+<h3>Wild Cards (using an asterisk)<a class="headerlink" href="#wild-cards-using-an-asterisk" title="Link to this heading"></a></h3>
 <p>Sometimes when we enter a string, we want part of it to be variable, or a wildcard. A common task is to list all files that end with a given extension, such as <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.  The wildcard functionality, through an asterisk, allows us to simply say:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls *.txt
 </pre></div>
@@ -574,7 +577,7 @@ mistyping filenames when you are tired or distracted.</p>
 <p>FYI, the text that follows a <code class="docutils literal notranslate"><span class="pre">#</span></code> on the linux command-line is
 treated as a comment and is ignored.</p>
 <section id="id3">
-<h4>Exercises<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<h4>Exercises<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
 <ol class="arabic simple">
 <li><p>Navigate to your home directory.  What do you see when you run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">linux-tutorial*</span></code>?  What about <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">linux-tutorial*/*.py</span></code>?</p></li>
 </ol>
@@ -582,7 +585,7 @@ treated as a comment and is ignored.</p>
 </section>
 </section>
 <section id="man-pages">
-<span id="tutorial-linux-basics-man-pages"></span><h2>Man Pages<a class="headerlink" href="#man-pages" title="Permalink to this heading"></a></h2>
+<span id="tutorial-linux-basics-man-pages"></span><h2>Man Pages<a class="headerlink" href="#man-pages" title="Link to this heading"></a></h2>
 <p>A man page (short for manual page) documents or describes topics related to working with Linux. These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.</p>
 <p>To get the man page for a Linux command, you can type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;</span>
@@ -600,13 +603,13 @@ treated as a comment and is ignored.</p>
 <p>This searches all the descriptions for the keyword <code class="docutils literal notranslate"><span class="pre">printf</span></code> and prints the names of the man pages with matches.</p>
 <p>Learning how to read man pages is an important skill.</p>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading"></a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h3>
 <p>By default, the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command does not include files with names that start with a dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>).
 The <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory contains a file that starts with a dot.  Use <code class="docutils literal notranslate"><span class="pre">man</span></code> to identify the flag to use with <code class="docutils literal notranslate"><span class="pre">ls</span></code> to include this file when listing the contents of <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code>.</p>
 </section>
 </section>
 <section id="editing-files">
-<h2>Editing files<a class="headerlink" href="#editing-files" title="Permalink to this heading"></a></h2>
+<h2>Editing files<a class="headerlink" href="#editing-files" title="Link to this heading"></a></h2>
 <p>In many of your classes, you will have to edit text files containing programming code.
 While there are many graphical editors you could use (either on a CS Linux environment,
 or on your own computer), it is also important to be familiar with <em>terminal editors</em>
@@ -614,7 +617,7 @@ that run exclusively from a terminal and don’t require a desktop environment.
 These editors can be particularly useful if you <em>only</em> have access to a terminal
 (e.g., if you’re logging into a CS Linux server using SSH).</p>
 <section id="using-a-terminal-editor">
-<h3>Using a terminal editor<a class="headerlink" href="#using-a-terminal-editor" title="Permalink to this heading"></a></h3>
+<h3>Using a terminal editor<a class="headerlink" href="#using-a-terminal-editor" title="Link to this heading"></a></h3>
 <p>List the files in the <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory. You should see the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backups</span>  <span class="n">hello</span><span class="o">.</span><span class="n">c</span>  <span class="n">hello</span><span class="o">.</span><span class="n">cpp</span>  <span class="n">Hello</span><span class="o">.</span><span class="n">java</span>  <span class="n">hello</span><span class="o">.</span><span class="n">py</span>  <span class="n">my_echo</span><span class="o">.</span><span class="n">py</span>  <span class="n">my</span><span class="o">-</span><span class="nb">input</span><span class="o">.</span><span class="n">txt</span>  <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -649,7 +652,7 @@ out there. If you’re interested in a more powerful terminal editor, you
 may want to check out <a class="reference external" href="https://www.vim.org/">Vim</a> or <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a>.</p>
 </section>
 <section id="using-a-graphical-editor">
-<h3>Using a graphical editor<a class="headerlink" href="#using-a-graphical-editor" title="Permalink to this heading"></a></h3>
+<h3>Using a graphical editor<a class="headerlink" href="#using-a-graphical-editor" title="Link to this heading"></a></h3>
 <p>A graphical editor requires a desktop environment so, if you
 have been working through this tutorial using SSH, you should
 skip this section, as SSH won’t allow you to run graphical programs.</p>
@@ -687,7 +690,7 @@ File menu to open the correct file.</p>
 </section>
 </section>
 <section id="the-edit-compile-run-cycle-in-the-terminal">
-<h2>The edit/compile/run cycle in the terminal<a class="headerlink" href="#the-edit-compile-run-cycle-in-the-terminal" title="Permalink to this heading"></a></h2>
+<h2>The edit/compile/run cycle in the terminal<a class="headerlink" href="#the-edit-compile-run-cycle-in-the-terminal" title="Link to this heading"></a></h2>
 <p>When writing code, you will very often go through several cycles
 of the edit/compile/run cycle:</p>
 <ol class="arabic simple">
@@ -708,7 +711,7 @@ can use for this purpose:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">Hello.java</span></code> (Java)</p></li>
 </ul>
 <section id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading"></a></h3>
+<h3>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h3>
 <p>In Python, given a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file, such as our <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file, we can run it from the terminal like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 hello.py
 Hello, world!
@@ -718,7 +721,7 @@ Hello, world!
 and running the program again. You should now see the updated message.</p>
 </section>
 <section id="c">
-<h3>C<a class="headerlink" href="#c" title="Permalink to this heading"></a></h3>
+<h3>C<a class="headerlink" href="#c" title="Link to this heading"></a></h3>
 <p>C is a <em>compiled</em> language, which means that we first need to compile our program
 to produce an executable file. For example, we can compile our <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> program
 like this:</p>
@@ -739,7 +742,7 @@ this is because you need to compile the <code class="docutils literal notranslat
 Once you do so, you should see the updated message when you run <code class="docutils literal notranslate"><span class="pre">./hello</span></code></p>
 </section>
 <section id="id4">
-<h3>C++<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<h3>C++<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>The process for compiling/running programs in C++ is basically the same
 as in C, except we will use the <code class="docutils literal notranslate"><span class="pre">g++</span></code> compiler:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ g++ hello.cpp -o hello++
@@ -749,7 +752,7 @@ Hello, world!
 </div>
 </section>
 <section id="java">
-<h3>Java<a class="headerlink" href="#java" title="Permalink to this heading"></a></h3>
+<h3>Java<a class="headerlink" href="#java" title="Link to this heading"></a></h3>
 <p>Like C/C++, Java is a compiled language, although the Java compiler
 doesn’t produce an executable in the same way that the C/C++ compiler
 does (we’ll see why momentarily).</p>
@@ -771,9 +774,9 @@ If you re-compile the file and run it again, you should see the updated message.
 </section>
 </section>
 <section id="tips-and-tricks">
-<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this heading"></a></h2>
+<h2>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Link to this heading"></a></h2>
 <section id="terminating-a-program">
-<h3>Terminating a program<a class="headerlink" href="#terminating-a-program" title="Permalink to this heading"></a></h3>
+<h3>Terminating a program<a class="headerlink" href="#terminating-a-program" title="Link to this heading"></a></h3>
 <p>Sometimes, a program will run indefinitely or misbehave. When this
 happens, you can type <code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code> to send an interrupt signal to the
 running program, which usually causes it to terminate. On occasion,
@@ -782,7 +785,7 @@ you may need to type <code class="docutils literal notranslate"><span class="pre
 no more information is coming.</p>
 </section>
 <section id="keyboard-shortcuts">
-<h3>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this heading"></a></h3>
+<h3>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Link to this heading"></a></h3>
 <p>Used in the terminal, the keyboard shortcut <code class="docutils literal notranslate"><span class="pre">Ctrl-P</span></code> will roll
 back to the previous command.  If you type <code class="docutils literal notranslate"><span class="pre">Ctrl-P</span></code> twice, you will
 roll back by two commands.  If you type <code class="docutils literal notranslate"><span class="pre">Ctrl-P</span></code> too many times, you
@@ -803,7 +806,7 @@ will reduce frustration as well save time.</p>
 </section>
 </section>
 <section id="acknowledgments">
-<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading"></a></h2>
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading"></a></h2>
 <p>Parts of this tutorial are based on a Linux lab originally written for CMSC 12100
 by Prof. Anne Rogers and Prof. Borja Sotomayor, and edited by numerous instructors
 and TAs over the years.</p>

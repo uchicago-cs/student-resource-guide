@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial - Advanced Linux &mdash; UChicago CS Student Resource Guide</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
-        <script src="../_static/analytics.js"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -130,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="tutorial-advanced-linux">
-<span id="tutorial-linux-advanced"></span><h1>Tutorial - Advanced Linux<a class="headerlink" href="#tutorial-advanced-linux" title="Permalink to this heading"></a></h1>
+<span id="tutorial-linux-advanced"></span><h1>Tutorial - Advanced Linux<a class="headerlink" href="#tutorial-advanced-linux" title="Link to this heading"></a></h1>
 <p>This tutorial covers a few advanced topics related to using a Linux environment.
 These topics are typically not essential to perform basic tasks in a Linux environment,
 but some classes may assume that you are familiar with the topics covered in this
@@ -148,7 +151,7 @@ $ unzip linux-tutorial-files.zip
 <p>This will create a <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory that has some files
 for us to play with.</p>
 <section id="running-commands-sequentially">
-<h2>Running Commands Sequentially<a class="headerlink" href="#running-commands-sequentially" title="Permalink to this heading"></a></h2>
+<h2>Running Commands Sequentially<a class="headerlink" href="#running-commands-sequentially" title="Link to this heading"></a></h2>
 <p>It is often convenient to chain together commands that you want to run in sequence.
 For example, recall that to print the working directory and list all of
 the files and directories contained inside, you would use the following commands:</p>
@@ -182,7 +185,7 @@ $ pwd       ;        ls
 </div>
 </section>
 <section id="working-with-input-output-streams">
-<h2>Working with Input/Output Streams<a class="headerlink" href="#working-with-input-output-streams" title="Permalink to this heading"></a></h2>
+<h2>Working with Input/Output Streams<a class="headerlink" href="#working-with-input-output-streams" title="Link to this heading"></a></h2>
 <p>When you run a program (at the command-line or by clicking), the Linux
 operating system creates a new <em>process</em> for running the program.
 Every Linux process has an input stream (known as <em>standard in</em>) for
@@ -192,7 +195,7 @@ about errors (known as <em>standard error</em>).  In this section, you will
 learn how to use these streams to provide input to a program and to
 capture the output.</p>
 <section id="redirection">
-<h3>Redirection<a class="headerlink" href="#redirection" title="Permalink to this heading"></a></h3>
+<h3>Redirection<a class="headerlink" href="#redirection" title="Link to this heading"></a></h3>
 <p>The examples in this section will use commands that we’ve not yet
 discussed.  Refer to the man pages for information about unfamiliar
 commands.</p>
@@ -250,7 +253,7 @@ For the purposes of this tutorial, we will only care about standard
 input and standard output.</p>
 </section>
 <section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading"></a></h3>
+<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code> as shown above.</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code> again, but this time redirect the output to a file named <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>.  Check the contents of <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> using an editor or by using the <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">more</span></code> commands.</p></li>
@@ -263,7 +266,7 @@ input and standard output.</p>
 </div>
 </section>
 <section id="piping">
-<h3>Piping<a class="headerlink" href="#piping" title="Permalink to this heading"></a></h3>
+<h3>Piping<a class="headerlink" href="#piping" title="Link to this heading"></a></h3>
 <p>In addition to the ability to direct output to and receive input from files,
 Linux provides a very powerful capability called piping. Piping allows one program
 to receive as input the output of another program, like so:</p>
@@ -301,7 +304,7 @@ vgmknodes (8)        - recreate volume group directory and logical volume specia
 <p>Nice.</p>
 </section>
 <section id="id1">
-<h3>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<h3>Exercises<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Use piping to chain together the <code class="docutils literal notranslate"><span class="pre">printenv</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> commands to display the last 10 lines of output from <code class="docutils literal notranslate"><span class="pre">printenv</span></code>.</p></li>
 <li><p>Replicate the above functionality without using the <code class="docutils literal notranslate"><span class="pre">|</span></code> operator. (hint: Use a temporary file.)</p></li>
@@ -309,7 +312,7 @@ vgmknodes (8)        - recreate volume group directory and logical volume specia
 </section>
 </section>
 <section id="file-permissions">
-<span id="id2"></span><h2>File Permissions<a class="headerlink" href="#file-permissions" title="Permalink to this heading"></a></h2>
+<span id="id2"></span><h2>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading"></a></h2>
 <p>Sometimes we want to restrict who can access certain resources on the file system.</p>
 <p>Most file systems assign ‘File Permissions’ (or just permissions) to specific users and groups of users. Unix is no different. File permissions dictate who can read (view), write (create/edit), and execute (run) files on a file system.</p>
 <p>All directories and files are owned by a user. Each user can be a member of one or more groups. To see your groups, enter the command <code class="docutils literal notranslate"><span class="pre">groups</span></code> into the command line.</p>
@@ -359,7 +362,7 @@ permissions to user and group and no permissions to other.  New
 directories will be set to have read, write and execute permissions
 for user and group.</p>
 <section id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading"></a></h3>
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have not completed the <a class="reference internal" href="linux-basics.html#tutorial-linux-basics"><span class="std std-ref">Linux Basics Tutorial</span></a>,
@@ -380,7 +383,7 @@ for <code class="docutils literal notranslate"><span class="pre">backups</span><
 directory.</p>
 </section>
 <section id="changing-permissions-owner-group">
-<h3>Changing Permissions, Owner, &amp; Group<a class="headerlink" href="#changing-permissions-owner-group" title="Permalink to this heading"></a></h3>
+<h3>Changing Permissions, Owner, &amp; Group<a class="headerlink" href="#changing-permissions-owner-group" title="Link to this heading"></a></h3>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chmod</span></code> &lt;permissions&gt; &lt;path-name&gt;</p></td>
@@ -448,7 +451,7 @@ permissions, it is useful to learn how to use the numeric method.</p>
 </div>
 </section>
 <section id="id3">
-<h3>Exercises<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<h3>Exercises<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;Hello!&quot;</span> <span class="pre">&gt;</span> <span class="pre">testfile</span></code> to construct <code class="docutils literal notranslate"><span class="pre">testfile</span></code>.  Look at the permissions using <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>.</p></li>
 <li><p>Change the permissions on <code class="docutils literal notranslate"><span class="pre">testfile</span></code> to allow write and read access for others.  Run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">testfile</span></code> to check the new permissions.</p></li>
@@ -458,7 +461,7 @@ permissions, it is useful to learn how to use the numeric method.</p>
 </section>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading"></a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h2>
 <p>Parts of this tutorial are based on a Linux lab originally written for CMSC 12100
 by Prof. Anne Rogers and Prof. Borja Sotomayor, and edited by numerous instructors
 and TAs over the years.</p>

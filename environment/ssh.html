@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Remote SSH Access &mdash; UChicago CS Student Resource Guide</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
-        <script src="../_static/analytics.js"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -120,7 +123,7 @@
            <div itemprop="articleBody">
              
   <section id="remote-ssh-access">
-<span id="ssh"></span><h1>Remote SSH Access<a class="headerlink" href="#remote-ssh-access" title="Permalink to this heading"></a></h1>
+<span id="ssh"></span><h1>Remote SSH Access<a class="headerlink" href="#remote-ssh-access" title="Link to this heading"></a></h1>
 <p>A common way of interacting with the CS Linux environment is via <strong>SSH</strong>,
 which will allow you to connect to a Linux server from your own personal
 computer (which doesn’t have to run Linux).</p>
@@ -197,12 +200,12 @@ typing <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span
 <p>If you are on campus and have trouble logging into one of the servers, please verify that you are using either <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> or <code class="docutils literal notranslate"><span class="pre">eduroam</span></code> as your wireless network.  The following is a common error message that occurs when trying to use a network that does not support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections : <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">establish</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">&quot;linuxX.cs.uchicago.edu&quot;:</span> <span class="pre">The</span> <span class="pre">operation</span> <span class="pre">timed</span> <span class="pre">out.</span></code></p>
 </div>
 <section id="installing-an-ssh-client">
-<h2>Installing an SSH Client<a class="headerlink" href="#installing-an-ssh-client" title="Permalink to this heading"></a></h2>
+<h2>Installing an SSH Client<a class="headerlink" href="#installing-an-ssh-client" title="Link to this heading"></a></h2>
 <p>If your operating system does not have an SSH client installed, please following
 the instructions below to install it. Please note that MacOS systems always include
 an SSH client, so we have not included instructions on how to install SSH on MacOS.</p>
 <section id="windows-10">
-<h3>Windows 10<a class="headerlink" href="#windows-10" title="Permalink to this heading"></a></h3>
+<h3>Windows 10<a class="headerlink" href="#windows-10" title="Link to this heading"></a></h3>
 <p>In these instructions, you will open various applications and settings by searching for them. To do this, open the Start menu by pressing the Windows key on the keyboard, or clicking the Windows icon in the corner of your screen. Begin typing the name of the application or setting, like <em>About your PC</em> (even though there is no visible search bar, one will appear when you begin typing). When the <em>About your PC</em> option appears, click on it.</p>
 <p><strong>Checking your version of Windows 10</strong></p>
 <p>You need to be running a recent version of Windows 10. To check your current version, open the Start menu, begin typing <em>About your PC</em>, and click on the option when it appears.</p>
@@ -244,7 +247,7 @@ an SSH client, so we have not included instructions on how to install SSH on Mac
 <p>The installation is complete. You should now re-try the instructions at the top of this page.</p>
 </section>
 <section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h3>
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
 <p>Linux systems typically include an SSH client but may occasionally not include one.
 The exact process to install the client may vary from one Linux distribution to another,
 but the following commands should allow you to install SSH in some of the most popular

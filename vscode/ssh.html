@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Using Visual Studio Code and SSH &mdash; UChicago CS Student Resource Guide</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
-        <script src="../_static/analytics.js"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -125,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="using-visual-studio-code-and-ssh">
-<span id="vscode-ssh"></span><h1>Using Visual Studio Code and SSH<a class="headerlink" href="#using-visual-studio-code-and-ssh" title="Permalink to this heading"></a></h1>
+<span id="vscode-ssh"></span><h1>Using Visual Studio Code and SSH<a class="headerlink" href="#using-visual-studio-code-and-ssh" title="Link to this heading"></a></h1>
 <p>VS Code provides a convenient mechanism to connect remotely to the CS Linux servers
 from inside VS Code, using SSH. This means you can run VSCode on your personal computer
 to edit files that live in the CS Linux servers, as well as interact
@@ -135,7 +138,7 @@ code).</p>
 to the CS Linux servers. We assume that you are already familiar
 with SSH; if you are not, please make sure to read the <a class="reference internal" href="../environment/ssh.html#ssh"><span class="std std-ref">Remote SSH Access</span></a> page.</p>
 <section id="server-assignments">
-<h2>Server assignments<a class="headerlink" href="#server-assignments" title="Permalink to this heading"></a></h2>
+<h2>Server assignments<a class="headerlink" href="#server-assignments" title="Link to this heading"></a></h2>
 <p><strong>Some classes, like CMSC 14100, use a different set of servers than the ones listed here. If you are in such a class, you should skip this section, and follow the instructions provided by your instructor(s).</strong></p>
 <p>In the instructions below, you will be asked to connect to a Linux
 server.  The main linux server (<code class="docutils literal notranslate"><span class="pre">linux.cs.uchicago.edu</span></code>) acts as a front
@@ -189,14 +192,14 @@ For example, if the text says run the command:</p>
 server is <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago,edu</span></code>.</p>
 </section>
 <section id="remotely-connecting-to-the-cs-linux-servers">
-<h2>Remotely connecting to the CS Linux servers<a class="headerlink" href="#remotely-connecting-to-the-cs-linux-servers" title="Permalink to this heading"></a></h2>
+<h2>Remotely connecting to the CS Linux servers<a class="headerlink" href="#remotely-connecting-to-the-cs-linux-servers" title="Link to this heading"></a></h2>
 <p>You will be able to use Visual Studio Code to connect remotely to the
 Linux computers on campus to (1) use the terminal (to execute shell
 commands, compile and run code, run automated tests, etc.),
 and (2) to edit text files (usually code).</p>
 <p>Open Visual Studio Code now.</p>
 <section id="initial-setup">
-<h3>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this heading"></a></h3>
+<h3>Initial setup<a class="headerlink" href="#initial-setup" title="Link to this heading"></a></h3>
 <p>You only need to follow the steps in this section once (or more accurately, once per computer that you will use to connect remotely). If you’ve already done this part, you can continue to “Connecting”.</p>
 <p>First, you will need to install an extension that will allow VS Code
 to use SSH. In the left sidebar of VS Code, there is an icon
@@ -247,7 +250,7 @@ macOS).</p>
 <p>You are ready to connect.</p>
 </section>
 <section id="connecting">
-<h3>Connecting<a class="headerlink" href="#connecting" title="Permalink to this heading"></a></h3>
+<h3>Connecting<a class="headerlink" href="#connecting" title="Link to this heading"></a></h3>
 <p>Click the green rectangle in the lower-left corner with the <em>&gt;&lt;</em> icon. Click <em>Remote-SSH: Connect to Host…</em>. You should see the heading <em>Select configured SSH host or enter user&#64;host</em>. This time, you should see the option <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> (where <code class="docutils literal notranslate"><span class="pre">LINUX_SERVER</span></code> is your assigned linux server) (if not, you should retry “Initial Setup”). Click on this option.</p>
 <figure class="align-default">
 <img alt="../_images/connect-6.png" src="../_images/connect-6.png" />
@@ -264,7 +267,7 @@ macOS).</p>
 </figure>
 </section>
 <section id="getting-disconnected">
-<h3>Getting Disconnected<a class="headerlink" href="#getting-disconnected" title="Permalink to this heading"></a></h3>
+<h3>Getting Disconnected<a class="headerlink" href="#getting-disconnected" title="Link to this heading"></a></h3>
 <p>If at any point you get disconnected from the server unintentionally, this will be indicated in the green box in the lower-left corner (with text such as “Disconnected from SSH”).</p>
 <figure class="align-default">
 <img alt="../_images/connect-9.png" src="../_images/connect-9.png" />
@@ -274,7 +277,7 @@ macOS).</p>
 </section>
 </section>
 <section id="using-the-terminal">
-<h2>Using the terminal<a class="headerlink" href="#using-the-terminal" title="Permalink to this heading"></a></h2>
+<h2>Using the terminal<a class="headerlink" href="#using-the-terminal" title="Link to this heading"></a></h2>
 <p>Have your VSCode window open, and check that you are connected to SSH. Open the <em>View</em> menu from the menu bar and click <em>Terminal</em> (as a shortcut, you can instead press Ctrl-Backtick, even on macOS). This will split the window into two panes. The top pane will be empty for now (or may have some “welcome” text). The bottom pane has the terminal.</p>
 <figure class="align-default">
 <img alt="../_images/connect-10.png" src="../_images/connect-10.png" />
@@ -286,7 +289,7 @@ macOS).</p>
 </div>
 </section>
 <section id="editing-text-files">
-<h2>Editing text files<a class="headerlink" href="#editing-text-files" title="Permalink to this heading"></a></h2>
+<h2>Editing text files<a class="headerlink" href="#editing-text-files" title="Link to this heading"></a></h2>
 <p>You can open a file to edit using the file menu on VSCode or by
 running the <code class="docutils literal notranslate"><span class="pre">code</span></code> command in the VSCode terminal window.  For
 example, to open a file called <code class="docutils literal notranslate"><span class="pre">hello.c</span></code>, you would run:</p>
@@ -308,7 +311,7 @@ take a few moments). Make sure to save often!</p>
 </div>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
 <p>If you run into issues with VSCode and SSH, please make sure to check out
 the troubleshooting guide prepared by the CS Techstaff: <a class="reference external" href="https://howto.cs.uchicago.edu/techstaff:vscode">https://howto.cs.uchicago.edu/techstaff:vscode</a></p>
 </section>

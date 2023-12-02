@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tutorial - Advanced Git &mdash; UChicago CS Student Resource Guide</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
-        <script src="../_static/analytics.js"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -120,7 +123,7 @@
            <div itemprop="articleBody">
              
   <section id="tutorial-advanced-git">
-<span id="tutorial-git-advanced"></span><h1>Tutorial - Advanced Git<a class="headerlink" href="#tutorial-advanced-git" title="Permalink to this heading"></a></h1>
+<span id="tutorial-git-advanced"></span><h1>Tutorial - Advanced Git<a class="headerlink" href="#tutorial-advanced-git" title="Link to this heading"></a></h1>
 <p>This tutorial covers a few advanced topics related to working with Git, mostly
 related to how to work collaboratively with other students on the same
 Git repository.</p>
@@ -131,7 +134,7 @@ Git Basics tutorial but are comfortable with the material covered in it,
 make sure to create a repository on GitHub with just a README in it, as
 you will need it to work through this tutorial.</p>
 <section id="working-collaboratively-with-git">
-<h2>Working collaboratively with Git<a class="headerlink" href="#working-collaboratively-with-git" title="Permalink to this heading"></a></h2>
+<h2>Working collaboratively with Git<a class="headerlink" href="#working-collaboratively-with-git" title="Link to this heading"></a></h2>
 <p>Suppose you are working with a classmate on a homework assignment that
 requires producing a single file called <code class="docutils literal notranslate"><span class="pre">hw1.c</span></code> that includes the
 implementation of some functions. If the file is located in a shared
@@ -238,7 +241,7 @@ conflict does arise, Git provides a specific mechanism to resolve that
 conflict, which we discuss in the following sections.</p>
 </section>
 <section id="branches">
-<h2>Branches<a class="headerlink" href="#branches" title="Permalink to this heading"></a></h2>
+<h2>Branches<a class="headerlink" href="#branches" title="Link to this heading"></a></h2>
 <p>So far, the commits in your tutorial repository have created a linear
 sequence of changes like this:</p>
 <figure class="align-default">
@@ -373,7 +376,7 @@ new branch just by running <code class="docutils literal notranslate"><span clas
 is only necessary the first time you push a new branch)</p>
 </section>
 <section id="merging">
-<h2>Merging<a class="headerlink" href="#merging" title="Permalink to this heading"></a></h2>
+<h2>Merging<a class="headerlink" href="#merging" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is, by convention, the “stable” branch of the
 repository, in the sense that it should only contain stable (not broken)
 code. So, it is very common to create separate branches to implement
@@ -443,7 +446,7 @@ made to the <code class="docutils literal notranslate"><span class="pre">main</s
 </div>
 </section>
 <section id="merge-conflicts">
-<h2>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this heading"></a></h2>
+<h2>Merge conflicts<a class="headerlink" href="#merge-conflicts" title="Link to this heading"></a></h2>
 <p>Things get a bit trickier if we try to merge branches where
 the code has diverged in some way. For example, let’s create
 a new branch called <code class="docutils literal notranslate"><span class="pre">update-buffer-size</span></code>:</p>
@@ -642,7 +645,7 @@ will see that the commit history now includes the commit from
 </div>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading"></a></h2>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h2>
 <p>Parts of this tutorial are based on a Git lab originally written for CMSC 12100
 by Prof. Anne Rogers, and edited by numerous TAs over the years. The content in
 this Advanced Git tutorial is based on materials originally written by
