@@ -203,7 +203,7 @@ page.
 .. _passwordless-ssh:
 
 Setting up Passwordless SSH
-===========================
+---------------------------
 
 You may have noticed that every time you connect to the Linux server with SSH,
 either in a terminal window or with VSCode, you are prompted for your password.
@@ -216,7 +216,7 @@ You only need to follow these instructions once on your personal
 computer/laptop.
 
 .. warning :: 
-  If you have already completed the GitHub SSH setup instructions, you
+  If you have already completed the GitHub SSH setup instructions (from the `Git Basics <tutorial-git-basics>`_  tutorial), you
   already have an SSH key pair on your computer. Please read and follow the
   instructions carefully to avoid overwriting your existing SSH key pair and
   losing access to GitHub.
@@ -229,12 +229,11 @@ not connect with SSH to the Linux server**. The following commands (steps 2-5)
 should be run on your local machine.
 
 
-**Step 2**: Run ``$ cd``
+**Step 2**: Run ``cd``
 
-Remember that $ is used to denote a terminal command, it is not part of the
-command itself. This command will take you to your home directory. 
+This command will take you to your home directory. 
 
-**Step 3**: Run ``$ ssh-keygen``
+**Step 3**: Run ``ssh-keygen``
 
 You will see the following prompt: ::
 
@@ -289,18 +288,23 @@ This message indicates that your SSH key pair has been generated successfully.
 **Step 4**: Time to copy your public key to the Linux server. This command will
 differ depending on whether you are using a Mac or Windows computer.
 
-- **Mac/Linux**: Run ``$ ssh-copy-id CNETID@<servername>.cs.uchicago.edu``
-  
-    Replace ``CNETID`` with your CNetID, and ``<servername>`` with the name of
-    the server you want to connect to. For example, if you want to connect to
-    such as ``linux1.cs.uchicago.edu`` or ``cs141-4.cs.uchicago.edu``.
+- **Mac/Linux**: Run the following command:
 
-    You will be prompted for your password. Enter your CNetID password.
+  ::
+    
+    ssh-copy-id CNETID@<servername>.cs.uchicago.edu``
+  
+  Replace ``CNETID`` with your CNetID, and ``<servername>`` with the name of
+  the server you want to connect to. For example, if you want to connect to
+  such as ``linux1.cs.uchicago.edu`` or ``cs141-4.cs.uchicago.edu``.
+
+  You will be prompted for your password. Enter your CNetID password.
 
 - **Windows**: Run the following command:
 
-  ``$ type $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh
-  CNETID@<servername>.cs.uchicago.edu “cat >> .ssh/authorized_keys”``
+  ::
+    
+    type $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh CNETID@<servername>.cs.uchicago.edu “cat >> .ssh/authorized_keys”
   
   Replace ``CNETID`` with your CNetID, and ``<servername>`` with the name of the
   server you want to connect to, such as ``linux1.cs.uchicago.edu`` or
