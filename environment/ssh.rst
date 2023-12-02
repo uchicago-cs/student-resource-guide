@@ -314,7 +314,7 @@ differ depending on whether you are using a Mac or Windows computer.
 
 **Step 5**: Test your connection. Run the following command:
   
-  ``$ ssh CNETID@<servername>.cs.uchicago.edu`` 
+  ``ssh CNETID@<servername>.cs.uchicago.edu`` 
 
 You should now be able to connect to the Linux server without being prompted for
 a password. 
