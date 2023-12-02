@@ -29,6 +29,9 @@ tutorials/linux-tutorial-files/*:
 deploy: _static/linux-tutorial-files.zip
 	echo gitdir: $(shell pwd)/.git/worktrees/html > $(BUILDDIR)/html/.git
 	touch $(BUILDDIR)/html/.nojekyll
+	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git stash --include-untracked
+	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git pull
+	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git checkout stash -- .
 	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git add -A .
 	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git commit -m"Updated website"
 	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git push origin gh-pages
