@@ -222,3 +222,10 @@ Troubleshooting
 If you run into issues with VSCode and SSH, please make sure to check out
 the troubleshooting guide prepared by the CS Techstaff: https://howto.cs.uchicago.edu/techstaff:vscode
 
+Passwordless SSH
+----------------
+You will be prompted for your password in VSCode every time you connect 
+(or reconnect) to the CS Linux servers.  If you would like to avoid this,
+you can set up passwordless SSH.  See the instructions in :ref:`passwordless-ssh`
+section.
+

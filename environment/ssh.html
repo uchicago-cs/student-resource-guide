@@ -55,6 +55,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-passwordless-ssh">Setting up Passwordless SSH</a></li>
 </ul>
 </li>
 </ul>
@@ -124,12 +125,12 @@
              
   <section id="remote-ssh-access">
 <span id="ssh"></span><h1>Remote SSH Access<a class="headerlink" href="#remote-ssh-access" title="Link to this heading"></a></h1>
-<p>A common way of interacting with the CS Linux environment is via <strong>SSH</strong>,
-which will allow you to connect to a Linux server from your own personal
-computer (which doesn’t have to run Linux).</p>
-<p>Nowadays, most operating systems include an <em>SSH client</em>, so you will likely
-not have to install any additional software. We’ll start by checking that
-you can run the SSH client on your computer (if not, we provide installation
+<p>A common way of interacting with the CS Linux environment is via <strong>SSH</strong>, which
+will allow you to connect to a Linux server from your own personal computer
+(which doesn’t have to run Linux).</p>
+<p>Nowadays, most operating systems include an <em>SSH client</em>, so you will likely not
+have to install any additional software. We’ll start by checking that you can
+run the SSH client on your computer (if not, we provide installation
 instructions further below in this page).</p>
 <p>The first step will be to open one of the following:</p>
 <ul class="simple">
@@ -143,10 +144,12 @@ following one of these instructions:</p>
 <ul class="simple">
 <li><p><strong>Windows</strong>: <a class="reference external" href="https://www.lifewire.com/how-to-open-command-prompt-2618089">How to Open Command Prompt (Windows 11, 10, 8, 7, etc.)</a></p></li>
 <li><p><strong>MacOS</strong>: <a class="reference external" href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac">Open or quit Terminal on Mac</a></p></li>
-<li><p><strong>Linux</strong>: In most Linux distributions, pressing <code class="docutils literal notranslate"><span class="pre">Ctrl-Alt-T</span></code> will open a terminal.</p></li>
+<li><p><strong>Linux</strong>: In most Linux distributions, pressing <code class="docutils literal notranslate"><span class="pre">Ctrl-Alt-T</span></code> will open a
+terminal.</p></li>
 </ul>
-<p>On Windows, the command prompt should look something like this (if you’re using the PowerShell,
-it will look basically the same, except it will say “PowerShell” at the top):</p>
+<p>On Windows, the command prompt should look something like this (if you’re using
+the PowerShell, it will look basically the same, except it will say “PowerShell”
+at the top):</p>
 <figure class="align-default">
 <img alt="../_images/windows-command-prompt.png" src="../_images/windows-command-prompt.png" />
 </figure>
@@ -159,27 +162,30 @@ it will look basically the same, except it will say “PowerShell” at the top)
 <img alt="../_images/linux-terminal.png" src="../_images/linux-terminal.png" />
 </figure>
 <p>Regardless of the operating system you’re using, the command prompt or terminal
-will allow you to enter text-based commands. To use SSH to connect to
-one of the UChicago CS Linux servers, you will need to type the following,
-taking care to replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID in all lowercase:</p>
+will allow you to enter text-based commands. To use SSH to connect to one of the
+UChicago CS Linux servers, you will need to type the following, taking care to
+replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID in all lowercase:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">CNETID</span><span class="nd">@linux</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">uchicago</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
-<p>Press Enter. If you get any sort of error message telling you that there
-is no <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command available on your computer, that means you will
-need to install SSH on your computer. You can find instructions
-on how to do this in the “Installing an SSH Client” section below.</p>
-<p>If SSH is installed on your computer, the command may first
-print out a message like this:</p>
+<p>Press Enter. If you get any sort of error message telling you that there is no
+<code class="docutils literal notranslate"><span class="pre">ssh</span></code> command available on your computer, that means you will need to install
+SSH on your computer. You can find instructions on how to do this in the
+“Installing an SSH Client” section below.</p>
+<p>If SSH is installed on your computer, the command may first print out a message
+like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;linuxX.cs.uchicago.edu (128.135.XXX.XXX)&#39; can&#39;t be established.
 ECDSA key fingerprint is SHA256:...
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 </pre></div>
 </div>
 <p>If so, just type <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p>
-<p>Then, when prompted for a password, just enter your CNetID password. Here are two troubleshooting hints:</p>
+<p>Then, when prompted for a password, just enter your CNetID password. Here are
+two troubleshooting hints:</p>
 <ul class="simple">
-<li><p>passwords are case-sensitive, that is, upper-case <code class="docutils literal notranslate"><span class="pre">S</span></code> is different from lower-case <code class="docutils literal notranslate"><span class="pre">s</span></code>.  Make sure you type your CNetID password exactly as you created it.</p></li>
+<li><p>passwords are case-sensitive, that is, upper-case <code class="docutils literal notranslate"><span class="pre">S</span></code> is different from
+lower-case <code class="docutils literal notranslate"><span class="pre">s</span></code>.  Make sure you type your CNetID password exactly as you
+created it.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ssh</span></code> will <em>not</em> echo your password back to you as you type it.</p></li>
 </ul>
 <p>If your connection is successful, you may see a series of messages, ending with
@@ -187,77 +193,207 @@ this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CNETID@linuxN:~$
 </pre></div>
 </div>
-<p>Where <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> will be your CNetID, and <code class="docutils literal notranslate"><span class="pre">N</span></code> will be a number between 1 and 7.</p>
-<p>If you see the above, you’ve connected successfully to a UChicago CS Linux server!
-If you came to this page from the <a class="reference internal" href="../tutorials/linux-basics.html#tutorial-linux-basics"><span class="std std-ref">Linux Basics tutorial</span></a>,
-you should continue working on the tutorial through the SSH connection you just opened.</p>
-<p>When you are finished using your SSH connection, close  it by
-typing <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span></code> or <code class="docutils literal notranslate"><span class="pre">exit</span></code> at the Linux prompt.</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> will be your CNetID, and <code class="docutils literal notranslate"><span class="pre">N</span></code> will be a number between 1 and
+7.</p>
+<p>If you see the above, you’ve connected successfully to a UChicago CS Linux
+server! If you came to this page from the <a class="reference internal" href="../tutorials/linux-basics.html#tutorial-linux-basics"><span class="std std-ref">Linux Basics tutorial</span></a>, you should continue working on the tutorial through
+the SSH connection you just opened.</p>
+<p>When you are finished using your SSH connection, close  it by typing <code class="docutils literal notranslate"><span class="pre">Ctrl-D</span></code>
+or <code class="docutils literal notranslate"><span class="pre">exit</span></code> at the Linux prompt.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Troubleshooting UChicago Campus Network Issues</p>
-<p>There are at least three wireless networks on campus: <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code>, <code class="docutils literal notranslate"><span class="pre">eduroam</span></code>, <code class="docutils literal notranslate"><span class="pre">uchicago</span></code>. The first two–<code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> and <code class="docutils literal notranslate"><span class="pre">eduroam</span></code>–can be used with <code class="docutils literal notranslate"><span class="pre">ssh</span></code>. The third–<code class="docutils literal notranslate"><span class="pre">uchicago</span></code>– DOES NOT support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections.</p>
-<p>If you are on campus and have trouble logging into one of the servers, please verify that you are using either <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> or <code class="docutils literal notranslate"><span class="pre">eduroam</span></code> as your wireless network.  The following is a common error message that occurs when trying to use a network that does not support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections : <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">establish</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">&quot;linuxX.cs.uchicago.edu&quot;:</span> <span class="pre">The</span> <span class="pre">operation</span> <span class="pre">timed</span> <span class="pre">out.</span></code></p>
+<p>There are at least three wireless networks on campus: <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code>,
+<code class="docutils literal notranslate"><span class="pre">eduroam</span></code>, <code class="docutils literal notranslate"><span class="pre">uchicago</span></code>. The first two–<code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> and
+<code class="docutils literal notranslate"><span class="pre">eduroam</span></code>–can be used with <code class="docutils literal notranslate"><span class="pre">ssh</span></code>. The third–<code class="docutils literal notranslate"><span class="pre">uchicago</span></code>– DOES NOT
+support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections.</p>
+<p>If you are on campus and have trouble logging into one of the servers, please
+verify that you are using either <code class="docutils literal notranslate"><span class="pre">uchicago-secure</span></code> or <code class="docutils literal notranslate"><span class="pre">eduroam</span></code> as your
+wireless network.  The following is a common error message that occurs when
+trying to use a network that does not support <code class="docutils literal notranslate"><span class="pre">ssh</span></code> connections : <code class="docutils literal notranslate"><span class="pre">Could</span>
+<span class="pre">not</span> <span class="pre">establish</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">&quot;linuxX.cs.uchicago.edu&quot;:</span> <span class="pre">The</span> <span class="pre">operation</span> <span class="pre">timed</span>
+<span class="pre">out.</span></code></p>
 </div>
 <section id="installing-an-ssh-client">
 <h2>Installing an SSH Client<a class="headerlink" href="#installing-an-ssh-client" title="Link to this heading"></a></h2>
 <p>If your operating system does not have an SSH client installed, please following
-the instructions below to install it. Please note that MacOS systems always include
-an SSH client, so we have not included instructions on how to install SSH on MacOS.</p>
+the instructions below to install it. Please note that MacOS systems always
+include an SSH client, so we have not included instructions on how to install
+SSH on MacOS.</p>
 <section id="windows-10">
 <h3>Windows 10<a class="headerlink" href="#windows-10" title="Link to this heading"></a></h3>
-<p>In these instructions, you will open various applications and settings by searching for them. To do this, open the Start menu by pressing the Windows key on the keyboard, or clicking the Windows icon in the corner of your screen. Begin typing the name of the application or setting, like <em>About your PC</em> (even though there is no visible search bar, one will appear when you begin typing). When the <em>About your PC</em> option appears, click on it.</p>
+<p>In these instructions, you will open various applications and settings by
+searching for them. To do this, open the Start menu by pressing the Windows key
+on the keyboard, or clicking the Windows icon in the corner of your screen.
+Begin typing the name of the application or setting, like <em>About your PC</em> (even
+though there is no visible search bar, one will appear when you begin typing).
+When the <em>About your PC</em> option appears, click on it.</p>
 <p><strong>Checking your version of Windows 10</strong></p>
-<p>You need to be running a recent version of Windows 10. To check your current version, open the Start menu, begin typing <em>About your PC</em>, and click on the option when it appears.</p>
+<p>You need to be running a recent version of Windows 10. To check your current
+version, open the Start menu, begin typing <em>About your PC</em>, and click on the
+option when it appears.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-1.png" src="../_images/install-ssh-win10-1.png" />
 </figure>
-<p>Scroll down to the heading <em>Windows specifications</em>. Next to <em>Edition</em>, you should see <em>Windows 10 Home</em> or <em>Windows 10 Pro</em> (or similar).</p>
+<p>Scroll down to the heading <em>Windows specifications</em>. Next to <em>Edition</em>, you
+should see <em>Windows 10 Home</em> or <em>Windows 10 Pro</em> (or similar).</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-2.png" src="../_images/install-ssh-win10-2.png" />
 </figure>
-<p>Below that you should see <em>Version</em> and a number like 2004. If this number is less than 1803, then you need to update Windows 10.</p>
+<p>Below that you should see <em>Version</em> and a number like 2004. If this number is
+less than 1803, then you need to update Windows 10.</p>
 <p><strong>Updating Windows 10</strong></p>
-<p>To update Windows 10, open the Start menu, begin typing <em>Check for updates</em>, and click on the option when it appears.</p>
+<p>To update Windows 10, open the Start menu, begin typing <em>Check for updates</em>, and
+click on the option when it appears.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-3.png" src="../_images/install-ssh-win10-3.png" />
 </figure>
-<p>The window that opens should have the heading <em>Windows Update</em>. It may tell you that you have updates available; otherwise, click the button that says <em>Check for updates</em>.</p>
+<p>The window that opens should have the heading <em>Windows Update</em>. It may tell you
+that you have updates available; otherwise, click the button that says <em>Check
+for updates</em>.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-4.png" src="../_images/install-ssh-win10-4.png" />
 </figure>
-<p>Follow the instructions to install the available updates. This may take a few minutes, and your computer may restart. When the update completes, check your version of Windows 10 again, and verify that it now reads as 1803 or greater.</p>
+<p>Follow the instructions to install the available updates. This may take a few
+minutes, and your computer may restart. When the update completes, check your
+version of Windows 10 again, and verify that it now reads as 1803 or greater.</p>
 <p><strong>Installing Windows OpenSSH Client</strong></p>
-<p>Open the Start menu, begin typing <em>Manage Optional Features</em>, and click the option when it appears.</p>
+<p>Open the Start menu, begin typing <em>Manage Optional Features</em>, and click the
+option when it appears.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-5.png" src="../_images/install-ssh-win10-5.png" />
 </figure>
-<p>You should see a window that looks like this, with the heading <em>Optional features</em>.</p>
+<p>You should see a window that looks like this, with the heading <em>Optional
+features</em>.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-6.png" src="../_images/install-ssh-win10-6.png" />
 </figure>
-<p>Scroll through the list of <em>Installed features</em>. If <em>OpenSSH Client</em> appears in the list, you are done with this step. Otherwise, click on <em>+ Add a feature</em> at the top of the page. You will get a pop-up window with the heading <em>Add an optional feature</em>. Start typing <em>OpenSSH Client</em>. When the option appears, click on the checkbox next to it.</p>
+<p>Scroll through the list of <em>Installed features</em>. If <em>OpenSSH Client</em> appears in
+the list, you are done with this step. Otherwise, click on <em>+ Add a feature</em> at
+the top of the page. You will get a pop-up window with the heading <em>Add an
+optional feature</em>. Start typing <em>OpenSSH Client</em>. When the option appears, click
+on the checkbox next to it.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-7.png" src="../_images/install-ssh-win10-7.png" />
 </figure>
-<p>Then click on the button labeled <em>Install (1)</em>. Wait for the progress bar to fill.</p>
+<p>Then click on the button labeled <em>Install (1)</em>. Wait for the progress bar to
+fill.</p>
 <figure class="align-default">
 <img alt="../_images/install-ssh-win10-8.png" src="../_images/install-ssh-win10-8.png" />
 </figure>
-<p>The installation is complete. You should now re-try the instructions at the top of this page.</p>
+<p>The installation is complete. You should now re-try the instructions at the top
+of this page.</p>
 </section>
 <section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
-<p>Linux systems typically include an SSH client but may occasionally not include one.
-The exact process to install the client may vary from one Linux distribution to another,
-but the following commands should allow you to install SSH in some of the most popular
-Linux distributions:</p>
+<p>Linux systems typically include an SSH client but may occasionally not include
+one. The exact process to install the client may vary from one Linux
+distribution to another, but the following commands should allow you to install
+SSH in some of the most popular Linux distributions:</p>
 <ul class="simple">
 <li><p><strong>Debian/Ubuntu</strong>: Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">openssh-client</span></code></p></li>
 <li><p><strong>RHEL/Fedora/CentOS</strong>: Run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">openssh-clients</span></code></p></li>
 </ul>
-<p>Once you’ve installed SSH, you should re-try the instructions at the top of the page.</p>
+<p>Once you’ve installed SSH, you should re-try the instructions at the top of the
+page.</p>
 </section>
+</section>
+<section id="setting-up-passwordless-ssh">
+<span id="passwordless-ssh"></span><h2>Setting up Passwordless SSH<a class="headerlink" href="#setting-up-passwordless-ssh" title="Link to this heading"></a></h2>
+<p>You may have noticed that every time you connect to the Linux server with SSH,
+either in a terminal window or with VSCode, you are prompted for your password.</p>
+<p>These instructions will allow you to configure your computer to connect to the
+Linux server without being prompted for your password each time, which is much
+more convenient.</p>
+<p>You only need to follow these instructions once on your personal
+computer/laptop.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you have already completed the GitHub SSH setup instructions (from the <a class="reference external" href="tutorial-git-basics">Git Basics</a>  tutorial), you
+already have an SSH key pair on your computer. Please read and follow the
+instructions carefully to avoid overwriting your existing SSH key pair and
+losing access to GitHub.</p>
+</div>
+<p><strong>Step 1</strong>: Open a terminal window on your local computer. On Windows, open a
+Powershell terminal by pressing the Windows button and searching for
+“Powershell”. This terminal should be on your <strong>local machine</strong>; that is, <strong>do
+not connect with SSH to the Linux server</strong>. The following commands (steps 2-5)
+should be run on your local machine.</p>
+<p><strong>Step 2</strong>: Run <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
+<p>This command will take you to your home directory.</p>
+<p><strong>Step 3</strong>: Run <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code></p>
+<p>You will see the following prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">rsa</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
+<span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Press Enter to accept the default location. Check the output of this command to
+decide whether you need to generate a new SSH key pair (see the warning below).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you have already completed generated an SSH key pair for (possibly for
+GitHub) , you will see a prompt like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/home/username/.ssh/id_rsa already exists. Overwrite (y/n)?
+</pre></div>
+</div>
+<p>If you see this prompt, <strong>do not overwrite your existing SSH key pair</strong>. You
+can re-use this key pair. <strong>Skip ahead to Step 4</strong>.</p>
+</div>
+<p>You will then see the following prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">passphrase</span> <span class="p">(</span><span class="n">empty</span> <span class="k">for</span> <span class="n">no</span> <span class="n">passphrase</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>In order to use SSH without a password, you must leave this passphrase empty.
+Press Enter to accept the default (empty passphrase). You will then see a
+message like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Your identification has been saved in /home/username/.ssh/id_rsa.
+Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:cBUUs2FeMCIrBlTyv/PGpBtNz0v235zvLykpoWIOS9I username@machine
+
+The key’s randomart image is:
++---[RSA 3072]----+
+| .+.. . ..@+.    |
+| + o = *         |
+| + o . o         |
+| . o o           |
+| . S             |
+| . +.o.          |
+| . E ++..=. . .  |
+| o o+++o.oo oo.  |
+| .oo+. ...o.+O   |
++----[SHA256]-----+
+</pre></div>
+</div>
+<p>This message indicates that your SSH key pair has been generated successfully.</p>
+<p><strong>Step 4</strong>: Time to copy your public key to the Linux server. This command will
+differ depending on whether you are using a Mac or Windows computer.</p>
+<ul>
+<li><p><strong>Mac/Linux</strong>: Run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ssh-copy-id CNETID@&lt;servername&gt;.cs.uchicago.edu``
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID, and <code class="docutils literal notranslate"><span class="pre">&lt;servername&gt;</span></code> with the name of
+the server you want to connect to. For example, if you want to connect to
+such as <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code> or <code class="docutils literal notranslate"><span class="pre">cs141-4.cs.uchicago.edu</span></code>.</p>
+<p>You will be prompted for your password. Enter your CNetID password.</p>
+</li>
+<li><p><strong>Windows</strong>: Run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>type $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh CNETID@&lt;servername&gt;.cs.uchicago.edu “cat &gt;&gt; .ssh/authorized_keys”
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID, and <code class="docutils literal notranslate"><span class="pre">&lt;servername&gt;</span></code> with the name of the
+server you want to connect to, such as <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code> or
+<code class="docutils literal notranslate"><span class="pre">cs141-4.cs.uchicago.edu</span></code>.</p>
+<p>You will be prompted for your password. Enter your CNetID password.</p>
+</li>
+</ul>
+<p><strong>Step 5</strong>: Test your connection. Run the following command:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">CNETID&#64;&lt;servername&gt;.cs.uchicago.edu</span></code></p>
+</div></blockquote>
+<p>You should now be able to connect to the Linux server without being prompted for
+a password.</p>
 </section>
 </section>
 
