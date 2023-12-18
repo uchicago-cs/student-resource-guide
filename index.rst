@@ -25,6 +25,8 @@ This guide is divided into the following sections:
 
    environment/environment.rst
    environment/ssh.rst
+   environment/windows.rst
+   environment/mac.rst
 
 .. toctree::
    :maxdepth: 2
