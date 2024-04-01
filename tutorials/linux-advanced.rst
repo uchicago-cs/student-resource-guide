@@ -8,8 +8,8 @@ These topics are typically not essential to perform basic tasks in a Linux envir
 but some classes may assume that you are familiar with the topics covered in this
 tutorial.
 
-This tutorial assumes that you have worked through the
-:ref:`Linux Basics tutorial <tutorial-linux-basics>`, or are already familiar
+This tutorial assumes that you have worked through the Linux tutorial sequence which starts with
+:ref:`Linux Basics Tutorial - Introduction to Linux <tutorial-linux-intro>`, or are already familiar
 with the topics covered in that tutorial. If you did not work through the Linux Basics tutorial
 but are comfortable with the material covered in it,
 make sure you download the files from the Linux Basics tutorial, as we will be using them
@@ -160,8 +160,8 @@ program2.  Or to put it more technically, the ``stdout`` of
 ``program1`` is connected to the ``stdin`` of ``program2``.
 
 As another more concrete example, consider the ``man`` command with the ``-k`` option that we've
-previously discussed in the :ref:`tutorial-linux-basics-man-pages` section of
-the :ref:`Linux Basics Tutorial <tutorial-linux-basics>`. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
+previously discussed in the :ref:`linux-man` section of
+the :ref:`Linux Basics Tutorial <tutorial-linux-intro>`. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
 How would you look for the command to create a directory? First attempts::
 
         $ man -k "create directory"
@@ -268,7 +268,7 @@ Exercise
 
 .. note::
 
-   If you have not completed the :ref:`Linux Basics Tutorial <tutorial-linux-basics>`,
+   If you have not completed the :ref:`Linux Basics Tutorial <tutorial-linux-intro>`,
    create a new directory and file by running the following in your
    ``linux-tutorial-files`` directory::
 

@@ -40,10 +40,19 @@ This guide is divided into the following sections:
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Tutorials
+   :caption: Linux Tutorials
 
-   Linux Basics <tutorials/linux-basics.rst>
+   Linux Basics <tutorials/linux-intro.rst>
+   Edit, Compile, and Run a Program <tutorials/linux-compile-and-run.rst>
+   Man Pages <tutorials/linux-man.rst>
+   Tips and Tricks <tutorials/linux-tip-tricks.rst>
    Advanced Linux <tutorials/linux-advanced.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Git Tutorials
+
    Git Basics <tutorials/git-basics.rst>
    Advanced Git <tutorials/git-advanced.rst>
 

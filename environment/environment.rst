@@ -18,8 +18,8 @@ a Linux environment remotely.
 .. admonition:: Completely new to Linux/UNIX?
 
    If you're completely new to Linux/UNIX systems, we recommend that you plan
-   to stop by the CSIL computer lab (see below), and work through the
-   :ref:`Linux Basics tutorial <tutorial-linux-basics>` on a CSIL Linux computer.
+   to stop by the CSIL computer lab (see below), and work through the Linux Basics Tutorial starting with
+   :ref:`Introduction to Linux <tutorial-linux-intro>` on a CSIL Linux computer.
    Once you're
    comfortable with the basics of using a Linux system, make sure you
    are able to remotely access the UChicago CS Linux environment
