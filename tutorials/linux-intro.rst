@@ -1,7 +1,7 @@
 .. _tutorial-linux-intro:
 
-Lunix Basics Tutorial - Introduction To Linux
-=============================================
+Lunix Tutorial - Introduction To Linux
+======================================
 
 Linux is an operating system, just like Windows and MacOS. It allows
 you (the user) to interact with your computer, and provides many
@@ -21,10 +21,15 @@ the terminal to perform some basic operations in Linux, including how to:
 #. Use basic terminal commands
 #. Navigate a UNIX filesystem
 
-For more check out:
+Please complete all tutorial sections relevant to your course.
+
+Other tutorials include:
 #. :ref:`Edit, Compile, and Run a Program <linux-compile-and-run>`
-#. :ref:`Man Pages <linux-man-pages>`
+#. :ref:`Man Pages <linux-man>`
 #. :ref:`Linux Tips and Tricks <linux-tip-tricks>`
+#. :ref:`Running Commands Sequentially <linux-sequence>`
+#. :ref:`Working with Input/Output Streams <linux-input-output>`
+#. :ref:`File Permissions <linux-permissions>`
 
 
 Where should you do this tutorial?
@@ -56,6 +61,9 @@ the music files over 5 MB that you haven't listened to in over a
 year. This task is very hard to do with the standard double-click
 interface but is relatively simple using the terminal.
 
+If you are using SSH, connecting to a CS Linux server will directly
+open a terminal for you.
+
 If you are using a desktop environment (e.g., you are sitting in CSIL
 or you're using the Virtual Desktop), you can start a terminal by
 clicking on the Application icon (3x3 grid of dots) at the bottom left of
@@ -67,9 +75,6 @@ the screen:
 Then, type "terminal" in the input box. Click the "terminal"
 icon to open a terminal window.  You can also use the keyboard shortcut: ``Ctrl+Alt+t.``
 
-If you are using SSH, connecting to a CS Linux server will directly
-open a terminal for you.
-
 Regardless of how you open the terminal, you will see something
 like this::
 
@@ -77,7 +82,7 @@ like this::
 
 where ``username`` has been replaced by your CNetID and ``computer``
 is the name of the machine you happen to be using.  This string is
-called the prompt.  When you start typing, the characters you type
+called the *prompt*.  When you start typing, the characters you type
 will appear to the right of the ``$``.
 
 The program that runs within a terminal window and processes the
@@ -126,12 +131,15 @@ your CNetID.
 
     If you are connected to a CS machine, either because you're physically sitting
     at a CSIL machine or have logged in remotely via SSH or the Remote Desktop,
-    that machine is connected to a *network file system*. This means that there is effectively
-    one very large hard drive shared by all the CS machines, and that you
+    that machine is connected to a *network file system*. 
+    
+    This means that there is effectively
+    one very large hard drive shared by all the CS machines. As a result you
     will have access to those files regardless of what machine you use.
+
     For example, if you create some files while logged into a CSIL machine,
     and then sit at a different CSIL machine the next day (or SSH into the CS Linux servers),
-    you will see the exact same files there.
+    you will have acess to the exact same files there.
 
 
 Show Files
@@ -296,6 +304,7 @@ prompt rather than the full text ``username@computer:~$`` in the rest
 of this tutorial.  Keep in
 mind, though, that the prompt shows your current working directory.
 
+.. _tutorial-materials:
 
 Pick Up the Tutorial Materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -321,6 +330,7 @@ navigate to the ``linux-tutorial-files`` directory. The next examples
 will assume that your current directory is the ``linux-tutorial-files`` directory.
 
 
+.. _useful_commands:
 
 Useful commands
 ~~~~~~~~~~~~~~~
@@ -367,7 +377,7 @@ files, the normal ``cp`` and ``rm`` commands will not work. Use ``cp -r`` instea
     *everything* in the named directory.
 
 Some useful terminology: the ``-r`` argument in ``cp -r`` or ``rm -r`` is known as a *flag*.  Flags help determine the behavior of a program.  In this case, the flag allows ``cp`` and ``rm`` to work with a directory tree, rather than just a single file. Most commands can accept a number
-of different flags; later in this tutorial, we'll see how to look up the documentation for
+of different flags; :ref:`Man Pages <linux-man>`, shows how to look up the documentation for
 specific commands, where we will be able to see the list of supported flags in each command.
 
 You can make a new directory with ``mkdir <directoryname>``, where
@@ -382,7 +392,7 @@ opening the file in an editor. We can do this with the ``cat`` command. For exam
 
     Name: Firstname Lastname
 
-In :ref:`Edit, compile, and run` you will learn how to edit these files.
+In :ref:`Edit, Compile, and Run <linux-compile-and-run>` you will learn how to edit these files.
 
 Exercises
 ^^^^^^^^^
@@ -448,12 +458,3 @@ Exercises
 ^^^^^^^^^
 
 #. Navigate to your home directory.  What do you see when you run ``ls linux-tutorial*``?  What about ``ls linux-tutorial*/*.py``?
-
-The next tutorial in Linux Basics is :ref:`Edit, Compile, and Run Files<linux-compile-and-run>`.
-
-Acknowledgments
-----------------
-
-Parts of this tutorial are based on a Linux lab originally written for CMSC 12100
-by Prof. Anne Rogers and Prof. Borja Sotomayor, and edited by numerous instructors
-and TAs over the years.

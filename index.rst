@@ -46,7 +46,9 @@ This guide is divided into the following sections:
    Edit, Compile, and Run a Program <tutorials/linux-compile-and-run.rst>
    Man Pages <tutorials/linux-man.rst>
    Tips and Tricks <tutorials/linux-tip-tricks.rst>
-   Advanced Linux <tutorials/linux-advanced.rst>
+   Running Commands Sequentially <tutorials/linux-sequence.rst>
+   Working with Input/Output Streams <tutorials/linux-input-output.rst>
+   File Permissions <tutorials/linux-permissions.rst>
 
 .. toctree::
    :maxdepth: 2
@@ -88,3 +90,4 @@ This guide is divided into the following sections:
    Getting Help <about/getting-help.rst>
    Report an Issue <about/issue.rst>
    Acknowledgements <about/acknowledgements.rst>
+   Tutorial Acknowledgements <tutorials/acknowledgements.rst>
