@@ -3,12 +3,12 @@
 Lunix Tutorial - Edit, Compile, and Run a Program
 ========================================================
 
-This tutorial is an extension of :ref:`Introduction to Linux <tutorial-linux-intro>`.
+.. note::
+   
+   This section assumes you have :ref:`picked up the tutorial
+   materials <tutorial-materials>` and that you have a :ref:`terminal
+   window open <terminal>` to  your ``linux-tutorial-files`` directory.
 
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
-
-Once you have the files navigate to the ``linux-tutorial-files`` directory. The next examples
-will assume that your current directory is the ``linux-tutorial-files`` directory.
 
 In this section of the tutorial you will learn how to use
 the terminal to perform some basic operations in Linux, including how to:
@@ -74,57 +74,12 @@ may want to check out `Vim <https://www.vim.org/>`__ or `Emacs <https://www.gnu.
 
 Using a graphical editor
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Visual Studio Code is a commonly utilized graphical editor.
-You can use Visual Studio code if you are using a desktop environment (e.g., if you are logging into
-a CSIL computer, or using the UChicago CS Virtual Machine or Virtual Desktop).
 
-Complete the `Visual Studio Code tutorial <https://code.visualstudio.com>` to get started
-with the graphical editor, Visual Studio Code.
-
-.. A graphical editor requires a desktop environment so, if you
-.. have been working through this tutorial using SSH, you should
-.. skip this section, as SSH won't allow you to run graphical programs.
-
-.. If you are using a desktop environment (e.g., if you are logging into
-.. a CSIL computer, or using the UChicago CS Virtual Machine or Virtual Desktop),
-.. you can try out `Visual Studio Code
-.. <https://code.visualstudio.com>`_ to see an example of what a graphical
-.. editor looks like.
-
-.. You can open a specific file, say ``hello.py``, using the ``code``
-.. command from the Linux command-line by typing
-
-..     $ code hello.py
-
-.. When you run this command, you will get a new window that looks like this:
-
-.. .. image:: ubuntu-vscode-1.png
-..    :align: center
-..    :alt:
-
-.. Specifically, you'll see the following text
-
-..     print("Hello, world!")
-
-
-.. If the file is blank, quit ``code`` and ensure that the file
-.. ``hello.py`` exists in your local directory (use ``ls`` to list the
-.. files in your local directory). If it does not, use ``cd`` to navigate
-.. to the ``linux-tutorial-files`` directory.
-
-.. For now, we will use Visual Studio Code (``code``) in a very basic
-.. way.  You can navigate to a particular place in a file using the arrow
-.. keys (or your mouse) and then type typical characters and delete them
-.. as you would in a regular text editor.  You can save your changes
-.. using the Save option in the File menu or use the keyboard
-.. shortcut ``Ctrl-s``.  To quit, you can use the Exit option in the File
-.. menu or the keyboard shortcut ``Ctrl-q``.
-
-.. As an aside, you can also launch ``code`` from the application
-.. launcher: simply click the Application button (at the top left of your
-.. screen), type "code" in the input box, and then click on the Visual
-.. Studio Code icon.  You can then use the "Open File..." option in the
-.. File menu to open the correct file.
+Visual Studio Code is a commonly utilized graphical editor.  You can
+use Visual Studio code if you are using a desktop environment (e.g.,
+if you are logging into a CSIL computer) or via SSH.  Complete the
+`Visual Studio Code tutorial <https://code.visualstudio.com>` to get
+started with the graphical editor, Visual Studio Code.
 
 
 The edit/compile/run cycle in the terminal
@@ -224,3 +179,7 @@ Notice how we don't have to include the ``.class`` extension.
 
 **Exercise:** Try editing ``Hello.java`` (e.g., change the message from ``Hello, world!`` to ``Hello, universe!``).
 If you re-compile the file and run it again, you should see the updated message.
+
+You have finished the section on editing, compiling, and running
+programs.  Please move on to the next section required by your
+instructor.

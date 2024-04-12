@@ -2,12 +2,6 @@
 
 Lunix Tutorial - Man Pages
 ==========================
-This tutorial is an extension of :ref:`Introduction to Linux <tutorial-linux-intro>`.
-
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
-
-Once you have the files navigate to the ``linux-tutorial-files`` directory. The next examples
-will assume that your current directory is the ``linux-tutorial-files`` directory.
 
 In this section of the tutorial you will learn how to use
 the terminal to perform some basic operations in Linux, including how to:
@@ -47,3 +41,7 @@ Exercise
 
 By default, the ``ls`` command does not include files with names that start with a dot (``.``).
 The ``linux-tutorial-files`` directory contains a file that starts with a dot.  Use ``man`` to identify the flag to use with ``ls`` to include this file when listing the contents of ``linux-tutorial-files``.
+
+
+You have finished the section on manual pages.  Please move on to the
+next section required by your instructor.

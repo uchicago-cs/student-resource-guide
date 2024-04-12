@@ -2,25 +2,15 @@
 
 Linux Tutorial - Running Commands Sequentially
 ===============================================
-This tutorial is an extension of :ref:`Introduction to Linux <tutorial-linux-intro>`.
 
-This tutorial covers a few advanced topics related to using a Linux environment.
-These topics are typically not essential to perform basic tasks in a Linux environment,
-but some classes may assume that you are familiar with the topics covered in this
-tutorial.
+.. note::
+   
+   This section assumes you have :ref:`picked up the tutorial
+   materials <tutorial-materials>` and that you have a :ref:`terminal
+   window open <terminal>` to your  ``linux-tutorial-files`` directory.
 
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
-
-Once you have the files navigate to the ``linux-tutorial-files`` directory. The next examples
-will assume that your current directory is the ``linux-tutorial-files`` directory.
-
-In this section of the tutorial you will learn how to use
-the terminal to perform some more advanced operations in Linux such as: 
-
-#. Running commands sequentially
-
-Running Commands Sequentially
------------------------------
+In this section of the tutorial you will learn how to run commands
+sequentially.
 
 It is often convenient to chain together commands that you want to run in sequence.
 For example, recall that to print the working directory and list all of
@@ -54,3 +44,14 @@ if there is a group of commands that you want to execute sequentially.
         $ pwd; ls
         $ pwd       ;        ls
 
+
+This tutorial covers a few advanced topics related to using a Linux environment.
+These topics are typically not essential to perform basic tasks in a Linux environment,
+but some classes may assume that you are familiar with the topics covered in this
+tutorial.
+
+If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
+
+You have finished the section on running commands sequentially.  Please
+move on to the next section required by your instructor.
+	

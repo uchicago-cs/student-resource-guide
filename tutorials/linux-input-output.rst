@@ -2,12 +2,13 @@
 
 Lunix Tutorial - Working with Input/Output Streams
 ==================================================
-This tutorial is an extension of :ref:`Introduction to Linux <tutorial-linux-intro>`.
 
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
+.. note::
+   
+   This section assumes you have :ref:`picked up the tutorial
+   materials <tutorial-materials>` and that you have a :ref:`terminal
+   window open <terminal>` to your ``linux-tutorial-files`` directory.
 
-Once you have the files navigate to the ``linux-tutorial-files`` directory. The next examples
-will assume that your current directory is the ``linux-tutorial-files`` directory.
 
 In this section of the tutorial you will learn how to use
 the terminal to perform some more advanced operations in Linux, including:
@@ -148,3 +149,7 @@ Exercises
 
 #. Use piping to chain together the ``printenv`` and ``tail`` commands to display the last 10 lines of output from ``printenv``.
 #. Replicate the above functionality without using the ``|`` operator. (hint: Use a temporary file.)
+
+You have finished the section on working with input and output.  Please
+move on to the next section required by your instructor.
+   

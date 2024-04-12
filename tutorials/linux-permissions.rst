@@ -2,15 +2,16 @@
 
 Lunix Tutorial - File Permissions
 =================================
-This tutorial is an extension of :ref:`Introduction to Linux <tutorial-linux-intro>`.
 
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
-
-Once you have the files navigate to the ``linux-tutorial-files`` directory. The next examples
-will assume that your current directory is the ``linux-tutorial-files`` directory.
+.. note::
+   
+   This section assumes you have :ref:`picked up the tutorial
+   materials <tutorial-materials>` and that you have a :ref:`terminal
+   window open <terminal>` to your  ``linux-tutorial-files`` directory.
 
 In this section of the tutorial you will learn how to use
 the terminal to perform some more advanced operations in Linux, including:
+
 #. File permissions
 #. Changing ownership and group
 
@@ -187,3 +188,8 @@ Exercises
 #. Change the permissions on ``testfile`` to allow write and read access for others.  Run ``ls -l testfile`` to check the new permissions.
 #. Remove group write access from ``testfile``.  Check the corrected permissions.
 #. Remove ``testfile`` using ``rm``.
+
+You have finished the section on understanding and changing file
+permissions.  This is the last section of the tutorial.
+
+   

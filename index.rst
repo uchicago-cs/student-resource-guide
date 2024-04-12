@@ -42,13 +42,14 @@ This guide is divided into the following sections:
    :hidden:
    :caption: Linux Tutorials
 
-   Linux Basics <tutorials/linux-intro.rst>
-   Edit, Compile, and Run a Program <tutorials/linux-compile-and-run.rst>
-   Man Pages <tutorials/linux-man.rst>
+   Introduction <tutorials/linux-intro.rst>
+   Navigating the Filesystem <tutorials/linux-filesystem.rst>
+   Editing, Compiling, and Running a Program <tutorials/linux-compile-and-run.rst>
+   Using Man Pages <tutorials/linux-man.rst>
    Tips and Tricks <tutorials/linux-tip-tricks.rst>
    Running Commands Sequentially <tutorials/linux-sequence.rst>
    Working with Input/Output Streams <tutorials/linux-input-output.rst>
-   File Permissions <tutorials/linux-permissions.rst>
+   Understanding File Permissions <tutorials/linux-permissions.rst>
 
 .. toctree::
    :maxdepth: 2
