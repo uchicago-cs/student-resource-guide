@@ -1,6 +1,6 @@
 .. _linux-permissions:
 
-Lunix Tutorial - File Permissions
+Linux Tutorial - File Permissions
 =================================
 
 .. note::

@@ -1,6 +1,6 @@
 .. _linux-input-output:
 
-Lunix Tutorial - Working with Input/Output Streams
+Linux Tutorial - Working with Input/Output Streams
 ==================================================
 
 .. note::

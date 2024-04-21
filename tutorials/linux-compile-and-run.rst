@@ -1,6 +1,6 @@
 .. _linux-compile-and-run:
 
-Lunix Tutorial - Edit, Compile, and Run a Program
+Linux Tutorial - Edit, Compile, and Run a Program
 ========================================================
 
 .. note::

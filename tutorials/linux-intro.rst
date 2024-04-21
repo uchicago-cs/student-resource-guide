@@ -1,6 +1,6 @@
 .. _tutorial-linux-intro:
 
-Lunix Tutorial - Introduction To Linux
+Linux Tutorial - Introduction To Linux
 ======================================
 
 Linux is an operating system, just like Windows and MacOS. It allows
