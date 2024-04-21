@@ -19,13 +19,21 @@ the terminal to perform some more advanced operations in Linux, including:
 File Permissions
 ----------------
 
-Sometimes we want to restrict who can access certain resources on the file system.
+Your personal laptop is likely set up with a login and password
+even though it is likely to be a single-user computer.  Why?  This
+simple mechanism helps to limit others' ability to access to your
+files.  Since you are likely the only user of your machine, it is
+not necessary to limit access to individual files.
 
-Most file systems assign 'File Permissions' (or just permissions) to specific users and groups of users. Unix is no different. File permissions dictate who can read (view), write (create/edit), and execute (run) files on a file system.
+On a networked filesystem, however, you may want to share some files
+with everyone, while restricting access to other files to yourself or
+a select group of users.
+
+Most file systems assign 'File Permissions' (or just permissions) to specific users and groups of users. Linux is no different. File permissions dictate who can read (view), write (create/edit), and execute (run) files on a file system.
 
 All directories and files are owned by a user. Each user can be a member of one or more groups. To see your groups, enter the command ``groups`` into the command line.
 
-File permissions in Unix systems are managed in three distinct scopes. Each scope has a distinct set of permissions.
+File permissions in Linux systems are managed in three distinct scopes. Each scope has a distinct set of permissions.
 
 **User** - The owner of a file or directory makes up the *user* scope.
 

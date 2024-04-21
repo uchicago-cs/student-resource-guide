@@ -45,13 +45,6 @@ if there is a group of commands that you want to execute sequentially.
         $ pwd       ;        ls
 
 
-This tutorial covers a few advanced topics related to using a Linux environment.
-These topics are typically not essential to perform basic tasks in a Linux environment,
-but some classes may assume that you are familiar with the topics covered in this
-tutorial.
-
-If you skipped other tutorials make sure to pick up materials in `Introduction to Linux <tutorial-materials>` before proceeding.
-
 You have finished the section on running commands sequentially.  Please
 move on to the next section required by your instructor.
 	

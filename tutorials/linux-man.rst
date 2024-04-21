@@ -1,6 +1,6 @@
 .. _linux-man:
 
-Lunix Tutorial - Man Pages
+Linux Tutorial - Man Pages
 ==========================
 
 In this section of the tutorial you will learn how to use

@@ -10,10 +10,9 @@ browsers, word processors, etc.).
 
 In almost all CS classes, instructors will assume that you know your
 way around a Linux environment, and may require that you compile and
-run code in a Linux system. While there are many things you'll
-be able to do from a Linux desktop environment, it is also important
-that you be come comfortable using the *terminal*, a command-line
-interface for interacting with the filesystem, running programs, etc.
+run code in a Linux system.  Being comfortable using the *terminal*, a command-line
+interface for interacting with the filesystem, running programs, etc, is an
+important part knowing your way around Linux.
 
 In this tutorial you will learn how to:
 
@@ -47,12 +46,11 @@ we recommend :ref:`using SSH <ssh>` to log into a CS Linux server from
 your personal computer, as this will likely be the primary way you'll
 be interacting with the CS department's Linux systems.
 
-It should also be possible for you to work through this
-tutorial in other UNIX environments, such as the MacOS terminal
-or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows, but we
-recommend against it, since you should try to become familiar
-specifically with the Linux environment provided by the CS department.
-
+Many of the steps in this tutorial can be replicated on a MacOS system
+or using `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows.
+While eventually you'll be able to reuse these skills in those
+environments, for now, we **strongly** recommend that you use the
+Linux environment provided by the CS department.
 
 .. _terminal:
 
@@ -92,9 +90,9 @@ will appear to the right of the ``$``.
 The program that runs within a terminal window and processes the
 commands the you type is called a *shell*.  We use ``bash``, which is
 the default shell on most Linux distributions, but there are other
-popular shells, such as ``ksh``, ``tcsh``, etc.
+popular shells, such as ``tcsh``, ``zsh``, etc.
 
-The terminal will start in your home directory, ``/home/username/``,
+The terminal will start in your *home directory*, ``/home/username/``,
 which is a special directory (*i.e.*, folder) assigned to your user
 account.
 
@@ -125,8 +123,12 @@ when you run the commands.)
 
 The first command (``cd``), which we explain in the :ref:`Navigating
 the File System <linux-file-system>` section, ensures that you are in
-your home directory.  The second picks up a compressed file from our
-GitHub site.  And finally, the third command decompresses that file.
+your home directory.  The second downloads up a compressed file from our
+GitHub site.   And finally, the third command decompresses that file.
+
+(As an aside, be very careful when running ``wget`` commands that you
+find in instructions on the internet.  You should always verify that the
+download site is legitimate.)
 
 After you run these commands, your home directory will contain a
 ``linux-tutorial-files`` directory that has some files

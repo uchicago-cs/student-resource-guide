@@ -147,6 +147,7 @@ Nice.
 Exercises
 ~~~~~~~~~
 
+#. Learn about the ``printenv`` command by looking at its manual page (``man printenv``)  and then giving it a try.
 #. Use piping to chain together the ``printenv`` and ``tail`` commands to display the last 10 lines of output from ``printenv``.
 #. Replicate the above functionality without using the ``|`` operator. (hint: Use a temporary file.)
 
