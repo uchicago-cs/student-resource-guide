@@ -1,10 +1,11 @@
-.. _tutorial-git-solo:
+.. _tutorial-git-basics:
 
-Tutorial - Git
-===================
+Tutorial - Git Basics
+=====================
+
 In many of your CS classes, you will use a system called Git to manage code. 
 In a nutshell, you can think of Git as a system for tracking changes to your code, storing your code on a remote server, 
-sharing your code with the course staff, and, eventually, in later courses, internships, and jobs, working collaboratively others.
+sharing your code with the course staff, and, eventually, in later courses, internships, and jobs, for working collaboratively with others.
 
 More specifically, Git is a version control system that maintains files in a 
 repository that contains not just files, but also a record of all the changes made 
@@ -47,7 +48,7 @@ your name and email address with Git using the following commands::
 
 Replace ``"YOUR NAME"`` with your name in quotes in the first command
 and ``"YOUR UCHICAGO EMAIL ADDRESS"`` with your UChicago email address
-in quotes in the second command.  
+in quotes in the second command.
 
 Git stores this information in a hidden file named ``.gitconfig`` in your
 home directory. You can see the contents of this file using the command::
@@ -75,23 +76,22 @@ Getting The Tutorial Materials
 
 To get the materials you will use for this tutorial, run::
 
-  $ wget -nv https://classes.cs.uchicago.edu/archive/2024/winter/14100-1/git-solo-tutorial.zip
-  $ unzip git-solo-tutorial.zip
+  $ wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/git-basics-tutorial.zip
+  $ unzip git-basics-tutorial.zip
 
 The first command, ``wget``, downloads a compressed directory (aka,
 folder) from the web. The second, ``unzip``, decompresses it.
 
 Once you have completed these commands, you should have a directory
-named ``git-solo-tutorial``.  In your terminal window, navigate to the
-``git-solo-tutorial`` directory using ``cd``::
+named ``git-basics-tutorial``.  In your terminal window, navigate to the
+``git-basics-tutorial`` directory using ``cd``::
 
-  $ cd git-solo-tutorial
+  $ cd git-basics-tutorial
 
 and run ``ls`` to view the contents of the directory. It should
 contain two files: ``hello.py``, and ``hola.py``.  The first is a
 simple Python program to print a few greetings in English.  The second
 is a simple Python program to print the same greetings in Spanish.
-
 
 
 Working Locally
@@ -102,17 +102,17 @@ We will start by converting an existing directory into a repository
 The first step to placing a directory under version control using Git
 is to run the git initialization command from within the directory.
 Use ``pwd`` to make sure that you are in your
-``/home/CNETID/git-solo-tutorial`` directory.  Once you are in the
+``/home/CNETID/git-basics-tutorial`` directory.  Once you are in the
 right directory, run::
 
   $ git init
 
 The result should be::
 
-  Initialized empty Git repository in /home/CNETID/git-solo-tutorial/.git/
+  Initialized empty Git repository in /home/CNETID/git-basics-tutorial/.git/
 
 (If the directory listed in the result is something other than
-``/home/CNETID/git-solo-tutorial/.git/``, please ask for help.)
+``/home/CNETID/git-basics-tutorial/.git/``, please ask for help.)
 
 This command creates a hidden folder, named ``.git``, used by Git to
 track the state of the repository.  Notice that the message indicates
@@ -128,7 +128,7 @@ system and Git's view of those files.
 
 .. figure::  img/git-a.png
    :align: center
-   :width: 6in
+   :width: 100%
 
 The Git repository side of the figure has four areas:
 
@@ -160,7 +160,7 @@ command immediately after initializing the repository::
 
   nothing added to commit but untracked files present (use "git add" to track)
 
-The first line contains information the name of the branch:
+The first line contains the name of the branch:
 ``master``.  We'll change this name to the more commonly used name
 ``main``, in a few steps.
 
@@ -210,7 +210,7 @@ Here is a figure that shows Git's updated view of the repository:
 
 .. figure::  img/git-b.png
    :align: center
-   :width: 6in
+   :width: 100%
 
 
 Now that the files are staged, we can package them into a commit using
@@ -254,7 +254,7 @@ view of the repository:
 
 .. figure::  img/git-c.png
    :align: center
-   :width: 6in
+   :width: 100%
 
 
 Notice as expected:
@@ -298,7 +298,7 @@ view of the file becomes out-of-date:
 
 .. figure::  img/git-d.png
    :align: center
-   :width: 6in
+   :width: 100%
 
 Notice that the file system version of ``hola.py`` and Git's view are
 different.  This difference is highlighted in the figure with an
@@ -356,7 +356,7 @@ Now the two views of the files are in sync:
 
 .. figure::  img/git-e.png
    :align: center
-   :width: 6in
+   :width: 100%
 
 and the status is clean::
 
@@ -474,7 +474,7 @@ The work we have done thus far is all local to the CS Linux servers.
 Now it is time to link up your repository with GitHub, a web-based
 hosting service for Git repositories.
 
-Before we can link your ``git-solo-tutorial`` repository to GitHub,
+Before we can link your ``git-basics-tutorial`` repository to GitHub,
 you'll need to create a GitHub account, create an SSH key on the CS Linux
 servers, and upload that key to GitHub.  Once those steps are
 completed, you will be able to create a repository on GitHub and then
@@ -510,7 +510,7 @@ is best to do the next few steps in your home directory, so run::
   $ cd
 
 to ensure that you are in your home directory rather than in your
-``git-solo-tutorial`` directory.
+``git-basics-tutorial`` directory.
 
 Creating an SSH Key
 ~~~~~~~~~~~~~~~~~~~
@@ -664,7 +664,7 @@ then on "New Repository":
 .. image:: img/new-repository.png
    :align: center
 
-Then, under "Repository name" enter ``git-solo-tutorial``.  Do not
+Then, under "Repository name" enter ``git-basics-tutorial``.  Do not
 change any other setting, and click on the green "Create repository"
 button.
 
@@ -688,9 +688,9 @@ from another version control system into GitHub.
 
 Since we want to link an existing local repository to this new remote
 repository on GitHub, we fall into the second case.  Navigate back to
-your ``git-solo-tutorial`` directory using ``cd``::
+your ``git-basics-tutorial`` directory using ``cd``::
 
-  $ cd git-solo-tutorial
+  $ cd git-basics-tutorial
 
 The first step is to set the URL (that is, the Uniform Resource
 Locator) for the remote repository.  To do so, copy and run the first
@@ -699,12 +699,12 @@ section of the setup page.  The command will have the form::
 
   $ git remote add origin URL
 
-where URL is the URL for your repository. Cut-and-paste the line from
+where URL is the URL for your repository. Copy-and-paste the line from
 your browser instead of retyping it to reduce the likelihood that you
 make a mistake when entering it.
 
 The URL should start with ``git@github.com:``.  If the URL starts with
-``http::`` instead, please ask for help.
+``http://`` instead, please ask for help.
 
 You can verify that you did this step correctly by running::
 
@@ -713,12 +713,12 @@ You can verify that you did this step correctly by running::
 It should show the actual URL for your repository:
 ::
    
-  git@github.com:GITHUB_USERNAME/git-solo-tutorial.git
+  git@github.com:GITHUB_USERNAME/git-basics-tutorial.git
 
 where ``GITHUB_USERNAME`` is your actual GitHub username.  If the
 result of this command does not look right, please ask for help.
 
-We have already set the branch name for ``git-solo-tutorial``, so we
+We have already set the branch name for ``git-basics-tutorial``, so we
 can skip the next step in the instructions.
 
 Next, you need to push your local commits to the repository on GitHub using ``git push``::
@@ -731,7 +731,7 @@ Next, you need to push your local commits to the repository on GitHub using ``gi
   Writing objects: 100% (14/14), 1.20 KiB | 1.20 MiB/s, done.
   Total 14 (delta 2), reused 0 (delta 0)
   remote: Resolving deltas: 100% (2/2), done.
-  To github.com:ar0r-student/git-solo-tutorial.git
+  To github.com:ar0r-student/git-basics-tutorial.git
    * [new branch]      main -> main
   Branch 'main' set up to track remote branch 'main' from 'origin'.
 
@@ -840,7 +840,7 @@ The output will be something like::
   Compressing objects: 100% (3/3), done.
   Writing objects: 100% (3/3), 378 bytes | 378.00 KiB/s, done.
   Total 3 (delta 0), reused 0 (delta 0)
-  To github.com:GITHUB_USERNAME/git-solo-tutorial.git
+  To github.com:GITHUB_USERNAME/git-basics-tutorial.git
 
 Now if you run ``git status`` it will show you that the two
 versions are in sync::
@@ -852,7 +852,7 @@ versions are in sync::
   nothing to commit, working tree clean
 
 If you refresh the browser page that is open to your
-``git-solo-tutorial`` repository on GitHub, you should now see
+``git-basics-tutorial`` repository on GitHub, you should now see
 ``hej.py``.
 
 .. image:: img/github-git-solo-5.png
@@ -868,7 +868,7 @@ repositories is a three step process:
 
 **When you are first working with git, it is good practice to end
 every work session by syncing your local and remote repositories.
-Similarly, before you ask a question on Ed, you should sync your
+Similarly, before you ask a question about your code in a class, you should sync your
 repository with GitHub to ensure that the course staff can see the
 most recent version of your code.**
 
@@ -879,14 +879,14 @@ likely it is that you will run into a difficult-to-fix Git problem.
 Exercise 3
 ~~~~~~~~~~
 
-Create a file named ``README.md`` that contains ``Git Solo Tutorial``
+Create a file named ``README.md`` that contains ``Git Basics Tutorial``
 and your name. Add this file to your local repository, create a
 commit, and sync it with GitHub.
 
 When you are finished, ``git status`` should show that your working
 tree is clean and up to date with ``origin/main`` and ``README.md``
 should appear when you refresh the browser page that is open to your
-``git-solo-tutorial`` repository on GitHub.
+``git-basics-tutorial`` repository on GitHub.
 
 
 .. image:: img/github-git-solo-6.png
@@ -1084,7 +1084,7 @@ running the ``git clone`` command (don’t run this command just yet):
 
 ::
 
-   $ git clone git@github.com:GITHUB_USERNAME/uchicago-cs-git-tutorial.git
+   $ git clone git@github.com:GITHUB_USERNAME/git-basics-tutorial.git
 
 This command will create a local "clone" of the repository that is
 currently stored on GitHub.  For the purposes of this tutorial, we'll
@@ -1098,7 +1098,7 @@ server, and run the following:
 
    $ mkdir -p /tmp/$USER
    $ cd /tmp/$USER
-   $ git clone git@github.com:GITHUB_USERNAME/git-solo-tutorial.git
+   $ git clone git@github.com:GITHUB_USERNAME/git-basics-tutorial.git
 
 Make sure to replace ``GITHUB_USERNAME`` with your GitHub username!
 (The string ``$USER`` will be automatically replaced with your
@@ -1111,12 +1111,12 @@ need to ``cd`` into it to use Git commands for that repository:
 
 ::
 
-   $ cd git-solo-tutorial
+   $ cd git-basics-tutorial
 
 You now have two local copies of the repository: one in your home
-directory (``/home/CNETID/git-solo-tutorial``), which we will refer to
+directory (``/home/CNETID/git-basics-tutorial``), which we will refer to
 as your *home* repository for now and one in ``/tmp``
-(``/tmp/CNETID/git-solo-tutorial``) which we will refer to as your
+(``/tmp/CNETID/git-basics-tutorial``) which we will refer to as your
 *temp* repository.
 
 Switch to the window that is open to your home repository, create a
@@ -1151,7 +1151,7 @@ The output of this command should look something like this:
    remote: Compressing objects: 100% (1/1), done.
    remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
    Unpacking objects: 100% (3/3), 265 bytes | 265.00 KiB/s, done.
-   From github.com:ar0r-student/git-solo-tutorial
+   From github.com:ar0r-student/git-basics-tutorial
       0864622..58651e3  main       -> origin/main
    Updating 0864622..58651e3
    Fast-forward
