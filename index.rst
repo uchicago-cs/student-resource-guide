@@ -44,8 +44,20 @@ This guide is divided into the following sections:
 
    Linux Basics <tutorials/linux-basics.rst>
    Advanced Linux <tutorials/linux-advanced.rst>
-   Git Basics <tutorials/git-basics.rst>
-   Advanced Git <tutorials/git-advanced.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Git Tutorial
+
+   Introduction	<tutorials/git-intro.rst>
+   Local Repositories <tutorials/git-local.rst>
+   Preparing to use GitHub <tutorials/git-prepare-github.rst>
+   Remote Repositories <tutorials/git-remote.rst>
+   Discarding Changes and Unstaging <tutorials/git-discarding-changes.rst>
+   Viewing the Commit Log <tutorials/git-commit-log.rst>
+   Working from Multiple Locations <tutorials/git-multiple-locations.rst>
+   Advanced Topics <tutorials/git-advanced.rst>
 
 .. toctree::
    :maxdepth: 2
