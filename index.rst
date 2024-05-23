@@ -57,7 +57,7 @@ This guide is divided into the following sections:
    Discarding Changes and Unstaging <tutorials/git-discarding-changes.rst>
    Viewing the Commit Log <tutorials/git-commit-log.rst>
    Working from Multiple Locations <tutorials/git-multiple-locations.rst>
-   Advanced Topics <tutorials/git-advanced.rst>
+   Working with Branches  <tutorials/git-branches.rst>
 
 .. toctree::
    :maxdepth: 2

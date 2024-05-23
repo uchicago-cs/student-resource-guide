@@ -16,8 +16,8 @@ existing directory into a repository and how to create commits.  In
 this part, you will learn how to link up your repository with GitHub.
 
 
-Creating a Repository on Git
-----------------------------
+Creating a Repository on GitHub
+-------------------------------
 
 To link our local repository to a repository on GitHub, we need to
 first create an empty repository on GitHub.  To do this, log into

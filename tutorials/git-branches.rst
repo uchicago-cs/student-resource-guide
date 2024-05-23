@@ -1,18 +1,18 @@
-.. _tutorial-git-advanced:
+.. _tutorial-git-branches:
 
-Tutorial - Advanced Git
-=======================
+Git Tutorial - Working with Branches
+====================================
 
 This tutorial covers a few advanced topics related to working with Git, mostly
 related to how to work collaboratively with other students on the same
 Git repository.
 
-This tutorial assumes that you have worked through the
-:ref:`Git Basics tutorial <tutorial-git-basics>`, or are already familiar
-with the topics covered in that tutorial. If you did not work through the
-Git Basics tutorial but are comfortable with the material covered in it,
-make sure to create a repository on GitHub with just a README in it, as
-you will need it to work through this tutorial.
+This tutorial assumes that you have worked through the previous
+sections of the Git tutorial or are already familiar with the topics
+covered in the earlier parts of the tutorial. If you did not work
+through them but are comfortable with the material covered in it, make
+sure to create a repository on GitHub with just a README in it, as you
+will need it to work through this tutorial.
 
 Working collaboratively with Git
 --------------------------------
@@ -625,6 +625,4 @@ Acknowledgements
 ----------------
 
 Parts of this tutorial are based on a Git lab originally written for CMSC 12100
-by Prof. Anne Rogers, and edited by numerous TAs over the years. The content in
-this Advanced Git tutorial is based on materials originally written by
-Isha Mehrotra (SB'19) for CMSC 22000.
+by Prof. Anne Rogers, and edited by numerous TAs over the years. 
