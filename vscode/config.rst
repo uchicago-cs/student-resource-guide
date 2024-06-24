@@ -99,7 +99,7 @@ will see a second vertical line at 120 characters.
 Turning off Git Integration
 ---------------------------
 
-Git is a version control system that is in many CS courses at
+Git is a version control system used in many CS courses at
 UChicago.
 
 By default, VSCode has tools for working with Git installed.  While
@@ -108,10 +108,9 @@ understanding of Git, it can cause problems for new programmers.  As a
 result, some instructors will ask you to disable VSCode + Git
 integration.  This section explains how to do so.
 
-To turn off Git integration, open the VSCode settings panel (either by
+To turn off Git integration, open the VSCode settings panel by
 using the menu as you did in the previous section or using the
-keyboard shortcut ``Control+,`` (``Command+,`` for MacOS users), that
-is, hold down the control key and type a comma.
+keyboard shortcut ``Control+,`` (``Command+,`` for MacOS users).
 
 In the settings search bar, type ``git: enabled`` as shown below:
 
@@ -129,7 +128,7 @@ click to remove the checkmark.  The result should be:
 You can then close the settings panel by clicking the ``X`` in the
 ``Settings`` tab.
 
-Once are you comfortable with using Git for solo projects and for
+Once are you comfortable with using Git for solo projects and
 group projects, you can reverse this process to turn Git integration
 back on.
 
