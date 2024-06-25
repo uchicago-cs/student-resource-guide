@@ -90,8 +90,9 @@ add the files to the list of files that will be part of the next
 commit.
 
 We'll take advantage of this hint in a minute.  First, it is important
-to understand that creating a commit is a two step process.  First,
-you need to *stage* the files that you want to be part of the commit
+to understand that creating a commit is a two step process.  
+
+First, you need to *stage* the files that you want to be part of the commit
 and then, once you have staged the right set of files, you need to
 create the actual commit.
 
@@ -104,7 +105,7 @@ the command to add (stage) both of our files at once::
 
   $ git add hello.py hola.py
 
-This command is silent, that is, it does not generate any output when
+This command is silent, meaning it does not generate any output when
 it runs successfully.
 
 We can run ``git status`` to verify that Git's view of the files has

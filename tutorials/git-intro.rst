@@ -118,5 +118,5 @@ creating and working with a local Git repository.
 prepared by Borja Sotomayor, and in part, based on a Git lab
 originally written for CMSC 12100 by Anne Rogers, and improved by
 numerous TAs over the years.  The content in
-:ref:`<tutorial-git-branches>` seciton is based on materials
+:ref:`<tutorial-git-branches>` section is based on materials
 originally written by Isha Mehrotra (SB'19) for CMSC 22000.

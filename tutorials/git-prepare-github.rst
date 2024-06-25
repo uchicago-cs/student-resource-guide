@@ -31,10 +31,10 @@ The next step is to create an SSH key and upload it to GitHub, which
 will allow you to access your GitHub repositories from the terminal.
 
 While these steps may seem a bit intricate, you only need to do them
-once for the CS Linux machines.  (If at some later date, you want to
+once for the CS Linux machines.  If at some later date, you want to
 access your repository from a different computer (e.g. your personal
 computer), you will have to create a new SSH key and upload it to
-GitHub.)
+GitHub.
 
 As in the previous sections, these commands should be run in a
 terminal window that is connected to one of the CS Linux servers.  It
@@ -185,8 +185,8 @@ You can safely enter "yes" here. You should then see a message like this::
     Hi username! You've successfully authenticated, but GitHub does
     not provide shell access.
 
-This means your SSH key is properly set up (don't worry about the "does not provide shell access," that is
-normal).
+This means your SSH key is properly set up. Don't worry about the "does not provide shell access," that is
+normal.
 
 If you are unable to set up your SSH key, please make sure to ask for help. You will not
 be able to complete the rest of the tutorial until you've set up your SSH key.

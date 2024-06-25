@@ -52,7 +52,7 @@ Since we want to link an existing local repository to this new remote
 repository on GitHub, we fall into the second case.
 
 In your terminal window, verify that you are in your ``git-tutorial``
-directory using ``pwd`` and if, not nagivate to it.
+directory using ``pwd`` and if, not navigate to it.
 
 The first step is to set the URL (that is, the Uniform Resource
 Locator) for the remote repository.  To do so, copy and run the first
