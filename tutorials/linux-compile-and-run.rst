@@ -47,8 +47,8 @@ This will open the ``test.txt`` file in the nano editor, which will look somethi
 .. image:: nano.png
    :align: center
 
-The way you interact with this editor will be very similar to how you use a text editor (or
-a word processor) in a graphical desktop environment: you can use the arrow keys to move
+The way you interact with this editor will be very similar to how you use a text editor or
+a word processor in a graphical desktop environment: you can use the arrow keys to move
 around the text, and typing text will insert that text at the location of the cursor.
 You can also use the Backspace key to delete text.
 

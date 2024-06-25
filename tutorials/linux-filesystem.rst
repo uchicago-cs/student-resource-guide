@@ -341,7 +341,7 @@ Sometimes when we enter a string, we want part of it to be variable, or a wildca
 
     $ ls *.txt
 
-The wildcard can represent a string of any length consisting of any characters - including the empty string.
+The wildcard can represent a string of any length consisting of any characters, including the empty string.
 
 It is important to be **careful** using wildcards, especially for commands like ``rm`` that cannot be undone. A command like::
 
@@ -349,7 +349,7 @@ It is important to be **careful** using wildcards, especially for commands like 
 
 will delete **all** of the files in your working directory!
 
-FYI, the text that follows a ``#`` on the linux command-line is
+Note that text following a ``#`` on the linux command-line is
 treated as a comment and is ignored.
 
 Exercises

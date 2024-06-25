@@ -97,7 +97,7 @@ which is a special directory (*i.e.*, folder) assigned to your user
 account.
 
 In each part of the tutorial, we will introduce a new concept or
-skill, and will provide a few simple examples. In fact, we show many
+skill, and will provide a few simple examples. This includes
 examples of sample output throughout the tutorial. Bear in mind that
 the output you see when you run through our examples may vary a bit;
 this is normal.  We have also included a few exercises in each section
@@ -118,17 +118,17 @@ To fetch these files, run the following commands one at a time::
     $ wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
     $ unzip linux-tutorial-files.zip
 
-(We use ``$`` to represent the Linux command-line prompt.  Do not include it
-when you run the commands.)
+Note that we use ``$`` to represent the Linux command-line prompt.  Do not include it
+when you run the commands.
 
 The first command (``cd``), which we explain in the :ref:`Navigating
 the File System <linux-file-system>` section, ensures that you are in
 your home directory.  The second downloads up a compressed file from our
 GitHub site.   And finally, the third command decompresses that file.
 
-(As an aside, be very careful when running ``wget`` commands that you
+As an aside, be very careful when running ``wget`` commands that you
 find in instructions on the internet.  You should always verify that the
-download site is legitimate.)
+download site is legitimate.
 
 After you run these commands, your home directory will contain a
 ``linux-tutorial-files`` directory that has some files
