@@ -447,10 +447,89 @@ Exercises
 
 .. _tutorial-linux-basics-man-pages:
 
-Man Pages
----------
+Getting Help
+------------
 
-A man page (short for manual page) documents or describes topics related to working with Linux. These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
+There are a number of ways to get help using command-line applications from within the terminal itself:
+
+Many commands have a `--help` flag, for example `pwd`::
+
+    $ pwd --help
+
+    pwd - output the current working directory
+
+    pwd [-P | --physical]
+    pwd [-L | --logical]
+
+    DESCRIPTION
+    NOTE: This page documents the fish builtin pwd.  To see the documentation on the pwd command you might have, use command man pwd.
+
+    pwd outputs (prints) the current working directory.
+
+    The following options are available:
+
+    -L or --logical
+           Output the logical working directory, without resolving symlinks (default behavior).
+
+    -P or --physical
+           Output the physical working directory, with symlinks resolved.
+
+    -h or --help
+           Displays help about using this command.
+
+This will often give helpful reminders about flags and options.
+
+tldr
+~~~~
+
+The CS Linux servers also have a program called `tldr` installed.
+
+This program gives a selection of examples of common behaviors, designed to be useful when performing tasks that you haven't memorized the correct arguments for::
+
+    $ tldr ls
+
+    List directory contents.
+    More information: <https://www.gnu.org/software/coreutils/ls>.
+
+    List files one per line:
+
+        ls -1
+
+    List all files, including hidden files:
+
+        ls -a
+
+    List all files, with trailing `/` added to directory names:
+
+        ls -F
+
+    Long format list (permissions, ownership, size, and modification date) of all files:
+
+        ls -la
+
+    Long format list with size displayed using human-readable units (KiB, MiB, GiB):
+
+        ls -lh
+
+    Long format list sorted by size (descending) recursively:
+
+        ls -lSR
+
+    Long format list of all files, sorted by modification date (oldest first):
+
+        ls -ltr
+
+    Only list directories:
+
+        ls -d */
+
+man pages
+~~~~~~~~~
+
+A man page (short for manual page) documents or describes topics related to working with Linux.
+These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
+
+These are the most comprehensive form of help, but also the most verbose.
 
 To get the man page for a Linux command, you can type::
 
