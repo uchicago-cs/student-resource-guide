@@ -484,7 +484,13 @@ tldr
 
 The CS Linux servers also have a program called `tldr` installed.
 
-This program gives a selection of examples of common behaviors, designed to be useful when performing tasks that you haven't memorized the correct arguments for::
+This program gives a selection of examples of common behaviors. It isn't comprehensive, but can often give a quick answer when you are trying to remember how to perform a particular task.
+
+To get the tldr page for a Linux command, you can type::
+
+    man <command name>
+
+For example::
 
     $ tldr ls
 
