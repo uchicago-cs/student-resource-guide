@@ -452,7 +452,7 @@ Getting Help
 
 There are a number of ways to get help using command-line applications from within the terminal itself:
 
-Many commands have a `--help` flag, for example `pwd`::
+Many commands have a ``--help`` flag that can be passed after the command name. ``pwd`` for example::
 
     $ pwd --help
 
