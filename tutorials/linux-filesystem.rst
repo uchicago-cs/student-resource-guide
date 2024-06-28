@@ -310,8 +310,8 @@ these terminal commands.
 5. Verify that step (4) was successful by listing the files in the
    ``backups`` directory.
 
-6. Now that we have a copy of ``test.txt`` in the ``backups`` directory we
-   no longer need ``copy2.txt``. Remove the file ``copy2.txt`` in the ``linux-tutorial-files``
+6. Now that we have a copy of ``test.txt`` in the file named ``copy2.txt`` in the ``backups`` directory we
+   no longer need ``copy2.txt`` in ``linux-tutorial-files``. Remove the file ``copy2.txt`` from the ``linux-tutorial-files``
    directory.
 
 7. Print the contents of the ``hello.py`` file.

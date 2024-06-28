@@ -42,6 +42,12 @@ up for previous (backward), down for next (forward).
 
 Here are some useful shortcuts for editing the current text on the command-line:
 
+- ``Ctrl-A`` will move you to the beginning of a line.
+- ``Ctrl-E`` will move you to the end of a line.
+- ``Ctrl-U`` will erase everything from where you are in a line back to the beginning.
+- ``Ctrl-K`` will erase everything from where you are to the end of the line.
+- ``Ctrl-L`` will clear the text from current terminal  
+  
 
 Play around with these commands.  Being able to scroll back to, edit,
 and then rerun previously used commands saves time and typing!  And
