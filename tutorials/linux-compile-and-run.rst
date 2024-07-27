@@ -181,5 +181,7 @@ Notice how we don't have to include the ``.class`` extension.
 If you re-compile the file and run it again, you should see the updated message.
 
 You have finished the section on editing, compiling, and running
-programs.  Please move on to the next section required by your
-instructor.
+programs.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.

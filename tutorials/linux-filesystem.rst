@@ -357,5 +357,7 @@ Exercises
 
 #. Navigate to your home directory.  What do you see when you run ``ls linux-tutorial*``?  What about ``ls linux-tutorial*/*.py``?
 
-You have finished the section on navigating the file system.  Please
-move on to the next section required by your instructor.
+You have finished the section on navigating the file system.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.

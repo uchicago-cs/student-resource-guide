@@ -70,6 +70,8 @@ Here is a complete list of the commands discussed in this section:
 - ``Ctrl-L`` will clear the text from current terminal
 
 
-You have finished the tips and tricks section.  Please move on to the
-next section required by your instructor.
+You have finished the tips and tricks section.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.
 

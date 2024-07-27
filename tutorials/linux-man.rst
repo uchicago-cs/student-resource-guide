@@ -43,5 +43,7 @@ By default, the ``ls`` command does not include files with names that start with
 The ``linux-tutorial-files`` directory contains a file that starts with a dot.  Use ``man`` to identify the flag to use with ``ls`` to include this file when listing the contents of ``linux-tutorial-files``.
 
 
-You have finished the section on manual pages.  Please move on to the
-next section required by your instructor.
+You have finished the section on manual pages.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.

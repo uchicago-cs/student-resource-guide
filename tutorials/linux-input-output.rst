@@ -151,6 +151,7 @@ Exercises
 #. Use piping to chain together the ``printenv`` and ``tail`` commands to display the last 10 lines of output from ``printenv``.
 #. Replicate the above functionality without using the ``|`` operator. (hint: Use a temporary file.)
 
-You have finished the section on working with input and output.  Please
-move on to the next section required by your instructor.
-   
+You have finished the section on working with input and output.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.

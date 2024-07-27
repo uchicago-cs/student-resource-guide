@@ -45,6 +45,7 @@ if there is a group of commands that you want to execute sequentially.
         $ pwd       ;        ls
 
 
-You have finished the section on running commands sequentially.  Please
-move on to the next section required by your instructor.
-	
+You have finished the section on running commands sequentially.
+
+If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.
