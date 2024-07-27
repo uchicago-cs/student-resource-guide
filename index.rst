@@ -40,10 +40,22 @@ This guide is divided into the following sections:
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Tutorials
+   :caption: Linux Tutorials
 
-   Linux Basics <tutorials/linux-basics.rst>
-   Advanced Linux <tutorials/linux-advanced.rst>
+   Introduction <tutorials/linux-intro.rst>
+   Navigating the Filesystem <tutorials/linux-filesystem.rst>
+   Editing, Compiling, and Running a Program <tutorials/linux-compile-and-run.rst>
+   Using Man Pages <tutorials/linux-man.rst>
+   Tips and Tricks <tutorials/linux-tip-tricks.rst>
+   Running Commands Sequentially <tutorials/linux-sequence.rst>
+   Working with Input/Output Streams <tutorials/linux-input-output.rst>
+   Understanding File Permissions <tutorials/linux-permissions.rst>
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Git Tutorials
+
    Git Basics <tutorials/git-basics.rst>
    Advanced Git <tutorials/git-advanced.rst>
 
@@ -79,3 +91,4 @@ This guide is divided into the following sections:
    Getting Help <about/getting-help.rst>
    Report an Issue <about/issue.rst>
    Acknowledgements <about/acknowledgements.rst>
+   Tutorial Acknowledgements <tutorials/acknowledgements.rst>

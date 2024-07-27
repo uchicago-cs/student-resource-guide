@@ -82,8 +82,8 @@ Where ``CNETID`` will be your CNetID, and ``N`` will be a number between 1 and
 7.
 
 If you see the above, you've connected successfully to a UChicago CS Linux
-server! If you came to this page from the :ref:`Linux Basics tutorial
-<tutorial-linux-basics>`, you should continue working on the tutorial through
+server! If you came to this page from the :ref:`Linux Basics Tutorial - Introduction to Linux
+<tutorial-linux-intro>`, you should continue working on the tutorial through
 the SSH connection you just opened.
 
 When you are finished using your SSH connection, close  it by typing ``Ctrl-D``

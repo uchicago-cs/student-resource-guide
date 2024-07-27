@@ -45,7 +45,8 @@ or `Ubuntu WSL <https://ubuntu.com/wsl>`__ on Windows.
 
 Please note that this tutorial assumes familiarity with using a UNIX
 environment. If you are unfamiliar with how to use a UNIX environment, such
-as Linux, you should work through the :ref:`Linux Tutorial <tutorial-linux-basics>` first.
+as Linux, you should work through the Linux Basics Tutorial starting with
+:ref:`Introduction to Linux <tutorial-linux-intro>` first.
 
 Throughout the tutorial, you will have to make some simple edits
 to a few text files. If you are using SSH to connect to a CS Linux server,
