@@ -3,15 +3,9 @@
 Linux Tutorial - Man Pages
 ==========================
 
-In this section of the tutorial you will learn how to use
-the terminal to perform some basic operations in Linux, including how to:
-
-#. Read a man page
-
-Man Pages
----------
-
-A man page (short for manual page) documents or describes topics related to working with Linux and helps give insights into Linux based tools. 
+In this section of the tutorial you will learn how to
+access and read man pages (short for manual pages),
+which document or describe topics related to working with Linux and helps give insights into Linux based tools.
 These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
 Information provided by a man page can include what flags and arguments can be utilized with a command. 
 More information about flags and arguments can be found in `Intro to Linux - Useful Commands <useful_commands>`.

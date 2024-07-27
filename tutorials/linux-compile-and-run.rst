@@ -76,10 +76,13 @@ Using a graphical editor
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Visual Studio Code is a commonly utilized graphical editor.  You can
-use Visual Studio code if you are using a desktop environment (e.g.,
-if you are logging into a CSIL computer) or via SSH.  Complete the
-`Visual Studio Code tutorial <https://code.visualstudio.com>` to get
-started with the graphical editor, Visual Studio Code.
+use Visual Studio Code if you are using a desktop environment like Windows
+or MacOS, or if you are logged into a CSIL computer. If you are using
+your personal computer, Visual Studio Code will also allow you to
+connect to the CS Linux servers using SSH.
+
+If you'd like to set up Visual Studio Code, please see the Visual Studio
+Code pages linked from the left sidebar, starting with :ref:`About VS Code <vscode-about>`
 
 
 The edit/compile/run cycle in the terminal
