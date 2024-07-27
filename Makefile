@@ -14,10 +14,16 @@ help:
 
 .PHONY: help Makefile
 
-_static/linux-tutorial-files.zip: tutorials/linux-tutorial-files/*
-	(cd tutorials; zip -r ../_static/linux-tutorial-files.zip linux-tutorial-files/;)
+_static/linux-tutorial-files.zip: tutorials/files/linux-tutorial-files/*
+	(cd tutorials/files/; zip -r ../../_static/linux-tutorial-files.zip linux-tutorial-files/;)
 
-tutorials/linux-tutorial-files/*:
+tutorials/files/linux-tutorial-files/*:
+	@:
+
+_static/git-basics-tutorial.zip: tutorials/files/git-basics-tutorial/*
+	(cd tutorials/files/; zip -r ../../_static/git-basics-tutorial.zip git-basics-tutorial/;)
+
+tutorials/files/git-basics-tutorial/*:
 	@:
 
 # For the deploy target to work, a worktree must be created
@@ -26,7 +32,7 @@ tutorials/linux-tutorial-files/*:
 #
 #   git worktree add -B gh-pages _build/html origin/gh-pages
 
-deploy: _static/linux-tutorial-files.zip
+deploy: _static/linux-tutorial-files.zip _static/git-basics-tutorial.zip
 	echo gitdir: $(shell pwd)/.git/worktrees/html > $(BUILDDIR)/html/.git
 	touch $(BUILDDIR)/html/.nojekyll
 	git --work-tree=$(BUILDDIR)/html/ --git-dir=$(BUILDDIR)/html/.git stash --include-untracked
