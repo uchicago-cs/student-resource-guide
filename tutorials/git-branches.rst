@@ -3,11 +3,14 @@
 Git Tutorial - Working with Branches
 ====================================
 
-This tutorial covers a few advanced topics related to working with Git, mostly
-related to how to work collaboratively with other students on the same
-Git repository.
+Starting with this section, the tutorial covers a few advanced topics
+related to working with Git, mostly related to how to work collaboratively
+with other students on the same Git repository. If you have been working
+through the tutorial for a class that only requires you to work individually
+with your repository, you may not need to read the following sections
+(if in doubt, check with your instructor).
 
-This tutorial assumes that you have worked through the previous
+The following sections assume that you have worked through the previous
 sections of the Git tutorial or are already familiar with the topics
 covered in the earlier parts of the tutorial. If you did not work
 through them but are comfortable with the material covered in it, make
@@ -620,9 +623,3 @@ will see that the commit history now includes the commit from
 
    Add note on how merge conflicts can happen even if you are not working
    with branches.
-
-Acknowledgements
-----------------
-
-Parts of this tutorial are based on a Git lab originally written for CMSC 12100
-by Prof. Anne Rogers, and edited by numerous TAs over the years. 
