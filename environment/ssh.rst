@@ -215,11 +215,13 @@ more convenient.
 You only need to follow these instructions once on your personal
 computer/laptop.
 
-.. warning :: 
-  If you have already completed the GitHub SSH setup instructions (from the `Git Basics <tutorial-git-basics>`_  tutorial), you
-  already have an SSH key pair on your computer. Please read and follow the
-  instructions carefully to avoid overwriting your existing SSH key pair and
-  losing access to GitHub.
+.. warning ::
+
+   If you have already completed the GitHub SSH setup instructions
+   (from the `Git Tutorial <tutorial-git-intro>`_), you
+   already have an SSH key pair on your computer. Please read and follow the
+   instructions carefully to avoid overwriting your existing SSH key pair and
+   losing access to GitHub.
 
 
 **Step 1**: Open a terminal window on your local computer. On Windows, open a
