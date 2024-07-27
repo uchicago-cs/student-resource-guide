@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Tutorial - Viewing the Commit Log &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Tutorial - Working from Multiple Locations" href="git-multiple-locations.html" />
+    <link rel="prev" title="Git Tutorial - Discarding Changes and Unstaging" href="git-discarding-changes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Git Tutorial - Viewing the Commit Log</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/git-commit-log.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="git-discarding-changes.html" class="btn btn-neutral float-left" title="Git Tutorial - Discarding Changes and Unstaging" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-multiple-locations.html" class="btn btn-neutral float-right" title="Git Tutorial - Working from Multiple Locations" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-tutorial-viewing-the-commit-log">
+<span id="tutorial-git-commit-log"></span><h1>Git Tutorial - Viewing the Commit Log<a class="headerlink" href="#git-tutorial-viewing-the-commit-log" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have:</p>
+<ul class="simple">
+<li><p>completed the <a class="reference internal" href="git-discarding-changes.html#tutorial-git-discarding-changes"><span class="std std-ref">Git Tutorial - Discarding Changes and Unstaging</span></a> section of the tutorial,</p></li>
+<li><p>opened a terminal window that is connected to one of the CS Linux servers, and</p></li>
+<li><p>navigated to your <code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code> directory.</p></li>
+</ul>
+</div>
+<p>Once you have made multiple commits, you can see these commits, their
+dates, commit messages, author, etc. using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>
+command. This command will open a scrollable interface (using the
+up/down arrow keys) that you can get out of by pressing the <code class="docutils literal notranslate"><span class="pre">q</span></code>
+key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">commit</span> <span class="mi">91</span><span class="n">ee425d4091f1c3d69accea84000a34ad14c856</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">,</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Anne</span> <span class="n">Rogers</span> <span class="o">&lt;</span><span class="n">ar0r14003</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">15</span> <span class="mi">15</span><span class="p">:</span><span class="mi">05</span><span class="p">:</span><span class="mi">54</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Wrapping</span> <span class="n">up</span> <span class="n">the</span> <span class="n">restore</span> <span class="n">section</span> <span class="n">of</span> <span class="n">the</span> <span class="n">tutorial</span>
+
+<span class="n">commit</span> <span class="mf">55e4745</span><span class="n">ef93c457649703c44909d63a3a06f0096</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">NAME</span> <span class="o">&lt;</span><span class="n">EMAIL</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">15</span> <span class="mi">14</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">16</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Added</span> <span class="n">README</span> <span class="n">file</span>
+
+<span class="n">commit</span> <span class="n">f81ceb9561bc80c6e4983b57e222c92fbd94b4c7</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">NAME</span> <span class="o">&lt;</span><span class="n">EMAIL</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">May</span> <span class="mi">15</span> <span class="mi">14</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mi">42</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Added</span> <span class="n">Danish</span> <span class="n">version</span>
+
+<span class="n">commit</span> <span class="mi">982</span><span class="n">d639fbc872ff407e2894ae457e87363a6942d</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">NAME</span> <span class="o">&lt;</span><span class="n">EMAIL</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Mon</span> <span class="n">May</span> <span class="mi">13</span> <span class="mi">18</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">58</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Added</span> <span class="n">French</span> <span class="n">version</span>
+
+<span class="n">commit</span> <span class="n">e8029ada15807dddf116a59f922093cae2c57cc1</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">NAME</span> <span class="o">&lt;</span><span class="n">EMAIL</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Mon</span> <span class="n">May</span> <span class="mi">13</span> <span class="mi">18</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">08</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+    <span class="n">Added</span> <span class="n">more</span> <span class="n">salutations</span>
+
+<span class="n">commit</span> <span class="mi">76</span><span class="n">d83bbd9fafa033f9fbffddfafabd04e3cb8cbe</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">NAME</span> <span class="o">&lt;</span><span class="n">EMAIL</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Mon</span> <span class="n">May</span> <span class="mi">13</span> <span class="mi">18</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">52</span> <span class="mi">2024</span> <span class="o">-</span><span class="mi">0500</span>
+
+  <span class="n">Forgot</span> <span class="n">to</span> <span class="n">capitalize</span> <span class="ow">in</span> <span class="n">Spanish</span> <span class="n">version</span>
+
+<span class="p">:</span>
+</pre></div>
+</div>
+<p>As we saw earlier, you can also see the history of commits
+through on GitHub’s web interface, but it is also useful to be able to
+access the commit log directly from the terminal, without having to
+open a browser.</p>
+<p>Each commit will have a <em>commit hash</em> (usually referred to as the
+<em>commit SHA</em>) that looks something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">76</span><span class="n">d83bbd9fafa033f9fbffddfafabd04e3cb8cbe</span>
+</pre></div>
+</div>
+<p>This is a unique identifier that we can use to refer to that commit
+elsewhere. For example, choose any commit from the commit log and run
+the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show COMMIT_SHA
+</pre></div>
+</div>
+<p>Make sure to replace <code class="docutils literal notranslate"><span class="pre">COMMIT_SHA</span></code> with a commit SHA that appears in
+your commit log.</p>
+<p>This will show you the changes that were included in that commit. The
+output of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">show</span></code> can be a bit hard to parse at first but the
+most important thing to take into account is that any line starting
+with a <code class="docutils literal notranslate"><span class="pre">+</span></code> denotes a line that was added, and any line starting with
+a <code class="docutils literal notranslate"><span class="pre">-</span></code> denotes a line that was removed.  For example, if we want to
+looked at the committed with the message <code class="docutils literal notranslate"><span class="pre">&quot;Forgot</span> <span class="pre">to</span> <span class="pre">capitalize</span> <span class="pre">in</span>
+<span class="pre">Spanish</span> <span class="pre">version&quot;</span></code>, we would run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show 76d83bbd9fafa033f9fbffddfafabd04e3cb8cbe
+commit 76d83bbd9fafa033f9fbffddfafabd04e3cb8cbe
+Author: NAME &lt;EMAIL&gt;
+Date:   Mon May 13 18:13:52 2024 -0500
+
+    Forgot to capitalize in Spanish version
+
+diff --git a/hola.py b/hola.py
+index 5cbad67..e4c0f4e 100644
+--- a/hola.py
++++ b/hola.py
+@@ -1,4 +1,4 @@
+-print(&quot;hola!&quot;)
+-print(&quot;hola, mundo!&quot;)
+-print(&quot;hola, universo!&quot;)
++print(&quot;Hola!&quot;)
++print(&quot;Hola, mundo!&quot;)
++print(&quot;Hola, universo!&quot;)
+</pre></div>
+</div>
+<p>Pro tip: in any place where you have to refer to a commit SHA, you can
+just write the first few characters of the commit SHA. For example, for
+commit <code class="docutils literal notranslate"><span class="pre">76d83bbd9fafa033f9fbffddfafabd04e3cb8cbe</span></code> we could write just
+this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show 76d8
+</pre></div>
+</div>
+<p>Git will only complain if there is more than one commit that starts with
+that same prefix.</p>
+<p>In the next section, you will learning about working from multiple places.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="git-discarding-changes.html" class="btn btn-neutral float-left" title="Git Tutorial - Discarding Changes and Unstaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-multiple-locations.html" class="btn btn-neutral float-right" title="Git Tutorial - Working from Multiple Locations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

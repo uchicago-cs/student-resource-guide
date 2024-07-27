@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Tutorial - Working with Remote Repositories &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Tutorial - Discarding Changes and Unstaging" href="git-discarding-changes.html" />
+    <link rel="prev" title="Git Tutorial - Preparing to use GitHub" href="git-prepare-github.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Remote Repositories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-repository-on-github">Creating a Repository on GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-changes-and-re-synchronizing">Making Changes and Re-Synchronizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercise-syncing-a-change-with-a-remote-repository">Exercise: Syncing a change with a remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Git Tutorial - Working with Remote Repositories</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/git-remote.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="git-prepare-github.html" class="btn btn-neutral float-left" title="Git Tutorial - Preparing to use GitHub" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-discarding-changes.html" class="btn btn-neutral float-right" title="Git Tutorial - Discarding Changes and Unstaging" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-tutorial-working-with-remote-repositories">
+<span id="tutorial-git-remote"></span><h1>Git Tutorial - Working with Remote Repositories<a class="headerlink" href="#git-tutorial-working-with-remote-repositories" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have:</p>
+<ul class="simple">
+<li><p>completed the <a class="reference internal" href="git-local.html#tutorial-git-local"><span class="std std-ref">Git Tutorial - Working Locally</span></a> and <a class="reference internal" href="git-prepare-github.html#tutorial-git-prepare-github"><span class="std std-ref">Git Tutorial - Preparing to use GitHub</span></a> sections of the tutorial and</p></li>
+<li><p>opened a terminal window that is connected to one of the CS Linux servers.</p></li>
+</ul>
+</div>
+<p>In the <a class="reference internal" href="git-local.html#tutorial-git-local"><span class="std std-ref">Git Tutorial - Working Locally</span></a> section, we covered how to convert an
+existing directory into a repository and how to create commits.  In
+this part, you will learn how to link up your repository with GitHub.</p>
+<section id="creating-a-repository-on-github">
+<h2>Creating a Repository on GitHub<a class="headerlink" href="#creating-a-repository-on-github" title="Link to this heading"></a></h2>
+<p>To link our local repository to a repository on GitHub, we need to
+first create an empty repository on GitHub.  To do this, log into
+GitHub, and click on the “+” icon on the top-right of the page, and
+then on “New Repository”:</p>
+<img alt="../_images/new-repository.png" class="align-center" src="../_images/new-repository.png" />
+<p>Then, under “Repository name” enter <code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code>.  Do not
+change any other setting, and click on the green “Create repository”
+button.</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-1.png"><img alt="../_images/github-git-tutorial-1.png" class="align-center" src="../_images/github-git-tutorial-1.png" style="width: 100%;" /></a>
+<p>Note that you will see your GitHub username rather than
+<code class="docutils literal notranslate"><span class="pre">ar0r-student</span></code> underneath <code class="docutils literal notranslate"><span class="pre">Owner</span></code>.</p>
+<p>Once you complete this step, you will be taken to a page where you can
+browse your repository through GitHub’s web interface.  To start, this
+page will include instructions for setting up a new repository and for
+connecting an existing repository (our case).</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-2.png"><img alt="../_images/github-git-tutorial-2.png" class="align-center" src="../_images/github-git-tutorial-2.png" style="width: 100%;" /></a>
+<p>Since we want to link an existing local repository to this new remote
+repository on GitHub, we fall into the second case.</p>
+<p>In your terminal window, verify that you are in your <code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code>
+directory using <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and if, not navigate to it.</p>
+<p>The first step is to set the URL (that is, the Uniform Resource
+Locator) for the remote repository.  To do so, copy and run the first
+line in the “..or push an existing repository from the command line”
+section of the setup page.  The command will have the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add origin URL
+</pre></div>
+</div>
+<p>where URL is the URL for your repository. Copy-and-paste the line from
+your browser instead of retyping it to reduce the likelihood that you
+make a mistake when entering it.  This command does not generate any
+output.</p>
+<p>The URL should start with <code class="docutils literal notranslate"><span class="pre">git&#64;github.com:</span></code>.  If the URL starts with
+<code class="docutils literal notranslate"><span class="pre">http://</span></code> instead, please ask for help.</p>
+<p>You can verify that you did this step correctly by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --get remote.origin.url
+</pre></div>
+</div>
+<p>It should show the actual URL for your repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">GITHUB_USERNAME</span></code> is your actual GitHub username.  If the
+result of this command does not look right, please ask for help.</p>
+<p>We have already set the branch name for <code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code>, so we
+can skip the next step in the instructions.</p>
+<p>Next, you need to push your local commits to the repository on GitHub using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push -u origin main
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.22 KiB | 1.22 MiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To github.com:GITHUB_USERNAME/git-tutorial.git
+  * [new branch]      main -&gt; main
+Branch &#39;main&#39; set up to track remote branch &#39;main&#39; from &#39;origin&#39;.
+</pre></div>
+</div>
+<p>You may be asked some variant of the following question:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Warning: the ECDSA host key for &#39;github.com&#39; differs from the key for the IP address &#39;140.82.114.3&#39;
+Offending key for IP in /home/CNETID/.ssh/known_hosts:1
+Matching host key in /home/CNETID/.ssh/known_hosts:10
+Are you sure you want to continue connecting (yes/no)?
+</pre></div>
+</div>
+<p>If so, respond <code class="docutils literal notranslate"><span class="pre">yes</span></code>.  Unfortunately, you may get asked this
+question the next few times you use a command to interact with GitHub.
+It is safe to say yes.</p>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in your terminal window after you have
+completed the push, you will see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>which tells you that the local and remote copies of your repository
+are in sync.</p>
+<p>If you switch back to your browser and click on <code class="docutils literal notranslate"><span class="pre">Code</span></code>, you should
+see something like this:</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-3.png"><img alt="../_images/github-git-tutorial-3.png" class="align-center" src="../_images/github-git-tutorial-3.png" style="width: 100%;" /></a>
+<p>If you click on the names of the files, you will see that the contents of
+the files on GitHub is the same as the files in the copy of your
+repository on the CS Linux servers.</p>
+<p>If you click on <code class="docutils literal notranslate"><span class="pre">commits</span></code>, you will be taken to a page that shows
+the commit log in reverse chronological order (that is, the most
+recent commit is shown first).</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-4.png"><img alt="../_images/github-git-tutorial-4.png" class="align-center" src="../_images/github-git-tutorial-4.png" style="width: 100%;" /></a>
+<p>If you click on a specific commit, GitHub will show you the
+exact changes that were made.  For example, clicking on
+the commit with the message <code class="docutils literal notranslate"><span class="pre">&quot;Forgot</span> <span class="pre">to</span> <span class="pre">capitalize</span> <span class="pre">in</span> <span class="pre">Spanish</span> <span class="pre">version&quot;</span></code>
+yields:</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-5.png"><img alt="../_images/github-git-tutorial-5.png" class="align-center" src="../_images/github-git-tutorial-5.png" style="width: 100%;" /></a>
+<p>Lines starting with a <code class="docutils literal notranslate"><span class="pre">-</span></code> (shown with a red background) were
+removed.  Lines starting with a <code class="docutils literal notranslate"><span class="pre">+</span></code> (shown with a green background)
+were added.</p>
+</section>
+<section id="making-changes-and-re-synchronizing">
+<h2>Making Changes and Re-Synchronizing<a class="headerlink" href="#making-changes-and-re-synchronizing" title="Link to this heading"></a></h2>
+<p>You now have two copies of your repository: one on the CS Linux
+servers and one on GitHub.  Anyone who has permission to access your
+GitHub repository will be able to see the repository as it exists on
+GitHub.  They will <strong>not</strong> be able to see changes that you have made
+locally until you push them.</p>
+<p>We’ll explore this behavior in this section.  Create a new
+file <code class="docutils literal notranslate"><span class="pre">hej.py</span></code> with the following contents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hej&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hej Verden&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hej Univers&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hej Multivers&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and then create a commit for this file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add hej.py
+$ git commit -m&quot;Added Danish version&quot;
+</pre></div>
+</div>
+<p>If you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, you will see a message that tells you that
+your local copy of the repository is “ahead” of the remote copy on
+GitHub by one commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status .
+On branch main
+Your branch is ahead of &#39;origin/main&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
+</pre></div>
+</div>
+<p>If you switch to your browser and click on <code class="docutils literal notranslate"><span class="pre">Code</span></code> to get back to the
+code page, you will see that the repository on GitHub does not include
+<code class="docutils literal notranslate"><span class="pre">hej.py</span></code>.  To bring GitHub up to date, you need to push your work by
+running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push
+</pre></div>
+</div>
+<p>The output will be something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">16</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">378</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">378.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">To</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">GITHUB_USERNAME</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Now if you run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> it will show you that the two
+versions are in sync:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Your branch is up to date with &#39;origin/main&#39;.
+
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>If you refresh the browser page that is open to your
+<code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code> repository on GitHub, you should now see
+<code class="docutils literal notranslate"><span class="pre">hej.py</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-6.png"><img alt="../_images/github-git-tutorial-6.png" class="align-center" src="../_images/github-git-tutorial-6.png" style="width: 100%;" /></a>
+<p>In general, synchronizing (aka, syncing) your local and remote
+repositories is a three step process:</p>
+<ol class="arabic simple">
+<li><p>add/stage the new/changed files,</p></li>
+<li><p>create a commit, and then</p></li>
+<li><p>push the new commit to the server.</p></li>
+</ol>
+<p><strong>When you are first working with git, it is good practice to end
+every work session by syncing your local and remote repositories.
+Similarly, before you ask a question about your code in a class, you should sync your
+repository with GitHub to ensure that the course staff can see the
+most recent version of your code.</strong></p>
+<p>The more disciplined you are about frequently syncing your repository
+and verifying that your repository is in a clean state, the less
+likely it is that you will run into a difficult-to-fix Git problem.</p>
+</section>
+<section id="exercise-syncing-a-change-with-a-remote-repository">
+<h2>Exercise: Syncing a change with a remote repository<a class="headerlink" href="#exercise-syncing-a-change-with-a-remote-repository" title="Link to this heading"></a></h2>
+<p>Create a file named <code class="docutils literal notranslate"><span class="pre">README.md</span></code> that contains <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Tutorial</span></code>
+and your name. Add this file to your local repository, create a
+commit, and sync it with GitHub.</p>
+<p>When you are finished, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> should show that your working
+tree is clean and up to date with <code class="docutils literal notranslate"><span class="pre">origin/main</span></code> and <code class="docutils literal notranslate"><span class="pre">README.md</span></code>
+should appear when you refresh the browser page that is open to your
+<code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code> repository on GitHub.</p>
+<a class="reference internal image-reference" href="../_images/github-git-tutorial-7.png"><img alt="../_images/github-git-tutorial-7.png" class="align-center" src="../_images/github-git-tutorial-7.png" style="width: 100%;" /></a>
+<p>If you need to take a break, this would be a good time to stop.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>In this section, you learned how to connect a local repository to a
+remote server, and learned how to push local changes to that server.
+The next section explains how to view the commit log.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="git-prepare-github.html" class="btn btn-neutral float-left" title="Git Tutorial - Preparing to use GitHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-discarding-changes.html" class="btn btn-neutral float-right" title="Git Tutorial - Discarding Changes and Unstaging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

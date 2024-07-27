@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Tutorial - Working Locally &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Tutorial - Preparing to use GitHub" href="git-prepare-github.html" />
+    <link rel="prev" title="Git Tutorial - Introduction to Git" href="git-intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Local Repositories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#converting-an-existing-directory-into-a-repository">Converting an existing directory into a repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-tracked-files">Changing tracked files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-existing-files">Modifying Existing Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-new-file">Adding a New File</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Git Tutorial - Working Locally</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/git-local.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="git-intro.html" class="btn btn-neutral float-left" title="Git Tutorial - Introduction to Git" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-prepare-github.html" class="btn btn-neutral float-right" title="Git Tutorial - Preparing to use GitHub" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-tutorial-working-locally">
+<span id="tutorial-git-local"></span><h1>Git Tutorial - Working Locally<a class="headerlink" href="#git-tutorial-working-locally" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have:</p>
+<ul class="simple">
+<li><p>picked up the <a class="reference internal" href="git-intro.html#tutorial-git-materials"><span class="std std-ref">tutorial materials</span></a>,</p></li>
+<li><p>opened a terminal window and connected to one of the CS Linux servers, and</p></li>
+<li><p>navigated to your <code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code> directory.</p></li>
+</ul>
+</div>
+<p>This section explains how to convert an existing directory into a Git
+repository and how to package up changes into a commit.</p>
+<section id="converting-an-existing-directory-into-a-repository">
+<h2>Converting an existing directory into a repository<a class="headerlink" href="#converting-an-existing-directory-into-a-repository" title="Link to this heading"></a></h2>
+<p>The first step when placing a directory under version control using Git
+is to run the git initialization command from within the directory.
+Use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to make sure that you are in your
+<code class="docutils literal notranslate"><span class="pre">/home/CNETID/git-tutorial</span></code> directory.  Once you are in the
+right directory, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git init
+</pre></div>
+</div>
+<p>The result should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">CNETID</span><span class="o">/</span><span class="n">git</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>(If the directory listed in the result is something other than
+<code class="docutils literal notranslate"><span class="pre">/home/CNETID/git-tutorial/.git/</span></code>, please ask for help.)</p>
+<p>This command creates a hidden folder, named <code class="docutils literal notranslate"><span class="pre">.git</span></code>, used by Git to
+track the state of the repository.  Notice that the message indicates
+that the repository is empty, which may be surprising given that the
+directory holds two files.  This seeming anomaly illustrates a
+fundamental aspect of working with Git: Git’s understanding of the
+state of the repository and the actual state of the files in the file
+system are not always the same.  This section explains the commands needed
+to bring Git’s view of the files up to date.</p>
+<p>Here is a figure that shows the contents of the files in the file
+system and Git’s view of those files.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/git-local-1.png"><img alt="../_images/git-local-1.png" src="../_images/git-local-1.png" style="width: 100%;" /></a>
+</figure>
+<p>The Git repository side of the figure has four areas:</p>
+<ul class="simple">
+<li><p>the list of commits,</p></li>
+<li><p>the latest version of the files (from Git’s perspective),</p></li>
+<li><p>a list of files that are staged to be part of the next commit, and</p></li>
+<li><p>a list of untracked files.</p></li>
+</ul>
+<p>The first three are empty, since we have not committed anything to the
+repository yet.  The untracked files section lists files that exist in
+the directory, but that have not been placed under Git’s control.  In
+this case, the “Untracked files” section includes <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">hola.py</span></code> because they exist in the directory and have not been
+placed under Git’s control.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command will allow you view to some of the
+information shown in this figure.  Here is the result of running this
+command immediately after initializing the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        hello.py
+        hola.py
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</pre></div>
+</div>
+<p>The first line contains the name of the branch:
+<code class="docutils literal notranslate"><span class="pre">master</span></code>.  We’ll change this name to the more commonly used name
+<code class="docutils literal notranslate"><span class="pre">main</span></code>, in a few steps.</p>
+<p>The next line tells us that no commits have been added to this
+repository yet and that there are two files in the directory that Git
+is not tracking yet.  Notice that Git provides a helpful hint about how to
+add the files to the list of files that will be part of the next
+commit.</p>
+<p>We’ll take advantage of this hint in a minute.  First, it is important
+to understand that creating a commit is a two step process.</p>
+<p>First, you need to <em>stage</em> the files that you want to be part of the commit
+and then, once you have staged the right set of files, you need to
+create the actual commit.</p>
+<p>The command for staging a file for the next commit is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
+(Yes, it is somewhat confusing that the add command does not directly
+add files to the repository.)</p>
+<p>We can stage files for a commit one at a time or in a batch.  Here is
+the command to add (stage) both of our files at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add hello.py hola.py
+</pre></div>
+</div>
+<p>This command is silent, meaning it does not generate any output when
+it runs successfully.</p>
+<p>We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to verify that Git’s view of the files has
+changed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+        new file:   hello.py  [text is green in actual output]
+        new file:   hola.py   [text is green in actual output]
+</pre></div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and <code class="docutils literal notranslate"><span class="pre">hola.py</span></code> have moved from the
+“Untracked files” section to the new section “Changes to be committed”,
+which holds the files that have been staged to be part of the next
+commit.</p>
+<p>Here is a figure that shows Git’s updated view of the repository:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/git-local-2.png"><img alt="../_images/git-local-2.png" src="../_images/git-local-2.png" style="width: 100%;" /></a>
+</figure>
+<p>Now that the files are staged, we can package them into a commit using
+the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.  Each commit has an associated commit
+message.  These messages should be descriptive enough to help you (and
+your collaborators) find specific versions as needed.  Short commit
+message can be provided as part of the commit command using the <code class="docutils literal notranslate"><span class="pre">-m</span></code>
+flag.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you forget the <code class="docutils literal notranslate"><span class="pre">-m</span></code> parameter, Git will think that you forgot
+to specify a commit message. It will graciously open up a default
+editor so that you can enter such a message. This behavior can be
+useful if you want to enter a longer commit message (including
+multi-line messages), but is irritating most of the time.</p>
+</div>
+<p>Here is the result of committing our staged files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit -m&quot;Added Python files&quot;
+[master (root-commit) e1d3a0f] Add Python files
+ 2 files changed, 6 insertions(+)
+ create mode 100644 hello.py
+ create mode 100644 hola.py
+</pre></div>
+</div>
+<p>If you run this command, your result will look slightly different. In
+particular, your result will have a different value in place of
+<code class="docutils literal notranslate"><span class="pre">e1d3a0f</span></code>.</p>
+<p>Here is the result of running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> after the commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>This message tells us that Git’s view of the files and the actual
+files in the file system are in sync.</p>
+<p>Here’s a figure that provides a more complete view of Git’s updated
+view of the repository:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/git-local-3.png"><img alt="../_images/git-local-3.png" src="../_images/git-local-3.png" style="width: 100%;" /></a>
+</figure>
+<p>Notice as expected:</p>
+<ul class="simple">
+<li><p>a commit has been created,</p></li>
+<li><p>the files are the same in Git and on the file system, and</p></li>
+<li><p>there are no untracked files and no files staged for commit.</p></li>
+</ul>
+<p>The file system and Git are now in sync.</p>
+<p>Now that we have created a commit, we can rename the branch to
+<code class="docutils literal notranslate"><span class="pre">main</span></code> using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch -M main
+</pre></div>
+</div>
+<p>This command does not generate any output and only needs to be run
+<em>once</em> per repository.  We can verify that it ran successfully using
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>Notice that the branch name has changed from <code class="docutils literal notranslate"><span class="pre">master</span></code> to <code class="docutils literal notranslate"><span class="pre">main</span></code>,
+which is the name that is now commonly used for the primary branch.</p>
+<p>In the first few sections of this tutorial, you will be working with
+the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.  We introduce branches more generally in a later
+section.</p>
+</section>
+<section id="changing-tracked-files">
+<h2>Changing tracked files<a class="headerlink" href="#changing-tracked-files" title="Link to this heading"></a></h2>
+<p>Let’s make a change to the files to fix the capitalization in
+<code class="docutils literal notranslate"><span class="pre">hola.py</span></code>.  Using an editor, change <code class="docutils literal notranslate"><span class="pre">h</span></code> to <code class="docutils literal notranslate"><span class="pre">H</span></code> in all three
+print statements.  (Make sure to save your changes.)</p>
+<p>As this figure illustrates, once you modify the file on disk, Git’s
+view of the file becomes out-of-date:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/git-local-4.png"><img alt="../_images/git-local-4.png" src="../_images/git-local-4.png" style="width: 100%;" /></a>
+</figure>
+<p>Notice that the file system version of <code class="docutils literal notranslate"><span class="pre">hola.py</span></code> and Git’s view are
+different.  This difference is highlighted in the figure with an
+exclamation point.  Using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> this change is reflected
+in a new section named “Changes not staged for commit”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   hola.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+<p>To get the repository back up to date, we need to stage the changed
+file (again) and we need to create the commit.  There are two ways to
+stage the file.  We can explicitly add the file using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add hola.py
+</pre></div>
+</div>
+<p>or we can use a git shortcut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add --update .
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--update</span></code> flag for the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command tells Git to stage
+files that it is tracking <em>and</em> that have changed since the last
+commit. The period tells Git to add only
+files in the current directory (and its subdirectories).  Technically,
+the period is optional, but it is good practice to be thoughtful about
+adding files to your repository.  In this case, being thoughtful means
+limiting the scope of the <code class="docutils literal notranslate"><span class="pre">add</span></code> command to the current directory.</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">-u</span></code> as the short form of the <code class="docutils literal notranslate"><span class="pre">--update</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add -u .
+</pre></div>
+</div>
+<p>On a related note, <strong>never</strong> use either of the following two commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add *    # NEVER DO THIS
+$ git add .    # OR THIS
+</pre></div>
+</div>
+<p>These commands add <em>everything</em> in the current directory (including
+files in subdirectories), which will likely add files, such as, editor
+backup files, large data files, etc, that should not be stored in a
+repository.  Again, you should also be thoughtful about the files that
+you choose to include in your repository.</p>
+<p>Let’s package this change into a commit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add --update .
+$ git commit -m&quot;Forgot to capitalize in Spanish version&quot;
+[master 94be5be] Forgot to capitalize in Spanish version
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+</pre></div>
+</div>
+<p>Now the two views of the files are in sync:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/git-local-5.png"><img alt="../_images/git-local-5.png" src="../_images/git-local-5.png" style="width: 100%;" /></a>
+</figure>
+<p>and the status is clean:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status .
+On branch main
+nothing to commit, working tree clean
+</pre></div>
+</div>
+<p>Notice that we added a space and a period to the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>
+command to indicate that we are only interested in looking at the
+status of the files in the current directory (including any
+subdirectories).  In a large repository, it can be useful to focus
+your attention on the current directory.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading"></a></h2>
+<section id="modifying-existing-files">
+<h3>Modifying Existing Files<a class="headerlink" href="#modifying-existing-files" title="Link to this heading"></a></h3>
+<p>In this exercise, you will make some changes to the files and
+package them up into a commit.</p>
+<p><strong>Step 1</strong>:</p>
+<p>Add the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, multiverse!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to the end of <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola, multiverso!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to the end of <code class="docutils literal notranslate"><span class="pre">hola.py</span></code>.  Make sure to save the files after you make the necessary changes.</p>
+<p><strong>Step 2</strong></p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to see the current state of the files.  Both
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and <code class="docutils literal notranslate"><span class="pre">hola.py</span></code> should appear in the “Changes not staged
+for commit” section of the output.  If one or both are missing, verify that
+you saved the files.</p>
+<p>An aside: the Linux <cite>cat</cite> command is useful for looking at small
+files.  For example, we could check the changes to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> by
+running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat hello.py
+print(&quot;Hello!&quot;)
+print(&quot;Hello, world!&quot;)
+print(&quot;Hello, universe!&quot;)
+print(&quot;Hello, multiverse!&quot;)
+</pre></div>
+</div>
+<p>Getting in the habit of frequently running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> and
+verifying that the results match your expectations will reduce
+the likelihood that you run into problems with Git.</p>
+<p><strong>Step 3</strong></p>
+<p>Stage the files for commit using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">-u</span> <span class="pre">.</span></code>.</p>
+<p>Then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to verify that the changed files are now staged.</p>
+<p><strong>Step 4</strong></p>
+<p>Commit the files using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.  Don’t forget to include the
+<code class="docutils literal notranslate"><span class="pre">-m</span></code> flag and a commit message in double quotes (such as, <code class="docutils literal notranslate"><span class="pre">&quot;Added</span> <span class="pre">more</span>
+<span class="pre">salutations&quot;</span></code>).</p>
+<p>Again, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to verify that the commit has been
+completed.  Does the result say <code class="docutils literal notranslate"><span class="pre">&quot;nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span>
+<span class="pre">clean&quot;</span></code> or does it show one or more changes not staged for commit?</p>
+</section>
+<section id="adding-a-new-file">
+<h3>Adding a New File<a class="headerlink" href="#adding-a-new-file" title="Link to this heading"></a></h3>
+<p>In this exercise, you will create a new file and add it to the
+repository:</p>
+<p><strong>Step 1</strong></p>
+<p>Create a new file named <code class="docutils literal notranslate"><span class="pre">bonjour.py</span></code> with the contents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour le monde!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour l’univers!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour multivers!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Make sure to save your changes!</p>
+<p><strong>Step 2</strong></p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to verify that there is now a new untracked file
+named <code class="docutils literal notranslate"><span class="pre">bonjour.py</span></code> in the directory.</p>
+<p><strong>Step 3</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">bonjour.py</span></code> to add the file to the repository.</p>
+<p><strong>Step 4</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to verify that the file has been staged for the next commit.</p>
+<p><strong>Step 5</strong></p>
+<p>Create a new commit.  Don’t forget the <code class="docutils literal notranslate"><span class="pre">-m</span></code> option and the commit
+message in double quotes, such as <code class="docutils literal notranslate"><span class="pre">&quot;Added</span> <span class="pre">French</span> <span class="pre">version&quot;</span></code>.</p>
+<p><strong>Step 6</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">.</span></code> to verify that your working tree is now clean.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>This section of the tutorial introduced you to the commands needed to
+create and manage a git repository locally.  The next section will
+explain how to setup your GitHub account.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="git-intro.html" class="btn btn-neutral float-left" title="Git Tutorial - Introduction to Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-prepare-github.html" class="btn btn-neutral float-right" title="Git Tutorial - Preparing to use GitHub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Tutorial - Preparing to use GitHub &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Tutorial - Working with Remote Repositories" href="git-remote.html" />
+    <link rel="prev" title="Git Tutorial - Working Locally" href="git-local.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preparing to use GitHub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-github-account">Creating a GitHub Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-ssh-access">Setting up SSH Access</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-ssh-key">Creating an SSH Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploading-your-ssh-key-to-github">Uploading Your SSH Key to GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Git Tutorial - Preparing to use GitHub</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/git-prepare-github.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="git-local.html" class="btn btn-neutral float-left" title="Git Tutorial - Working Locally" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-remote.html" class="btn btn-neutral float-right" title="Git Tutorial - Working with Remote Repositories" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-tutorial-preparing-to-use-github">
+<span id="tutorial-git-prepare-github"></span><h1>Git Tutorial - Preparing to use GitHub<a class="headerlink" href="#git-tutorial-preparing-to-use-github" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have opened you have an open terminal window connected to one of the CS Linux servers.</p>
+</div>
+<p>In this section, you will do the work necessary to use GitHub.  Specifically, you will:</p>
+<ul class="simple">
+<li><p>Create a GitHub account (if needed),</p></li>
+<li><p>Create an SSH key using one the CS Linux servers, and</p></li>
+<li><p>Upload that key to GitHub.</p></li>
+</ul>
+<section id="creating-a-github-account">
+<h2>Creating a GitHub Account<a class="headerlink" href="#creating-a-github-account" title="Link to this heading"></a></h2>
+<p>If you do not yet have one, you can get a GitHub account here:
+<a class="reference external" href="https://github.com/join">https://github.com/join</a>.  We encourage you to use your CNetID as your
+GitHub account name, if possible. If that name is already taken, try
+using your CNetID as a prefix in your Github username.</p>
+</section>
+<section id="setting-up-ssh-access">
+<h2>Setting up SSH Access<a class="headerlink" href="#setting-up-ssh-access" title="Link to this heading"></a></h2>
+<p>The next step is to create an SSH key and upload it to GitHub, which
+will allow you to access your GitHub repositories from the terminal.</p>
+<p>While these steps may seem a bit intricate, you only need to do them
+once for the CS Linux machines.  If at some later date, you want to
+access your repository from a different computer (e.g. your personal
+computer), you will have to create a new SSH key and upload it to
+GitHub.</p>
+<p>As in the previous sections, these commands should be run in a
+terminal window that is connected to one of the CS Linux servers.  It
+is best to do the next few steps in your home directory, so run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+</pre></div>
+</div>
+<p>to ensure that you are in your home directory rather than in your
+<code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code> directory.</p>
+<section id="creating-an-ssh-key">
+<h3>Creating an SSH Key<a class="headerlink" href="#creating-an-ssh-key" title="Link to this heading"></a></h3>
+<p>When you log into the GitHub website, you will use the username and
+password associated with your GitHub account.  When using
+Git commands from the terminal, however, things are a bit different.
+In particular, GitHub uses two mechanisms for authenticating yourself
+from the terminal: Personal Access Tokens and SSH Keys. We will
+be using SSH keys.</p>
+<p>In a nutshell, an SSH key is a file that resides in your home directory,
+which you can think of as a file that stores a secure password.
+(SSH keys are a bit more complex than that but, for our purposes,
+we can just think of them as extra-secure passwords.)</p>
+<p>To create an SSH key, run the following command from the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  ssh-keygen -t ed25519 -C &quot;CS Linux Server SSH Key&quot;
+</pre></div>
+</div>
+<p>(As an aside, Ed25519 is a public-key signature system.  It is more
+secure than RSA, which may be more familiar to some of you.)</p>
+<p>You will see the following prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">ed25519</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
+<span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ar0r</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Press Enter. This will select the default file path shown in the prompt: <code class="docutils literal notranslate"><span class="pre">/home/CNETID/.ssh/id_ed25519</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If, after pressing Enter, you see the following message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/home/CNETID/.ssh/id_ed25519 already exists.
+Overwrite (y/n)?
+</pre></div>
+</div>
+<p>This means there is already an Ed25519 SSH key in your home directory.
+You should proceed as follows:</p>
+<ol class="arabic">
+<li><p>If you are already familiar with SSH keys, and know for certain
+that you’d like to use your existing Ed25519 SSH key, type “n” and
+skip ahead to the <a class="reference internal" href="#uploading"><span class="std std-ref">Uploading your SSH key to GitHub</span></a> section below.</p></li>
+<li><p>If you do not know why you have an Ed25519 SSH key in your directory,
+it’s possible it was created for you if you’ve taken another
+CS class in the past. Type “n” and then run the following commands
+to create a backup of your existing key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv ~/.ssh/id_ed25519 ~/.ssh/id_ed25519.bak
+$ mv ~/.ssh/id_ed25519.pub ~/.ssh/id_ed25519.pub.bak
+</pre></div>
+</div>
+<p>Then, re-run the <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> command and press Enter when prompted
+for the file name, and follow the rest of the
+instructions in this section.</p>
+</li>
+</ol>
+</div>
+<p>Next, you will see this prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">passphrase</span> <span class="p">(</span><span class="n">empty</span> <span class="k">for</span> <span class="n">no</span> <span class="n">passphrase</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Just press Enter here. You will be asked to confirm (just press Enter again):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">same</span> <span class="n">passphrase</span> <span class="n">again</span><span class="p">:</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While it may seem counterintuitive, we don’t want our SSH
+key to have a passphrase (this is an added layer of security that we don’t
+need here; your GitHub account will still be secure even if your
+SSH key doesn’t have a password).</p>
+</div>
+<p>If all goes well, you should see something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Your</span> <span class="n">identification</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="ow">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ar0r</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span>
+<span class="n">Your</span> <span class="n">public</span> <span class="n">key</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="ow">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ar0r</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="o">.</span><span class="n">pub</span>
+<span class="n">The</span> <span class="n">key</span> <span class="n">fingerprint</span> <span class="ow">is</span><span class="p">:</span>
+<span class="n">SHA256</span><span class="p">:</span><span class="n">CvLPtFFx70iR3Fas2o0pmbnWwQ8gJSVke8FmWzzPmhU</span> <span class="n">CS</span> <span class="n">Linux</span> <span class="n">Server</span> <span class="n">SSH</span> <span class="n">Key</span>
+<span class="n">The</span> <span class="n">key</span><span class="s1">&#39;s randomart image is:</span>
+<span class="o">+--</span><span class="p">[</span><span class="n">ED25519</span> <span class="mi">256</span><span class="p">]</span><span class="o">--+</span>
+<span class="o">|</span>       <span class="o">.+</span><span class="n">oo</span><span class="o">.</span> <span class="o">..</span>  <span class="o">|</span>
+<span class="o">|</span>       <span class="o">..+=++.</span><span class="n">E</span>  <span class="o">|</span>
+<span class="o">|</span>        <span class="n">o</span><span class="o">=*</span><span class="n">oo</span><span class="o">=</span> <span class="o">.</span> <span class="o">|</span>
+<span class="o">|</span>        <span class="o">.+</span><span class="n">o</span><span class="o">+.</span> <span class="o">+</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">.</span> <span class="o">.</span>   <span class="n">S</span><span class="o">..</span><span class="n">O</span><span class="o">.</span><span class="n">B</span>   <span class="o">|</span>
+<span class="o">|</span>   <span class="n">o</span> <span class="o">.</span> <span class="n">o</span> <span class="o">.*</span><span class="n">oX</span> <span class="o">.</span>  <span class="o">|</span>
+<span class="o">|</span>    <span class="o">.</span> <span class="o">+</span>   <span class="o">.+.+</span>   <span class="o">|</span>
+<span class="o">|</span>     <span class="o">+</span> <span class="n">o</span>  <span class="n">o</span> <span class="o">.</span> <span class="o">.</span>  <span class="o">|</span>
+<span class="o">|</span>      <span class="o">+</span>  <span class="o">.</span>       <span class="o">|</span>
+<span class="o">+----</span><span class="p">[</span><span class="n">SHA256</span><span class="p">]</span><span class="o">-----+</span>
+</pre></div>
+</div>
+<p>This means your key was created correctly.</p>
+</section>
+<section id="uploading-your-ssh-key-to-github">
+<span id="uploading"></span><h3>Uploading Your SSH Key to GitHub<a class="headerlink" href="#uploading-your-ssh-key-to-github" title="Link to this heading"></a></h3>
+<p>Now, you need to instruct GitHub to accept your SSH key. To do this, log into <a class="reference external" href="https://github.com/">https://github.com/</a>
+and go to your Settings page by clicking on the top-right account icon, and then selecting “Settings”
+in the drop-down menu. Then, click on “SSH and GPG keys”.</p>
+<p>Now, click on the green “New SSH key” button. This will take you to a page where you can upload your
+SSH key:</p>
+<figure class="align-default">
+<img alt="&quot;SSH keys / Add new&quot; page on GitHub" src="../_images/github-ssh-key.png" />
+</figure>
+<p>You will be asked for three values: a title, a key type, and the key
+itself. The title can be anything you want, but we suggest something
+like “CS Linux Server SSH Key”.  Choose <code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">Key</span></code> from
+the drop down menu for the key type.</p>
+<p>The value of the key is contained in the <code class="docutils literal notranslate"><span class="pre">.ssh/id_ed25519.pub</span></code> file in your home directory. To print
+out the contents of that file, we can just use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat ~/.ssh/id_ed25519.pub
+</pre></div>
+</div>
+<p>This will print a few lines of output starting with <code class="docutils literal notranslate"><span class="pre">ssh-ed25519</span></code> and
+ending with <code class="docutils literal notranslate"><span class="pre">CS</span> <span class="pre">Linux</span> <span class="pre">Server</span> <span class="pre">SSH</span> <span class="pre">Key</span></code>.  Copy the whole output
+to the clipboard; you can do this by clicking and dragging the mouse
+from the first character to the last character, and then pressing
+<code class="docutils literal notranslate"><span class="pre">Ctrl-Shift-C</span></code> (<code class="docutils literal notranslate"><span class="pre">Cmd-C</span></code> for MacOS users).</p>
+<p>Then, paste the key into the “Key” field on the GitHub page. Then click on the green “Add SSH Key”
+button.</p>
+<p>To verify that you correctly uploaded the key, try running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh -T git@github.com
+</pre></div>
+</div>
+<p>You may see a message like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The authenticity of host &#39;github.com (140.82.114.4)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre></div>
+</div>
+<p>You can safely enter “yes” here. You should then see a message like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi username! You&#39;ve successfully authenticated, but GitHub does
+not provide shell access.
+</pre></div>
+</div>
+<p>This means your SSH key is properly set up. Don’t worry about the “does not provide shell access,” that is
+normal.</p>
+<p>If you are unable to set up your SSH key, please make sure to ask for help. You will not
+be able to complete the rest of the tutorial until you’ve set up your SSH key.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>In this section, you set up your GitHub account for use from the CS
+Linux servers.  In the next section, you will create a repository on
+Git and link it to the local repository (<code class="docutils literal notranslate"><span class="pre">git-tutorial</span></code>) that you
+created in the previous section.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="git-local.html" class="btn btn-neutral float-left" title="Git Tutorial - Working Locally" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-remote.html" class="btn btn-neutral float-right" title="Git Tutorial - Working with Remote Repositories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

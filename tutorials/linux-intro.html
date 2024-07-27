@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Tutorial - Introduction To Linux &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linux Tutorial - Navigating the filesystem" href="linux-filesystem.html" />
+    <link rel="prev" title="Tips &amp; Tricks" href="../vscode/tips.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#where-should-you-do-this-tutorial">Where should you do this tutorial?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opening-a-terminal-window">Opening a Terminal Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pick-up-the-tutorial-materials">Pick Up the Tutorial Materials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Linux Tutorial - Introduction To Linux</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/linux-intro.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../vscode/tips.html" class="btn btn-neutral float-left" title="Tips &amp; Tricks" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-filesystem.html" class="btn btn-neutral float-right" title="Linux Tutorial - Navigating the filesystem" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux-tutorial-introduction-to-linux">
+<span id="tutorial-linux-intro"></span><h1>Linux Tutorial - Introduction To Linux<a class="headerlink" href="#linux-tutorial-introduction-to-linux" title="Link to this heading"></a></h1>
+<p>Linux is an operating system, just like Windows and MacOS. It allows
+you (the user) to interact with your computer, and provides many
+of the same tools you’re accustomed to in Windows and MacOS (web
+browsers, word processors, etc.).</p>
+<p>In almost all CS classes, instructors will assume that you know your
+way around a Linux environment, and may require that you compile and
+run code in a Linux system.  Being comfortable using the <em>terminal</em>, a command-line
+interface for interacting with the filesystem, running programs, etc, is an
+important part knowing your way around Linux.</p>
+<p>In this tutorial you will learn how to:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#terminal"><span class="std std-ref">Open a terminal window</span></a></p></li>
+<li><p><a class="reference internal" href="linux-filesystem.html#linux-file-system"><span class="std std-ref">Navigate the filesystem</span></a></p></li>
+<li><p><a class="reference internal" href="linux-compile-and-run.html#linux-compile-and-run"><span class="std std-ref">Edit, Compile, and Run a Program</span></a></p></li>
+<li><p><a class="reference internal" href="linux-man.html#linux-man"><span class="std std-ref">Use Man Pages</span></a></p></li>
+<li><p><a class="reference internal" href="linux-tip-tricks.html#linux-tip-tricks"><span class="std std-ref">Use Keyboard Shortcuts</span></a></p></li>
+<li><p><a class="reference internal" href="linux-sequence.html#linux-sequence"><span class="std std-ref">Run Commands Sequentially</span></a></p></li>
+<li><p><a class="reference internal" href="linux-input-output.html#linux-input-output"><span class="std std-ref">Work with Input/Output Streams</span></a></p></li>
+<li><p><a class="reference internal" href="linux-permissions.html#linux-permissions"><span class="std std-ref">Understand and Set File Permissions</span></a></p></li>
+</ol>
+<p>Everyone should work through the first part, even students with prior
+experience with Linux, since it explains how to pick up the materials
+you will need to complete subsequent parts.</p>
+<p>As for the rest of the tutorial, you are welcome to complete all the
+sections, but only some will be relevant for your current course(s).
+Check the instructions you received from your instructor(s) to
+determine which sections you need to complete.</p>
+<section id="where-should-you-do-this-tutorial">
+<h2>Where should you do this tutorial?<a class="headerlink" href="#where-should-you-do-this-tutorial" title="Link to this heading"></a></h2>
+<p>Since one of the goals of this tutorial is for you to be able to use
+the CS department’s Linux environment, we strongly suggest you work
+through this tutorial on a <a class="reference internal" href="../environment/environment.html#software-environment"><span class="std std-ref">UChicago CS software environment</span></a>.
+While you can work through the tutorial in one of our computer labs,
+we recommend <a class="reference internal" href="../environment/ssh.html#ssh"><span class="std std-ref">using SSH</span></a> to log into a CS Linux server from
+your personal computer, as this will likely be the primary way you’ll
+be interacting with the CS department’s Linux systems.</p>
+<p>Many of the steps in this tutorial can be replicated on a MacOS system
+or using <a class="reference external" href="https://ubuntu.com/wsl">Ubuntu WSL</a> on Windows.
+While eventually you’ll be able to reuse these skills in those
+environments, for now, we <strong>strongly</strong> recommend that you use the
+Linux environment provided by the CS department.</p>
+</section>
+<section id="opening-a-terminal-window">
+<span id="terminal"></span><h2>Opening a Terminal Window<a class="headerlink" href="#opening-a-terminal-window" title="Link to this heading"></a></h2>
+<p>On your personal computer, you probably navigate your hard drive by
+double clicking on icons. While convenient for simple tasks, this
+approach is limited. For example, imagine that you want to delete all of
+the music files over 5 MB that you haven’t listened to in over a
+year. This task is very hard to do with the standard double-click
+interface but is relatively simple using the terminal.</p>
+<p>If you are using SSH, connecting to a CS Linux server will directly
+open a terminal for you.</p>
+<p>If you are using a desktop environment (e.g., you are sitting in
+CSIL), you can start a terminal by clicking on the Application icon
+(3x3 grid of dots) at the bottom left of the screen:</p>
+<figure class="align-default">
+<img alt="Application icon in Ubuntu" src="../_images/ubuntu-3x3.png" />
+</figure>
+<p>Then, type “terminal” in the input box. Click the “terminal”
+icon to open a terminal window.  You can also use the keyboard shortcut: <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+t.</span></code></p>
+<p>Regardless of how you open the terminal, you will see something
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>username@computer:~$
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">username</span></code> has been replaced by your CNetID and <code class="docutils literal notranslate"><span class="pre">computer</span></code>
+is the name of the machine you happen to be using.  This string is
+called the <em>prompt</em>.  When you start typing, the characters you type
+will appear to the right of the <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<p>The program that runs within a terminal window and processes the
+commands the you type is called a <em>shell</em>.  We use <code class="docutils literal notranslate"><span class="pre">bash</span></code>, which is
+the default shell on most Linux distributions, but there are other
+popular shells, such as <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>, <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, etc.</p>
+<p>The terminal will start in your <em>home directory</em>, <code class="docutils literal notranslate"><span class="pre">/home/username/</span></code>,
+which is a special directory (<em>i.e.</em>, folder) assigned to your user
+account.</p>
+<p>In each part of the tutorial, we will introduce a new concept or
+skill, and will provide a few simple examples. This includes
+examples of sample output throughout the tutorial. Bear in mind that
+the output you see when you run through our examples may vary a bit;
+this is normal.  We have also included a few exercises in each section
+so you can practice these skills.</p>
+</section>
+<section id="pick-up-the-tutorial-materials">
+<span id="tutorial-materials"></span><h2>Pick Up the Tutorial Materials<a class="headerlink" href="#pick-up-the-tutorial-materials" title="Link to this heading"></a></h2>
+<p>To complete this tutorial, you will need a series of files to use with
+for the examples and exercises.</p>
+<p>To fetch these files, run the following commands one at a time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ wget -nv https://uchicago-cs.github.io/student-resource-guide/_static/linux-tutorial-files.zip
+$ unzip linux-tutorial-files.zip
+</pre></div>
+</div>
+<p>Note that we use <code class="docutils literal notranslate"><span class="pre">$</span></code> to represent the Linux command-line prompt.  Do not include it
+when you run the commands.</p>
+<p>The first command (<code class="docutils literal notranslate"><span class="pre">cd</span></code>), which we explain in the <a class="reference internal" href="linux-filesystem.html#linux-file-system"><span class="std std-ref">Navigating
+the File System</span></a> section, ensures that you are in
+your home directory.  The second downloads up a compressed file from our
+GitHub site.   And finally, the third command decompresses that file.</p>
+<p>As an aside, be very careful when running <code class="docutils literal notranslate"><span class="pre">wget</span></code> commands that you
+find in instructions on the internet.  You should always verify that the
+download site is legitimate.</p>
+<p>After you run these commands, your home directory will contain a
+<code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory that has some files
+for us to play with.</p>
+<p>The next section of the tutorial covers <a class="reference internal" href="linux-filesystem.html#linux-file-system"><span class="std std-ref">Navigating the Filesystem</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../vscode/tips.html" class="btn btn-neutral float-left" title="Tips &amp; Tricks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-filesystem.html" class="btn btn-neutral float-right" title="Linux Tutorial - Navigating the filesystem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

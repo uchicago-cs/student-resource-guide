@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Tutorial - File Permissions &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Tutorial - Introduction to Git" href="git-intro.html" />
+    <link rel="prev" title="Linux Tutorial - Working with Input/Output Streams" href="linux-input-output.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Understanding File Permissions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-permissions">File Permissions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exercise">Exercise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-permissions-owner-group">Changing Permissions, Owner, &amp; Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Linux Tutorial - File Permissions</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/linux-permissions.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="linux-input-output.html" class="btn btn-neutral float-left" title="Linux Tutorial - Working with Input/Output Streams" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-intro.html" class="btn btn-neutral float-right" title="Git Tutorial - Introduction to Git" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux-tutorial-file-permissions">
+<span id="linux-permissions"></span><h1>Linux Tutorial - File Permissions<a class="headerlink" href="#linux-tutorial-file-permissions" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have <a class="reference internal" href="linux-intro.html#tutorial-materials"><span class="std std-ref">picked up the tutorial
+materials</span></a> and that you have a <a class="reference internal" href="linux-intro.html#terminal"><span class="std std-ref">terminal
+window open</span></a> to your  <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory.</p>
+</div>
+<p>In this section of the tutorial you will learn how to use
+the terminal to perform some more advanced operations in Linux, including:</p>
+<ol class="arabic simple">
+<li><p>File permissions</p></li>
+<li><p>Changing ownership and group</p></li>
+</ol>
+<section id="file-permissions">
+<h2>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading"></a></h2>
+<p>Your personal laptop is likely set up with a login and password
+even though it is likely to be a single-user computer.  Why?  This
+simple mechanism helps to limit others’ ability to access to your
+files.  Since you are likely the only user of your machine, it is
+not necessary to limit access to individual files.</p>
+<p>On a networked filesystem, however, you may want to share some files
+with everyone, while restricting access to other files to yourself or
+a select group of users.</p>
+<p>Most file systems assign ‘File Permissions’ (or just permissions) to specific users and groups of users. Linux is no different. File permissions dictate who can read (view), write (create/edit), and execute (run) files on a file system.</p>
+<p>All directories and files are owned by a user. Each user can be a member of one or more groups. To see your groups, enter the command <code class="docutils literal notranslate"><span class="pre">groups</span></code> into the command line.</p>
+<p>File permissions in Linux systems are managed in three distinct scopes. Each scope has a distinct set of permissions.</p>
+<p><strong>User</strong> - The owner of a file or directory makes up the <em>user</em> scope.</p>
+<p><strong>Group</strong> - Each file and directory has a group assigned to it. The members of this group make up the <em>group</em> scope.</p>
+<p><strong>Others</strong> - Every user who does not fall into the previous two scopes make up the <em>others</em> scope.</p>
+<p>If a user falls into more than one of these scopes, their effective permissions are determined based on the first scope the user falls within in the order of user, group, and others.</p>
+<p>Each scope has three specific permissions for each file or directory:</p>
+<p><strong>read</strong> - The read permission allows a user to view a file’s contents. When set for a directory, this permission allows a user to view the names of files in the directory, but no further information about the files in the directory. <code class="docutils literal notranslate"><span class="pre">r</span></code> is shorthand for read permissions.</p>
+<p><strong>write</strong> - The write permission allows a user to modify the contents of a file. When set for a directory, this permission allows a user to create, delete, or rename files. <code class="docutils literal notranslate"><span class="pre">w</span></code> is shorthand for write permissions.</p>
+<p><strong>execute</strong> - The execute permission allows a user to execute a file (or program) using the operating system. When set for a directory, this permission allows a user to access file contents and other information about files within the directory (given that the user has the proper permissions to access the file). The execute permission does not allow the user to list the files inside the directory unless the read permission is also set. <code class="docutils literal notranslate"><span class="pre">x</span></code> is shorthand for execute permissions.</p>
+<p>To list information about a file, including its permissions, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You’ll get output of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">permissions</span><span class="o">&gt;</span> <span class="mi">1</span> <span class="n">owner</span> <span class="n">group</span> <span class="o">&lt;</span><span class="n">size</span> <span class="ow">in</span> <span class="nb">bytes</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">date</span> <span class="n">modified</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">filepath</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For example, if we want information on <code class="docutils literal notranslate"><span class="pre">/usr/bin/python3.8</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l /usr/bin/python3.8
+-rwxr-xr-x 1 root root 5486384 Jan 27  2021 /usr/bin/python3.8
+</pre></div>
+</div>
+<p>First thing we can notice is that the owner of the file is a user
+named <code class="docutils literal notranslate"><span class="pre">root</span></code>. The file’s group is also <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">root</span></code> is a name for an account that has access
+to <em>all</em> commands and files on a Linux system.  Other accounts may
+also have “root” privileges.</p>
+</div>
+<p>The permissions are <code class="docutils literal notranslate"><span class="pre">-rwxr-xr-x</span></code>.  The initial dash (<code class="docutils literal notranslate"><span class="pre">-</span></code>)
+indicates that <code class="docutils literal notranslate"><span class="pre">/usr/bin/python3.8</span></code> is a file, not a directory.
+Directories have a <code class="docutils literal notranslate"><span class="pre">d</span></code> instead of a dash.  Then the permissions are
+listed in user, group, and others order. In this example, the owner,
+<code class="docutils literal notranslate"><span class="pre">root</span></code>, can read (<code class="docutils literal notranslate"><span class="pre">r</span></code>), write (<code class="docutils literal notranslate"><span class="pre">w</span></code>), and execute (<code class="docutils literal notranslate"><span class="pre">x</span></code>) the
+file. Users in the <code class="docutils literal notranslate"><span class="pre">root</span></code> group and all other users can read and
+execute the files.</p>
+<p>By default, any files or directories that you create will have your
+username as both the user and the group.  (If you run <code class="docutils literal notranslate"><span class="pre">groups</span></code>,
+you’ll notice that there is a group with the same name as your
+username.  You are the only member of this group.)  On our Linux
+machines, by default, new files are give read and write
+permissions to user and group and no permissions to other.  New
+directories will be set to have read, write and execute permissions
+for user and group.</p>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have not completed the <a class="reference internal" href="linux-intro.html#tutorial-linux-intro"><span class="std std-ref">Linux Basics Tutorial</span></a>,
+create a new directory and file by running the following in your
+<code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir backups
+$ cp test.txt backups/copy2.txt
+</pre></div>
+</div>
+</div>
+<p>Verify that the permissions in your directories and files were set
+correctly by running <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">backups/copy2.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-ld</span>&#160; <span class="pre">backups</span></code> in your <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to list the directory, instead of its
+contents. Notice that that the first letter in the permissions string
+for <code class="docutils literal notranslate"><span class="pre">backups</span></code> is a <cite>d</cite>, while it is a <code class="docutils literal notranslate"><span class="pre">-</span></code> for
+<code class="docutils literal notranslate"><span class="pre">backups/copy2.txt</span></code>.</p>
+<p>Once you have verified the claim, go ahead and remove the <code class="docutils literal notranslate"><span class="pre">backups</span></code>
+directory.</p>
+</section>
+<section id="changing-permissions-owner-group">
+<h3>Changing Permissions, Owner, &amp; Group<a class="headerlink" href="#changing-permissions-owner-group" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chmod</span></code> &lt;permissions&gt; &lt;path-name&gt;</p></td>
+<td><p>set the permissions for a file/directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chmod</span></code> &lt;changes&gt; &lt;path-name&gt;</p></td>
+<td><p>update the permissions for a file/directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chown</span></code> &lt;username&gt; &lt;path-name&gt;</p></td>
+<td><p>change the owner of a file to username</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chgrp</span></code> &lt;group&gt; &lt;path-name&gt;</p></td>
+<td><p>change the group of a file</p></td>
+</tr>
+</tbody>
+</table>
+<p>To change permissions, we use the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command.  There are two
+ways to specify the permissions.  We’ll describe the more accessible
+one first: to set the permissions you specify the scope using a
+combination of <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, and <code class="docutils literal notranslate"><span class="pre">o</span></code>, the permission using <code class="docutils literal notranslate"><span class="pre">r</span></code>,
+<code class="docutils literal notranslate"><span class="pre">w</span></code>, and <code class="docutils literal notranslate"><span class="pre">x</span></code>, and either <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span></code> to indicate that you want
+to add or remove a permission.  For example <code class="docutils literal notranslate"><span class="pre">uo+rw</span></code> indicates that
+you want to add read and write permissions for the user and others
+groups.</p>
+<p>We can demonstrate this using the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;Hello!&quot; &gt; testfile
+$ ls -l testfile
+-rw-rw---- 1 username username 7 Aug 23 11:22 testfile
+$ cat testfile
+Hello!
+$ chmod ug-r testfile   #remove read and permissions from user and group
+$ ls -l testfile
+--w--w---- 1 username username 7 Aug 23 11:22 testfile
+$ cat testfile
+cat: testfile: Permission denied
+$ chmod u+r testfile    #give user scope read permissions
+</pre></div>
+</div>
+<p>In this last example, we have added user read permissions to
+<code class="docutils literal notranslate"><span class="pre">testfile</span></code>.</p>
+<p>In addition to the symbolic method for setting permissions, you can
+also use a numeric method: each permission has a unique value: read =
+4, write = 2, execute = 1. As a result, you can describe the
+permissions of each scope using the sum of its permissions’
+values. For example, if a file has read and write permissions for the
+user scope, its permissions can be described as 6 (4 + 2 = 6).</p>
+<p>You can describe the permissions of a file overall using these values
+for each scope. For example, 761 describes the permissions for a file
+with read, write, and execute permissions for the user scope, read and
+write permissions for the group scope, and only execute permissions
+for the others scope.</p>
+<p>The symbolic approach is relative: it allows you to add and remove
+permissions relative the the current file permissions.  The numeric
+method is absolute: it sets the permissions to a specific
+configuration.  We recommend starting the symbolic approach.  It is
+easier to get right.  As you get more comfortable with setting
+permissions, it is useful to learn how to use the numeric method.</p>
+<p>To change the owner of a file or directory (if you are the owner or root), use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chown</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">owner</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To change a file’s group (if you are the owner or root), use the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chgrp</span> <span class="o">&lt;</span><span class="n">new</span> <span class="n">group</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">file</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;Hello!&quot;</span> <span class="pre">&gt;</span> <span class="pre">testfile</span></code> to construct <code class="docutils literal notranslate"><span class="pre">testfile</span></code>.  Look at the permissions using <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>.</p></li>
+<li><p>Change the permissions on <code class="docutils literal notranslate"><span class="pre">testfile</span></code> to allow write and read access for others.  Run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span> <span class="pre">testfile</span></code> to check the new permissions.</p></li>
+<li><p>Remove group write access from <code class="docutils literal notranslate"><span class="pre">testfile</span></code>.  Check the corrected permissions.</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">testfile</span></code> using <code class="docutils literal notranslate"><span class="pre">rm</span></code>.</p></li>
+</ol>
+<p>You have finished the section on understanding and changing file
+permissions.  This is the last section of the tutorial.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-input-output.html" class="btn btn-neutral float-left" title="Linux Tutorial - Working with Input/Output Streams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git-intro.html" class="btn btn-neutral float-right" title="Git Tutorial - Introduction to Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

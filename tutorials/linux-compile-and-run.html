@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Tutorial - Edit, Compile, and Run a Program &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linux Tutorial - Man Pages" href="linux-man.html" />
+    <link rel="prev" title="Linux Tutorial - Navigating the filesystem" href="linux-filesystem.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Editing, Compiling, and Running a Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#editing-files">Editing files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-terminal-editor">Using a terminal editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-a-graphical-editor">Using a graphical editor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-edit-compile-run-cycle-in-the-terminal">The edit/compile/run cycle in the terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compiling-and-running-code-examples">Compiling and Running Code Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c">C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#java">Java</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-input-output.html">Working with Input/Output Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Linux Tutorial - Edit, Compile, and Run a Program</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/linux-compile-and-run.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="linux-filesystem.html" class="btn btn-neutral float-left" title="Linux Tutorial - Navigating the filesystem" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-man.html" class="btn btn-neutral float-right" title="Linux Tutorial - Man Pages" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux-tutorial-edit-compile-and-run-a-program">
+<span id="linux-compile-and-run"></span><h1>Linux Tutorial - Edit, Compile, and Run a Program<a class="headerlink" href="#linux-tutorial-edit-compile-and-run-a-program" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have <a class="reference internal" href="linux-intro.html#tutorial-materials"><span class="std std-ref">picked up the tutorial
+materials</span></a> and that you have a <a class="reference internal" href="linux-intro.html#terminal"><span class="std std-ref">terminal
+window open</span></a> to  your <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory.</p>
+</div>
+<p>In this section of the tutorial you will learn how to use
+the terminal to perform some basic operations in Linux, including how to:</p>
+<ol class="arabic simple">
+<li><p>Use a terminal editor</p></li>
+<li><p>Use a graphical editor</p></li>
+<li><p>Edit/compile/run in the terminal</p></li>
+</ol>
+<section id="editing-files">
+<h2>Editing files<a class="headerlink" href="#editing-files" title="Link to this heading"></a></h2>
+<p>In many of your classes, you will have to edit text files containing programming code.
+While there are many graphical editors you could use (either on a CS Linux environment,
+or on your own computer), it is also important to be familiar with <em>terminal editors</em>
+that run exclusively from a terminal and don’t require a desktop environment.
+These editors can be particularly useful if you <em>only</em> have access to a terminal
+(e.g., if you’re logging into a CS Linux server using SSH).</p>
+<section id="using-a-terminal-editor">
+<h3>Using a terminal editor<a class="headerlink" href="#using-a-terminal-editor" title="Link to this heading"></a></h3>
+<p>List the files in the <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory. You should see the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">backups</span>  <span class="n">hello</span><span class="o">.</span><span class="n">c</span>  <span class="n">hello</span><span class="o">.</span><span class="n">cpp</span>  <span class="n">Hello</span><span class="o">.</span><span class="n">java</span>  <span class="n">hello</span><span class="o">.</span><span class="n">py</span>  <span class="n">my_echo</span><span class="o">.</span><span class="n">py</span>  <span class="n">my</span><span class="o">-</span><span class="nb">input</span><span class="o">.</span><span class="n">txt</span>  <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>If you do not see these files make sure you have grabbed materials from <a class="reference internal" href="linux-intro.html#tutorial-materials"><span class="std std-ref">Introduction to Linux</span></a>.</p>
+<p>Let’s say we wanted to edit the file <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>. There are many different terminal
+editors we could use, but we will start with a simple and fairly intuitive one: <code class="docutils literal notranslate"><span class="pre">nano</span></code>.
+To edit the file, run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano test.txt
+</pre></div>
+</div>
+<p>This will open the <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> file in the nano editor, which will look something like this:</p>
+<img alt="../_images/nano.png" class="align-center" src="../_images/nano.png" />
+<p>The way you interact with this editor will be very similar to how you use a text editor or
+a word processor in a graphical desktop environment: you can use the arrow keys to move
+around the text, and typing text will insert that text at the location of the cursor.
+You can also use the Backspace key to delete text.</p>
+<p>Try removing the text <code class="docutils literal notranslate"><span class="pre">Firstname</span> <span class="pre">Lastname</span></code> and replacing it with your name. Then,
+save the file by pressing Ctrl-O (i.e., the Control key and the O key at the same time).
+You will see the following prompt at the bottom of the screen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="n">Name</span> <span class="n">to</span> <span class="n">Write</span><span class="p">:</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You can just press Enter to confirm you’d like to save the changes to the same file
+(however, you could also specify a different file).</p>
+<p>The bottom of the screen actually specifies some of the most common commands you
+can run in the editor. For example, <code class="docutils literal notranslate"><span class="pre">^O</span> <span class="pre">Write</span> <span class="pre">Out</span></code> refers to what we just did:
+Pressing Ctrl-O allows your “write out” (i.e., save) the file (a common abbreviation
+for the Control key is <code class="docutils literal notranslate"><span class="pre">^</span></code>).</p>
+<p>Another common command is <code class="docutils literal notranslate"><span class="pre">^X</span> <span class="pre">Exit</span></code>. Just press Control-X to exit the editor.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">nano</span></code> is a simple and intuitive editor, there are many other editors
+out there. If you’re interested in a more powerful terminal editor, you
+may want to check out <a class="reference external" href="https://www.vim.org/">Vim</a> or <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a>.</p>
+</section>
+<section id="using-a-graphical-editor">
+<h3>Using a graphical editor<a class="headerlink" href="#using-a-graphical-editor" title="Link to this heading"></a></h3>
+<p>Visual Studio Code is a commonly utilized graphical editor.  You can
+use Visual Studio Code if you are using a desktop environment like Windows
+or MacOS, or if you are logged into a CSIL computer. If you are using
+your personal computer, Visual Studio Code will also allow you to
+connect to the CS Linux servers using SSH.</p>
+<p>If you’d like to set up Visual Studio Code, please see the Visual Studio
+Code pages linked from the left sidebar, starting with <a class="reference internal" href="../vscode/about.html#vscode-about"><span class="std std-ref">About VS Code</span></a></p>
+</section>
+</section>
+<section id="the-edit-compile-run-cycle-in-the-terminal">
+<h2>The edit/compile/run cycle in the terminal<a class="headerlink" href="#the-edit-compile-run-cycle-in-the-terminal" title="Link to this heading"></a></h2>
+<p>When writing code, you will very often go through several cycles
+of the edit/compile/run cycle:</p>
+<ol class="arabic simple">
+<li><p>Edit: You edit the source code file to add or modify some code.</p></li>
+<li><p>Compile: You compile the code into a runnable executable (only in compiled
+languages; e.g., this step doesn’t apply in Python).</p></li>
+<li><p>Run: You run the executable to verify that the code you added/modified
+works as expected.</p></li>
+</ol>
+<p>We have previously covered how to edit files from the terminal, but
+now we’ll see the basic commands to compile and run your code from the terminal.
+We have included four example programs in the tutorial files which you
+can use for this purpose:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hello.py</span></code> (Python)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hello.c</span></code> (C)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> (C++)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hello.java</span></code> (Java)</p></li>
+</ul>
+</section>
+<section id="compiling-and-running-code-examples">
+<h2>Compiling and Running Code Examples<a class="headerlink" href="#compiling-and-running-code-examples" title="Link to this heading"></a></h2>
+<p>Work through the following subsections relevant to your course.
+You do not need to complete all subsections unless specified by your course.</p>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h3>
+<p>In Python, given a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file, such as our <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file, we can run it from the terminal like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 hello.py
+Hello, world!
+</pre></div>
+</div>
+<p><strong>Exercise:</strong> Try editing the file (e.g., change the message from <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code> to <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">universe!</span></code>)
+and running the program again. You should now see the updated message.</p>
+</section>
+<section id="c">
+<h3>C<a class="headerlink" href="#c" title="Link to this heading"></a></h3>
+<p>C is a <em>compiled</em> language, which means that we first need to compile our program
+to produce an executable file. For example, we can compile our <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> program
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gcc hello.c -o hello
+</pre></div>
+</div>
+<p>We are using the <code class="docutils literal notranslate"><span class="pre">gcc</span></code> compiler, but some classes may use the <code class="docutils literal notranslate"><span class="pre">clang</span></code> compiler.
+The first parameter (<code class="docutils literal notranslate"><span class="pre">hello.c</span></code>) specifies the C file we want to compile, and
+the <code class="docutils literal notranslate"><span class="pre">-o</span></code> option specifies the executable file we want to produce.</p>
+<p>Running the above command will produce a <code class="docutils literal notranslate"><span class="pre">hello</span></code> file that you can run like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./hello
+Hello, world!
+</pre></div>
+</div>
+<p><strong>Exercise:</strong> Try editing <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> (e.g., change the message from <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code> to <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">universe!</span></code>).
+If you re-run <code class="docutils literal notranslate"><span class="pre">./hello</span></code>, you’ll see that the old message is still being printed out:
+this is because you need to compile the <code class="docutils literal notranslate"><span class="pre">hello.c</span></code> file to produce an updated executable.
+Once you do so, you should see the updated message when you run <code class="docutils literal notranslate"><span class="pre">./hello</span></code></p>
+</section>
+<section id="id1">
+<h3>C++<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The process for compiling/running programs in C++ is basically the same
+as in C, except we will use the <code class="docutils literal notranslate"><span class="pre">g++</span></code> compiler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ g++ hello.cpp -o hello++
+$ ./hello++
+Hello, world!
+</pre></div>
+</div>
+</section>
+<section id="java">
+<h3>Java<a class="headerlink" href="#java" title="Link to this heading"></a></h3>
+<p>Like C/C++, Java is a compiled language, although the Java compiler
+doesn’t produce an executable in the same way that the C/C++ compiler
+does (we’ll see why momentarily).</p>
+<p>To compile a Java file, you need to run this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ javac Hello.java
+</pre></div>
+</div>
+<p>Unlike the C/C++ example we just saw, this will actually produce a
+file called <code class="docutils literal notranslate"><span class="pre">Hello.class</span></code> that is not directly runnable from the terminal
+(i.e., running <code class="docutils literal notranslate"><span class="pre">./Hello.class</span></code> like we did in the C/C++ example won’t
+work). Instead, we need to use the <code class="docutils literal notranslate"><span class="pre">java</span></code> command to run it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ java Hello
+Hello, world!
+</pre></div>
+</div>
+<p>Notice how we don’t have to include the <code class="docutils literal notranslate"><span class="pre">.class</span></code> extension.</p>
+<p><strong>Exercise:</strong> Try editing <code class="docutils literal notranslate"><span class="pre">Hello.java</span></code> (e.g., change the message from <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world!</span></code> to <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">universe!</span></code>).
+If you re-compile the file and run it again, you should see the updated message.</p>
+<p>You have finished the section on editing, compiling, and running
+programs.</p>
+<p>If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-filesystem.html" class="btn btn-neutral float-left" title="Linux Tutorial - Navigating the filesystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-man.html" class="btn btn-neutral float-right" title="Linux Tutorial - Man Pages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Tutorial - Working with Input/Output Streams &mdash; UChicago CS Student Resource Guide</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-MRE434GGPY"></script>
+        <script src="../_static/analytics.js?v=642cde0b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linux Tutorial - File Permissions" href="linux-permissions.html" />
+    <link rel="prev" title="Linux Tutorial - Running Commands Sequentially" href="linux-sequence.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            UChicago CS Student Resource Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Software Environment</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../environment/environment.html">The UChicago CS Software Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/ssh.html">Remote SSH Access</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visual Studio Code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/about.html">About VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/ssh.html">Using VS Code and SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/config.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vscode/tips.html">Tips &amp; Tricks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linux Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-man.html">Using Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-tip-tricks.html">Tips and Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux-sequence.html">Running Commands Sequentially</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Working with Input/Output Streams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-input-output-streams">Working with Input/Output Streams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#redirection">Redirection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises">Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#piping">Piping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linux-permissions.html">Understanding File Permissions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Git Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="git-intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-local.html">Local Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-prepare-github.html">Preparing to use GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-remote.html">Remote Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-discarding-changes.html">Discarding Changes and Unstaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-commit-log.html">Viewing the Commit Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-multiple-locations.html">Working from Multiple Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Working with Branches</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Help in Your Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/questions.html">Asking Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help/office-hours.html">Office Hours</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Style Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/c.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style-guide/python.html">Python</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../teams.html">Working in Teams</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://uchicago-cs.github.io/debugging-guide/">The Debugging Guide 🔗</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About This Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/getting-help.html">Getting Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/issue.html">Report an Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Tutorial Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UChicago CS Student Resource Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Linux Tutorial - Working with Input/Output Streams</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/linux-input-output.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="linux-sequence.html" class="btn btn-neutral float-left" title="Linux Tutorial - Running Commands Sequentially" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-permissions.html" class="btn btn-neutral float-right" title="Linux Tutorial - File Permissions" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux-tutorial-working-with-input-output-streams">
+<span id="linux-input-output"></span><h1>Linux Tutorial - Working with Input/Output Streams<a class="headerlink" href="#linux-tutorial-working-with-input-output-streams" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section assumes you have <a class="reference internal" href="linux-intro.html#tutorial-materials"><span class="std std-ref">picked up the tutorial
+materials</span></a> and that you have a <a class="reference internal" href="linux-intro.html#terminal"><span class="std std-ref">terminal
+window open</span></a> to your <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory.</p>
+</div>
+<p>In this section of the tutorial you will learn how to use
+the terminal to perform some more advanced operations in Linux, including:
+#. Redirection
+#. Piping</p>
+<section id="working-with-input-output-streams">
+<h2>Working with Input/Output Streams<a class="headerlink" href="#working-with-input-output-streams" title="Link to this heading"></a></h2>
+<p>When you run a program (at the command-line or by clicking), the Linux
+operating system creates a new <em>process</em> for running the program.
+Every Linux process has an input stream (known as <em>standard in</em>) for
+providing input to a program and two output streams, one for regular
+output (known as <em>standard out</em>) and one for providing information
+about errors (known as <em>standard error</em>).  In this section, you will
+learn how to use these streams to provide input to a program and to
+capture the output.</p>
+<section id="redirection">
+<h3>Redirection<a class="headerlink" href="#redirection" title="Link to this heading"></a></h3>
+<p>The examples in this section will use commands that we’ve not yet
+discussed.  Refer to the man pages for information about unfamiliar
+commands.</p>
+<p>As we already know, commands like <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code>, and <code class="docutils literal notranslate"><span class="pre">cat</span></code> will
+print output to screen by default.  Sometimes, however, we may prefer
+to write the output of these commands to a file. In Linux, we can
+redirect the output of a program to a file of our choosing. This
+operation is done with the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operator.</p>
+<p>Try the following example and compare your output with ours:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd
+$ touch test-0.txt
+$ ls &gt; test-1.txt
+$ cat test-1.txt
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Public
+Templates
+test-0.txt
+test-1.txt
+Videos
+$ echo &quot;Hello World!&quot; &gt; test-2.txt
+$ cat test-2.txt
+Hello World!
+$ cat test-2.txt &gt; test-1.txt; cat test-1.txt
+Hello World!
+$ rm test-*
+</pre></div>
+</div>
+<p>Two important things to note:</p>
+<ol class="arabic simple">
+<li><p>If you redirect to a file that does not exist, that file will be created.</p></li>
+<li><p>If you redirect to a file that already exists, the contents of that file will be <strong>overwritten</strong>.</p></li>
+</ol>
+<p>You can use the append operator (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) to append the output of
+command to the end of an existing file rather than overwrite the
+contents of that file.</p>
+<p>Not only can we redirect the output of a program to a file, we can
+also have a program receive its input from a file.  This operation is
+done with the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 my_echo.py &lt; my-input.txt
+</pre></div>
+</div>
+<p>(Change back to your <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory before you try this command.)</p>
+<p>In general, all Linux processes can perform input/output operations
+through, at least, the keyboard and the screen. More specifically,
+there are three ‘input/output streams’: standard input (or <code class="docutils literal notranslate"><span class="pre">stdin</span></code>),
+standard output (or <code class="docutils literal notranslate"><span class="pre">stdout</span></code>), and standard error (or <code class="docutils literal notranslate"><span class="pre">stderr</span></code>).
+The code in <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code> simply reads information from <code class="docutils literal notranslate"><span class="pre">stdin</span></code> and
+writes it back out to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.  The redirection operators change
+the bindings of these streams from the keyboard and/or screen to files.
+For the purposes of this tutorial, we will only care about standard
+input and standard output.</p>
+</section>
+<section id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code> as shown above.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code> again, but this time redirect the output to a file named <code class="docutils literal notranslate"><span class="pre">output.txt</span></code>.  Check the contents of <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> using an editor or by using the <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">more</span></code> commands.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">my_echo.py</span></code>  redirecting the input from <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> and the output to <code class="docutils literal notranslate"><span class="pre">output2.txt</span></code>.  Check the contents of <code class="docutils literal notranslate"><span class="pre">output2.txt</span></code>.</p></li>
+<li><p>When you are done, remove <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">output2.txt</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how, if you run <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">my_echo.py</span></code> without redirecting the input, it will patiently wait for you to type some input for it to echo.  Once you type some input and hit return, the program will echo your input, and then resume waiting for input.  It will continue to do so until you exit by typing <code class="docutils literal notranslate"><span class="pre">Ctrl-d</span></code>.  Give it a try!</p>
+</div>
+</section>
+<section id="piping">
+<h3>Piping<a class="headerlink" href="#piping" title="Link to this heading"></a></h3>
+<p>In addition to the ability to direct output to and receive input from files,
+Linux provides a very powerful capability called piping. Piping allows one program
+to receive as input the output of another program, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ program1 | program2
+</pre></div>
+</div>
+<p>In this example, the output of program1 is used as the input of
+program2.  Or to put it more technically, the <code class="docutils literal notranslate"><span class="pre">stdout</span></code> of
+<code class="docutils literal notranslate"><span class="pre">program1</span></code> is connected to the <code class="docutils literal notranslate"><span class="pre">stdin</span></code> of <code class="docutils literal notranslate"><span class="pre">program2</span></code>.</p>
+<p>As another more concrete example, consider the <code class="docutils literal notranslate"><span class="pre">man</span></code> command with the <code class="docutils literal notranslate"><span class="pre">-k</span></code> option that we’ve
+previously discussed in the <a class="reference internal" href="linux-man.html#linux-man"><span class="std std-ref">Linux Tutorial - Man Pages</span></a> section of
+the <a class="reference internal" href="linux-intro.html#tutorial-linux-intro"><span class="std std-ref">Linux Basics Tutorial</span></a>. Let’s assume that you hadn’t yet been introduced to the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command.
+How would you look for the command to create a directory? First attempts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man -k &quot;create directory&quot;
+create directory: nothing appropriate
+$ man -k &quot;directory&quot;
+(a bunch of mostly irrelevant output)
+</pre></div>
+</div>
+<p>As we can see, neither of these options is particularly helpful. However, with
+piping, we can combine <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">-k</span></code> with a powerful command line utility called
+<code class="docutils literal notranslate"><span class="pre">grep</span></code> to find what we need:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man -k &quot;directory&quot; | grep &quot;create&quot;
+mkdir (2)            - create a directory
+mkdirat (2)          - create a directory
+mkdtemp (3)          - create a unique temporary directory
+mkfontdir (1)        - create an index of X font files in a directory
+mklost+found (8)     - create a lost+found directory on a mounted Linux second extended fil...
+mktemp (1)           - create a temporary file or directory
+pam_mkhomedir (8)    - PAM module to create users home directory
+update-info-dir (8)  - update or create index file from all installed info files in directory
+vgmknodes (8)        - recreate volume group directory and logical volume special files
+</pre></div>
+</div>
+<p>Nice.</p>
+</section>
+<section id="id1">
+<h3>Exercises<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Learn about the <code class="docutils literal notranslate"><span class="pre">printenv</span></code> command by looking at its manual page (<code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">printenv</span></code>)  and then giving it a try.</p></li>
+<li><p>Use piping to chain together the <code class="docutils literal notranslate"><span class="pre">printenv</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> commands to display the last 10 lines of output from <code class="docutils literal notranslate"><span class="pre">printenv</span></code>.</p></li>
+<li><p>Replicate the above functionality without using the <code class="docutils literal notranslate"><span class="pre">|</span></code> operator. (hint: Use a temporary file.)</p></li>
+</ol>
+<p>You have finished the section on working with input and output.</p>
+<p>If you have been referred to this tutorial as part of a class you
+are taking, please move on to the next section required by your instructor.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-sequence.html" class="btn btn-neutral float-left" title="Linux Tutorial - Running Commands Sequentially" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-permissions.html" class="btn btn-neutral float-right" title="Linux Tutorial - File Permissions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, University of Chicago - Department of Computer Science.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
