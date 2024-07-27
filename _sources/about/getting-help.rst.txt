@@ -8,7 +8,7 @@ please use one of the following support mechanisms:
 
 - **If you were referred to this guide by the course staff of a class you are taking**:
   Please use the support mechanisms provided in that class. For example, if the instructor
-  for a class you're taking has instructed you to work through the Git Basics tutorial,
+  for a class you're taking has instructed you to work through the Git tutorial,
   and you run into any issues while doing so, so should use whatever support mechanisms
   are available in that class (online discussion board, office hours, etc.) to get assistance
   with that issue.
