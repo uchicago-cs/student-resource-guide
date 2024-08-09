@@ -336,10 +336,10 @@ not connect with SSH to the Linux server</strong>. The following commands (steps
 should be run on your local machine.</p>
 <p><strong>Step 2</strong>: Run <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
 <p>This command will take you to your home directory.</p>
-<p><strong>Step 3</strong>: Run <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code></p>
+<p><strong>Step 3</strong>: Run <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-t</span> <span class="pre">ed25519</span></code></p>
 <p>You will see the following prompt:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">rsa</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
-<span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">ed25519</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
+<span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>Press Enter to accept the default location. Check the output of this command to
@@ -348,7 +348,7 @@ decide whether you need to generate a new SSH key pair (see the warning below).<
 <p class="admonition-title">Warning</p>
 <p>If you have already completed generated an SSH key pair for (possibly for
 GitHub) , you will see a prompt like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/home/username/.ssh/id_rsa already exists. Overwrite (y/n)?
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/home/username/.ssh/id_ed25519 already exists. Overwrite (y/n)?
 </pre></div>
 </div>
 <p>If you see this prompt, <strong>do not overwrite your existing SSH key pair</strong>. You
@@ -361,13 +361,13 @@ can re-use this key pair. <strong>Skip ahead to Step 4</strong>.</p>
 <p>In order to use SSH without a password, you must leave this passphrase empty.
 Press Enter to accept the default (empty passphrase). You will then see a
 message like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Your identification has been saved in /home/username/.ssh/id_rsa.
-Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Your identification has been saved in /home/username/.ssh/id_ed25519.
+Your public key has been saved in /home/username/.ssh/id_ed25519.pub.
 The key fingerprint is:
 SHA256:cBUUs2FeMCIrBlTyv/PGpBtNz0v235zvLykpoWIOS9I username@machine
 
 The key’s randomart image is:
-+---[RSA 3072]----+
++--[ED25519 256]--+
 | .+.. . ..@+.    |
 | + o = *         |
 | + o . o         |
@@ -394,7 +394,7 @@ such as <code class="docutils literal notranslate"><span class="pre">linux1.cs.u
 <p>You will be prompted for your password. Enter your CNetID password.</p>
 </li>
 <li><p><strong>Windows</strong>: Run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>type $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh CNETID@&lt;servername&gt;.cs.uchicago.edu “cat &gt;&gt; .ssh/authorized_keys”
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>type $env:USERPROFILE\\.ssh\\id_ed25519.pub | ssh CNETID@&lt;servername&gt;.cs.uchicago.edu “cat &gt;&gt; .ssh/authorized_keys”
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">CNETID</span></code> with your CNetID, and <code class="docutils literal notranslate"><span class="pre">&lt;servername&gt;</span></code> with the name of the

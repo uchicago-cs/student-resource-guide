@@ -235,12 +235,12 @@ should be run on your local machine.
 
 This command will take you to your home directory. 
 
-**Step 3**: Run ``ssh-keygen``
+**Step 3**: Run ``ssh-keygen -t ed25519``
 
 You will see the following prompt: ::
 
-  Generating public/private rsa key pair. 
-  Enter file in which to save the key (/home/username/.ssh/id_rsa):
+  Generating public/private ed25519 key pair. 
+  Enter file in which to save the key (/home/username/.ssh/id_ed25519):
 
 Press Enter to accept the default location. Check the output of this command to
 decide whether you need to generate a new SSH key pair (see the warning below).
@@ -250,7 +250,7 @@ decide whether you need to generate a new SSH key pair (see the warning below).
   GitHub) , you will see a prompt like this:
   ::
 
-    /home/username/.ssh/id_rsa already exists. Overwrite (y/n)?
+    /home/username/.ssh/id_ed25519 already exists. Overwrite (y/n)?
 
   If you see this prompt, **do not overwrite your existing SSH key pair**. You
   can re-use this key pair. **Skip ahead to Step 4**.
@@ -267,13 +267,13 @@ message like this:
 
 ::
 
-  Your identification has been saved in /home/username/.ssh/id_rsa. 
-  Your public key has been saved in /home/username/.ssh/id_rsa.pub. 
+  Your identification has been saved in /home/username/.ssh/id_ed25519. 
+  Your public key has been saved in /home/username/.ssh/id_ed25519.pub. 
   The key fingerprint is:
   SHA256:cBUUs2FeMCIrBlTyv/PGpBtNz0v235zvLykpoWIOS9I username@machine
 
   The key’s randomart image is:
-  +---[RSA 3072]----+
+  +--[ED25519 256]--+
   | .+.. . ..@+.    |
   | + o = *         |
   | + o . o         |
@@ -306,7 +306,7 @@ differ depending on whether you are using a Mac or Windows computer.
 
   ::
     
-    type $env:USERPROFILE\\.ssh\\id_rsa.pub | ssh CNETID@<servername>.cs.uchicago.edu “cat >> .ssh/authorized_keys”
+    type $env:USERPROFILE\\.ssh\\id_ed25519.pub | ssh CNETID@<servername>.cs.uchicago.edu “cat >> .ssh/authorized_keys”
   
   Replace ``CNETID`` with your CNetID, and ``<servername>`` with the name of the
   server you want to connect to, such as ``linux1.cs.uchicago.edu`` or
