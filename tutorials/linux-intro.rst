@@ -16,10 +16,10 @@ important part knowing your way around Linux.
 
 In this tutorial you will learn how to:
 
-#. :ref:`Open a terminal window <terminal>`
-#. :ref:`Navigate the filesystem <linux-file-system>`
+#. :ref:`Open a Terminal Window <terminal>`
+#. :ref:`Navigate the Filesystem <linux-file-system>`
 #. :ref:`Edit, Compile, and Run a Program <linux-compile-and-run>`
-#. :ref:`Use Man Pages <linux-man>`
+#. :ref:`Get Help from the Command-line <linux-getting-help>`
 #. :ref:`Use Keyboard Shortcuts  <linux-tip-tricks>`
 #. :ref:`Run Commands Sequentially <linux-sequence>`
 #. :ref:`Work with Input/Output Streams <linux-input-output>`

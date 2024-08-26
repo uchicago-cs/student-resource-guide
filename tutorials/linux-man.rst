@@ -1,4 +1,4 @@
-.. _linux-man:
+.. _linux-getting-help:
 
 Linux Tutorial - Getting Help
 =============================
@@ -42,7 +42,7 @@ This will often give helpful reminders about flags and options.
 tldr
 ~~~~
 
-The CS Linux servers also have a program called `tldr` installed.
+The CS Linux servers also have a program called ``tldr`` installed.
 
 This program gives a selection of examples of common behaviors. It isn't comprehensive, but can often give a quick answer when you are trying to remember how to perform a particular task.
 
@@ -93,15 +93,9 @@ man pages
 ~~~~~~~~~
 
 A man page (short for manual page) documents or describes topics related to working with Linux.
-These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
-Information provided by a man page can include what flags and arguments can be utilized with a command. 
-More information about flags and arguments can be found in `Intro to Linux - Useful Commands <useful_commands>`.
+These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts. Information provided by a man page can include what flags and arguments can be utilized with a command (we discussed flags and arguments when learning how to :ref:`navigate the filesystem <linux-file-system>`).
 
-These are the most comprehensive form of help, but also the most verbose.
-
-In this section of the tutorial you will learn how to access and read man pages.
-
-Learning how to read a man page takes time and is a skill you will develop with practice.
+Man pages are the most comprehensive form of help, but also the most verbose. In this section of the tutorial you will learn how to access and read man pages. Learning how to read a man page takes time and is a skill you will develop with practice.
 
 To get the man page for a Linux command, you can type::
 
@@ -128,7 +122,7 @@ By default, the ``ls`` command does not include files with names that start with
 The ``linux-tutorial-files`` directory contains a file that starts with a dot.  Use ``man`` to identify the flag to use with ``ls`` to include this file when listing the contents of ``linux-tutorial-files``.
 
 
-You have finished the section on manual pages.
+You have finished the section on getting help.
 
 If you have been referred to this tutorial as part of a class you
 are taking, please move on to the next section required by your instructor.

@@ -118,7 +118,7 @@ program2.  Or to put it more technically, the ``stdout`` of
 ``program1`` is connected to the ``stdin`` of ``program2``.
 
 As another more concrete example, consider the ``man`` command with the ``-k`` option that we've
-previously discussed in the :ref:`linux-man` section of
+previously discussed in the :ref:`Getting Help <linux-getting-help>` section of
 the :ref:`Linux Basics Tutorial <tutorial-linux-intro>`. Let's assume that you hadn't yet been introduced to the ``mkdir`` command.
 How would you look for the command to create a directory? First attempts::
 
