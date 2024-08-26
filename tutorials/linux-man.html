@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linux Tutorial - Man Pages &mdash; UChicago CS Student Resource Guide</title>
+  <title>Linux Tutorial - Getting Help &mdash; UChicago CS Student Resource Guide</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -62,7 +62,10 @@
 <li class="toctree-l1"><a class="reference internal" href="linux-intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linux-filesystem.html">Navigating the Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linux-compile-and-run.html">Editing, Compiling, and Running a Program</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Man Pages</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#help"><code class="docutils literal notranslate"><span class="pre">--help</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tldr">tldr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#man-pages">man pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercise">Exercise</a></li>
 </ul>
 </li>
@@ -119,7 +122,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Linux Tutorial - Man Pages</li>
+      <li class="breadcrumb-item active">Linux Tutorial - Getting Help</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/uchicago-cs/student-resource-guide/blob/main/tutorials/linux-man.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -132,15 +135,96 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="linux-tutorial-man-pages">
-<span id="linux-man"></span><h1>Linux Tutorial - Man Pages<a class="headerlink" href="#linux-tutorial-man-pages" title="Link to this heading"></a></h1>
-<p>In this section of the tutorial you will learn how to
-access and read man pages (short for manual pages),
-which document or describe topics related to working with Linux and helps give insights into Linux based tools.
-These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts.
-Information provided by a man page can include what flags and arguments can be utilized with a command.
-More information about flags and arguments can be found in <cite>Intro to Linux - Useful Commands &lt;useful_commands&gt;</cite>.</p>
-<p>Learning how to read a man page takes time and is a skill you will develop with practice.</p>
+  <section id="linux-tutorial-getting-help">
+<span id="linux-getting-help"></span><h1>Linux Tutorial - Getting Help<a class="headerlink" href="#linux-tutorial-getting-help" title="Link to this heading"></a></h1>
+<p>There are a number of ways to get help using command-line applications from within the terminal itself:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code> flag</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tldr</span></code> command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">man</span></code> pages</p></li>
+</ul>
+<section id="help">
+<h2><code class="docutils literal notranslate"><span class="pre">--help</span></code><a class="headerlink" href="#help" title="Link to this heading"></a></h2>
+<p>Many commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag that can be passed after the command name. <code class="docutils literal notranslate"><span class="pre">pwd</span></code> for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd --help
+
+pwd - output the current working directory
+
+pwd [-P | --physical]
+pwd [-L | --logical]
+
+DESCRIPTION
+NOTE: This page documents the fish builtin pwd.  To see the documentation on the pwd command you might have, use command man pwd.
+
+pwd outputs (prints) the current working directory.
+
+The following options are available:
+
+-L or --logical
+       Output the logical working directory, without resolving symlinks (default behavior).
+
+-P or --physical
+       Output the physical working directory, with symlinks resolved.
+
+-h or --help
+       Displays help about using this command.
+</pre></div>
+</div>
+<p>This will often give helpful reminders about flags and options.</p>
+</section>
+<section id="tldr">
+<h2>tldr<a class="headerlink" href="#tldr" title="Link to this heading"></a></h2>
+<p>The CS Linux servers also have a program called <code class="docutils literal notranslate"><span class="pre">tldr</span></code> installed.</p>
+<p>This program gives a selection of examples of common behaviors. It isn’t comprehensive, but can often give a quick answer when you are trying to remember how to perform a particular task.</p>
+<p>To get the tldr page for a Linux command, you can type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tldr ls
+
+List directory contents.
+More information: &lt;https://www.gnu.org/software/coreutils/ls&gt;.
+
+List files one per line:
+
+    ls -1
+
+List all files, including hidden files:
+
+    ls -a
+
+List all files, with trailing `/` added to directory names:
+
+    ls -F
+
+Long format list (permissions, ownership, size, and modification date) of all files:
+
+    ls -la
+
+Long format list with size displayed using human-readable units (KiB, MiB, GiB):
+
+    ls -lh
+
+Long format list sorted by size (descending) recursively:
+
+    ls -lSR
+
+Long format list of all files, sorted by modification date (oldest first):
+
+    ls -ltr
+
+Only list directories:
+
+    ls -d */
+</pre></div>
+</div>
+</section>
+<section id="man-pages">
+<h2>man pages<a class="headerlink" href="#man-pages" title="Link to this heading"></a></h2>
+<p>A man page (short for manual page) documents or describes topics related to working with Linux.
+These topics include specific Linux programs, certain programming functions, standards, and conventions, and abstract concepts. Information provided by a man page can include what flags and arguments can be utilized with a command (we discussed flags and arguments when learning how to <a class="reference internal" href="linux-filesystem.html#linux-file-system"><span class="std std-ref">navigate the filesystem</span></a>).</p>
+<p>Man pages are the most comprehensive form of help, but also the most verbose. In this section of the tutorial you will learn how to access and read man pages. Learning how to read a man page takes time and is a skill you will develop with practice.</p>
 <p>To get the man page for a Linux command, you can type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
@@ -156,11 +240,12 @@ More information about flags and arguments can be found in <cite>Intro to Linux 
 </div>
 <p>This searches all the descriptions for the keyword <code class="docutils literal notranslate"><span class="pre">printf</span></code> and prints the names of the man pages with matches.</p>
 <p>Learning how to read man pages is an important skill.</p>
+</section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading"></a></h2>
 <p>By default, the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command does not include files with names that start with a dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>).
 The <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code> directory contains a file that starts with a dot.  Use <code class="docutils literal notranslate"><span class="pre">man</span></code> to identify the flag to use with <code class="docutils literal notranslate"><span class="pre">ls</span></code> to include this file when listing the contents of <code class="docutils literal notranslate"><span class="pre">linux-tutorial-files</span></code>.</p>
-<p>You have finished the section on manual pages.</p>
+<p>You have finished the section on getting help.</p>
 <p>If you have been referred to this tutorial as part of a class you
 are taking, please move on to the next section required by your instructor.</p>
 </section>

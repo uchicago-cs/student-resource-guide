@@ -45,7 +45,7 @@ This guide is divided into the following sections:
    Introduction <tutorials/linux-intro.rst>
    Navigating the Filesystem <tutorials/linux-filesystem.rst>
    Editing, Compiling, and Running a Program <tutorials/linux-compile-and-run.rst>
-   Using Man Pages <tutorials/linux-man.rst>
+   Getting Help <tutorials/linux-man.rst>
    Tips and Tricks <tutorials/linux-tip-tricks.rst>
    Running Commands Sequentially <tutorials/linux-sequence.rst>
    Working with Input/Output Streams <tutorials/linux-input-output.rst>

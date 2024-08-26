@@ -272,7 +272,7 @@ files, the normal ``cp`` and ``rm`` commands will not work. Use ``cp -r`` instea
     *everything* in the named directory.
 
 Some useful terminology: the ``-r`` argument in ``cp -r`` or ``rm -r`` is known as a *flag*.  Flags help determine the behavior of a program.  In this case, the flag allows ``cp`` and ``rm`` to work with a directory tree, rather than just a single file. Most commands can accept a number
-of different flags; the :ref:`Man Pages <linux-man>` section explains how to look up the documentation for
+of different flags; the :ref:`Getting Help <linux-getting-help>` section explains how to look up the documentation for
 specific commands, including the list of supported flags in each command.
 
 You can make a new directory with ``mkdir <directoryname>``, where
