@@ -14,28 +14,22 @@ There are a number of ways to get help using command-line applications from with
 
 Many commands have a ``--help`` flag that can be passed after the command name. ``pwd`` for example::
 
-    $ pwd --help
+   $ pwd --help
+   pwd: pwd [-LP]
+       Print the name of the current working directory.
+    
+       Options:
+         -L        print the value of $PWD if it names the current working
+                   directory
+         -P        print the physical directory, without any symbolic links
+    
+       By default, `pwd' behaves as if `-L' were specified.
+    
+       Exit Status:
+       Returns 0 unless an invalid option is given or the current directory
+       cannot be read.
 
-    pwd - output the current working directory
 
-    pwd [-P | --physical]
-    pwd [-L | --logical]
-
-    DESCRIPTION
-    NOTE: This page documents the fish builtin pwd.  To see the documentation on the pwd command you might have, use command man pwd.
-
-    pwd outputs (prints) the current working directory.
-
-    The following options are available:
-
-    -L or --logical
-           Output the logical working directory, without resolving symlinks (default behavior).
-
-    -P or --physical
-           Output the physical working directory, with symlinks resolved.
-
-    -h or --help
-           Displays help about using this command.
 
 This will often give helpful reminders about flags and options.
 
@@ -48,7 +42,7 @@ This program gives a selection of examples of common behaviors. It isn't compreh
 
 To get the tldr page for a Linux command, you can type::
 
-    man <command name>
+    tldr <command name>
 
 For example::
 
