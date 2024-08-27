@@ -301,13 +301,17 @@ differ depending on whether you are using a Mac or Windows computer.
 
   You will be prompted for your password. Enter your CNetID password.
 
-- **Windows**: Run the following command:
+- **Windows**: Run the following commands:
 
   ::
     
-    type $env:USERPROFILE\\.ssh\\id_ed25519.pub | ssh CNETID@<servername>.cs.uchicago.edu “cat >> .ssh/authorized_keys”
+    $publicKeyPath = "$env:USERPROFILE\\.ssh\\id_rsa.pub"
+    $remoteCommand = "{
+        mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys
+    }"
+    Get-Content $publicKeyPath | ssh <CNETID>@<servername> $remoteCommand
   
-  Replace ``CNETID`` with your CNetID, and ``<servername>`` with the name of the
+  Replace ``<CNETID>`` with your CNetID, and ``<servername>`` with the name of the
   server you want to connect to, such as ``linux1.cs.uchicago.edu`` or
   ``cs141-4.cs.uchicago.edu``.
 
