@@ -149,27 +149,19 @@
 <h2><code class="docutils literal notranslate"><span class="pre">--help</span></code><a class="headerlink" href="#help" title="Link to this heading"></a></h2>
 <p>Many commands have a <code class="docutils literal notranslate"><span class="pre">--help</span></code> flag that can be passed after the command name. <code class="docutils literal notranslate"><span class="pre">pwd</span></code> for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd --help
+pwd: pwd [-LP]
+    Print the name of the current working directory.
 
-pwd - output the current working directory
+    Options:
+      -L        print the value of $PWD if it names the current working
+                directory
+      -P        print the physical directory, without any symbolic links
 
-pwd [-P | --physical]
-pwd [-L | --logical]
+    By default, `pwd&#39; behaves as if `-L&#39; were specified.
 
-DESCRIPTION
-NOTE: This page documents the fish builtin pwd.  To see the documentation on the pwd command you might have, use command man pwd.
-
-pwd outputs (prints) the current working directory.
-
-The following options are available:
-
--L or --logical
-       Output the logical working directory, without resolving symlinks (default behavior).
-
--P or --physical
-       Output the physical working directory, with symlinks resolved.
-
--h or --help
-       Displays help about using this command.
+    Exit Status:
+    Returns 0 unless an invalid option is given or the current directory
+    cannot be read.
 </pre></div>
 </div>
 <p>This will often give helpful reminders about flags and options.</p>
@@ -179,7 +171,7 @@ The following options are available:
 <p>The CS Linux servers also have a program called <code class="docutils literal notranslate"><span class="pre">tldr</span></code> installed.</p>
 <p>This program gives a selection of examples of common behaviors. It isn’t comprehensive, but can often give a quick answer when you are trying to remember how to perform a particular task.</p>
 <p>To get the tldr page for a Linux command, you can type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tldr</span> <span class="o">&lt;</span><span class="n">command</span> <span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>For example:</p>
