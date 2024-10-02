@@ -301,7 +301,7 @@ differ depending on whether you are using a Mac or Windows computer.
 
   You will be prompted for your password. Enter your CNetID password.
 
-- **Windows**: Run the following commands:
+- **Windows**: Run the following commands from the Window's **Powershell** command-line prompt:
 
   ::
     
@@ -309,11 +309,13 @@ differ depending on whether you are using a Mac or Windows computer.
       $remoteCommand = "{
           mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys
       }"
-      Get-Content $publicKeyPath | ssh {cnetId}@{linuxServer} $remoteCommand
+      Get-Content $publicKeyPath | ssh <CNETID>@<servername> $remoteCommand
   
   Replace ``<CNETID>`` with your CNetID, and ``<servername>`` with the name of the
   server you want to connect to, such as ``linux1.cs.uchicago.edu`` or
   ``cs141-4.cs.uchicago.edu``.
+
+  Please note that the curly braces (``{`` and ``}``) in the second command need to be on their own lines.
 
   You will be prompted for your password. Enter your CNetID password.
 

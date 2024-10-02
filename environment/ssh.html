@@ -393,17 +393,18 @@ the server you want to connect to. For example, if you want to connect to
 such as <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code> or <code class="docutils literal notranslate"><span class="pre">cs141-4.cs.uchicago.edu</span></code>.</p>
 <p>You will be prompted for your password. Enter your CNetID password.</p>
 </li>
-<li><p><strong>Windows</strong>: Run the following commands:</p>
+<li><p><strong>Windows</strong>: Run the following commands from the Window’s <strong>Powershell</strong> command-line prompt:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$publicKeyPath = &quot;$env:USERPROFILE\.ssh\id_ed25519.pub&quot;
 $remoteCommand = &quot;{
     mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys
 }&quot;
-Get-Content $publicKeyPath | ssh {cnetId}@{linuxServer} $remoteCommand
+Get-Content $publicKeyPath | ssh &lt;CNETID&gt;@&lt;servername&gt; $remoteCommand
 </pre></div>
 </div>
 <p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;CNETID&gt;</span></code> with your CNetID, and <code class="docutils literal notranslate"><span class="pre">&lt;servername&gt;</span></code> with the name of the
 server you want to connect to, such as <code class="docutils literal notranslate"><span class="pre">linux1.cs.uchicago.edu</span></code> or
 <code class="docutils literal notranslate"><span class="pre">cs141-4.cs.uchicago.edu</span></code>.</p>
+<p>Please note that the curly braces (<code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>) in the second command need to be on their own lines.</p>
 <p>You will be prompted for your password. Enter your CNetID password.</p>
 </li>
 </ul>
