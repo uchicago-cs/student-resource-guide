@@ -87,6 +87,7 @@ Use the relevant commands below to install any missing tools.
 Use the following command to install the Criterion library.
 
 ::
+
     sudo apt-get install libcriterion-dev
 
 
@@ -96,11 +97,54 @@ MacOS Instructions
 Homebrew
 ~~~~~~~~
 
+Homebrew is package manager for MacOS. It is the program we will use to install
+the tools listed above. To install Homebrew, use the command found on the 
+`official website<https://brew.sh/>`__.
+
 Tool Installation
 ~~~~~~~~~~~~~~~~~
 
+Once you have successfully installed Homebrew, open a terminal and follow the
+instructions in :ref:`The which Command` section to check if any of the tools are
+already installed. Note that Valgrind is **not** available on MacOS so there
+is no need to check for it.
+
+Use the relevant commands below to install any missing tools.
+
+::
+
+    brew install clang
+    brew install lldb
+    brew install make
+
+Use the following command to install the Criterion library.
+
+::
+
+    brew install criterion
+
+
 Linux Instructions
 ------------------
+
+Open up the terminal and follow the instructions in :ref:`The which Command` 
+section to check if any of the tools are already installed.
+
+Use the relevant commands below to install any missing tools.
+
+::
+
+    sudo apt-get install clang
+    sudo apt-get install lldb
+    sudo apt-get install valgrind
+    sudo apt-get install make
+
+Use the following command to install the Criterion library.
+
+::
+
+    sudo apt-get install libcriterion-dev
+
 
 .. Credits
     Adapted from a lab assignment created by Adam Shaw and Matthew Wachs.
